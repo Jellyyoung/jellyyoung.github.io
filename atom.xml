@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yaodong.ml/"/>
-  <updated>2016-11-03T15:01:51.156Z</updated>
+  <updated>2016-11-09T14:06:27.574Z</updated>
   <id>http://yaodong.ml/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yaodong.ml/Kaggle%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html"/>
     <id>http://yaodong.ml/Kaggle竞赛学习资源汇总.html</id>
     <published>2016-11-03T08:21:46.000Z</published>
-    <updated>2016-11-03T15:01:51.156Z</updated>
+    <updated>2016-11-09T14:06:27.574Z</updated>
     
     <content type="html"><![CDATA[<p>&emsp;&emsp;Kaggle竞赛相比于国内的数据科学、机器学习类比赛，入门教程更丰富，foreigners对解题方案的讲解更详细，因此Kaggle竞赛对于数据科学爱好者是一个不错的学习资源。本博文整理了Kaggle竞赛的相关学习资源，欢迎交流。<br><a id="more"></a></p>
 <h3 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h3><ol>
@@ -41,7 +41,7 @@
 <li><a href="http://www.chioka.in/kaggle-competition-solutions/" target="_blank" rel="external">Kaggle Competition Past Solutions</a></li>
 <li><a href="http://dsguide.biz/competitions/" target="_blank" rel="external">Solutions from past competitions</a></li>
 </ol>
-<p>####Bike Sharing Demand<br>&emsp;&emsp;<a href="https://www.kaggle.com/c/bike-sharing-demand" target="_blank" rel="external">赛题链接</a><br>&emsp;&emsp;<a href="http://nbviewer.jupyter.org/gist/whbzju/ff06fce9fd738dcf8096" target="_blank" rel="external">referenced solution</a></p>
+<h4 id="Bike-Sharing-Demand"><a href="#Bike-Sharing-Demand" class="headerlink" title="Bike Sharing Demand"></a>Bike Sharing Demand</h4><p>&emsp;&emsp;<a href="https://www.kaggle.com/c/bike-sharing-demand" target="_blank" rel="external">赛题链接</a><br>&emsp;&emsp;<a href="http://nbviewer.jupyter.org/gist/whbzju/ff06fce9fd738dcf8096" target="_blank" rel="external">referenced solution</a></p>
 <h4 id="Titanic-Machine-Learning-from-Disaster"><a href="#Titanic-Machine-Learning-from-Disaster" class="headerlink" title="Titanic: Machine Learning from Disaster"></a>Titanic: Machine Learning from Disaster</h4><ul>
 <li>推荐这个solution，<a href="https://github.com/cindycindyhi/kaggle-Titanic" target="_blank" rel="external">cindycindyhi</a></li>
 <li><a href="https://github.com/agconti/kaggle-titanic" target="_blank" rel="external">agconti - github</a><h4 id="Galaxy-Zoo-The-Galaxy-Challenge"><a href="#Galaxy-Zoo-The-Galaxy-Challenge" class="headerlink" title="Galaxy Zoo The Galaxy Challenge"></a>Galaxy Zoo The Galaxy Challenge</h4>&emsp;&emsp;<a href="https://github.com/benanne/kaggle-galaxies" target="_blank" rel="external">benanne - github

@@ -25,7 +25,7 @@
 <li><a href="http://www.chioka.in/kaggle-competition-solutions/" target="_blank" rel="external">Kaggle Competition Past Solutions</a></li>
 <li><a href="http://dsguide.biz/competitions/" target="_blank" rel="external">Solutions from past competitions</a></li>
 </ol>
-<p>####Bike Sharing Demand<br>&emsp;&emsp;<a href="https://www.kaggle.com/c/bike-sharing-demand" target="_blank" rel="external">赛题链接</a><br>&emsp;&emsp;<a href="http://nbviewer.jupyter.org/gist/whbzju/ff06fce9fd738dcf8096" target="_blank" rel="external">referenced solution</a></p>
+<h4 id="Bike-Sharing-Demand"><a href="#Bike-Sharing-Demand" class="headerlink" title="Bike Sharing Demand"></a>Bike Sharing Demand</h4><p>&emsp;&emsp;<a href="https://www.kaggle.com/c/bike-sharing-demand" target="_blank" rel="external">赛题链接</a><br>&emsp;&emsp;<a href="http://nbviewer.jupyter.org/gist/whbzju/ff06fce9fd738dcf8096" target="_blank" rel="external">referenced solution</a></p>
 <h4 id="Titanic-Machine-Learning-from-Disaster"><a href="#Titanic-Machine-Learning-from-Disaster" class="headerlink" title="Titanic: Machine Learning from Disaster"></a>Titanic: Machine Learning from Disaster</h4><ul>
 <li>推荐这个solution，<a href="https://github.com/cindycindyhi/kaggle-Titanic" target="_blank" rel="external">cindycindyhi</a></li>
 <li><a href="https://github.com/agconti/kaggle-titanic" target="_blank" rel="external">agconti - github</a><h4 id="Galaxy-Zoo-The-Galaxy-Challenge"><a href="#Galaxy-Zoo-The-Galaxy-Challenge" class="headerlink" title="Galaxy Zoo The Galaxy Challenge"></a>Galaxy Zoo The Galaxy Challenge</h4>&emsp;&emsp;<a href="https://github.com/benanne/kaggle-galaxies" target="_blank" rel="external">benanne - github
