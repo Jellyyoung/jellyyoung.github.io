@@ -370,7 +370,7 @@
 <li>完全二叉树除最后一层外，每一层上的结点数均达到最大值；在最后一层上只缺少右子树的若干结点。</li>
 </ul>
 <p>&emsp;&emsp;<strong>满二叉树与完全二叉树的重要区别</strong>：<strong>满二叉树肯定是完全二叉树，完全二叉树不一定是满二叉树。</strong></p>
-<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p>&emsp;&emsp;1. 在二叉树的第<strong>i</strong>层最多有$2^{i}-1$个结点（$i$）；<br>&emsp;&emsp;2. 深度为<strong>k</strong>的二叉树至多有个结点；<br>&emsp;&emsp;3. 对任何一棵二叉树T，如果其终端结点数为$n_0$，度为<strong>2</strong>的结点数为$n_2$，则$n_0=n<em>2+1$；<br>&emsp;&emsp;4. 具有<strong>n</strong>个结点的完全二叉树的深度为$\lfloor log</em>{2} n \rfloor+1$<br>&emsp;&emsp;5. 如果对一棵有<strong>n</strong>个结点的完全二叉树（其深度为$\lfloor log_{2} n \rfloor+1$）的结点按层序编号，对任一结点$i$都有：</p>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p>&emsp;&emsp;1. 在二叉树的第<strong>i</strong>层最多有$2^{i}-1$个结点（$i$）；<br>&emsp;&emsp;2. 深度为<strong>k</strong>的二叉树至多有个结点；<br>&emsp;&emsp;3. 对任何一棵二叉树T，如果其终端结点数为$n<em>0$，度为<strong>2</strong>的结点数为$n_2$，则$n_0=n_2+1$；<br>&emsp;&emsp;4. 具有<strong>n</strong>个结点的完全二叉树的深度为$\lfloor log</em>{2} n \rfloor+1$<br>&emsp;&emsp;5. 如果对一棵有<strong>n</strong>个结点的完全二叉树（其深度为$\lfloor log_{2} n \rfloor+1$）的结点按层序编号，对任一结点$i$都有：</p>
 <ul>
 <li>如果$i=1$，则结点$i$是二叉树的根结点，无双亲；如果$i&gt;1$，则其双亲是结点$\lfloor i/2 \rfloor$;</li>
 <li>如果$2i&gt;n$，则结点$i$无左孩子，结点$i$为叶子结点，否则其左孩子是结点$2i$；</li>
@@ -385,8 +385,8 @@
 <li>当访问到任一结点<strong>p</strong>：输出结点<strong>p</strong>，并将该结点入栈；</li>
 <li>判断结点<strong>p</strong>的左孩子是否为空：<ol>
 <li>若不为空，并将<strong>p</strong>的左孩子置为当前结点，回到1，循环；</li>
-<li>若为空，则对栈顶结点进行出栈操作，但不输出，并将待出栈结点的右孩子置为当前结点，判断是否为空：<pre><code>1. 若不为空，回到1，循环操作；
-2. 若为空，则对栈顶结点进行出栈操作，但不输出，即重复上述操作
+<li>若为空，则对栈顶结点进行出栈操作，但不输出，并将待出栈结点的右孩子置为当前结点，判断是否为空：<pre><code> 1. 若不为空，回到1，循环操作；
+ 2. 若为空，则对栈顶结点进行出栈操作，但不输出，即重复上述操作
 </code></pre></li>
 </ol>
 </li>
