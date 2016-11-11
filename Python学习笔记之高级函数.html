@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;">
+<meta name="description" content="&amp;emsp;&amp;emsp;本博文是python的高级函数语法的学习总结，主要参考廖雪峰的python教程整理而来。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Machine Learning学习资源总结">
-<meta property="og:url" content="http://yaodong.ml/Machine-Learning学习资源总结.html">
+<meta property="og:title" content="Python学习笔记之高级函数">
+<meta property="og:url" content="http://yaodong.ml/Python学习笔记之高级函数.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;">
-<meta property="og:updated_time" content="2016-11-11T07:46:48.511Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文是python的高级函数语法的学习总结，主要参考廖雪峰的python教程整理而来。">
+<meta property="og:updated_time" content="2016-11-11T07:51:52.915Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Machine Learning学习资源总结">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;">
+<meta name="twitter:title" content="Python学习笔记之高级函数">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文是python的高级函数语法的学习总结，主要参考廖雪峰的python教程整理而来。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/Machine-Learning学习资源总结.html"/>
+  <link rel="canonical" href="http://yaodong.ml/Python学习笔记之高级函数.html"/>
 
 
-  <title> Machine Learning学习资源总结 | Jellyyoung's Blog </title>
+  <title> Python学习笔记之高级函数 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -286,7 +286,7 @@
             
             
               
-                Machine Learning学习资源总结
+                Python学习笔记之高级函数
               
             
           </h1>
@@ -298,8 +298,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T09:55:27+08:00" content="2016-10-14">
-              2016-10-14
+            <time itemprop="dateCreated" datetime="2016-11-11T15:48:47+08:00" content="2016-11-11">
+              2016-11-11
             </time>
           </span>
 
@@ -312,8 +312,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习资源/" itemprop="url" rel="index">
-                    <span itemprop="name">学习资源</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -328,8 +328,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/Machine-Learning学习资源总结.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Machine-Learning学习资源总结.html" itemprop="commentsCount"></span>
+                <a href="/Python学习笔记之高级函数.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="Python学习笔记之高级函数.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -339,7 +339,7 @@
 
           
           
-             <span id="/Machine-Learning学习资源总结.html" class="leancloud_visitors" data-flag-title="Machine Learning学习资源总结">
+             <span id="/Python学习笔记之高级函数.html" class="leancloud_visitors" data-flag-title="Python学习笔记之高级函数">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -361,8 +361,29 @@
       
 
       
-        <a id="more"></a>
-<p>&emsp;&emsp;</p>
+        <p>&emsp;&emsp;本博文是python的高级函数语法的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
+<h2 id="Python学习笔记之高级函数"><a href="#Python学习笔记之高级函数" class="headerlink" title="Python学习笔记之高级函数"></a>Python学习笔记之高级函数</h2><h3 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator(生成器)"></a>Generator(生成器)</h3><p>&emsp;&emsp;通过列表生成式生成的list直接保存在内存中，容量有限。如果列表中的元素可以根据某种算法推导得到，那么就可以在循环的过程中推导后续的元素值。Python中，这种一边循环一边计算的机制，称为生成器（Generator）。<br>&emsp;&emsp;创建generator：把一个列表生成式的[]改成()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>g</div><div class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x104feab40</span>&gt;**</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;generator中保存的不是具体的数据，而是循环生成元素所用到得算法或推导公式，因此，如果要计算generator后续元素的值，须先计算出之前的元素值，这一点与数据结构中的链表的性质很像。generator也是可迭代对象，因此可使用generator.next()或for循环来输出元素值。</p>
+<h4 id="yield关键字"><a href="#yield关键字" class="headerlink" title="yield关键字"></a>yield关键字</h4><p>&emsp;&emsp;定义generator对象的另一种方法：如果一个函数定义中包含<code>yield</code>关键字，那么就不再是一个普通函数，而是一个generator。<br>&emsp;&emsp;generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而含有generator对象的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><h4 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h4><p>&emsp;&emsp;函数式编程的特点：</p>
+<ul>
+<li>允许把函数本身作为参数传入另一个函数</li>
+<li>允许函数的返回类型是一个函数</li>
+<li>函数本身可以作为“变量”赋值给另一个变量，即：变量可以指向函数<br>&emsp;&emsp;函数式编程思想指出，变量可以指向函数，函数的参数也可以接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。简而言之，形参中包含另一个函数的自定义函数称为高阶函数。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y,f)</span>:</span></div><div class="line">    <span class="keyword">return</span> f(x)+f(y)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>result = add(<span class="number">-5</span>, <span class="number">6</span>, abs)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">11</span></div></pre></td></tr></table></figure>
+<p>&emsp;&emsp;常用的高阶函数有<code>map</code>、<code>reduce</code>、<code>filter</code>、<code>sorted</code><br>&emsp;&emsp;map()函数接收两个参数，一个是函数，一个是序列，map将传入的函数依次作用到序列的每个元素，并把结果作为新的list返回。<br>&emsp;&emsp;reduce()函数接收两个参数，一个是函数，一个是序列，reduce把传入的函数作用在序列[x1, x2, x3,…]上，reduce把函数作用在序列中当前的元素的同时，继续和序列的下一个元素做函数运算。其效果就是：<code>reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)</code>，如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">(x, y)</span>:</span></div><div class="line">    <span class="keyword">return</span> x * <span class="number">10</span> + y</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>reduce(fn, [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">13579</span></div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;filter()函数接收两个参数，一个是函数，另一个是序列，用于过滤序列，返回满足筛选条件的结果。<br>&emsp;&emsp;删除list中的偶数，只保留奇数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_odd</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">return</span> n % <span class="number">2</span> == <span class="number">1</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>filter(is_odd, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">15</span>]</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;删除list中的空字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">def not_empty(s):</div><div class="line">    return s and s.strip()</div><div class="line">&gt;&gt;&gt; filter(not_empty, [&apos;A&apos;, &apos;&apos;, &apos;B&apos;, None, &apos;C&apos;, &apos;  &apos;])</div><div class="line">&gt;&gt;&gt; [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;]</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;sorted()函数是python内置的可以自定义比较规则的高阶函数，与上述高阶函数相似，sorted()也接收两个参数，一个序列，一个函数。sorted()通过接收一个比较函数来实现自定义的排序。比如，对字符串排序，对dict进行排序。<br>&emsp;&emsp;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> print_function</div><div class="line"></div><div class="line">% 安装从小到大的顺序对list中的数字进行排序</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">reversed_cmp</span><span class="params">(x, y)</span>:</span></div><div class="line">    <span class="keyword">if</span> x &gt; y:</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span></div><div class="line">    <span class="keyword">if</span> x &lt; y:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span></div><div class="line">sorted([<span class="number">36</span>, <span class="number">5</span>, <span class="number">12</span>, <span class="number">9</span>, <span class="number">21</span>], reversed_cmp) <span class="comment"># [36, 21, 12, 9, 5]</span></div><div class="line"></div><div class="line">% 忽略大小写，按照字母序排序</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">cmp_ignore_case</span><span class="params">(s1, s2)</span>:</span></div><div class="line">    u1 = s1.upper()</div><div class="line">    u2 = s2.upper()</div><div class="line">    <span class="keyword">if</span> u1 &lt; u2:</div><div class="line">        <span class="keyword">return</span> <span class="number">-1</span></div><div class="line">    <span class="keyword">if</span> u1 &gt; u2:</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span></div><div class="line">sorted([<span class="string">'bob'</span>, <span class="string">'about'</span>, <span class="string">'Zoo'</span>, <span class="string">'Credit'</span>], cmp_ignore_case) <span class="comment">#['about', 'bob', 'Credit', 'Zoo']</span></div></pre></td></tr></table></figure></p>
+<h4 id="返回函数"><a href="#返回函数" class="headerlink" title="返回函数"></a>返回函数</h4><p>&emsp;&emsp;高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。当返回值是函数类型时，返回的是具体的函数对象，不是具体的值，当再次调用该返回函数时，才真正执行该返回函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">lazy_sum</span><span class="params">(*args)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sum</span><span class="params">()</span>:</span></div><div class="line">        ax = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> args:</div><div class="line">            ax = ax + n</div><div class="line">        <span class="keyword">return</span> ax</div><div class="line">    <span class="keyword">return</span> sum</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;上述代码定义了一个返回sum()对象的lazy_sum函数，而不是返回具体的sum值。<br>&emsp;&emsp;<strong>闭包</strong>：定义返回类型为函数对象的函数时，内部函数可以引用外部函数的参数和局部变量，而且相关的参数和变量都保存在返回的函数中，这种语法称为<strong>闭包（Closure）</strong>。<br>&emsp;&emsp;返回闭包时需注意：返回函数不要引用任何循环变量，或者后续会发生变化的变量，否则会得到预料之外的结果。这是因为返回的函数在其内部引用了外部函数中定义的局部变量args，当一个函数返回了该返回函数后，其内部的局部变量还被新的返回函数引用，进而引发无法预知的结果。</p>
+<h4 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h4><p>&emsp;&emsp;匿名函数用lambda关键字表示，通常作为高阶函数的传入参数使用。另外，匿名函数只能有一个表达式，没有return语句。匿名函数的返回值就是lambda表达式的结果。<br>&emsp;&emsp;匿名函数的好处之一是：匿名函数没有名字因此，不必担心函数名冲突。此外，匿名函数也是一个函数对象，因此可以把匿名函数赋值给一个变量，再利用变量来调用该函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>f = <span class="keyword">lambda</span> x: x * x</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>f</div><div class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x10453d7d0</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>f(<span class="number">5</span>)</div><div class="line"><span class="number">25</span></div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;同样，也可以把匿名函数作为返回值返回，比如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">build</span><span class="params">(x, y)</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span>: x * x + y * y</div></pre></td></tr></table></figure></p>
+<h4 id="装饰器decorator"><a href="#装饰器decorator" class="headerlink" title="装饰器decorator"></a>装饰器decorator</h4><p>&emsp;&emsp;在程序运行期间为函数动态增加功能的方式，称为“装饰器”。装饰器不改变函数原油的定义，只是在函数运行期间为其添加功能。<strong>decorator</strong>的本质是一个返回类型为函数对象的高阶函数。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args,**kw)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">"call %s():"</span> % func.__name__</div><div class="line">        <span class="keyword">return</span> func(*args,**kw)</div><div class="line">    <span class="keyword">return</span> wrappre <span class="comment"># 返回类型是函数对象</span></div><div class="line">% python的@语法</div><div class="line">% 借助@语法，使得在调用log()函数，其中log()函数为形参函数func添加了wrapper功能</div><div class="line"><span class="meta">@log</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">now</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"2016-11-11"</span></div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;Python的@语法：把@log放到now()函数的定义处，相当于执行了语句：now = log(now)<br>&emsp;&emsp;decorator的实质还是函数对象，具有<code>__name__</code>属性。执行输入参数是原函数（now）的decorator函数后，返回值最终是decorator函数内定义的新函数（wrapper）。即原函数经过decorator函数后，<code>__name__</code>属性发生了改变。因此为了避免某些依赖函数签名的代码执行出错，需要把原始函数的<code>__name__</code>等属性复制到generator内部的新函数中。Python内置的<code>functools.wraps</code>可以实现这个功能。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'call %s():'</span> % func.__name__</div><div class="line">        <span class="keyword">return</span> func(*args, **kw)</div><div class="line">    <span class="keyword">return</span> wrapper</div></pre></td></tr></table></figure></p>
+<h4 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h4><p>&emsp;&emsp;Python的functools模块提供了偏函数（<strong>partial function</strong>）功能。偏函数的作用是把函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会传入指定默认值的参数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">% int()函数可根据参数base,指定N进制转换</div><div class="line">def int2(x,base=2)</div><div class="line">    return int(x,base)</div><div class="line"></div><div class="line">% 用偏函数实现</div><div class="line">&gt;&gt;&gt; import functools</div><div class="line">&gt;&gt;&gt; int2 = functools.partial(int, base=2)</div><div class="line">&gt;&gt;&gt; int2('1000000')</div><div class="line">64</div><div class="line">&gt;&gt;&gt; int2('1010101')</div><div class="line">85</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;Python的functools模块把int(x,base=2)简化为int2，执行int2(‘10010’)相当于：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">kw = &#123; base: <span class="number">2</span> &#125;</div><div class="line">int(<span class="string">'10010'</span>, **kw)</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -406,7 +427,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
+            <a href="/tags/python/" rel="tag">#python</a>
           
         </div>
       
@@ -415,17 +436,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Machine-Learning学习笔记：特征工程.html" rel="next" title="Machine Learning学习笔记：特征工程">
-                <i class="fa fa-chevron-left"></i> Machine Learning学习笔记：特征工程
+              <a href="/Kaggle竞赛学习资源汇总.html" rel="next" title="Kaggle竞赛学习资源汇总">
+                <i class="fa fa-chevron-left"></i> Kaggle竞赛学习资源汇总
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Window下python的Xgboost框架安装教程.html" rel="prev" title="Window下python的Xgboost框架安装教程">
-                Window下python的Xgboost框架安装教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -440,10 +457,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="Machine-Learning学习资源总结.html"
-     data-title="Machine Learning学习资源总结"
+        <div class="ds-share flat" data-thread-key="Python学习笔记之高级函数.html"
+     data-title="Python学习笔记之高级函数"
      data-content=""
-     data-url="http://yaodong.ml/Machine-Learning学习资源总结.html">
+     data-url="http://yaodong.ml/Python学习笔记之高级函数.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -470,8 +487,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="Machine-Learning学习资源总结.html"
-           data-title="Machine Learning学习资源总结" data-url="http://yaodong.ml/Machine-Learning学习资源总结.html">
+      <div class="ds-thread" data-thread-key="Python学习笔记之高级函数.html"
+           data-title="Python学习笔记之高级函数" data-url="http://yaodong.ml/Python学习笔记之高级函数.html">
       </div>
     
   </div>
@@ -624,7 +641,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python学习笔记之高级函数"><span class="nav-number">1.</span> <span class="nav-text">Python学习笔记之高级函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator-生成器"><span class="nav-number">1.1.</span> <span class="nav-text">Generator(生成器)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#yield关键字"><span class="nav-number">1.1.1.</span> <span class="nav-text">yield关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高阶函数"><span class="nav-number">1.2.</span> <span class="nav-text">高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数式编程"><span class="nav-number">1.2.1.</span> <span class="nav-text">函数式编程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#返回函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">返回函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名函数"><span class="nav-number">1.2.3.</span> <span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#装饰器decorator"><span class="nav-number">1.2.4.</span> <span class="nav-text">装饰器decorator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏函数"><span class="nav-number">1.2.5.</span> <span class="nav-text">偏函数</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

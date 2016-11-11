@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="树,二叉树," />
+  <meta name="keywords" content="算法,二叉树," />
 
 
 
@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yaodong.ml/数据结构与算法学习笔记：树和二叉树.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。">
-<meta property="og:updated_time" content="2016-11-03T05:32:04.893Z">
+<meta property="og:updated_time" content="2016-11-11T07:45:00.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与算法学习笔记：树和二叉树">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。">
@@ -312,19 +312,7 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构与算法</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/数据结构与算法/学习笔记/" itemprop="url" rel="index">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
                     <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
@@ -390,7 +378,7 @@
 <li>完全二叉树除最后一层外，每一层上的结点数均达到最大值；在最后一层上只缺少右子树的若干结点。</li>
 </ul>
 <p>&emsp;&emsp;<strong>满二叉树与完全二叉树的重要区别</strong>：<strong>满二叉树肯定是完全二叉树，完全二叉树不一定是满二叉树。</strong></p>
-<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p>&emsp;&emsp;1. 在二叉树的第<strong>i</strong>层最多有$2^{i}-1$个结点（$i$）；<br>&emsp;&emsp;2. 深度为<strong>k</strong>的二叉树至多有个结点；<br>&emsp;&emsp;3. 对任何一棵二叉树T，如果其终端结点数为$n_0$，度为<strong>2</strong>的结点数为$n_2$，则$n_0=n<em>2+1$；<br>&emsp;&emsp;4. 具有<strong>n</strong>个结点的完全二叉树的深度为$\lfloor log</em>{2} n \rfloor+1$<br>&emsp;&emsp;5. 如果对一棵有<strong>n</strong>个结点的完全二叉树（其深度为$\lfloor log_{2} n \rfloor+1$）的结点按层序编号，对任一结点$i$都有：</p>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p>&emsp;&emsp;1. 在二叉树的第<strong>i</strong>层最多有$2^{i}-1$个结点（$i$）；<br>&emsp;&emsp;2. 深度为<strong>k</strong>的二叉树至多有个结点；<br>&emsp;&emsp;3. 对任何一棵二叉树T，如果其终端结点数为$n<em>0$，度为<strong>2</strong>的结点数为$n_2$，则$n_0=n_2+1$；<br>&emsp;&emsp;4. 具有<strong>n</strong>个结点的完全二叉树的深度为$\lfloor log</em>{2} n \rfloor+1$<br>&emsp;&emsp;5. 如果对一棵有<strong>n</strong>个结点的完全二叉树（其深度为$\lfloor log_{2} n \rfloor+1$）的结点按层序编号，对任一结点$i$都有：</p>
 <ul>
 <li>如果$i=1$，则结点$i$是二叉树的根结点，无双亲；如果$i&gt;1$，则其双亲是结点$\lfloor i/2 \rfloor$;</li>
 <li>如果$2i&gt;n$，则结点$i$无左孩子，结点$i$为叶子结点，否则其左孩子是结点$2i$；</li>
@@ -405,8 +393,8 @@
 <li>当访问到任一结点<strong>p</strong>：输出结点<strong>p</strong>，并将该结点入栈；</li>
 <li>判断结点<strong>p</strong>的左孩子是否为空：<ol>
 <li>若不为空，并将<strong>p</strong>的左孩子置为当前结点，回到1，循环；</li>
-<li>若为空，则对栈顶结点进行出栈操作，但不输出，并将待出栈结点的右孩子置为当前结点，判断是否为空：<pre><code>1. 若不为空，回到1，循环操作；
-2. 若为空，则对栈顶结点进行出栈操作，但不输出，即重复上述操作
+<li>若为空，则对栈顶结点进行出栈操作，但不输出，并将待出栈结点的右孩子置为当前结点，判断是否为空：<pre><code> 1. 若不为空，回到1，循环操作；
+ 2. 若为空，则对栈顶结点进行出栈操作，但不输出，即重复上述操作
 </code></pre></li>
 </ol>
 </li>
@@ -506,7 +494,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树/" rel="tag">#树</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
             <a href="/tags/二叉树/" rel="tag">#二叉树</a>
           
@@ -618,7 +606,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -626,7 +614,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -635,7 +623,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

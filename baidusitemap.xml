@@ -4,43 +4,20 @@
 
     
   <url>
-    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</loc>
-    <lastmod>2016-11-09T14:47:54.974Z</lastmod>
+    <loc>http://yaodong.ml/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0.html</loc>
+    <lastmod>2016-11-11T07:51:52.915Z</lastmod>
     <data>
         <display>
-        <title>Machine Learning学习笔记：决策树与随机森林</title>
-        <pubTime>2016-10-03T04:54:14.000Z</pubTime>
+        <title>Python学习笔记之高级函数</title>
+        <pubTime>2016-11-11T07:48:47.000Z</pubTime>
         
-        <tag>机器学习</tag>
-         
-        <tag>算法</tag>
+        <tag>python</tag>
          
          
            
              
-              <breadCrumb title="机器学习" url="http://yaodong.ml/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
-             
-              <breadCrumb title="Machine Learning" url="http://yaodong.ml/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Machine-Learning/"/>
-          
-             
-              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Machine-Learning/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yaodong.ml/Kaggle%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
-    <lastmod>2016-11-09T14:06:27.574Z</lastmod>
-    <data>
-        <display>
-        <title>Kaggle竞赛学习资源汇总</title>
-        <pubTime>2016-11-03T08:21:46.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
@@ -48,7 +25,7 @@
     
   <url>
     <loc>http://yaodong.ml/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
-    <lastmod>2016-11-03T08:18:02.035Z</lastmod>
+    <lastmod>2016-11-11T07:47:40.004Z</lastmod>
     <data>
         <display>
         <title>python爬虫学习资源汇总</title>
@@ -69,16 +46,16 @@
 
     
   <url>
-    <loc>http://yaodong.ml/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
-    <lastmod>2016-11-03T06:06:07.224Z</lastmod>
+    <loc>http://yaodong.ml/pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
+    <lastmod>2016-11-11T07:47:29.648Z</lastmod>
     <data>
         <display>
-        <title>MySQL学习笔记</title>
-        <pubTime>2016-11-03T03:37:21.000Z</pubTime>
+        <title>pandas学习笔记</title>
+        <pubTime>2016-11-02T12:12:28.000Z</pubTime>
         
-        <tag>MySQL</tag>
+        <tag>python</tag>
          
-        <tag>数据库</tag>
+        <tag>pandas</tag>
          
          
            
@@ -91,64 +68,20 @@
 
     
   <url>
-    <loc>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</loc>
-    <lastmod>2016-11-03T05:32:04.893Z</lastmod>
+    <loc>http://yaodong.ml/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
+    <lastmod>2016-11-11T07:47:05.378Z</lastmod>
     <data>
         <display>
-        <title>数据结构与算法学习笔记：树和二叉树</title>
-        <pubTime>2016-10-03T05:13:10.000Z</pubTime>
+        <title>MySQL学习笔记</title>
+        <pubTime>2016-11-03T03:37:21.000Z</pubTime>
         
-        <tag>树</tag>
-         
-        <tag>二叉树</tag>
+        <tag>MySQL</tag>
          
          
            
              
-              <breadCrumb title="数据结构与算法" url="http://yaodong.ml/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
           
-             
-              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yaodong.ml/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</loc>
-    <lastmod>2016-11-02T12:19:47.668Z</lastmod>
-    <data>
-        <display>
-        <title>Window下python的Xgboost框架安装教程</title>
-        <pubTime>2016-10-14T11:43:42.000Z</pubTime>
-        
-        <tag>动手实战</tag>
-         
-        <tag>Xgboost</tag>
-         
-         
-           
-             
-              <breadCrumb title="原创" url="http://yaodong.ml/categories/%E5%8E%9F%E5%88%9B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yaodong.ml/pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
-    <lastmod>2016-11-02T12:17:53.683Z</lastmod>
-    <data>
-        <display>
-        <title>pandas学习笔记</title>
-        <pubTime>2016-11-02T12:12:28.000Z</pubTime>
-        
-        <tag>学习笔记</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -156,59 +89,18 @@
     
   <url>
     <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%80%BB%E7%BB%93.html</loc>
-    <lastmod>2016-11-02T08:17:09.830Z</lastmod>
+    <lastmod>2016-11-11T07:46:48.511Z</lastmod>
     <data>
         <display>
         <title>Machine Learning学习资源总结</title>
         <pubTime>2016-10-14T01:55:27.000Z</pubTime>
         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
-    <loc>http://yaodong.ml/Java%E5%BC%80%E5%8F%91%E5%B2%97%E4%BD%8D%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.html</loc>
-    <lastmod>2016-10-14T11:54:20.287Z</lastmod>
-    <data>
-        <display>
-        <title>Java开发岗位面试题汇总</title>
-        <pubTime>2016-10-08T06:16:00.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>面试题</tag>
+        <tag>机器学习</tag>
          
          
            
              
-              <breadCrumb title="面试" url="http://yaodong.ml/categories/%E9%9D%A2%E8%AF%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yaodong.ml/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</loc>
-    <lastmod>2016-10-14T11:53:55.810Z</lastmod>
-    <data>
-        <display>
-        <title>JavaEE很全面的面试题（转自jackfrued）</title>
-        <pubTime>2016-10-08T08:06:29.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-        <tag>面试题</tag>
-         
-         
-           
-             
-              <breadCrumb title="面试" url="http://yaodong.ml/categories/%E9%9D%A2%E8%AF%95/"/>
+              <breadCrumb title="学习资源" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
           
         </display>
     </data>
@@ -217,7 +109,7 @@
     
   <url>
     <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</loc>
-    <lastmod>2016-10-10T10:40:34.485Z</lastmod>
+    <lastmod>2016-11-11T07:46:22.395Z</lastmod>
     <data>
         <display>
         <title>Machine Learning学习笔记：特征工程</title>
@@ -239,7 +131,7 @@
     
   <url>
     <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</loc>
-    <lastmod>2016-10-08T11:01:45.356Z</lastmod>
+    <lastmod>2016-11-11T07:46:05.474Z</lastmod>
     <data>
         <display>
         <title>Machine Learning学习笔记：判别模型与生成模型</title>
@@ -247,7 +139,49 @@
         
         <tag>机器学习</tag>
          
-        <tag>Machine Learning</tag>
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</loc>
+    <lastmod>2016-11-11T07:45:50.748Z</lastmod>
+    <data>
+        <display>
+        <title>Machine Learning学习笔记：决策树与随机森林</title>
+        <pubTime>2016-10-03T04:54:14.000Z</pubTime>
+        
+        <tag>机器学习</tag>
+         
+        <tag>算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</loc>
+    <lastmod>2016-11-11T07:45:00.573Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法学习笔记：树和二叉树</title>
+        <pubTime>2016-10-03T05:13:10.000Z</pubTime>
+        
+        <tag>算法</tag>
+         
+        <tag>二叉树</tag>
          
          
            
@@ -261,15 +195,37 @@
     
   <url>
     <loc>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B%E5%88%B7%E9%A2%98%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB%E6%95%B4%E7%90%86.html</loc>
-    <lastmod>2016-10-08T06:08:07.505Z</lastmod>
+    <lastmod>2016-11-11T07:44:32.363Z</lastmod>
     <data>
         <display>
         <title>数据科学竞赛刷题网站汇总整理</title>
         <pubTime>2016-10-04T09:11:11.000Z</pubTime>
         
+        <tag>机器学习</tag>
+         
         <tag>算法</tag>
          
-        <tag>数据科学</tag>
+         
+           
+             
+              <breadCrumb title="学习资源" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yaodong.ml/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</loc>
+    <lastmod>2016-11-11T07:43:19.253Z</lastmod>
+    <data>
+        <display>
+        <title>Window下python的Xgboost框架安装教程</title>
+        <pubTime>2016-10-14T11:43:42.000Z</pubTime>
+        
+        <tag>Xgboost</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -280,6 +236,68 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://yaodong.ml/Kaggle%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
+    <lastmod>2016-11-11T07:42:45.707Z</lastmod>
+    <data>
+        <display>
+        <title>Kaggle竞赛学习资源汇总</title>
+        <pubTime>2016-11-03T08:21:46.000Z</pubTime>
+        
+        <tag>Kaggle</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习资源" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yaodong.ml/Java%E5%BC%80%E5%8F%91%E5%B2%97%E4%BD%8D%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.html</loc>
+    <lastmod>2016-11-11T07:41:56.963Z</lastmod>
+    <data>
+        <display>
+        <title>Java开发岗位面试题汇总</title>
+        <pubTime>2016-10-08T06:16:00.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="面试题" url="http://yaodong.ml/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yaodong.ml/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</loc>
+    <lastmod>2016-11-11T07:41:35.846Z</lastmod>
+    <data>
+        <display>
+        <title>JavaEE很全面的面试题（转自jackfrued）</title>
+        <pubTime>2016-10-08T08:06:29.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="面试题" url="http://yaodong.ml/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
     
     
 </urlset>

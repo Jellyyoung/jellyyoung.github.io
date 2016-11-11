@@ -2,58 +2,100 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</loc>
+    <loc>http://yaodong.ml/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0.html</loc>
     
-    <lastmod>2016-11-09T14:47:54.974Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/Kaggle%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
-    
-    <lastmod>2016-11-09T14:06:27.574Z</lastmod>
+    <lastmod>2016-11-11T07:51:52.915Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yaodong.ml/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
     
-    <lastmod>2016-11-03T08:18:02.035Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
-    
-    <lastmod>2016-11-03T06:06:07.224Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</loc>
-    
-    <lastmod>2016-11-03T05:32:04.893Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</loc>
-    
-    <lastmod>2016-11-02T12:19:47.668Z</lastmod>
+    <lastmod>2016-11-11T07:47:40.004Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yaodong.ml/pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
     
-    <lastmod>2016-11-02T12:17:53.683Z</lastmod>
+    <lastmod>2016-11-11T07:47:29.648Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
+    
+    <lastmod>2016-11-11T07:47:05.378Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%80%BB%E7%BB%93.html</loc>
     
-    <lastmod>2016-11-02T08:17:09.830Z</lastmod>
+    <lastmod>2016-11-11T07:46:48.511Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</loc>
+    
+    <lastmod>2016-11-11T07:46:22.395Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</loc>
+    
+    <lastmod>2016-11-11T07:46:05.474Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</loc>
+    
+    <lastmod>2016-11-11T07:45:50.748Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</loc>
+    
+    <lastmod>2016-11-11T07:45:00.573Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B%E5%88%B7%E9%A2%98%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB%E6%95%B4%E7%90%86.html</loc>
+    
+    <lastmod>2016-11-11T07:44:32.363Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</loc>
+    
+    <lastmod>2016-11-11T07:43:19.253Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Kaggle%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
+    
+    <lastmod>2016-11-11T07:42:45.707Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Java%E5%BC%80%E5%8F%91%E5%B2%97%E4%BD%8D%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.html</loc>
+    
+    <lastmod>2016-11-11T07:41:56.963Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</loc>
+    
+    <lastmod>2016-11-11T07:41:35.846Z</lastmod>
     
   </url>
   
@@ -68,41 +110,6 @@
     <loc>http://yaodong.ml/messages/index.html</loc>
     
     <lastmod>2016-10-23T16:37:11.492Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/Java%E5%BC%80%E5%8F%91%E5%B2%97%E4%BD%8D%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.html</loc>
-    
-    <lastmod>2016-10-14T11:54:20.287Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</loc>
-    
-    <lastmod>2016-10-14T11:53:55.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</loc>
-    
-    <lastmod>2016-10-10T10:40:34.485Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</loc>
-    
-    <lastmod>2016-10-08T11:01:45.356Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B%E5%88%B7%E9%A2%98%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB%E6%95%B4%E7%90%86.html</loc>
-    
-    <lastmod>2016-10-08T06:08:07.505Z</lastmod>
     
   </url>
   
