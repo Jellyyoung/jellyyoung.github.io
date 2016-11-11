@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yaodong.ml/Python学习笔记之高级函数.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;本博文是python的高级函数语法的学习总结，主要参考廖雪峰的python教程整理而来。">
-<meta property="og:updated_time" content="2016-11-11T07:51:52.915Z">
+<meta property="og:updated_time" content="2016-11-11T07:54:01.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记之高级函数">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文是python的高级函数语法的学习总结，主要参考廖雪峰的python教程整理而来。">
@@ -204,18 +204,10 @@
         </li>
       
         
-        <li class="menu-item menu-item-guestbook">
-          <a href="/messages" rel="section">
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
             
-            留言板
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule" rel="section">
-            
-            日程
+            简历
           </a>
         </li>
       
@@ -362,7 +354,7 @@
 
       
         <p>&emsp;&emsp;本博文是python的高级函数语法的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
-<h2 id="Python学习笔记之高级函数"><a href="#Python学习笔记之高级函数" class="headerlink" title="Python学习笔记之高级函数"></a>Python学习笔记之高级函数</h2><h3 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator(生成器)"></a>Generator(生成器)</h3><p>&emsp;&emsp;通过列表生成式生成的list直接保存在内存中，容量有限。如果列表中的元素可以根据某种算法推导得到，那么就可以在循环的过程中推导后续的元素值。Python中，这种一边循环一边计算的机制，称为生成器（Generator）。<br>&emsp;&emsp;创建generator：把一个列表生成式的[]改成()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>g</div><div class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x104feab40</span>&gt;**</div></pre></td></tr></table></figure></p>
+<h2 id="Python学习笔记之高级函数"><a href="#Python学习笔记之高级函数" class="headerlink" title="Python学习笔记之高级函数"></a>Python学习笔记之高级函数</h2><h3 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator(生成器)"></a>Generator(生成器)</h3><p>&emsp;&emsp;通过列表生成式生成的list直接保存在内存中，容量有限。如果列表中的元素可以根据某种算法推导得到，那么就可以在循环的过程中推导后续的元素值。Python中，这种一边循环一边计算的机制，称为生成器（Generator）。<br>&emsp;&emsp;创建generator：把一个列表生成式的[]改成()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>g</div><div class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x104feab40</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;generator中保存的不是具体的数据，而是循环生成元素所用到得算法或推导公式，因此，如果要计算generator后续元素的值，须先计算出之前的元素值，这一点与数据结构中的链表的性质很像。generator也是可迭代对象，因此可使用generator.next()或for循环来输出元素值。</p>
 <h4 id="yield关键字"><a href="#yield关键字" class="headerlink" title="yield关键字"></a>yield关键字</h4><p>&emsp;&emsp;定义generator对象的另一种方法：如果一个函数定义中包含<code>yield</code>关键字，那么就不再是一个普通函数，而是一个generator。<br>&emsp;&emsp;generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而含有generator对象的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
 <h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><h4 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h4><p>&emsp;&emsp;函数式编程的特点：</p>

@@ -7,7 +7,7 @@
       <title><![CDATA[Python学习笔记之高级函数]]></title>
       <url>http://yaodong.ml/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文是python的高级函数语法的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
-<h2 id="Python学习笔记之高级函数"><a href="#Python学习笔记之高级函数" class="headerlink" title="Python学习笔记之高级函数"></a>Python学习笔记之高级函数</h2><h3 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator(生成器)"></a>Generator(生成器)</h3><p>&emsp;&emsp;通过列表生成式生成的list直接保存在内存中，容量有限。如果列表中的元素可以根据某种算法推导得到，那么就可以在循环的过程中推导后续的元素值。Python中，这种一边循环一边计算的机制，称为生成器（Generator）。<br>&emsp;&emsp;创建generator：把一个列表生成式的[]改成()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>g</div><div class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x104feab40</span>&gt;**</div></pre></td></tr></table></figure></p>
+<h2 id="Python学习笔记之高级函数"><a href="#Python学习笔记之高级函数" class="headerlink" title="Python学习笔记之高级函数"></a>Python学习笔记之高级函数</h2><h3 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator(生成器)"></a>Generator(生成器)</h3><p>&emsp;&emsp;通过列表生成式生成的list直接保存在内存中，容量有限。如果列表中的元素可以根据某种算法推导得到，那么就可以在循环的过程中推导后续的元素值。Python中，这种一边循环一边计算的机制，称为生成器（Generator）。<br>&emsp;&emsp;创建generator：把一个列表生成式的[]改成()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>g</div><div class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x104feab40</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;generator中保存的不是具体的数据，而是循环生成元素所用到得算法或推导公式，因此，如果要计算generator后续元素的值，须先计算出之前的元素值，这一点与数据结构中的链表的性质很像。generator也是可迭代对象，因此可使用generator.next()或for循环来输出元素值。</p>
 <h4 id="yield关键字"><a href="#yield关键字" class="headerlink" title="yield关键字"></a>yield关键字</h4><p>&emsp;&emsp;定义generator对象的另一种方法：如果一个函数定义中包含<code>yield</code>关键字，那么就不再是一个普通函数，而是一个generator。<br>&emsp;&emsp;generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而含有generator对象的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
 <h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><h4 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h4><p>&emsp;&emsp;函数式编程的特点：</p>
@@ -44,7 +44,7 @@
 </ol>
 <h3 id="Kaggle竞赛相关的博客"><a href="#Kaggle竞赛相关的博客" class="headerlink" title="Kaggle竞赛相关的博客"></a>Kaggle竞赛相关的博客</h3><ol>
 <li>Kaggle实战的科普博客：<a href="http://nanjunxiao.github.io/2015/07/30/Kaggle%E5%AE%9E%E6%88%98%E4%B8%80/" target="_blank" rel="external">Kaggle实战（一）</a>，<a href="http://nanjunxiao.github.io/2015/07/31/Kaggle%E5%AE%9E%E6%88%98%E4%BA%8C/" target="_blank" rel="external">Kaggle实战（二）</a></li>
-<li><a href="http://www.cnblogs.com/kobedeshow/p/4118361.html" target="_blank" rel="external">数据挖掘比赛——Kaggle实战</a></li>
+<li><a href="http://www.cnblogs.com/kobedeshow/p/4118361.html" target="_blank" rel="external">数据挖掘比赛—-Kaggle实战</a></li>
 <li>清华大学范淼博士的Kaggle实战：<a href="https://mlnote.wordpress.com/2015/12/16/python%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5%E4%B8%8Ekaggle%E5%AE%9E%E6%88%98-machine-learning-for-kaggle-competition-in-python/" target="_blank" rel="external">Python机器学习实践与Kaggle实战</a></li>
 <li>强力推荐！关于Titanic赛题的solution。<a href="https://github.com/cindycindyhi/kaggle-Titanic" target="_blank" rel="external">作者</a>从数据预处理、特征提取、特征生成、模型评估各个方面都进行了详细的讲解，是机器学习实践的比较好的学习资源。传送门：<strong>solution</strong> <a href="http://www.cnblogs.com/north-north/p/4353365.html" target="_blank" rel="external">step 1</a>，<a href="http://www.cnblogs.com/north-north/p/4354775.html" target="_blank" rel="external">step 2</a> ，<a href="http://www.cnblogs.com/north-north/p/4358084.html" target="_blank" rel="external">step 3</a>，<a href="http://www.cnblogs.com/north-north/p/4360121.html" target="_blank" rel="external">step 4</a></li>
 <li><a href="http://www.jianshu.com/p/32def2294ae6" target="_blank" rel="external">用python参加Kaggle的些许经验总结</a></li>
@@ -492,15 +492,10 @@
 <p><strong>Feature engineering</strong> is the process of using domain knowledge of the data to create features that make machine learning algorithms work. Feature engineering is fundamental to the application of machine learning, and is both difficult and expensive. The need for manual feature engineering can be obviated by automated feature learning<br><strong>特征工程</strong>是利用数据科学领域的相关知识来创建、提取、选择能使机器学习算法达到最佳性能的特征的过程。</p>
 </blockquote>
 <h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>&emsp;&emsp;特征选择，即从特征集合中挑选一组最具统计意义的特征子集，以提高机器学习算法的性能表现，并达到数据降维的效果。通常需要衡量单独每个特征与类别标签之间的相关性。实际机器学习应用中，表示单个特征与类别标签之间相关关系的参数指标有：<strong>皮尔逊相关系数</strong>、<strong>信息增益</strong>、<strong>信息增益比</strong>和<strong>基尼指数</strong>等。</p>
-<h4 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h4><p>&emsp;&emsp;两个变量（特征与标签向量）之间的pearson相关系数定义为两个变量之间的协方差和标准差的商。计算公式为：</p>
-<script type="math/tex; mode=display">\gamma^2_{xy}=\dfrac{cov(x,y)}{\sigma_x\sigma_y}=\dfrac{E[(X-\mu_x)(Y-\mu_y)]}{\sigma_x\sigma_y}</script><p>&emsp;&emsp;这里的$x$表示某个特征的观测值，$Y$表示类别标签。pearson相关系数的取值在0到1之间。</p>
-<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>&emsp;&emsp;信息增益的概念来源于信息科学的分支。<strong>熵</strong>（entropy）是随机变量不确定性的度量。熵越大，表示随机变量的不确定性就越大。<br>设随机变量X为有限个值的离散随机变量，其概率分布为</p>
-<script type="math/tex; mode=display">P(X=x_i)=p_i</script><p>&emsp;&emsp;熵的定义为</p>
-<script type="math/tex; mode=display">H(X)=-\sum_{i=1}^np_ilog(p_i)</script><p>&emsp;&emsp;条件熵：H(Y|X)表示已知随机变量X的条件下随机变量Y的不确定性，定义<script type="math/tex">H(Y|X)=\sum_{i=1}^np_iH(Y|X=x_i)</script><br>&emsp;&emsp;其中$p_i=P(X=x_i)$。这里X表示样本数据集的某个特征，即表示根据某个特征划分后，数据Y的熵。如果某个特征有更强的分类能力，则条件熵$H(Y|X)$越小，表示不确定性越小。</p>
-<h4 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h4><p>&emsp;&emsp;信息增益定义为特征A对训练数据集D的信息增益 $g(D,A)$ 定义为集合D的经验熵 $H(D)$ 与特征A在给定条件下D的经验条件熵$H(D|A)$之差，即<script type="math/tex">g(D,A)=H(D)-H(D|A)</script><br> &emsp;&emsp;信息增益$g(D,A)$表示特征A使得对数据集D的分裂的不确定性减少的程度。所以信息增益越大，表明不确定性减小越多，即特征具有更强的分类能力。<br>&emsp;&emsp;根据信息增益准则的特征选择方法是：对训练数据集（或其子集）D,计算每个特征的信息增益，并比较其大小将其排序，选择最大的信息增益对应的特征。</p>
-<h4 id="信息增益比"><a href="#信息增益比" class="headerlink" title="信息增益比"></a>信息增益比</h4><p>&emsp;&emsp;信息增益比也是度量特征分类能力的方法。特征A对训练数据集D的信息增益比$g_R(D,A)$定义为其信息增益与训练数据集D关于特征A的熵之比，即</p>
-<script type="math/tex; mode=display">g_R(D,A)=\frac{g(D,A)}{H_A(D)}</script><p>&emsp;&emsp;其中</p>
-<script type="math/tex; mode=display">H_A(D)=-\sum_{i=1}^n\frac{|D_i|}{|D|}log_2\frac{|D_i|}{|D|}</script><p>&emsp;&emsp;$|D|$表示训练样本集D中样本数量，$|D_i|$表示训练数据D中特征A取第i个值的总数目。信息增益比越大，表明特征分类能力越强。<br>&emsp;&emsp;需要注意的是，<strong>以信息增益作为划分训练数据集的特征，存在偏向于选择取值较多的特征的问题</strong>。</p>
+<h4 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h4><p>&emsp;&emsp;两个变量（特征与标签向量）之间的pearson相关系数定义为两个变量之间的协方差和标准差的商。计算公式为：<br>$$\gamma^2_{xy}=\dfrac{cov(x,y)}{\sigma_x\sigma_y}=\dfrac{E[(X-\mu_x)(Y-\mu_y)]}{\sigma_x\sigma_y}$$<br>&emsp;&emsp;这里的$x$表示某个特征的观测值，$Y$表示类别标签。pearson相关系数的取值在0到1之间。</p>
+<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>&emsp;&emsp;信息增益的概念来源于信息科学的分支。<strong>熵</strong>（entropy）是随机变量不确定性的度量。熵越大，表示随机变量的不确定性就越大。<br>设随机变量X为有限个值的离散随机变量，其概率分布为<br> $$P(X=x_i)=p<em>i$$<br>&emsp;&emsp;熵的定义为<br>$$H(X)=-\sum</em>{i=1}^np_ilog(p<em>i)$$<br>&emsp;&emsp;条件熵：H(Y|X)表示已知随机变量X的条件下随机变量Y的不确定性，定义$$H(Y|X)=\sum</em>{i=1}^np_iH(Y|X=x_i)$$<br>&emsp;&emsp;其中$p_i=P(X=x_i)$。这里X表示样本数据集的某个特征，即表示根据某个特征划分后，数据Y的熵。如果某个特征有更强的分类能力，则条件熵$H(Y|X)$越小，表示不确定性越小。</p>
+<h4 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h4><p>&emsp;&emsp;信息增益定义为特征A对训练数据集D的信息增益 $g(D,A)$ 定义为集合D的经验熵 $H(D)$ 与特征A在给定条件下D的经验条件熵$H(D|A)$之差，即$$g(D,A)=H(D)-H(D|A)$$<br> &emsp;&emsp;信息增益$g(D,A)$表示特征A使得对数据集D的分裂的不确定性减少的程度。所以信息增益越大，表明不确定性减小越多，即特征具有更强的分类能力。<br>&emsp;&emsp;根据信息增益准则的特征选择方法是：对训练数据集（或其子集）D,计算每个特征的信息增益，并比较其大小将其排序，选择最大的信息增益对应的特征。</p>
+<h4 id="信息增益比"><a href="#信息增益比" class="headerlink" title="信息增益比"></a>信息增益比</h4><p>&emsp;&emsp;信息增益比也是度量特征分类能力的方法。特征A对训练数据集D的信息增益比$g_R(D,A)$定义为其信息增益与训练数据集D关于特征A的熵之比，即<br>$$g_R(D,A)=\frac{g(D,A)}{H_A(D)}$$<br>&emsp;&emsp;其中<br>$$H<em>A(D)=-\sum</em>{i=1}^n\frac{|D_i|}{|D|}log_2\frac{|D_i|}{|D|}$$<br>&emsp;&emsp;$|D|$表示训练样本集D中样本数量，$|D_i|$表示训练数据D中特征A取第i个值的总数目。信息增益比越大，表明特征分类能力越强。<br>&emsp;&emsp;需要注意的是，<strong>以信息增益作为划分训练数据集的特征，存在偏向于选择取值较多的特征的问题</strong>。</p>
 <h4 id="基尼指数"><a href="#基尼指数" class="headerlink" title="基尼指数"></a>基尼指数</h4><p>&emsp;&emsp;基尼指数表示样本集合的不确定性程度，基尼指数越小，对应的特征分类能力越强。</p>
 <h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>&emsp;&emsp;原则上讲，特征提取应该在特征选择之前。特征提取的对象是未经处理的原始数据（raw data），它的目的是自动地构建新的特征，将原始数据转换为一组具有明显物理现实意义或者统计意义或核的特征。实际的机器学习应用中，常见的特征提取的方法有：</p>
 <ul>
@@ -509,7 +504,7 @@
 <li><strong>LDA</strong> （Linear Discriminant Analysis，线性判别分析）</li>
 </ul>
 <h3 id="特征构建"><a href="#特征构建" class="headerlink" title="特征构建"></a>特征构建</h3><p>&emsp;&emsp;特征构建指的是结合所研究问题的实际背景从原始数据中人工构建新的特征。这一步需要花大量的时间和精力去研究真实的数据，思考问题的潜在形式和数据结构，同时能够更好地应用到预测模型中。<br>&emsp;&emsp;特征构建需要很强的洞察力和分析能力，从原始数据中找出具有物理意义的特征，并将其处理成一个或一组新的特征，便于应用到机器学习算法模型中。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>&emsp;&emsp;特征工程包括特征提取、特征构建和特征选择这三个子问题。在实际的机器学习应用中，每一个步骤都很重要。将这三个子问题的重要性排序为：<script type="math/tex">特征构建>特征提取>特征选择</script><br>如果特征构建做的不好，则会直接影响特征提取，进而影响了特征选择，最终影响机器学习算法模型的性能表现。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>&emsp;&emsp;特征工程包括特征提取、特征构建和特征选择这三个子问题。在实际的机器学习应用中，每一个步骤都很重要。将这三个子问题的重要性排序为：$$特征构建&gt;特征提取&gt;特征选择$$<br>如果特征构建做的不好，则会直接影响特征提取，进而影响了特征选择，最终影响机器学习算法模型的性能表现。</p>
 ]]></content>
     </entry>
     
@@ -1088,7 +1083,7 @@
 <li>完全二叉树除最后一层外，每一层上的结点数均达到最大值；在最后一层上只缺少右子树的若干结点。</li>
 </ul>
 <p>&emsp;&emsp;<strong>满二叉树与完全二叉树的重要区别</strong>：<strong>满二叉树肯定是完全二叉树，完全二叉树不一定是满二叉树。</strong></p>
-<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p>&emsp;&emsp;1. 在二叉树的第<strong>i</strong>层最多有$2^{i}-1$个结点（$i$）；<br>&emsp;&emsp;2. 深度为<strong>k</strong>的二叉树至多有个结点；<br>&emsp;&emsp;3. 对任何一棵二叉树T，如果其终端结点数为$n<em>0$，度为<strong>2</strong>的结点数为$n_2$，则$n_0=n_2+1$；<br>&emsp;&emsp;4. 具有<strong>n</strong>个结点的完全二叉树的深度为$\lfloor log</em>{2} n \rfloor+1$<br>&emsp;&emsp;5. 如果对一棵有<strong>n</strong>个结点的完全二叉树（其深度为$\lfloor log_{2} n \rfloor+1$）的结点按层序编号，对任一结点$i$都有：</p>
+<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p>&emsp;&emsp;1. 在二叉树的第<strong>i</strong>层最多有$2^{i}-1$个结点（$i$）；<br>&emsp;&emsp;2. 深度为<strong>k</strong>的二叉树至多有个结点；<br>&emsp;&emsp;3. 对任何一棵二叉树T，如果其终端结点数为$n_0$，度为<strong>2</strong>的结点数为$n_2$，则$n_0=n<em>2+1$；<br>&emsp;&emsp;4. 具有<strong>n</strong>个结点的完全二叉树的深度为$\lfloor log</em>{2} n \rfloor+1$<br>&emsp;&emsp;5. 如果对一棵有<strong>n</strong>个结点的完全二叉树（其深度为$\lfloor log_{2} n \rfloor+1$）的结点按层序编号，对任一结点$i$都有：</p>
 <ul>
 <li>如果$i=1$，则结点$i$是二叉树的根结点，无双亲；如果$i&gt;1$，则其双亲是结点$\lfloor i/2 \rfloor$;</li>
 <li>如果$2i&gt;n$，则结点$i$无左孩子，结点$i$为叶子结点，否则其左孩子是结点$2i$；</li>
@@ -1103,8 +1098,8 @@
 <li>当访问到任一结点<strong>p</strong>：输出结点<strong>p</strong>，并将该结点入栈；</li>
 <li>判断结点<strong>p</strong>的左孩子是否为空：<ol>
 <li>若不为空，并将<strong>p</strong>的左孩子置为当前结点，回到1，循环；</li>
-<li>若为空，则对栈顶结点进行出栈操作，但不输出，并将待出栈结点的右孩子置为当前结点，判断是否为空：<pre><code> 1. 若不为空，回到1，循环操作；
- 2. 若为空，则对栈顶结点进行出栈操作，但不输出，即重复上述操作
+<li>若为空，则对栈顶结点进行出栈操作，但不输出，并将待出栈结点的右孩子置为当前结点，判断是否为空：<pre><code>1. 若不为空，回到1，循环操作；
+2. 若为空，则对栈顶结点进行出栈操作，但不输出，即重复上述操作
 </code></pre></li>
 </ol>
 </li>
@@ -1184,7 +1179,7 @@
 <li>再对子结点递归调用以上方法，构建决策树。直到所有特征的信息增益均很小或没有特征可以选择为止。</li>
 </ul>
 <h4 id="C4-5算法"><a href="#C4-5算法" class="headerlink" title="C4.5算法"></a>C4.5算法</h4><p>&emsp;&emsp;<strong>ID3</strong>算法由于只有树的生成，所以该算法生成的树容易产生过拟合。<strong>C4.5</strong>算法对<strong>ID3</strong>算法进行了改进，选用信息增益比作为特征选择准则。</p>
-<h3 id="决策树的剪枝"><a href="#决策树的剪枝" class="headerlink" title="决策树的剪枝"></a>决策树的剪枝</h3><p>&emsp;&emsp;用决策树生成算法递归产生决策树，容易出现过拟合，原因在于决策树的生成过程过多考虑如何提高对训练数据的正确分类，从而构建的决策树趋于复杂<br>&emsp;&emsp;在决策树学习中，将已生成的树进行简化的过程称为剪枝，具体来说就是剪掉一些子树或叶子结点，并将其根节点或父结点作为新的叶子结点，进而简化决策树模型<br>&emsp;&emsp;决策树的剪枝通过极小化决策树整体的损失函数（代价函数）来实现，即<script type="math/tex">C_\alpha(T)=C(T)+\alpha|T|</script></p>
+<h3 id="决策树的剪枝"><a href="#决策树的剪枝" class="headerlink" title="决策树的剪枝"></a>决策树的剪枝</h3><p>&emsp;&emsp;用决策树生成算法递归产生决策树，容易出现过拟合，原因在于决策树的生成过程过多考虑如何提高对训练数据的正确分类，从而构建的决策树趋于复杂<br>&emsp;&emsp;在决策树学习中，将已生成的树进行简化的过程称为剪枝，具体来说就是剪掉一些子树或叶子结点，并将其根节点或父结点作为新的叶子结点，进而简化决策树模型<br>&emsp;&emsp;决策树的剪枝通过极小化决策树整体的损失函数（代价函数）来实现，即$$C_\alpha(T)=C(T)+\alpha|T|$$</p>
 <h4 id="CART算法"><a href="#CART算法" class="headerlink" title="CART算法"></a>CART算法</h4><p>&emsp;&emsp;<strong>CART</strong>算法是一种既可以用于分类也可用作回归的决策树算法。<strong>CART</strong>算法分为以下两步：</p>
 <ol>
 <li>决策树生成：基于训练数据集生成决策树，生成的决策树要尽量大</li>
