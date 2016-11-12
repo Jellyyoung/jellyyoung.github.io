@@ -358,15 +358,10 @@
 <p><strong>Feature engineering</strong> is the process of using domain knowledge of the data to create features that make machine learning algorithms work. Feature engineering is fundamental to the application of machine learning, and is both difficult and expensive. The need for manual feature engineering can be obviated by automated feature learning<br><strong>特征工程</strong>是利用数据科学领域的相关知识来创建、提取、选择能使机器学习算法达到最佳性能的特征的过程。</p>
 </blockquote>
 <h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>&emsp;&emsp;特征选择，即从特征集合中挑选一组最具统计意义的特征子集，以提高机器学习算法的性能表现，并达到数据降维的效果。通常需要衡量单独每个特征与类别标签之间的相关性。实际机器学习应用中，表示单个特征与类别标签之间相关关系的参数指标有：<strong>皮尔逊相关系数</strong>、<strong>信息增益</strong>、<strong>信息增益比</strong>和<strong>基尼指数</strong>等。</p>
-<h4 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h4><p>&emsp;&emsp;两个变量（特征与标签向量）之间的pearson相关系数定义为两个变量之间的协方差和标准差的商。计算公式为：</p>
-<script type="math/tex; mode=display">\gamma^2_{xy}=\dfrac{cov(x,y)}{\sigma_x\sigma_y}=\dfrac{E[(X-\mu_x)(Y-\mu_y)]}{\sigma_x\sigma_y}</script><p>&emsp;&emsp;这里的$x$表示某个特征的观测值，$Y$表示类别标签。pearson相关系数的取值在0到1之间。</p>
-<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>&emsp;&emsp;信息增益的概念来源于信息科学的分支。<strong>熵</strong>（entropy）是随机变量不确定性的度量。熵越大，表示随机变量的不确定性就越大。<br>设随机变量X为有限个值的离散随机变量，其概率分布为</p>
-<script type="math/tex; mode=display">P(X=x_i)=p_i</script><p>&emsp;&emsp;熵的定义为</p>
-<script type="math/tex; mode=display">H(X)=-\sum_{i=1}^np_ilog(p_i)</script><p>&emsp;&emsp;条件熵：H(Y|X)表示已知随机变量X的条件下随机变量Y的不确定性，定义<script type="math/tex">H(Y|X)=\sum_{i=1}^np_iH(Y|X=x_i)</script><br>&emsp;&emsp;其中$p_i=P(X=x_i)$。这里X表示样本数据集的某个特征，即表示根据某个特征划分后，数据Y的熵。如果某个特征有更强的分类能力，则条件熵$H(Y|X)$越小，表示不确定性越小。</p>
-<h4 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h4><p>&emsp;&emsp;信息增益定义为特征A对训练数据集D的信息增益 $g(D,A)$ 定义为集合D的经验熵 $H(D)$ 与特征A在给定条件下D的经验条件熵$H(D|A)$之差，即<script type="math/tex">g(D,A)=H(D)-H(D|A)</script><br> &emsp;&emsp;信息增益$g(D,A)$表示特征A使得对数据集D的分裂的不确定性减少的程度。所以信息增益越大，表明不确定性减小越多，即特征具有更强的分类能力。<br>&emsp;&emsp;根据信息增益准则的特征选择方法是：对训练数据集（或其子集）D,计算每个特征的信息增益，并比较其大小将其排序，选择最大的信息增益对应的特征。</p>
-<h4 id="信息增益比"><a href="#信息增益比" class="headerlink" title="信息增益比"></a>信息增益比</h4><p>&emsp;&emsp;信息增益比也是度量特征分类能力的方法。特征A对训练数据集D的信息增益比$g_R(D,A)$定义为其信息增益与训练数据集D关于特征A的熵之比，即</p>
-<script type="math/tex; mode=display">g_R(D,A)=\frac{g(D,A)}{H_A(D)}</script><p>&emsp;&emsp;其中</p>
-<script type="math/tex; mode=display">H_A(D)=-\sum_{i=1}^n\frac{|D_i|}{|D|}log_2\frac{|D_i|}{|D|}</script><p>&emsp;&emsp;$|D|$表示训练样本集D中样本数量，$|D_i|$表示训练数据D中特征A取第i个值的总数目。信息增益比越大，表明特征分类能力越强。<br>&emsp;&emsp;需要注意的是，<strong>以信息增益作为划分训练数据集的特征，存在偏向于选择取值较多的特征的问题</strong>。</p>
+<h4 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h4><p>&emsp;&emsp;两个变量（特征与标签向量）之间的pearson相关系数定义为两个变量之间的协方差和标准差的商。计算公式为：<br>$$\gamma^2_{xy}=\dfrac{cov(x,y)}{\sigma_x\sigma_y}=\dfrac{E[(X-\mu_x)(Y-\mu_y)]}{\sigma_x\sigma_y}$$<br>&emsp;&emsp;这里的$x$表示某个特征的观测值，$Y$表示类别标签。pearson相关系数的取值在0到1之间。</p>
+<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>&emsp;&emsp;信息增益的概念来源于信息科学的分支。<strong>熵</strong>（entropy）是随机变量不确定性的度量。熵越大，表示随机变量的不确定性就越大。<br>设随机变量X为有限个值的离散随机变量，其概率分布为<br> $$P(X=x_i)=p<em>i$$<br>&emsp;&emsp;熵的定义为<br>$$H(X)=-\sum</em>{i=1}^np_ilog(p<em>i)$$<br>&emsp;&emsp;条件熵：H(Y|X)表示已知随机变量X的条件下随机变量Y的不确定性，定义$$H(Y|X)=\sum</em>{i=1}^np_iH(Y|X=x_i)$$<br>&emsp;&emsp;其中$p_i=P(X=x_i)$。这里X表示样本数据集的某个特征，即表示根据某个特征划分后，数据Y的熵。如果某个特征有更强的分类能力，则条件熵$H(Y|X)$越小，表示不确定性越小。</p>
+<h4 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h4><p>&emsp;&emsp;信息增益定义为特征A对训练数据集D的信息增益 $g(D,A)$ 定义为集合D的经验熵 $H(D)$ 与特征A在给定条件下D的经验条件熵$H(D|A)$之差，即$$g(D,A)=H(D)-H(D|A)$$<br> &emsp;&emsp;信息增益$g(D,A)$表示特征A使得对数据集D的分裂的不确定性减少的程度。所以信息增益越大，表明不确定性减小越多，即特征具有更强的分类能力。<br>&emsp;&emsp;根据信息增益准则的特征选择方法是：对训练数据集（或其子集）D,计算每个特征的信息增益，并比较其大小将其排序，选择最大的信息增益对应的特征。</p>
+<h4 id="信息增益比"><a href="#信息增益比" class="headerlink" title="信息增益比"></a>信息增益比</h4><p>&emsp;&emsp;信息增益比也是度量特征分类能力的方法。特征A对训练数据集D的信息增益比$g_R(D,A)$定义为其信息增益与训练数据集D关于特征A的熵之比，即<br>$$g_R(D,A)=\frac{g(D,A)}{H_A(D)}$$<br>&emsp;&emsp;其中<br>$$H<em>A(D)=-\sum</em>{i=1}^n\frac{|D_i|}{|D|}log_2\frac{|D_i|}{|D|}$$<br>&emsp;&emsp;$|D|$表示训练样本集D中样本数量，$|D_i|$表示训练数据D中特征A取第i个值的总数目。信息增益比越大，表明特征分类能力越强。<br>&emsp;&emsp;需要注意的是，<strong>以信息增益作为划分训练数据集的特征，存在偏向于选择取值较多的特征的问题</strong>。</p>
 <h4 id="基尼指数"><a href="#基尼指数" class="headerlink" title="基尼指数"></a>基尼指数</h4><p>&emsp;&emsp;基尼指数表示样本集合的不确定性程度，基尼指数越小，对应的特征分类能力越强。</p>
 <h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>&emsp;&emsp;原则上讲，特征提取应该在特征选择之前。特征提取的对象是未经处理的原始数据（raw data），它的目的是自动地构建新的特征，将原始数据转换为一组具有明显物理现实意义或者统计意义或核的特征。实际的机器学习应用中，常见的特征提取的方法有：</p>
 <ul>
@@ -375,7 +370,7 @@
 <li><strong>LDA</strong> （Linear Discriminant Analysis，线性判别分析）</li>
 </ul>
 <h3 id="特征构建"><a href="#特征构建" class="headerlink" title="特征构建"></a>特征构建</h3><p>&emsp;&emsp;特征构建指的是结合所研究问题的实际背景从原始数据中人工构建新的特征。这一步需要花大量的时间和精力去研究真实的数据，思考问题的潜在形式和数据结构，同时能够更好地应用到预测模型中。<br>&emsp;&emsp;特征构建需要很强的洞察力和分析能力，从原始数据中找出具有物理意义的特征，并将其处理成一个或一组新的特征，便于应用到机器学习算法模型中。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>&emsp;&emsp;特征工程包括特征提取、特征构建和特征选择这三个子问题。在实际的机器学习应用中，每一个步骤都很重要。将这三个子问题的重要性排序为：<script type="math/tex">特征构建>特征提取>特征选择</script><br>如果特征构建做的不好，则会直接影响特征提取，进而影响了特征选择，最终影响机器学习算法模型的性能表现。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>&emsp;&emsp;特征工程包括特征提取、特征构建和特征选择这三个子问题。在实际的机器学习应用中，每一个步骤都很重要。将这三个子问题的重要性排序为：$$特征构建&gt;特征提取&gt;特征选择$$<br>如果特征构建做的不好，则会直接影响特征提取，进而影响了特征选择，最终影响机器学习算法模型的性能表现。</p>
 
       
     </div>
