@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning, Data Science" />
+  <meta name="keywords" content="python,pandas," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;本文转自牛客网的笔经面经板块，原文作者为stupidjoey，原文链接。">
+<meta name="description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】">
-<meta property="og:url" content="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html">
+<meta property="og:title" content="pandas学习笔记">
+<meta property="og:url" content="http://yaodong.ml/blog/pandas学习笔记.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;本文转自牛客网的笔经面经板块，原文作者为stupidjoey，原文链接。">
-<meta property="og:updated_time" content="2016-11-12T07:29:25.261Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
+<meta property="og:updated_time" content="2016-11-11T07:47:29.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文转自牛客网的笔经面经板块，原文作者为stupidjoey，原文链接。">
+<meta name="twitter:title" content="pandas学习笔记">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html"/>
+  <link rel="canonical" href="http://yaodong.ml/blog/pandas学习笔记.html"/>
 
 
-  <title> 2016校招：百度、360、美团机器学习岗面试经历【转自牛客】 | Jellyyoung's Blog </title>
+  <title> pandas学习笔记 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                2016校招：百度、360、美团机器学习岗面试经历【转自牛客】
+                pandas学习笔记
               
             
           </h1>
@@ -290,19 +290,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-12T15:28:05+08:00" content="2016-11-12">
-              2016-11-12
+            <time itemprop="dateCreated" datetime="2016-11-02T20:12:28+08:00" content="2016-11-02">
+              2016-11-02
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html" itemprop="commentsCount"></span>
+                <a href="/blog/pandas学习笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/pandas学习笔记.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -312,7 +331,7 @@
 
           
           
-             <span id="/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html" class="leancloud_visitors" data-flag-title="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】">
+             <span id="/blog/pandas学习笔记.html" class="leancloud_visitors" data-flag-title="pandas学习笔记">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -334,30 +353,19 @@
       
 
       
-        <p>&emsp;&emsp;本文转自<a href="https://www.nowcoder.com/" target="_blank" rel="external">牛客网</a>的<a href="https://www.nowcoder.com/discuss?type=2" target="_blank" rel="external">笔经面经</a>板块，原文作者为stupidjoey，<a href="https://www.nowcoder.com/discuss/3243" target="_blank" rel="external">原文链接</a>。<br><a id="more"></a><br>&emsp;&emsp;今天下午在教室自习，顺便还投了一些公司，准备笔试面试，突然接到百度hr的电话，顺利拿到offer。期间，我有点屌丝地反复问她这个offer是确定的吧，不会被取消吧，因为前几天看到百度缩招的消息，哈哈，hr跟我确定这个offer不会变，就等着签三方了。lz是硕士，属于计算机相关专业，无实习经历。<br>&emsp;&emsp;关于机器学习岗的面经比较少，本着回报牛客网的目的，决定写写面经。</p>
-<hr>
-<h3 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h3><p>&emsp;&emsp;在天津参加的百度的三轮面试，分三天面完。</p>
-<h4 id="一面（1小时）"><a href="#一面（1小时）" class="headerlink" title="一面（1小时）"></a>一面（1小时）</h4><p>&emsp;&emsp;问项目<br>&emsp;&emsp;逻辑回归估计参数时的目标函数（就是极大似然估计那部分）<br>&emsp;&emsp;写代码，翻转二叉树<br>&emsp;&emsp;其他内容我忘了，大部分时间在问项目</p>
-<h4 id="二面（1小时20分钟）"><a href="#二面（1小时20分钟）" class="headerlink" title="二面（1小时20分钟）"></a>二面（1小时20分钟）</h4><p>&emsp;&emsp;面试官语速很快，难度比一面高很多<br>&emsp;&emsp;问项目<br>&emsp;&emsp;逻辑回归估计参数时的目标函数（第二次）<br>&emsp;&emsp;逻辑回归估计参数时的目标函数 如果加上一个先验的服从高斯分布的假设，会是什么样（其实就是在后面乘一个东西，取log后就变成加一个东西，实际就变成一个正则项）<br>&emsp;&emsp;SVM在哪个地方引入的核函数<br>&emsp;&emsp;如果用高斯核可以升到多少维（无限维）<br>&emsp;&emsp;什么是贝叶斯估计<br>&emsp;&emsp;k折交叉验证中k取值多少有什么关系？知道bias和variance吗？（估计是和这两个东西有关，知乎上有个问题讨论了k值大小与bias和variance的关系）<br>&emsp;&emsp;过拟合了怎么办<br>&emsp;&emsp;设计一个结构存取稀疏矩阵（面试官最后告诉我了一个极度压缩的存法，相同行或列存偏差）<br>&emsp;&emsp;平衡二叉树是什么？<br>&emsp;&emsp;系统设计题，给一个query，如何快速从10亿个query中找出和它最相似的 （面试官说可以对每个query找1000个最相似的，存起来，每天离线更新）<br>&emsp;&emsp;编程题，给了一个链表，第1个结点标号为1，把链表中标号在M到N区间的部分反转<br>&emsp;&emsp;编程题，在一个字符串中，找出最长的无重复字符的字串（这个问题还是有难度的，我碰巧想到了用hash，但没想到完整解法，用hash的解法复杂度在O(N^2)，在网上查了下，好像还有更快解法）</p>
-<h4 id="三面（1小时）"><a href="#三面（1小时）" class="headerlink" title="三面（1小时）"></a>三面（1小时）</h4><p>&emsp;&emsp;逻辑回归估计参数时的目标函数（第三次）<br>&emsp;&emsp;逻辑回归的值表示概率吗？（值越大可能性越高，但不能说是概率）<br>&emsp;&emsp;分类模型和回归模型的区别？<br>&emsp;&emsp;分类模型可以做回归分析吗？反过来可以吗？<br>&emsp;&emsp;开放性问题：设计一个合理的电梯调度策略，调度两个电梯 ，考虑满足基本的接送需求，满足能耗最小，满足用户等待时间最短（面试官的想法，类似进程调度问题，每一时刻只可能有一个用户按按钮，把这条指令接收，判断当前电梯能否满足，能满足就执行，不能满足则放入一个队列里，实际情况还要细化）<br>&emsp;&emsp;常用排序算法的时间和空间复杂度<br>&emsp;&emsp;10.12号参加的第三轮面试，从5点面到6点，天已经黑了，我正对着面试官，面试官背后的窗户开着，外面高楼的灯光射进来，房间里只开了一盏台灯，发着淡黄色的光，想开放题的时候觉得时间过得好慢，周围好安静，我想我会永远铭记这一瞬间！</p>
-<hr>
-<h3 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h3><p>&emsp;&emsp;在面完百度三面回学校的公交上，接到了美团的面试邀请电话。10月15号参加了美团的三轮面试。</p>
-<h4 id="一面（1小时）-1"><a href="#一面（1小时）-1" class="headerlink" title="一面（1小时）"></a>一面（1小时）</h4><p>&emsp;&emsp;问会什么机器学习算法，讲下SVM的原理，我把SVM的公式推导了一部分，面试官就着公式问了一些问题<br>&emsp;&emsp;你简历里说用过random forest和GBDT，讲一下他们的区别<br>&emsp;&emsp;数据库索引用什么建的（b+树，并不知道原理）<br>&emsp;&emsp;写sql（并不会）<br>&emsp;&emsp;tcp关闭连接的过程， 为什么要四次？<br>&emsp;&emsp;写代码：str2Int</p>
-<h4 id="二面（1小时）"><a href="#二面（1小时）" class="headerlink" title="二面（1小时）"></a>二面（1小时）</h4><p>&emsp;&emsp;讲项目<br>&emsp;&emsp;面试官是做NLP的，看我有个比赛涉及到NLP的内容，就问了我很多NLP的知识，比如做情绪分析，他态度很好，以一种讨论的方法跟我交流<br>&emsp;&emsp;问了一个概率题  54张牌，分成6份，每份9张牌，大小王在一起的概率（8/53）<br>&emsp;&emsp;问了操作系统的内存管理， 分页和分段的区别<br>&emsp;&emsp;银行家算法原理<br>&emsp;&emsp;写程序，翻转链表</p>
-<h4 id="三面（40分钟）"><a href="#三面（40分钟）" class="headerlink" title="三面（40分钟）"></a>三面（40分钟）</h4><p>&emsp;&emsp;讲项目。我花了10几分钟，费尽口舌，绘声绘色地讲了在实验室的项目。面试官直接抛出一句：我觉得你这个项目一点都不牛逼 ！尴尬，双方停顿了10秒～ （所以我要滚蛋了？）<br>&emsp;&emsp;我觉得你设计的算法没什么创新性，在其他论文里可以找到很多类似的（补刀，但其实说的很对。。。我花了好几分钟来圆场，解释自己不能滚蛋，不是，解释自己的项目还是有价值的原因。。。。。<br>&emsp;&emsp;机器学习的大概过程是什么？<br>&emsp;&emsp;特征选取怎么选？为什么信息增益可以用来选特征？<br>&emsp;&emsp;哪个项目是跟人合作的？（在实验室的项目，和导师合作）<br>&emsp;&emsp;有没有和导师意见不同的时候，怎么做的？<br>&emsp;&emsp;有没有接触过机器学习的前沿，深度学习看过paper没有？（并没有）</p>
-<hr>
-<h3 id="360（内推）"><a href="#360（内推）" class="headerlink" title="360（内推）"></a>360（内推）</h3><h4 id="一面（1小时30分钟）"><a href="#一面（1小时30分钟）" class="headerlink" title="一面（1小时30分钟）"></a>一面（1小时30分钟）</h4><p>&emsp;&emsp;花了很长时间讲了一个自己做的很水的比赛，属于NLP相关，面试官也是NLP，感觉他没怎么听懂。<br>&emsp;&emsp;写程序，最短编辑距离<br>&emsp;&emsp;如何从很多的query中找出一个query（我开始想到hash，后来经提示我想到了前缀树）<br>&emsp;&emsp;若允许有错误，可以再怎么解决（面试官提示了布隆过滤器）</p>
-<h4 id="二面（1小时）-1"><a href="#二面（1小时）-1" class="headerlink" title="二面（1小时）"></a>二面（1小时）</h4><p>&emsp;&emsp;讲项目，根据项目问问题<br>&emsp;&emsp;问我知道倒排索引不？<br>&emsp;&emsp;想考察我学习能力，所以决定教教我倒排索引 ，简单画了个图，问了相关的问题<br>&emsp;&emsp;很多数中找前k大数</p>
-<h4 id="三面（HR面）"><a href="#三面（HR面）" class="headerlink" title="三面（HR面）"></a>三面（HR面）</h4><p>&emsp;&emsp;最有成就感的事？<br>&emsp;&emsp;和计算机专业的比有什么优势，什么劣势？<br> &emsp;&emsp;有女朋友吗？ （并没有）<br>&emsp;&emsp;其他忘了</p>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;就我自己仅有的几次机器学习岗面试做一下总结：</p>
-<h4 id="公司喜好"><a href="#公司喜好" class="headerlink" title="公司喜好"></a>公司喜好</h4><p>&emsp;&emsp;百度会先问你熟悉的东西，有项目和比赛都会先问，这些答得好，后面会容易很多。所以，好好准备简历，并且把写到简历里的部分都熟悉一下。<br>&emsp;&emsp;美团问的感觉比较死，操作系统/计算机网络/数据库等常见问题都还是会涉及到。<br>&emsp;&emsp;360因为是搜索部门，问了很多搜索相关的知识。</p>
-<h4 id="不会的问题如何回答"><a href="#不会的问题如何回答" class="headerlink" title="不会的问题如何回答"></a>不会的问题如何回答</h4><p>&emsp;&emsp;很多帖子里都谈到过这一点，在机器学习岗面试中，我很认同的一种方式是尽量的向面试官输出你的知识，不会就先说相关的。<br>&emsp;&emsp;如果还不会，适当的找面试官要提示。<br>&emsp;&emsp;百度二面那个query找相似的系统设计题，我先后说了前缀树，kd树等解决方案，虽然不对，但面试至少知道我了解这些东西。</p>
-<h4 id="面对面试官的刁难怎么办？"><a href="#面对面试官的刁难怎么办？" class="headerlink" title="面对面试官的刁难怎么办？"></a>面对面试官的刁难怎么办？</h4><p>&emsp;&emsp;如我在美团三面的时候，面试冷冷地一句你这项目一点也不牛逼，就把我弄傻了，因为其他面试官都不会这么直接。如果你是大牛，你的项目肯定很牛，面试官肯定不会说这种话。如果你水平一般，不要有什么反抗的态度，你也是在找工作，如果你向往这家公司，不会因为一个面试官的态度不好，就改变你对公司的态度吧，回答的态度还是要温和一点，拿到offer才是王道，被拒了在网上到处骂是弱者的行为。</p>
-<h4 id="如何准备机器学习面试？"><a href="#如何准备机器学习面试？" class="headerlink" title="如何准备机器学习面试？"></a>如何准备机器学习面试？</h4><p>&emsp;&emsp;就我面过的公司来说，机器学习方面的问题完全是与你自己以及面试官自身的水平有关的，如果你很牛，面试官也很牛，你们可能会讨论到很高大上的算法上去，但一般来说，李航的那本书应该是够了。<br>&emsp;&emsp;关于大数据处理的问题要好好准备一下，我记得july好像有篇博客专门讲这个，有大概10种工具处理大数据问题，你可以挨个轮番用。<br>&emsp;&emsp;数据结构和算法是一定要好好准备的<br>&emsp;&emsp;笔试题，机器学习岗位，我知道BAT、美团、蘑菇街等很多有针对算法岗单独的题，但还是要编程，还是要考基础知识，所以都要好好准备才行，不要像我到处挂笔试。。</p>
-<hr>
-<p>&emsp;&emsp;美团可能挂了，我准备签百度了，不过部门貌似很边缘，看来还是和自己的能力挂钩的。。。其实我一直觉得能拿到offer挺幸运的，从8月份开始找工作到现在，我一共就面了3次<br>360内推，笔试很差，内推的师兄叫hr把我加到面试名单，我才有了面试机会，2轮技术面+1轮hr面在一个下午搞定，技术面面得不好，hr让回去等消息，然后就没有消息了。<br>&emsp;&emsp;百度，百度笔试做的很差，但好像笔试不怎么刷人，所以抓住机会，一直撑到三面<br>&emsp;&emsp;美团，每个参加美团笔试的人都说题简单，而且写代码还支持python，这个要赞！ 当天下午4点吃了个面包，从5点开始，一直撑到晚上快8点，挺完3面。<br>其他公司都挂在笔试。。。。。。。。。<br>&emsp;&emsp;我讲这个，是想说，在找工作的过程中，一定要挺住，挂笔试挂面试不可怕，可怕的是你放弃自己，我在10月1号之前做了很多公司的笔试，次次都挂，但我都是洗个澡，换条内裤，第二天继续到教室自习。整个找工作过程中，我从来不刷朋友圈，别人到处吃喝玩乐跟我无关，不想受到别人的打扰。<br>&emsp;&emsp;今天在朋友圈发了个状态，写道：拿到offer是因为运气，心里高兴是因为付出。<br>&emsp;&emsp;感谢牛客网以及牛客的QQ群在我找工作的时候一直陪伴我，说实话，找不到工作的时候看到群里有一大群人也找不到，心里还是挺开心的，觉得自己也没那么差，嘿嘿，但我真 心 祝愿每一个人都能拿到自己心仪的offer。<br>&emsp;&emsp;O(∩_∩)O谢谢～</p>
-<div align="right"><font size="5">2015.10.23</font></div>
+        <p>&emsp;&emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。<br><a id="more"></a><br>&emsp;&emsp;本博文主要是记录博主学习pandas的相关笔记，大部分学习内容来自于总结<a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html" target="_blank" rel="external">pandas documenation</a>和《利用Python进行数据分析》的pandas的相关章节。<br>&emsp;&emsp;pandas中的两个主要的数据结构是<strong>Series</strong>和<strong>DataFrame</strong>，对此不做过多的理论介绍，<strong>本博文侧重于记录如何使用pandas</strong>。</p>
+<h4 id="导入pandas、numpy、matplotlib包："><a href="#导入pandas、numpy、matplotlib包：" class="headerlink" title="导入pandas、numpy、matplotlib包："></a>导入pandas、numpy、matplotlib包：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> scipy <span class="keyword">as</span> sp</div><div class="line"><span class="keyword">import</span> matplot.pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
+<h4 id="创建Series"><a href="#创建Series" class="headerlink" title="创建Series"></a>创建<strong>Series</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s = pd.Series([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,np.nan,<span class="number">6</span>,<span class="number">8</span>])</div><div class="line">%<span class="comment">#Series具有index属性和values属性，索引从0开始。创建Series时也可指定index的类型</span></div><div class="line">obj = pd.Series([<span class="number">4</span>,<span class="number">-7</span>,<span class="number">5</span>,<span class="number">3</span>],index=[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>])</div><div class="line">%<span class="comment">#可通过索引值获取Series结构的值：</span></div><div class="line">series[index]</div></pre></td></tr></table></figure>
+<h4 id="根据字典创建DataFrame对象："><a href="#根据字典创建DataFrame对象：" class="headerlink" title="根据字典创建DataFrame对象："></a>根据字典创建<strong>DataFrame</strong>对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">df2 = pd.DataFrame(</div><div class="line">    &#123; <span class="string">'A'</span> : <span class="number">1.</span>,</div><div class="line">      <span class="string">'B'</span> : pd.Timestamp(<span class="string">'20130102'</span>),</div><div class="line">      <span class="string">'C'</span> : pd.Series(<span class="number">1</span>,index=list(range(<span class="number">4</span>)),dtype=<span class="string">'float32'</span>),</div><div class="line">      <span class="string">'D'</span> : np.array([<span class="number">3</span>] * <span class="number">4</span>,dtype=<span class="string">'int32'</span>),</div><div class="line">      <span class="string">'E'</span> : pd.Categorical([<span class="string">"test"</span>,<span class="string">"train"</span>,<span class="string">"test"</span>,<span class="string">"train"</span>]),</div><div class="line">      <span class="string">'F'</span> : <span class="string">'foo'</span></div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<h4 id="使用pandas创建时间日期戳对象："><a href="#使用pandas创建时间日期戳对象：" class="headerlink" title="使用pandas创建时间日期戳对象："></a>使用pandas创建时间日期戳对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">6</span>]: dates = pd.date_range(<span class="string">'20130101'</span>, periods=<span class="number">6</span>)</div><div class="line">In [<span class="number">7</span>]: dates</div><div class="line">Out[<span class="number">7</span>]: </div><div class="line">DatetimeIndex([<span class="string">'2013-01-01'</span>, <span class="string">'2013-01-02'</span>, <span class="string">'2013-01-03'</span>, <span class="string">'2013-01-04'</span>,</div><div class="line">               <span class="string">'2013-01-05'</span>, <span class="string">'2013-01-06'</span>],</div><div class="line">              dtype=<span class="string">'datetime64[ns]'</span>, freq=<span class="string">'D'</span>)</div><div class="line">In [<span class="number">8</span>]: df = pd.DataFrame(np.random.randn(<span class="number">6</span>,<span class="number">4</span>), index=dates, columns=list(<span class="string">'ABCD'</span>))</div><div class="line">In [<span class="number">9</span>]: df</div><div class="line">Out[<span class="number">9</span>]: </div><div class="line">                A         B         C         D</div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-01</span>  <span class="number">0.469112</span> <span class="number">-0.282863</span> <span class="number">-1.509059</span> <span class="number">-1.135632</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-02</span>  <span class="number">1.212112</span> <span class="number">-0.173215</span>  <span class="number">0.119209</span> <span class="number">-1.044236</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-03</span> <span class="number">-0.861849</span> <span class="number">-2.104569</span> <span class="number">-0.494929</span>  <span class="number">1.071804</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-04</span>  <span class="number">0.721555</span> <span class="number">-0.706771</span> <span class="number">-1.039575</span>  <span class="number">0.271860</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-05</span> <span class="number">-0.424972</span>  <span class="number">0.567020</span>  <span class="number">0.276232</span> <span class="number">-1.087401</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-06</span> <span class="number">-0.673690</span>  <span class="number">0.113648</span> <span class="number">-1.478427</span>  <span class="number">0.524988</span></div></pre></td></tr></table></figure>
+<h4 id="对DataFrame对象进行排序"><a href="#对DataFrame对象进行排序" class="headerlink" title="对DataFrame对象进行排序"></a>对DataFrame对象进行排序</h4><p>&emsp;&emsp;根据属性进行排序：<code>sort_index(axis=1,ascending=False)</code>函数<br>&emsp;&emsp;根据某个属性的值进行排序：<code>sort_values(by=&#39;column_name&#39;)</code>函数</p>
+<h4 id="获取DataFrame对象的指定行或列"><a href="#获取DataFrame对象的指定行或列" class="headerlink" title="获取DataFrame对象的指定行或列"></a>获取DataFrame对象的指定行或列</h4><p>&emsp;&emsp;df.loc()：根据元素的具体值获取DataFrame对象的行或列<br>&emsp;&emsp;df.iloc()：根据具体数字作为索引来获取DataFrame对象的行或列<br>&emsp;&emsp;df.at()：获取指定的元素<br>&emsp;&emsp;df.iat()：获取指定的元素</p>
+<h4 id="pandas处理缺失值"><a href="#pandas处理缺失值" class="headerlink" title="pandas处理缺失值"></a>pandas处理缺失值</h4><p>&emsp;&emsp;df.dropna(how=”any”)：删除DataFrame对象的缺失值<br>&emsp;&emsp;df.fillna(value=5)：用value的值来代替DataFrame对象的缺失值<br>&emsp;&emsp;pd.isnull(df)：判断DataFrame对象的各属性值是否为空</p>
+<h4 id="pandas合并、连结DataFrame对象"><a href="#pandas合并、连结DataFrame对象" class="headerlink" title="pandas合并、连结DataFrame对象"></a>pandas合并、连结DataFrame对象</h4><p>&emsp;&emsp;<strong>pd.concat([df1,df2],axis=0 or 1)</strong><br>&emsp;&emsp;<strong>pd.merge()</strong>：类SQL式合并DataFrame对象<br>&emsp;&emsp;<strong>df.append(series, ignore_index=True)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">77</span>]: left = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'lval'</span>: [<span class="number">1</span>, <span class="number">2</span>]&#125;)</div><div class="line">In [<span class="number">78</span>]: right = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'rval'</span>: [<span class="number">4</span>, <span class="number">5</span>]&#125;)</div><div class="line">In [<span class="number">79</span>]: left</div><div class="line">Out[<span class="number">79</span>]: </div><div class="line">               key  lval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">2</span></div><div class="line">In [<span class="number">80</span>]: right</div><div class="line">Out[<span class="number">80</span>]: </div><div class="line">               key  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">5</span></div><div class="line">In [<span class="number">81</span>]: pd.merge(left, right, on=<span class="string">'key'</span>)</div><div class="line">Out[<span class="number">81</span>]: </div><div class="line">               key  lval  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span>     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">1</span>     <span class="number">5</span></div><div class="line">            <span class="number">2</span>  foo     <span class="number">2</span>     <span class="number">4</span></div><div class="line">            <span class="number">3</span>  foo     <span class="number">2</span>     <span class="number">5</span></div></pre></td></tr></table></figure>
+<h4 id="pandas的DataFrame对象的相关属性"><a href="#pandas的DataFrame对象的相关属性" class="headerlink" title="pandas的DataFrame对象的相关属性"></a><strong>pandas的DataFrame对象的相关属性</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">df2.A                  df2.boxplot</div><div class="line">df2.abs                df2.C</div><div class="line">df2.add                df2.clip</div><div class="line">df2.add_prefix         df2.clip_lower</div><div class="line">df2.add_suffix         df2.clip_upper</div><div class="line">df2.align              df2.columns</div><div class="line">df2.all                df2.combine</div><div class="line">df2.any                df2.combineAdd</div><div class="line">df2.append             df2.combine_first</div><div class="line">df2.apply              df2.combineMult</div><div class="line">df2.applymap           df2.compound</div><div class="line">df2.as_blocks          df2.consolidate</div><div class="line">df2.asfreq             df2.convert_objects</div><div class="line">df2.as_matrix          df2.copy</div><div class="line">df2.astype             df2.corr</div><div class="line">df2.at                 df2.corrwith</div><div class="line">df2.at_time            df2.count</div><div class="line">df2.axes               df2.cov</div><div class="line">df2.B                  df2.cummax</div><div class="line">df2.between_time       df2.cummin</div><div class="line">df2.bfill              df2.cumprod</div><div class="line">df2.blocks             df2.cumsum</div><div class="line">df2.bool               df2.D</div></pre></td></tr></table></figure>
+<h4 id="pandas的相关函数："><a href="#pandas的相关函数：" class="headerlink" title="pandas的相关函数："></a>pandas的相关函数：</h4><p>&emsp;&emsp;<strong>pd.Tiimestamp()</strong>：把字符串转化为日期时间戳对象<br>&emsp;&emsp;<strong>np.array()</strong>：创建numpy的ndarray对象<br>&emsp;&emsp;<strong>df.dtypes</strong>：查看DataFrame对象的每个属性的数据类型<br>&emsp;&emsp;<strong>df.head()</strong>：查看DataFrame对象头部的若干条记录<br>&emsp;&emsp;<strong>df.tail()</strong>：查看DataFrame对象尾部的若干条记录<br>&emsp;&emsp;<strong>df.columns</strong>：获取DataFrame对象的属性名字<br>&emsp;&emsp;<strong>df.index</strong>：获取DataFrame对象的索引值<br>&emsp;&emsp;<strong>df.values</strong>：获取DataFrame对象属性值<br>&emsp;&emsp;<strong>df.describe()</strong>：获取DataFrame对象的相关信息<br>&emsp;&emsp;<strong>df.copy()</strong>：显性复制DataFrame对象<br>&emsp;&emsp;<strong>series.shift()</strong>：对Series对象的数据循环移动n位<br>&emsp;&emsp;<strong>df.apply(</strong>lambda function<strong>)</strong>：对DataFrame对象应用函数<br>&emsp;&emsp;<strong>series.value_counts()</strong>：统计Series对象的每个取值的频数<br>&emsp;&emsp;<strong>series.str.lower()</strong>：把字符转化为小写<br>&emsp;&emsp;<strong>df.groupby(column_name).sum()</strong>：以group的形式统计相关信息<br>&emsp;&emsp;stacked = df.stack()：<br>&emsp;&emsp;stacked.unstack()</p>
+
       
     </div>
 
@@ -398,18 +406,30 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/pandas/" rel="tag">#pandas</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Python学习笔记之面向对象高级编程.html" rel="next" title="Python学习笔记之面向对象高级编程">
-                <i class="fa fa-chevron-left"></i> Python学习笔记之面向对象高级编程
+              <a href="/blog/Window下python的Xgboost框架安装教程.html" rel="next" title="Window下python的Xgboost框架安装教程">
+                <i class="fa fa-chevron-left"></i> Window下python的Xgboost框架安装教程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/MySQL学习笔记.html" rel="prev" title="MySQL学习笔记">
+                MySQL学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -424,10 +444,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html"
-     data-title="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】"
+        <div class="ds-share flat" data-thread-key="blog/pandas学习笔记.html"
+     data-title="pandas学习笔记"
      data-content=""
-     data-url="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html">
+     data-url="http://yaodong.ml/blog/pandas学习笔记.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -454,8 +474,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html"
-           data-title="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】" data-url="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html">
+      <div class="ds-thread" data-thread-key="blog/pandas学习笔记.html"
+           data-title="pandas学习笔记" data-url="http://yaodong.ml/blog/pandas学习笔记.html">
       </div>
     
   </div>
@@ -608,7 +628,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#百度"><span class="nav-number">1.</span> <span class="nav-text">百度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一面（1小时）"><span class="nav-number">1.1.</span> <span class="nav-text">一面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二面（1小时20分钟）"><span class="nav-number">1.2.</span> <span class="nav-text">二面（1小时20分钟）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三面（1小时）"><span class="nav-number">1.3.</span> <span class="nav-text">三面（1小时）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#美团"><span class="nav-number">2.</span> <span class="nav-text">美团</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一面（1小时）-1"><span class="nav-number">2.1.</span> <span class="nav-text">一面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二面（1小时）"><span class="nav-number">2.2.</span> <span class="nav-text">二面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三面（40分钟）"><span class="nav-number">2.3.</span> <span class="nav-text">三面（40分钟）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#360（内推）"><span class="nav-number">3.</span> <span class="nav-text">360（内推）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一面（1小时30分钟）"><span class="nav-number">3.1.</span> <span class="nav-text">一面（1小时30分钟）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二面（1小时）-1"><span class="nav-number">3.2.</span> <span class="nav-text">二面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三面（HR面）"><span class="nav-number">3.3.</span> <span class="nav-text">三面（HR面）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公司喜好"><span class="nav-number">4.1.</span> <span class="nav-text">公司喜好</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不会的问题如何回答"><span class="nav-number">4.2.</span> <span class="nav-text">不会的问题如何回答</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面对面试官的刁难怎么办？"><span class="nav-number">4.3.</span> <span class="nav-text">面对面试官的刁难怎么办？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何准备机器学习面试？"><span class="nav-number">4.4.</span> <span class="nav-text">如何准备机器学习面试？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入pandas、numpy、matplotlib包："><span class="nav-number">1.</span> <span class="nav-text">导入pandas、numpy、matplotlib包：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Series"><span class="nav-number">2.</span> <span class="nav-text">创建Series</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据字典创建DataFrame对象："><span class="nav-number">3.</span> <span class="nav-text">根据字典创建DataFrame对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用pandas创建时间日期戳对象："><span class="nav-number">4.</span> <span class="nav-text">使用pandas创建时间日期戳对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对DataFrame对象进行排序"><span class="nav-number">5.</span> <span class="nav-text">对DataFrame对象进行排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取DataFrame对象的指定行或列"><span class="nav-number">6.</span> <span class="nav-text">获取DataFrame对象的指定行或列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas处理缺失值"><span class="nav-number">7.</span> <span class="nav-text">pandas处理缺失值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas合并、连结DataFrame对象"><span class="nav-number">8.</span> <span class="nav-text">pandas合并、连结DataFrame对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的DataFrame对象的相关属性"><span class="nav-number">9.</span> <span class="nav-text">pandas的DataFrame对象的相关属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的相关函数："><span class="nav-number">10.</span> <span class="nav-text">pandas的相关函数：</span></a></li></ol></div>
             
           </div>
         </section>
