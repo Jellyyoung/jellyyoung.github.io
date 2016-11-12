@@ -88,7 +88,7 @@
     
     <entry>
       <title><![CDATA[Kaggle竞赛学习资源汇总]]></title>
-      <url>http://yaodong.ml/Kaggle%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</url>
+      <url>http://yaodong.ml/bak/Kaggle%E7%AB%9E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;Kaggle竞赛相比于国内的数据科学、机器学习类比赛，入门教程更丰富，foreigners对解题方案的讲解更详细，因此Kaggle竞赛对于数据科学爱好者是一个不错的学习资源。本博文整理了Kaggle竞赛的相关学习资源，欢迎交流。<br><a id="more"></a></p>
 <h3 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h3><ol>
 <li><a href="https://www.kaggle.com/competitions" target="_blank" rel="external">Kaggle竞赛主页</a></li>
@@ -1064,7 +1064,7 @@
     
     <entry>
       <title><![CDATA[数据科学竞赛刷题网站汇总整理]]></title>
-      <url>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B%E5%88%B7%E9%A2%98%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB%E6%95%B4%E7%90%86.html</url>
+      <url>http://yaodong.ml/bak/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E7%AB%9E%E8%B5%9B%E5%88%B7%E9%A2%98%E7%BD%91%E7%AB%99%E6%B1%87%E6%80%BB%E6%95%B4%E7%90%86.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;机器学习、大数据、数据挖掘，这些词汇充斥着互联网coders的学习和工作中，时刻关注<strong>Data Science</strong>领域的前沿热点显得十分必要，特整理以下数据竞赛类网站、算法刷题OJ。<br><a id="more"></a></p>
 <h3 id="数据竞赛类网站"><a href="#数据竞赛类网站" class="headerlink" title="数据竞赛类网站"></a><strong>数据竞赛类网站</strong></h3><ul>
 <li><a href="https://www.kaggle.com/" target="_blank" rel="external">Kaggle</a></li>
