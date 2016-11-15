@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning, Data Science" />
+  <meta name="keywords" content="算法,算法设计," />
 
 
 
@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="Nothing but practice">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jellyyoung's Blog">
-<meta property="og:url" content="http://yaodong.ml/tags/爬虫/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法设计思想之回溯算法">
+<meta property="og:url" content="http://yaodong.ml/算法设计思想之回溯算法.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="Nothing but practice">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
+<meta property="og:updated_time" content="2016-11-15T08:16:01.706Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jellyyoung's Blog">
-<meta name="twitter:description" content="Nothing but practice">
+<meta name="twitter:title" content="算法设计思想之回溯算法">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
 
 
 
@@ -115,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/tags/爬虫/"/>
+  <link rel="canonical" href="http://yaodong.ml/算法设计思想之回溯算法.html"/>
 
 
-  <title> 标签: 爬虫 | Jellyyoung's Blog </title>
+  <title> 算法设计思想之回溯算法 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -256,46 +257,232 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        爬虫
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                算法设计思想之回溯算法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-15T16:12:20+08:00" content="2016-11-15">
+              2016-11-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/算法设计思想之回溯算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="算法设计思想之回溯算法.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/算法设计思想之回溯算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之回溯算法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <p>&emsp;&emsp;本博文记录了博主关于回溯算法设计思想的学习总结。<br><a id="more"></a></p>
+<blockquote>
+<p><strong>回溯（Backtracking）算法</strong>也叫试探法，属于暴力求解的范畴。<strong>回溯（Backtracking）算法</strong>是一种既有系统性又有跳跃性的的搜索算法，适用于求解具有约束条件，并且有多个候选解的问题。</p>
+</blockquote>
+<h3 id="回溯算法的设计思想"><a href="#回溯算法的设计思想" class="headerlink" title="回溯算法的设计思想"></a>回溯算法的设计思想</h3><p>&emsp;&emsp;<strong>回溯算法</strong>采用试探的思想，尝试分步解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。</p>
+<p>&emsp;&emsp;<strong>回溯算法</strong>在包含问题的所有解的解空间树中，按照深度优先遍历的策略，从根结点出发搜索整个解空间树。<br>&emsp;&emsp;当算法搜索至解空间树的任一结点时，先判断该结点是否肯定不包含问题的解。如果肯定不包含，则跳过对以该结点为根的子树的所有搜索，病逐层向其祖先结点回溯。否则，进入该子树，继续按深度优先遍历的策略进行搜索。<br>&emsp;&emsp;<strong>回溯算法</strong>通常用最简单的递归方法来实现，反复重复上述的步骤后会出现两种情况：</p>
+<ol>
+<li>找到了符合要求的正确答案</li>
+<li>遍历了所有可能的分步方法后，宣告该问题没有符合要求的解</li>
+</ol>
+<p>&emsp;&emsp;回溯法是设计递归过程的一种重要方法，回溯算法的实质是先序遍历一颗状态树的过程，只不过这棵状态树不是遍历前预先建立的，而是隐含在遍历过程中。</p>
+<h3 id="回溯算法的相关概念"><a href="#回溯算法的相关概念" class="headerlink" title="回溯算法的相关概念"></a>回溯算法的相关概念</h3><h4 id="约束函数-amp-限界函数"><a href="#约束函数-amp-限界函数" class="headerlink" title="约束函数&amp;限界函数"></a>约束函数&amp;限界函数</h4><p>&emsp;&emsp;约束函数可根据所求解问题中的限制条件构造。约束函数描述了给定问题的合法解的一般特征，用于DFS深度优先遍历过程中去除不合法的解，从而避免无效搜索。此外，约束函数是对于任何状态空间树上的节点都有效、等价的。</p>
+<h4 id="状态空间树"><a href="#状态空间树" class="headerlink" title="状态空间树"></a>状态空间树</h4><p>&emsp;&emsp;状态空间树是对问题的所有解的图形描述。树上的每个子节点的解都只有一个部分与父节点不同。</p>
+<h4 id="扩展节点、活结点、死结点"><a href="#扩展节点、活结点、死结点" class="headerlink" title="扩展节点、活结点、死结点"></a>扩展节点、活结点、死结点</h4><p>&emsp;&emsp;扩展节点，是当前正在求出它的子节点的节点，在DFS中，只允许有一个扩展节点。<br>&emsp;&emsp;节点本身和其父节点满足约束函数和限界条件的结点称为活结点。活结点需要进行DFS递归遍历<br>&emsp;&emsp;死结点反之，死结点是不满足约束函数的结点，DFS过程不必遍历死结点的子节点。</p>
+<h3 id="回溯算法的求解步骤"><a href="#回溯算法的求解步骤" class="headerlink" title="回溯算法的求解步骤"></a>回溯算法的求解步骤</h3><ul>
+<li>针对所给问题，定义问题的解空间</li>
+<li>确定易于搜索的解空间结构</li>
+<li>构造约束函数和限界函数，避免冗余的无效搜索</li>
+<li>以深度优先遍历（<strong>DFS</strong>）搜索解空间树，并在搜索过程中用剪枝函数避免无效搜索<h3 id="回溯算法的适用情形"><a href="#回溯算法的适用情形" class="headerlink" title="回溯算法的适用情形"></a>回溯算法的适用情形</h3></li>
+</ul>
+<ol>
+<li>给定的问题有很多组解，要求寻找问题的解集或者寻找满足某些约束条件的最佳解时，可以考虑使用回溯法</li>
+<li>回溯算法虽然属于暴力求解范畴，但是回溯思想能避免很多不必要的穷举式搜索。因此回溯算法适用于求解一些组合数很大的问题</li>
+<li>回溯算法的终止条件要注意以下两种情况：</li>
+</ol>
+<ul>
+<li>回溯算法用于求问题的所有解时，要回溯到解状态树的根结点，且根结点的所有子树都已被搜索遍才结束</li>
+<li>回溯算法用于求问题的任一解时，只要搜索到问题的一个解就可以结束<h3 id="回溯算法的应用"><a href="#回溯算法的应用" class="headerlink" title="回溯算法的应用"></a>回溯算法的应用</h3></li>
+<li>八皇后问题</li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/python爬虫学习资源汇总.html" itemprop="url">
-              
-                <span itemprop="name">python爬虫学习资源汇总</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>感谢果冻君，受益匪浅！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-qrd.png" alt="摇摇果冻 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-qcode.jpg" alt="摇摇果冻 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-03T15:37:38+08:00"
-              content="2016-11-03" >
-          11-03
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/算法设计思想之贪心算法.html" rel="next" title="算法设计思想之贪心算法">
+                <i class="fa fa-chevron-left"></i> 算法设计思想之贪心算法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/算法设计思想之分支界限.html" rel="prev" title="算法设计思想之分支界限">
+                算法设计思想之分支界限 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="算法设计思想之回溯算法.html"
+     data-title="算法设计思想之回溯算法"
+     data-content=""
+     data-url="http://yaodong.ml/算法设计思想之回溯算法.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -303,6 +490,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="算法设计思想之回溯算法.html"
+           data-title="算法设计思想之回溯算法" data-url="http://yaodong.ml/算法设计思想之回溯算法.html">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -322,8 +517,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/don't-fear.jpg"
@@ -435,6 +639,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的设计思想"><span class="nav-number">1.</span> <span class="nav-text">回溯算法的设计思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的相关概念"><span class="nav-number">2.</span> <span class="nav-text">回溯算法的相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#约束函数-amp-限界函数"><span class="nav-number">2.1.</span> <span class="nav-text">约束函数&限界函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态空间树"><span class="nav-number">2.2.</span> <span class="nav-text">状态空间树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展节点、活结点、死结点"><span class="nav-number">2.3.</span> <span class="nav-text">扩展节点、活结点、死结点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的求解步骤"><span class="nav-number">3.</span> <span class="nav-text">回溯算法的求解步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的适用情形"><span class="nav-number">4.</span> <span class="nav-text">回溯算法的适用情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的应用"><span class="nav-number">5.</span> <span class="nav-text">回溯算法的应用</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -554,6 +769,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

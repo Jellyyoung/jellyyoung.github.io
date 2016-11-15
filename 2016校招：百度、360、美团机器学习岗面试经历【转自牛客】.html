@@ -1,0 +1,1046 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine Learning, Data Science" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jellyyoung's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.icon?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;本文转自牛客网的笔经面经板块，原文作者为stupidjoey，原文链接。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】">
+<meta property="og:url" content="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html">
+<meta property="og:site_name" content="Jellyyoung's Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本文转自牛客网的笔经面经板块，原文作者为stupidjoey，原文链接。">
+<meta property="og:updated_time" content="2016-11-12T07:29:25.261Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文转自牛客网的笔经面经板块，原文作者为stupidjoey，原文链接。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6310520035420931000',
+      author: '摇摇果冻'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html"/>
+
+
+  <title> 2016校招：百度、360、美团机器学习岗面试经历【转自牛客】 | Jellyyoung's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jellyyoung's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一只不会编程还想做数据科学的coder</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                2016校招：百度、360、美团机器学习岗面试经历【转自牛客】
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-12T15:28:05+08:00" content="2016-11-12">
+              2016-11-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html" class="leancloud_visitors" data-flag-title="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;本文转自<a href="https://www.nowcoder.com/" target="_blank" rel="external">牛客网</a>的<a href="https://www.nowcoder.com/discuss?type=2" target="_blank" rel="external">笔经面经</a>板块，原文作者为stupidjoey，<a href="https://www.nowcoder.com/discuss/3243" target="_blank" rel="external">原文链接</a>。<br><a id="more"></a><br>&emsp;&emsp;今天下午在教室自习，顺便还投了一些公司，准备笔试面试，突然接到百度hr的电话，顺利拿到offer。期间，我有点屌丝地反复问她这个offer是确定的吧，不会被取消吧，因为前几天看到百度缩招的消息，哈哈，hr跟我确定这个offer不会变，就等着签三方了。lz是硕士，属于计算机相关专业，无实习经历。<br>&emsp;&emsp;关于机器学习岗的面经比较少，本着回报牛客网的目的，决定写写面经。</p>
+<hr>
+<h3 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h3><p>&emsp;&emsp;在天津参加的百度的三轮面试，分三天面完。</p>
+<h4 id="一面（1小时）"><a href="#一面（1小时）" class="headerlink" title="一面（1小时）"></a>一面（1小时）</h4><p>&emsp;&emsp;问项目<br>&emsp;&emsp;逻辑回归估计参数时的目标函数（就是极大似然估计那部分）<br>&emsp;&emsp;写代码，翻转二叉树<br>&emsp;&emsp;其他内容我忘了，大部分时间在问项目</p>
+<h4 id="二面（1小时20分钟）"><a href="#二面（1小时20分钟）" class="headerlink" title="二面（1小时20分钟）"></a>二面（1小时20分钟）</h4><p>&emsp;&emsp;面试官语速很快，难度比一面高很多<br>&emsp;&emsp;问项目<br>&emsp;&emsp;逻辑回归估计参数时的目标函数（第二次）<br>&emsp;&emsp;逻辑回归估计参数时的目标函数 如果加上一个先验的服从高斯分布的假设，会是什么样（其实就是在后面乘一个东西，取log后就变成加一个东西，实际就变成一个正则项）<br>&emsp;&emsp;SVM在哪个地方引入的核函数<br>&emsp;&emsp;如果用高斯核可以升到多少维（无限维）<br>&emsp;&emsp;什么是贝叶斯估计<br>&emsp;&emsp;k折交叉验证中k取值多少有什么关系？知道bias和variance吗？（估计是和这两个东西有关，知乎上有个问题讨论了k值大小与bias和variance的关系）<br>&emsp;&emsp;过拟合了怎么办<br>&emsp;&emsp;设计一个结构存取稀疏矩阵（面试官最后告诉我了一个极度压缩的存法，相同行或列存偏差）<br>&emsp;&emsp;平衡二叉树是什么？<br>&emsp;&emsp;系统设计题，给一个query，如何快速从10亿个query中找出和它最相似的 （面试官说可以对每个query找1000个最相似的，存起来，每天离线更新）<br>&emsp;&emsp;编程题，给了一个链表，第1个结点标号为1，把链表中标号在M到N区间的部分反转<br>&emsp;&emsp;编程题，在一个字符串中，找出最长的无重复字符的字串（这个问题还是有难度的，我碰巧想到了用hash，但没想到完整解法，用hash的解法复杂度在O(N^2)，在网上查了下，好像还有更快解法）</p>
+<h4 id="三面（1小时）"><a href="#三面（1小时）" class="headerlink" title="三面（1小时）"></a>三面（1小时）</h4><p>&emsp;&emsp;逻辑回归估计参数时的目标函数（第三次）<br>&emsp;&emsp;逻辑回归的值表示概率吗？（值越大可能性越高，但不能说是概率）<br>&emsp;&emsp;分类模型和回归模型的区别？<br>&emsp;&emsp;分类模型可以做回归分析吗？反过来可以吗？<br>&emsp;&emsp;开放性问题：设计一个合理的电梯调度策略，调度两个电梯 ，考虑满足基本的接送需求，满足能耗最小，满足用户等待时间最短（面试官的想法，类似进程调度问题，每一时刻只可能有一个用户按按钮，把这条指令接收，判断当前电梯能否满足，能满足就执行，不能满足则放入一个队列里，实际情况还要细化）<br>&emsp;&emsp;常用排序算法的时间和空间复杂度<br>&emsp;&emsp;10.12号参加的第三轮面试，从5点面到6点，天已经黑了，我正对着面试官，面试官背后的窗户开着，外面高楼的灯光射进来，房间里只开了一盏台灯，发着淡黄色的光，想开放题的时候觉得时间过得好慢，周围好安静，我想我会永远铭记这一瞬间！</p>
+<hr>
+<h3 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h3><p>&emsp;&emsp;在面完百度三面回学校的公交上，接到了美团的面试邀请电话。10月15号参加了美团的三轮面试。</p>
+<h4 id="一面（1小时）-1"><a href="#一面（1小时）-1" class="headerlink" title="一面（1小时）"></a>一面（1小时）</h4><p>&emsp;&emsp;问会什么机器学习算法，讲下SVM的原理，我把SVM的公式推导了一部分，面试官就着公式问了一些问题<br>&emsp;&emsp;你简历里说用过random forest和GBDT，讲一下他们的区别<br>&emsp;&emsp;数据库索引用什么建的（b+树，并不知道原理）<br>&emsp;&emsp;写sql（并不会）<br>&emsp;&emsp;tcp关闭连接的过程， 为什么要四次？<br>&emsp;&emsp;写代码：str2Int</p>
+<h4 id="二面（1小时）"><a href="#二面（1小时）" class="headerlink" title="二面（1小时）"></a>二面（1小时）</h4><p>&emsp;&emsp;讲项目<br>&emsp;&emsp;面试官是做NLP的，看我有个比赛涉及到NLP的内容，就问了我很多NLP的知识，比如做情绪分析，他态度很好，以一种讨论的方法跟我交流<br>&emsp;&emsp;问了一个概率题  54张牌，分成6份，每份9张牌，大小王在一起的概率（8/53）<br>&emsp;&emsp;问了操作系统的内存管理， 分页和分段的区别<br>&emsp;&emsp;银行家算法原理<br>&emsp;&emsp;写程序，翻转链表</p>
+<h4 id="三面（40分钟）"><a href="#三面（40分钟）" class="headerlink" title="三面（40分钟）"></a>三面（40分钟）</h4><p>&emsp;&emsp;讲项目。我花了10几分钟，费尽口舌，绘声绘色地讲了在实验室的项目。面试官直接抛出一句：我觉得你这个项目一点都不牛逼 ！尴尬，双方停顿了10秒～ （所以我要滚蛋了？）<br>&emsp;&emsp;我觉得你设计的算法没什么创新性，在其他论文里可以找到很多类似的（补刀，但其实说的很对。。。我花了好几分钟来圆场，解释自己不能滚蛋，不是，解释自己的项目还是有价值的原因。。。。。<br>&emsp;&emsp;机器学习的大概过程是什么？<br>&emsp;&emsp;特征选取怎么选？为什么信息增益可以用来选特征？<br>&emsp;&emsp;哪个项目是跟人合作的？（在实验室的项目，和导师合作）<br>&emsp;&emsp;有没有和导师意见不同的时候，怎么做的？<br>&emsp;&emsp;有没有接触过机器学习的前沿，深度学习看过paper没有？（并没有）</p>
+<hr>
+<h3 id="360（内推）"><a href="#360（内推）" class="headerlink" title="360（内推）"></a>360（内推）</h3><h4 id="一面（1小时30分钟）"><a href="#一面（1小时30分钟）" class="headerlink" title="一面（1小时30分钟）"></a>一面（1小时30分钟）</h4><p>&emsp;&emsp;花了很长时间讲了一个自己做的很水的比赛，属于NLP相关，面试官也是NLP，感觉他没怎么听懂。<br>&emsp;&emsp;写程序，最短编辑距离<br>&emsp;&emsp;如何从很多的query中找出一个query（我开始想到hash，后来经提示我想到了前缀树）<br>&emsp;&emsp;若允许有错误，可以再怎么解决（面试官提示了布隆过滤器）</p>
+<h4 id="二面（1小时）-1"><a href="#二面（1小时）-1" class="headerlink" title="二面（1小时）"></a>二面（1小时）</h4><p>&emsp;&emsp;讲项目，根据项目问问题<br>&emsp;&emsp;问我知道倒排索引不？<br>&emsp;&emsp;想考察我学习能力，所以决定教教我倒排索引 ，简单画了个图，问了相关的问题<br>&emsp;&emsp;很多数中找前k大数</p>
+<h4 id="三面（HR面）"><a href="#三面（HR面）" class="headerlink" title="三面（HR面）"></a>三面（HR面）</h4><p>&emsp;&emsp;最有成就感的事？<br>&emsp;&emsp;和计算机专业的比有什么优势，什么劣势？<br> &emsp;&emsp;有女朋友吗？ （并没有）<br>&emsp;&emsp;其他忘了</p>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;就我自己仅有的几次机器学习岗面试做一下总结：</p>
+<h4 id="公司喜好"><a href="#公司喜好" class="headerlink" title="公司喜好"></a>公司喜好</h4><p>&emsp;&emsp;百度会先问你熟悉的东西，有项目和比赛都会先问，这些答得好，后面会容易很多。所以，好好准备简历，并且把写到简历里的部分都熟悉一下。<br>&emsp;&emsp;美团问的感觉比较死，操作系统/计算机网络/数据库等常见问题都还是会涉及到。<br>&emsp;&emsp;360因为是搜索部门，问了很多搜索相关的知识。</p>
+<h4 id="不会的问题如何回答"><a href="#不会的问题如何回答" class="headerlink" title="不会的问题如何回答"></a>不会的问题如何回答</h4><p>&emsp;&emsp;很多帖子里都谈到过这一点，在机器学习岗面试中，我很认同的一种方式是尽量的向面试官输出你的知识，不会就先说相关的。<br>&emsp;&emsp;如果还不会，适当的找面试官要提示。<br>&emsp;&emsp;百度二面那个query找相似的系统设计题，我先后说了前缀树，kd树等解决方案，虽然不对，但面试至少知道我了解这些东西。</p>
+<h4 id="面对面试官的刁难怎么办？"><a href="#面对面试官的刁难怎么办？" class="headerlink" title="面对面试官的刁难怎么办？"></a>面对面试官的刁难怎么办？</h4><p>&emsp;&emsp;如我在美团三面的时候，面试冷冷地一句你这项目一点也不牛逼，就把我弄傻了，因为其他面试官都不会这么直接。如果你是大牛，你的项目肯定很牛，面试官肯定不会说这种话。如果你水平一般，不要有什么反抗的态度，你也是在找工作，如果你向往这家公司，不会因为一个面试官的态度不好，就改变你对公司的态度吧，回答的态度还是要温和一点，拿到offer才是王道，被拒了在网上到处骂是弱者的行为。</p>
+<h4 id="如何准备机器学习面试？"><a href="#如何准备机器学习面试？" class="headerlink" title="如何准备机器学习面试？"></a>如何准备机器学习面试？</h4><p>&emsp;&emsp;就我面过的公司来说，机器学习方面的问题完全是与你自己以及面试官自身的水平有关的，如果你很牛，面试官也很牛，你们可能会讨论到很高大上的算法上去，但一般来说，李航的那本书应该是够了。<br>&emsp;&emsp;关于大数据处理的问题要好好准备一下，我记得july好像有篇博客专门讲这个，有大概10种工具处理大数据问题，你可以挨个轮番用。<br>&emsp;&emsp;数据结构和算法是一定要好好准备的<br>&emsp;&emsp;笔试题，机器学习岗位，我知道BAT、美团、蘑菇街等很多有针对算法岗单独的题，但还是要编程，还是要考基础知识，所以都要好好准备才行，不要像我到处挂笔试。。</p>
+<hr>
+<p>&emsp;&emsp;美团可能挂了，我准备签百度了，不过部门貌似很边缘，看来还是和自己的能力挂钩的。。。其实我一直觉得能拿到offer挺幸运的，从8月份开始找工作到现在，我一共就面了3次<br>360内推，笔试很差，内推的师兄叫hr把我加到面试名单，我才有了面试机会，2轮技术面+1轮hr面在一个下午搞定，技术面面得不好，hr让回去等消息，然后就没有消息了。<br>&emsp;&emsp;百度，百度笔试做的很差，但好像笔试不怎么刷人，所以抓住机会，一直撑到三面<br>&emsp;&emsp;美团，每个参加美团笔试的人都说题简单，而且写代码还支持python，这个要赞！ 当天下午4点吃了个面包，从5点开始，一直撑到晚上快8点，挺完3面。<br>其他公司都挂在笔试。。。。。。。。。<br>&emsp;&emsp;我讲这个，是想说，在找工作的过程中，一定要挺住，挂笔试挂面试不可怕，可怕的是你放弃自己，我在10月1号之前做了很多公司的笔试，次次都挂，但我都是洗个澡，换条内裤，第二天继续到教室自习。整个找工作过程中，我从来不刷朋友圈，别人到处吃喝玩乐跟我无关，不想受到别人的打扰。<br>&emsp;&emsp;今天在朋友圈发了个状态，写道：拿到offer是因为运气，心里高兴是因为付出。<br>&emsp;&emsp;感谢牛客网以及牛客的QQ群在我找工作的时候一直陪伴我，说实话，找不到工作的时候看到群里有一大群人也找不到，心里还是挺开心的，觉得自己也没那么差，嘿嘿，但我真 心 祝愿每一个人都能拿到自己心仪的offer。<br>&emsp;&emsp;O(∩_∩)O谢谢～</p>
+<div align="right"><font size="5">2015.10.23</font></div>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>感谢果冻君，受益匪浅！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-qrd.png" alt="摇摇果冻 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-qcode.jpg" alt="摇摇果冻 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Python学习笔记之面向对象高级编程.html" rel="next" title="Python学习笔记之面向对象高级编程">
+                <i class="fa fa-chevron-left"></i> Python学习笔记之面向对象高级编程
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/算法设计思想之动态规划.html" rel="prev" title="算法设计思想之动态规划">
+                算法设计思想之动态规划 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html"
+     data-title="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】"
+     data-content=""
+     data-url="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html"
+           data-title="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】" data-url="http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/don't-fear.jpg"
+               alt="摇摇果冻" />
+          <p class="site-author-name" itemprop="name">摇摇果冻</p>
+          <p class="site-description motion-element" itemprop="description">Nothing but practice</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jellyyoung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2685489433" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/yao-yao-guo-dong" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com" title="Github" target="_blank">Github</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://leetcode.com" title="Leetcode" target="_blank">Leetcode</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.nowcoder.com" title="牛客网" target="_blank">牛客网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.google.com" title="Google" target="_blank">Google</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#百度"><span class="nav-number">1.</span> <span class="nav-text">百度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一面（1小时）"><span class="nav-number">1.1.</span> <span class="nav-text">一面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二面（1小时20分钟）"><span class="nav-number">1.2.</span> <span class="nav-text">二面（1小时20分钟）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三面（1小时）"><span class="nav-number">1.3.</span> <span class="nav-text">三面（1小时）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#美团"><span class="nav-number">2.</span> <span class="nav-text">美团</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一面（1小时）-1"><span class="nav-number">2.1.</span> <span class="nav-text">一面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二面（1小时）"><span class="nav-number">2.2.</span> <span class="nav-text">二面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三面（40分钟）"><span class="nav-number">2.3.</span> <span class="nav-text">三面（40分钟）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#360（内推）"><span class="nav-number">3.</span> <span class="nav-text">360（内推）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一面（1小时30分钟）"><span class="nav-number">3.1.</span> <span class="nav-text">一面（1小时30分钟）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二面（1小时）-1"><span class="nav-number">3.2.</span> <span class="nav-text">二面（1小时）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三面（HR面）"><span class="nav-number">3.3.</span> <span class="nav-text">三面（HR面）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#公司喜好"><span class="nav-number">4.1.</span> <span class="nav-text">公司喜好</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不会的问题如何回答"><span class="nav-number">4.2.</span> <span class="nav-text">不会的问题如何回答</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#面对面试官的刁难怎么办？"><span class="nav-number">4.3.</span> <span class="nav-text">面对面试官的刁难怎么办？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何准备机器学习面试？"><span class="nav-number">4.4.</span> <span class="nav-text">如何准备机器学习面试？</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">摇摇果冻</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jellyyoung"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("FMr7sWjQxkJp3Cryj0InKhSH-gzGzoHsz", "MM5zwP9a10uxjJHqpLRtlyQF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

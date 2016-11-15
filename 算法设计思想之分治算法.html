@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,Xgboost," />
+  <meta name="keywords" content="算法,算法设计," />
 
 
 
@@ -86,18 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;Xgboost是Tianqi Chen大神实现的一个boost算法框架。在Kaggle比赛的很多题目中都大放异彩，Xgboost诞生之后获奖无数，是个值得强力推荐的机器学习实战框架。">
+<meta name="description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Window下python的Xgboost框架安装教程">
-<meta property="og:url" content="http://yaodong.ml/blog/Window下python的Xgboost框架安装教程.html">
+<meta property="og:title" content="算法设计思想之分治算法">
+<meta property="og:url" content="http://yaodong.ml/算法设计思想之分治算法.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;Xgboost是Tianqi Chen大神实现的一个boost算法框架。在Kaggle比赛的很多题目中都大放异彩，Xgboost诞生之后获奖无数，是个值得强力推荐的机器学习实战框架。">
-<meta property="og:image" content="http://yaodong.ml/images/mingw64-5.3.0.png">
-<meta property="og:updated_time" content="2016-11-11T07:43:19.253Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
+<meta property="og:updated_time" content="2016-11-15T08:10:36.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Window下python的Xgboost框架安装教程">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;Xgboost是Tianqi Chen大神实现的一个boost算法框架。在Kaggle比赛的很多题目中都大放异彩，Xgboost诞生之后获奖无数，是个值得强力推荐的机器学习实战框架。">
-<meta name="twitter:image" content="http://yaodong.ml/images/mingw64-5.3.0.png">
+<meta name="twitter:title" content="算法设计思想之分治算法">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
 
 
 
@@ -118,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/blog/Window下python的Xgboost框架安装教程.html"/>
+  <link rel="canonical" href="http://yaodong.ml/算法设计思想之分治算法.html"/>
 
 
-  <title> Window下python的Xgboost框架安装教程 | Jellyyoung's Blog </title>
+  <title> 算法设计思想之分治算法 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +278,7 @@
             
             
               
-                Window下python的Xgboost框架安装教程
+                算法设计思想之分治算法
               
             
           </h1>
@@ -292,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T19:43:42+08:00" content="2016-10-14">
-              2016-10-14
+            <time itemprop="dateCreated" datetime="2016-11-15T16:08:14+08:00" content="2016-11-15">
+              2016-11-15
             </time>
           </span>
 
@@ -306,8 +304,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/原创/" itemprop="url" rel="index">
-                    <span itemprop="name">原创</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -322,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/Window下python的Xgboost框架安装教程.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/Window下python的Xgboost框架安装教程.html" itemprop="commentsCount"></span>
+                <a href="/算法设计思想之分治算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="算法设计思想之分治算法.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,7 +331,7 @@
 
           
           
-             <span id="/blog/Window下python的Xgboost框架安装教程.html" class="leancloud_visitors" data-flag-title="Window下python的Xgboost框架安装教程">
+             <span id="/算法设计思想之分治算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之分治算法">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,36 +353,42 @@
       
 
       
-        <p>&emsp;&emsp;<a href="http://xgboost.readthedocs.io/en/latest/" target="_blank" rel="external">Xgboost</a>是<a href="http://homes.cs.washington.edu/~tqchen/" target="_blank" rel="external">Tianqi Chen</a>大神实现的一个boost算法框架。在Kaggle比赛的很多题目中都大放异彩，Xgboost诞生之后获奖无数，是个值得强力推荐的机器学习实战框架。<br><a id="more"></a><br>&emsp;&emsp;本博文记录了在Windows平台下的Anaconda中安装Xgboost。Window平台对机器学习、深度学习的最新成果的支持与Linux/Ubuntu的差距简直不要太大，安装过程中也踩了不少坑。本博文特将Xgboost的安装过程作简单整理，希望对大家能够有所帮助。<br>&emsp;&emsp;果冻君的电脑配置环境是：</p>
-<ul>
-<li>操作系统：Window 8.1 <strong>64</strong>位</li>
-<li>已经安装了<strong>git</strong>和<strong>Anaconda2</strong>，<strong>git</strong>和<strong>Anaconda2</strong>就不多说了，学习的两大利器，强力推荐！</li>
+        <p>&emsp;&emsp;本博文记录了博主关于分治算法设计思想的学习总结。<br><a id="more"></a></p>
+<blockquote>
+<p><strong>分治法（Divide and Conquer）</strong>是基于多项分支递归的一种很重要的算法范式思想。分治的意思是“分而治之”，把复杂问题分解成多个规模较小、相对独立、与原问题形式相同的子问题，子问题的求解很简单很直观，原问题的解即子问题的解的合并。</p>
+</blockquote>
+<p>&emsp;&emsp;分治与递归经常同时应用在算法设计中，是诸多高效算法的基础，因此也产生了很多著名的高效算法。如（快速排序、归并排序）、傅里叶变换等。</p>
+<h3 id="分治算法的设计思想"><a href="#分治算法的设计思想" class="headerlink" title="分治算法的设计思想"></a>分治算法的设计思想</h3><ul>
+<li>将计算规模较大的复杂问题，分割成规模较小的相同性质的多个子问题，对简单的子问题进行逐个击破，分而治之</li>
+<li>使用数学上的不完全归纳法，寻找求解原问题的方程表达式，根据方程式设计递归程序Solution</li>
 </ul>
-<hr>
-<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><ol>
-<li><p>在用户文件夹下建立code文件夹</p>
-</li>
-<li><p>进入code文件夹，使用git将xgboost克隆到本地</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/code</div><div class="line">git clone --recursive https://github.com/dmlc/xgboost</div></pre></td></tr></table></figure>
-</li>
-<li><p>进入xgboost文件夹，输入下面的两条指令：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git checkout 9a48a40 %为了解决在源码编译时出现问题</div><div class="line">git submodule init</div><div class="line">git submodule update</div></pre></td></tr></table></figure>
-</li>
-<li><p>window下安装Xgboost需要对源码进行编译，编译工具一定要使用Mingw64。去<a href="http://mingw-w64.org/doku.php" target="_blank" rel="external">官网</a>下载Mingw64。<code>MinGW-w64 - for 32 and 64 bit Windows</code>的下载地址：<a href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/" target="_blank" rel="external">Download mingw-w64-install.exe</a>。这里需要注意，<strong>安装mingw64的5.3.0或4.9.x版本，不要安装最新的6.1.0和6.2.0版本，否则会编译不成功</strong>！！！，如图说示：<br><img src="/images/mingw64-5.3.0.png" alt="mingw64-5.3.0"></p>
-</li>
-<li>mingw64安装成功后，一会儿要用到<code>mingw32-make.exe</code>编译Xgboost的源码，因此需要将<code>mingw32-make.exe</code>的路径加入到环境变量<code>PATH</code>中：<code>C:\Program Files\mingw-w64\x86_64-5.3.0-posix-seh-rt_v5-rev0\mingw64\bin</code>。重启Git Bash窗口，输入<code>which mingw32-make</code>，如果输出<code>mingw32-make</code>的安装路径，则说明环境变量配置成功。</li>
-<li><p>在Git Bash窗口输入以下指令，使用<code>mingw32-make</code>编译Xgboost的几个子模块。注意当输入的指令完全执行完后再输入下一条指令</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ alias make=&apos;mingw32-make&apos;</div><div class="line">$ cd dmlc-core</div><div class="line">$ make -j4</div><div class="line">$ cd ../rabit</div><div class="line">$ make lib/librabit_empty.a -j4</div><div class="line">$ cd ..</div><div class="line">$ cp make/mingw64.mk config.mk</div><div class="line">$ make -j4</div></pre></td></tr></table></figure>
-</li>
-<li><p>打开<code>Anaconda prompt</code>窗口，进入xgboost/python-package路径，执行以下指令；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[Anaconda2] cd C:\Users\username\code\xgboost\python-package </div><div class="line">[Anaconda2] python setup.py install</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>Xgboost</strong>到这里已经安装成功了，不过此时若在python程序中<code>import xgboost as xgb</code>时，会出现Error。因此还需要把<code>mingw64</code>的路径加入到环境变量的Path中：</p>
- <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">mingw_path = <span class="string">'C:\\Program Files\\mingw-w64\\x86_64-5.3.0-posix-seh-rt_v4-rev0\\mingw64\\bin'</span></div><div class="line">os.environ[<span class="string">'PATH'</span>] = mingw_path + <span class="string">';'</span> + os.environ[<span class="string">'PATH'</span>]</div></pre></td></tr></table></figure>
-</li>
-<li><p>尝试在python程序中输入<code>import xgboost as xgb</code>，如果没有报错，则说明我们的Xgboost安装成功啦！Enjoy it~~~</p>
-</li>
+<h3 id="分治算法的递归求解步骤"><a href="#分治算法的递归求解步骤" class="headerlink" title="分治算法的递归求解步骤"></a>分治算法的递归求解步骤</h3><ol>
+<li><strong>分解</strong>：将原问题分解为若干个规模较小，相对独立，与原问题形式相同的子问题。</li>
+<li><strong>求解</strong>：若子问题规模较小且易于解决时，则直接解。否则，递归地解决各子问题。</li>
+<li><strong>合并</strong>：将各子问题的解合并为原问题的解。</li>
 </ol>
+<h3 id="分治算法的适用情形"><a href="#分治算法的适用情形" class="headerlink" title="分治算法的适用情形"></a>分治算法的适用情形</h3><ol>
+<li>原复杂问题的规模缩减到一定程度后可以很容易求解</li>
+<li>原问题可分解成若干个规模较小、与原问题性质相同的子问题，即原问题具有<strong>最优子结构</strong>性质，这条特性反映了递归思想</li>
+<li>原复杂问题分解得到的子问题相互之间是独立的，即<strong>子问题之间不包含公共的问题</strong></li>
+<li>子问题的解可以合并为原复杂问题的解</li>
+<li>算法求解过程中至少含有两个递归调用，也就是说，只进行一次递归调用的不属于分治算法范畴<h3 id="分治算法与动态规划算法的区别"><a href="#分治算法与动态规划算法的区别" class="headerlink" title="分治算法与动态规划算法的区别"></a>分治算法与动态规划算法的区别</h3></li>
+<li>分治法与动态规划都要求原问题具有最有子结构，都是将问题分解成若干个规模较小的子问题</li>
+<li>动态规划是将原问题分解为多个相同性质的子问题，这些子问题相互之间有联系，有重叠。分治法将分解后的子问题看成是相互独立的。</li>
+<li>动态规划通过迭代法自底向上求解，通过子问题的求解进而寻找原问题的最优解。而分治法是利用递归对各个子问题独立求解，最后将各子问题的解进行合并形成原问题的解。</li>
+<li>若原复杂问题分解之后得到的各子问题之间不独立，则可以考虑使用动态规划算法</li>
+</ol>
+<h3 id="分治算法的复杂度分析"><a href="#分治算法的复杂度分析" class="headerlink" title="分治算法的复杂度分析"></a>分治算法的复杂度分析</h3><p>&emsp;&emsp;假设分治算法策略将原问题分解为<code>K</code>个计算规模为<code>n/m</code>的同质子问题，<code>m</code>表示问题规模减小的因子，$f(n)$为分解与合并子问题的计算复杂度。原问题的时间复杂度可用如下的递归表达式表示：</p>
+<script type="math/tex; mode=display">T(n)=KT(n/m)+f(n)</script><h3 id="分治算法的应用"><a href="#分治算法的应用" class="headerlink" title="分治算法的应用"></a>分治算法的应用</h3><ul>
+<li>二分查找</li>
+<li>大整数乘法</li>
+<li>棋盘覆盖</li>
+<li>快速排序</li>
+<li>合并排序</li>
+<li>Strassen矩阵乘法</li>
+<li>最接近点对问题</li>
+<li>汉诺塔</li>
+</ul>
 
       
     </div>
@@ -428,9 +432,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag">#python</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
-            <a href="/tags/Xgboost/" rel="tag">#Xgboost</a>
+            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
           
         </div>
       
@@ -439,16 +443,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/Machine-Learning学习资源总结.html" rel="next" title="Machine Learning学习资源总结">
-                <i class="fa fa-chevron-left"></i> Machine Learning学习资源总结
+              <a href="/算法设计思想之动态规划.html" rel="next" title="算法设计思想之动态规划">
+                <i class="fa fa-chevron-left"></i> 算法设计思想之动态规划
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/pandas学习笔记.html" rel="prev" title="pandas学习笔记">
-                pandas学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/算法设计思想之贪心算法.html" rel="prev" title="算法设计思想之贪心算法">
+                算法设计思想之贪心算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -464,10 +468,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="blog/Window下python的Xgboost框架安装教程.html"
-     data-title="Window下python的Xgboost框架安装教程"
+        <div class="ds-share flat" data-thread-key="算法设计思想之分治算法.html"
+     data-title="算法设计思想之分治算法"
      data-content=""
-     data-url="http://yaodong.ml/blog/Window下python的Xgboost框架安装教程.html">
+     data-url="http://yaodong.ml/算法设计思想之分治算法.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -494,8 +498,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="blog/Window下python的Xgboost框架安装教程.html"
-           data-title="Window下python的Xgboost框架安装教程" data-url="http://yaodong.ml/blog/Window下python的Xgboost框架安装教程.html">
+      <div class="ds-thread" data-thread-key="算法设计思想之分治算法.html"
+           data-title="算法设计思想之分治算法" data-url="http://yaodong.ml/算法设计思想之分治算法.html">
       </div>
     
   </div>
@@ -540,7 +544,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -557,7 +561,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -648,7 +652,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装教程"><span class="nav-number">1.</span> <span class="nav-text">安装教程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的设计思想"><span class="nav-number">1.</span> <span class="nav-text">分治算法的设计思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的递归求解步骤"><span class="nav-number">2.</span> <span class="nav-text">分治算法的递归求解步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的适用情形"><span class="nav-number">3.</span> <span class="nav-text">分治算法的适用情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法与动态规划算法的区别"><span class="nav-number">4.</span> <span class="nav-text">分治算法与动态规划算法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的复杂度分析"><span class="nav-number">5.</span> <span class="nav-text">分治算法的复杂度分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的应用"><span class="nav-number">6.</span> <span class="nav-text">分治算法的应用</span></a></li></ol></div>
             
           </div>
         </section>

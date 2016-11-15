@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning, Data Science" />
+  <meta name="keywords" content="算法,算法设计," />
 
 
 
@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="Nothing but practice">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jellyyoung's Blog">
-<meta property="og:url" content="http://yaodong.ml/tags/爬虫/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于贪心算法设计思想的学习总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法设计思想之贪心算法">
+<meta property="og:url" content="http://yaodong.ml/算法设计思想之贪心算法.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="Nothing but practice">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于贪心算法设计思想的学习总结。">
+<meta property="og:updated_time" content="2016-11-15T08:17:32.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jellyyoung's Blog">
-<meta name="twitter:description" content="Nothing but practice">
+<meta name="twitter:title" content="算法设计思想之贪心算法">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于贪心算法设计思想的学习总结。">
 
 
 
@@ -115,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/tags/爬虫/"/>
+  <link rel="canonical" href="http://yaodong.ml/算法设计思想之贪心算法.html"/>
 
 
-  <title> 标签: 爬虫 | Jellyyoung's Blog </title>
+  <title> 算法设计思想之贪心算法 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -139,7 +140,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -256,46 +257,234 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        爬虫
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                算法设计思想之贪心算法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-15T16:11:25+08:00" content="2016-11-15">
+              2016-11-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/算法设计思想之贪心算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="算法设计思想之贪心算法.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/算法设计思想之贪心算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之贪心算法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="//schema.org/Article">
-    <header class="post-header">
+      
+        <p>&emsp;&emsp;本博文记录了博主关于贪心算法设计思想的学习总结。<br><a id="more"></a></p>
+<blockquote>
+<p><strong>贪心算法（greedy algorithm）</strong>，又称<strong>贪婪算法</strong>，在每一步都选择当前状态下能达到最好或最优的策略，从而希望算法结束时的结果就是全局最优的算法。换句话说，贪心算法不考虑全局只考虑局部最优，基于当前状态做出局部最优选择。</p>
+</blockquote>
+<h3 id="贪心算法的基本步骤"><a href="#贪心算法的基本步骤" class="headerlink" title="贪心算法的基本步骤"></a>贪心算法的基本步骤</h3><p>&emsp;&emsp;贪心算法把原问题可分解为多个子问题，然后贪心算法以迭代的方式作出每一步的贪心选择策略，每作一次贪心选择就将原复杂问题化简为规模更小的子问题。一直迭代求解子问题的局部最优解，最终子问题的最优解能递推到原复杂问题的最优解。<br>&emsp;&emsp;<strong>贪心算法求解问题的步骤</strong>：</p>
+<ol>
+<li>对问题进行分析，确定原问题的最优子结构</li>
+<li>针对分解后的各子问题，设计递归求解算法</li>
+<li>证明原问题总是有一个最优解是贪心选择得到的，即证明贪心选择是安全的</li>
+<li>证明剩余的子问题的最优解结合贪心选择策略，可以得到原问题的最优解</li>
+<li>设计出一个实现贪心策略的递归算法，并将递归算法转换成迭代算法</li>
+</ol>
+<p>&emsp;&emsp;贪心算法通常用于求解一些最优化问题。 贪心算法并不总能求得问题的整体最优解，但是由于贪心法的高效性以及其所求得的答案通常很接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。</p>
+<h3 id="贪心算法的适用情形"><a href="#贪心算法的适用情形" class="headerlink" title="贪心算法的适用情形"></a>贪心算法的适用情形</h3><ol>
+<li>给定的问题是否能使用贪心算法策略求解，首先要确定该问题是否具有<strong>贪心选择性质</strong>。贪心选择性质是指一系列子问题的局部最优策略可以导致产生全局最优解。给定问题的整体最优解可以通过这些子问题的局部最优解得到。这也是贪心算法与动态规划算法的主要区别</li>
+<li>给定问题是否具有贪心选择性质，需要证明子问题每一步进行的贪心选择最终导致问题的整体最优解。</li>
+<li>一个问题的最优解包含其子问题的最优解，或者局部最优解能决定全局最优解，则称此问题具有<strong>最优子结构性质</strong>。贪心算法可用于求解具有最优子结构性质的问题。<br>因此当问题具有最优子结构性质时，可以考虑使用贪心算法。</li>
+<li>贪心算法中，每一步的贪心选择可以依赖于以往的选择策略，但决不依赖于未来子问题的选择，也不依赖于将来子问题的解。简单来说，<strong>Greedy Algorithm</strong>选择的贪心策略必须具备无后效性，即将来子问题的选择策略不会影响先前子问题的求解。所以对所采用的贪心策略一定要仔细分析其是否满足<strong>无后效性</strong>。</li>
+</ol>
+<h3 id="贪心算法与动态规划算法的区别"><a href="#贪心算法与动态规划算法的区别" class="headerlink" title="贪心算法与动态规划算法的区别"></a>贪心算法与动态规划算法的区别</h3><ol>
+<li>动态规划算法通常以自底向上的方式迭代求解各子问题，而贪心算法则通常以自顶向下的方式对问题进行求解。</li>
+<li>在动态规划算法中，原问题每步所作的选择往往依赖于相关子问题的解。只有在求解相关子问题之后，原问题才能作出在当前状态的选择。而在贪心算法中，仅在当前状态下作出最好选择，即局部最优解，然后再求解相应的子问题。</li>
+<li>贪心算法与动态规划的不同在于它每对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。</li>
+</ol>
+<h3 id="贪心算法的应用"><a href="#贪心算法的应用" class="headerlink" title="贪心算法的应用"></a>贪心算法的应用</h3><ul>
+<li><code>Dijkstra</code>算法</li>
+<li><code>Prim</code>算法</li>
+<li><code>Kruskal</code>算法</li>
+<li><code>Huffman</code>编码</li>
+<li>磁盘文件的存储算法</li>
+<li>生产调度问题</li>
+</ul>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/python爬虫学习资源汇总.html" itemprop="url">
-              
-                <span itemprop="name">python爬虫学习资源汇总</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>感谢果冻君，受益匪浅！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-qrd.png" alt="摇摇果冻 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-qcode.jpg" alt="摇摇果冻 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-11-03T15:37:38+08:00"
-              content="2016-11-03" >
-          11-03
-        </time>
-      </div>
 
-    </header>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/算法设计思想之分治算法.html" rel="next" title="算法设计思想之分治算法">
+                <i class="fa fa-chevron-left"></i> 算法设计思想之分治算法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/算法设计思想之回溯算法.html" rel="prev" title="算法设计思想之回溯算法">
+                算法设计思想之回溯算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="算法设计思想之贪心算法.html"
+     data-title="算法设计思想之贪心算法"
+     data-content=""
+     data-url="http://yaodong.ml/算法设计思想之贪心算法.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -303,6 +492,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="算法设计思想之贪心算法.html"
+           data-title="算法设计思想之贪心算法" data-url="http://yaodong.ml/算法设计思想之贪心算法.html">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -322,8 +519,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/don't-fear.jpg"
@@ -435,6 +641,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法的基本步骤"><span class="nav-number">1.</span> <span class="nav-text">贪心算法的基本步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法的适用情形"><span class="nav-number">2.</span> <span class="nav-text">贪心算法的适用情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法与动态规划算法的区别"><span class="nav-number">3.</span> <span class="nav-text">贪心算法与动态规划算法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法的应用"><span class="nav-number">4.</span> <span class="nav-text">贪心算法的应用</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -554,6 +771,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 

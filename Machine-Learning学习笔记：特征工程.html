@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="机器学习,Machine Learning," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;">
+<meta name="description" content="&amp;emsp;&amp;emsp;特征工程（Feature Engineering）包括特征构建(Construction)、特征提取(Extraction)、特征选择(Selection)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Machine Learning学习资源总结">
-<meta property="og:url" content="http://yaodong.ml/blog/Machine-Learning学习资源总结.html">
+<meta property="og:title" content="Machine Learning学习笔记：特征工程">
+<meta property="og:url" content="http://yaodong.ml/Machine-Learning学习笔记：特征工程.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;">
-<meta property="og:updated_time" content="2016-11-11T07:46:48.511Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;特征工程（Feature Engineering）包括特征构建(Construction)、特征提取(Extraction)、特征选择(Selection)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。">
+<meta property="og:updated_time" content="2016-11-11T07:46:22.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Machine Learning学习资源总结">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;">
+<meta name="twitter:title" content="Machine Learning学习笔记：特征工程">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;特征工程（Feature Engineering）包括特征构建(Construction)、特征提取(Extraction)、特征选择(Selection)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/blog/Machine-Learning学习资源总结.html"/>
+  <link rel="canonical" href="http://yaodong.ml/Machine-Learning学习笔记：特征工程.html"/>
 
 
-  <title> Machine Learning学习资源总结 | Jellyyoung's Blog </title>
+  <title> Machine Learning学习笔记：特征工程 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                Machine Learning学习资源总结
+                Machine Learning学习笔记：特征工程
               
             
           </h1>
@@ -290,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T09:55:27+08:00" content="2016-10-14">
-              2016-10-14
+            <time itemprop="dateCreated" datetime="2016-10-10T16:48:47+08:00" content="2016-10-10">
+              2016-10-10
             </time>
           </span>
 
@@ -304,8 +304,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习资源/" itemprop="url" rel="index">
-                    <span itemprop="name">学习资源</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -320,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/Machine-Learning学习资源总结.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/Machine-Learning学习资源总结.html" itemprop="commentsCount"></span>
+                <a href="/Machine-Learning学习笔记：特征工程.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="Machine-Learning学习笔记：特征工程.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/blog/Machine-Learning学习资源总结.html" class="leancloud_visitors" data-flag-title="Machine Learning学习资源总结">
+             <span id="/Machine-Learning学习笔记：特征工程.html" class="leancloud_visitors" data-flag-title="Machine Learning学习笔记：特征工程">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,8 +353,29 @@
       
 
       
-        <a id="more"></a>
-<p>&emsp;&emsp;</p>
+        <p>&emsp;&emsp;<strong>特征工程（Feature Engineering）</strong>包括特征构建(<strong>Construction</strong>)、特征提取(<strong>Extraction</strong>)、特征选择(<strong>Selection</strong>)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。<br><a id="more"></a></p>
+<blockquote>
+<p><strong>Feature engineering</strong> is the process of using domain knowledge of the data to create features that make machine learning algorithms work. Feature engineering is fundamental to the application of machine learning, and is both difficult and expensive. The need for manual feature engineering can be obviated by automated feature learning<br><strong>特征工程</strong>是利用数据科学领域的相关知识来创建、提取、选择能使机器学习算法达到最佳性能的特征的过程。</p>
+</blockquote>
+<h3 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h3><p>&emsp;&emsp;特征选择，即从特征集合中挑选一组最具统计意义的特征子集，以提高机器学习算法的性能表现，并达到数据降维的效果。通常需要衡量单独每个特征与类别标签之间的相关性。实际机器学习应用中，表示单个特征与类别标签之间相关关系的参数指标有：<strong>皮尔逊相关系数</strong>、<strong>信息增益</strong>、<strong>信息增益比</strong>和<strong>基尼指数</strong>等。</p>
+<h4 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h4><p>&emsp;&emsp;两个变量（特征与标签向量）之间的pearson相关系数定义为两个变量之间的协方差和标准差的商。计算公式为：</p>
+<script type="math/tex; mode=display">\gamma^2_{xy}=\dfrac{cov(x,y)}{\sigma_x\sigma_y}=\dfrac{E[(X-\mu_x)(Y-\mu_y)]}{\sigma_x\sigma_y}</script><p>&emsp;&emsp;这里的$x$表示某个特征的观测值，$Y$表示类别标签。pearson相关系数的取值在0到1之间。</p>
+<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>&emsp;&emsp;信息增益的概念来源于信息科学的分支。<strong>熵</strong>（entropy）是随机变量不确定性的度量。熵越大，表示随机变量的不确定性就越大。<br>设随机变量X为有限个值的离散随机变量，其概率分布为</p>
+<script type="math/tex; mode=display">P(X=x_i)=p_i</script><p>&emsp;&emsp;熵的定义为</p>
+<script type="math/tex; mode=display">H(X)=-\sum_{i=1}^np_ilog(p_i)</script><p>&emsp;&emsp;条件熵：H(Y|X)表示已知随机变量X的条件下随机变量Y的不确定性，定义<script type="math/tex">H(Y|X)=\sum_{i=1}^np_iH(Y|X=x_i)</script><br>&emsp;&emsp;其中$p_i=P(X=x_i)$。这里X表示样本数据集的某个特征，即表示根据某个特征划分后，数据Y的熵。如果某个特征有更强的分类能力，则条件熵$H(Y|X)$越小，表示不确定性越小。</p>
+<h4 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h4><p>&emsp;&emsp;信息增益定义为特征A对训练数据集D的信息增益 $g(D,A)$ 定义为集合D的经验熵 $H(D)$ 与特征A在给定条件下D的经验条件熵$H(D|A)$之差，即<script type="math/tex">g(D,A)=H(D)-H(D|A)</script><br> &emsp;&emsp;信息增益$g(D,A)$表示特征A使得对数据集D的分裂的不确定性减少的程度。所以信息增益越大，表明不确定性减小越多，即特征具有更强的分类能力。<br>&emsp;&emsp;根据信息增益准则的特征选择方法是：对训练数据集（或其子集）D,计算每个特征的信息增益，并比较其大小将其排序，选择最大的信息增益对应的特征。</p>
+<h4 id="信息增益比"><a href="#信息增益比" class="headerlink" title="信息增益比"></a>信息增益比</h4><p>&emsp;&emsp;信息增益比也是度量特征分类能力的方法。特征A对训练数据集D的信息增益比$g_R(D,A)$定义为其信息增益与训练数据集D关于特征A的熵之比，即</p>
+<script type="math/tex; mode=display">g_R(D,A)=\frac{g(D,A)}{H_A(D)}</script><p>&emsp;&emsp;其中</p>
+<script type="math/tex; mode=display">H_A(D)=-\sum_{i=1}^n\frac{|D_i|}{|D|}log_2\frac{|D_i|}{|D|}</script><p>&emsp;&emsp;$|D|$表示训练样本集D中样本数量，$|D_i|$表示训练数据D中特征A取第i个值的总数目。信息增益比越大，表明特征分类能力越强。<br>&emsp;&emsp;需要注意的是，<strong>以信息增益作为划分训练数据集的特征，存在偏向于选择取值较多的特征的问题</strong>。</p>
+<h4 id="基尼指数"><a href="#基尼指数" class="headerlink" title="基尼指数"></a>基尼指数</h4><p>&emsp;&emsp;基尼指数表示样本集合的不确定性程度，基尼指数越小，对应的特征分类能力越强。</p>
+<h3 id="特征提取"><a href="#特征提取" class="headerlink" title="特征提取"></a>特征提取</h3><p>&emsp;&emsp;原则上讲，特征提取应该在特征选择之前。特征提取的对象是未经处理的原始数据（raw data），它的目的是自动地构建新的特征，将原始数据转换为一组具有明显物理现实意义或者统计意义或核的特征。实际的机器学习应用中，常见的特征提取的方法有：</p>
+<ul>
+<li><strong>PCA</strong>（Principal Component Analysis，主成分分析）</li>
+<li><strong>ICA</strong> （Independent component analysis，独立成分分析）</li>
+<li><strong>LDA</strong> （Linear Discriminant Analysis，线性判别分析）</li>
+</ul>
+<h3 id="特征构建"><a href="#特征构建" class="headerlink" title="特征构建"></a>特征构建</h3><p>&emsp;&emsp;特征构建指的是结合所研究问题的实际背景从原始数据中人工构建新的特征。这一步需要花大量的时间和精力去研究真实的数据，思考问题的潜在形式和数据结构，同时能够更好地应用到预测模型中。<br>&emsp;&emsp;特征构建需要很强的洞察力和分析能力，从原始数据中找出具有物理意义的特征，并将其处理成一个或一组新的特征，便于应用到机器学习算法模型中。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>&emsp;&emsp;特征工程包括特征提取、特征构建和特征选择这三个子问题。在实际的机器学习应用中，每一个步骤都很重要。将这三个子问题的重要性排序为：<script type="math/tex">特征构建>特征提取>特征选择</script><br>如果特征构建做的不好，则会直接影响特征提取，进而影响了特征选择，最终影响机器学习算法模型的性能表现。</p>
 
       
     </div>
@@ -400,6 +421,8 @@
           
             <a href="/tags/机器学习/" rel="tag">#机器学习</a>
           
+            <a href="/tags/Machine-Learning/" rel="tag">#Machine Learning</a>
+          
         </div>
       
 
@@ -407,16 +430,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/Machine-Learning学习笔记：特征工程.html" rel="next" title="Machine Learning学习笔记：特征工程">
-                <i class="fa fa-chevron-left"></i> Machine Learning学习笔记：特征工程
+              <a href="/Machine-Learning学习笔记：判别模型与生成模型.html" rel="next" title="Machine Learning学习笔记：判别模型与生成模型">
+                <i class="fa fa-chevron-left"></i> Machine Learning学习笔记：判别模型与生成模型
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/Window下python的Xgboost框架安装教程.html" rel="prev" title="Window下python的Xgboost框架安装教程">
-                Window下python的Xgboost框架安装教程 <i class="fa fa-chevron-right"></i>
+              <a href="/Machine-Learning学习资源总结.html" rel="prev" title="Machine Learning学习资源总结">
+                Machine Learning学习资源总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -432,10 +455,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="blog/Machine-Learning学习资源总结.html"
-     data-title="Machine Learning学习资源总结"
+        <div class="ds-share flat" data-thread-key="Machine-Learning学习笔记：特征工程.html"
+     data-title="Machine Learning学习笔记：特征工程"
      data-content=""
-     data-url="http://yaodong.ml/blog/Machine-Learning学习资源总结.html">
+     data-url="http://yaodong.ml/Machine-Learning学习笔记：特征工程.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -462,8 +485,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="blog/Machine-Learning学习资源总结.html"
-           data-title="Machine Learning学习资源总结" data-url="http://yaodong.ml/blog/Machine-Learning学习资源总结.html">
+      <div class="ds-thread" data-thread-key="Machine-Learning学习笔记：特征工程.html"
+           data-title="Machine Learning学习笔记：特征工程" data-url="http://yaodong.ml/Machine-Learning学习笔记：特征工程.html">
       </div>
     
   </div>
@@ -508,7 +531,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -525,7 +548,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -616,7 +639,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#特征选择"><span class="nav-number">1.</span> <span class="nav-text">特征选择</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#皮尔逊相关系数"><span class="nav-number">1.1.</span> <span class="nav-text">皮尔逊相关系数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息熵"><span class="nav-number">1.2.</span> <span class="nav-text">信息熵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息增益"><span class="nav-number">1.3.</span> <span class="nav-text">信息增益</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息增益比"><span class="nav-number">1.4.</span> <span class="nav-text">信息增益比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基尼指数"><span class="nav-number">1.5.</span> <span class="nav-text">基尼指数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征提取"><span class="nav-number">2.</span> <span class="nav-text">特征提取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征构建"><span class="nav-number">3.</span> <span class="nav-text">特征构建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
           </div>
         </section>

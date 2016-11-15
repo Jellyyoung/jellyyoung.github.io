@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Machine Learning, Data Science" />
+  <meta name="keywords" content="机器学习,算法," />
 
 
 
@@ -86,15 +86,34 @@
 
 
 
-<meta name="description" content="Nothing but practice">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jellyyoung's Blog">
-<meta property="og:url" content="http://yaodong.ml/page/2/index.html">
+<meta name="description" content="决策树(Decision Tree)&amp;emsp;&amp;emsp;决策树是一种基本的分类与回归算法，属于贪婪算法，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程&amp;emsp;&amp;emsp;决策树的特点：
+
+优点：计算复杂度不高，输出结果可直观理解数据，对中间值得缺失不敏感，可以处理不相关特征数据
+缺点：可能会出现Over Fittting
+适用数据类型：数值型和标称型
+
+&amp;em">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Machine Learning学习笔记：决策树与随机森林">
+<meta property="og:url" content="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="Nothing but practice">
+<meta property="og:description" content="决策树(Decision Tree)&amp;emsp;&amp;emsp;决策树是一种基本的分类与回归算法，属于贪婪算法，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程&amp;emsp;&amp;emsp;决策树的特点：
+
+优点：计算复杂度不高，输出结果可直观理解数据，对中间值得缺失不敏感，可以处理不相关特征数据
+缺点：可能会出现Over Fittting
+适用数据类型：数值型和标称型
+
+&amp;em">
+<meta property="og:updated_time" content="2016-11-11T07:45:50.748Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jellyyoung's Blog">
-<meta name="twitter:description" content="Nothing but practice">
+<meta name="twitter:title" content="Machine Learning学习笔记：决策树与随机森林">
+<meta name="twitter:description" content="决策树(Decision Tree)&amp;emsp;&amp;emsp;决策树是一种基本的分类与回归算法，属于贪婪算法，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程&amp;emsp;&amp;emsp;决策树的特点：
+
+优点：计算复杂度不高，输出结果可直观理解数据，对中间值得缺失不敏感，可以处理不相关特征数据
+缺点：可能会出现Over Fittting
+适用数据类型：数值型和标称型
+
+&amp;em">
 
 
 
@@ -115,10 +134,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/page/2/"/>
+  <link rel="canonical" href="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html"/>
 
 
-  <title> Jellyyoung's Blog </title>
+  <title> Machine Learning学习笔记：决策树与随机森林 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -139,9 +158,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -257,9 +274,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -279,1057 +296,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/pandas学习笔记.html" itemprop="url">
-                  pandas学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-02T20:12:28+08:00" content="2016-11-02">
-              2016-11-02
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/pandas学习笔记.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="pandas学习笔记.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/pandas学习笔记.html" class="leancloud_visitors" data-flag-title="pandas学习笔记">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/pandas学习笔记.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Window下python的Xgboost框架安装教程.html" itemprop="url">
-                  Window下python的Xgboost框架安装教程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T19:43:42+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/原创/" itemprop="url" rel="index">
-                    <span itemprop="name">原创</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Window下python的Xgboost框架安装教程.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Window下python的Xgboost框架安装教程.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/Window下python的Xgboost框架安装教程.html" class="leancloud_visitors" data-flag-title="Window下python的Xgboost框架安装教程">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;<a href="http://xgboost.readthedocs.io/en/latest/">Xgboost</a>是<a href="http://homes.cs.washington.edu/~tqchen/">Tianqi Chen</a>大神实现的一个boost算法框架。在Kaggle比赛的很多题目中都大放异彩，Xgboost诞生之后获奖无数，是个值得强力推荐的机器学习实战框架。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Window下python的Xgboost框架安装教程.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Machine-Learning学习资源总结.html" itemprop="url">
-                  Machine Learning学习资源总结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T09:55:27+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习资源/" itemprop="url" rel="index">
-                    <span itemprop="name">学习资源</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Machine-Learning学习资源总结.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Machine-Learning学习资源总结.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/Machine-Learning学习资源总结.html" class="leancloud_visitors" data-flag-title="Machine Learning学习资源总结">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<p>&emsp;&emsp;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Machine-Learning学习笔记：特征工程.html" itemprop="url">
-                  Machine Learning学习笔记：特征工程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-10T16:48:47+08:00" content="2016-10-10">
-              2016-10-10
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Machine-Learning学习笔记：特征工程.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Machine-Learning学习笔记：特征工程.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/Machine-Learning学习笔记：特征工程.html" class="leancloud_visitors" data-flag-title="Machine Learning学习笔记：特征工程">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;<strong>特征工程（Feature Engineering）</strong>包括特征构建(<strong>Construction</strong>)、特征提取(<strong>Extraction</strong>)、特征选择(<strong>Selection</strong>)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Machine-Learning学习笔记：特征工程.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Machine-Learning学习笔记：判别模型与生成模型.html" itemprop="url">
-                  Machine Learning学习笔记：判别模型与生成模型
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-08T18:43:52+08:00" content="2016-10-08">
-              2016-10-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Machine-Learning学习笔记：判别模型与生成模型.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Machine-Learning学习笔记：判别模型与生成模型.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/Machine-Learning学习笔记：判别模型与生成模型.html" class="leancloud_visitors" data-flag-title="Machine Learning学习笔记：判别模型与生成模型">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文简单介绍了判别模型与生成模型的定义、优缺点以及相互之间的关系。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Machine-Learning学习笔记：判别模型与生成模型.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Java EE很全面的面试题（转自jackfrued）.html" itemprop="url">
-                  JavaEE很全面的面试题（转自jackfrued）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-08T16:06:29+08:00" content="2016-10-08">
-              2016-10-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/面试题/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Java EE很全面的面试题（转自jackfrued）.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Java EE很全面的面试题（转自jackfrued）.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/Java EE很全面的面试题（转自jackfrued）.html" class="leancloud_visitors" data-flag-title="JavaEE很全面的面试题（转自jackfrued）">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;Java面试题在google上能搜到很多，但是绝大部分博客或网站上的Java面试题都不全面。<strong>本博客非原创</strong>，博主果冻君作为一只<strong>搬运工</strong>，本博客<strong>汇总</strong>了CSDN博客上<a href="http://my.csdn.net/jackfrued">jackfrued</a>的Java面试题全集。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Java EE很全面的面试题（转自jackfrued）.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Java开发岗位面试题汇总.html" itemprop="url">
-                  Java开发岗位面试题汇总
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-08T14:16:00+08:00" content="2016-10-08">
-              2016-10-08
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/面试题/" itemprop="url" rel="index">
-                    <span itemprop="name">面试题</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/Java开发岗位面试题汇总.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Java开发岗位面试题汇总.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/Java开发岗位面试题汇总.html" class="leancloud_visitors" data-flag-title="Java开发岗位面试题汇总">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&nbsp;<br>&emsp;&emsp;Java面试题在google上能搜到很多，但是绝大部分博客或网站上的Java面试题都不全面。<strong>本博客非原创</strong>，博主果冻君作为一只<strong>搬运工</strong>，本博客<strong>汇总</strong>了网上能搜到的大部分Java面试题。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/Java开发岗位面试题汇总.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/数据结构与算法学习笔记：树和二叉树.html" itemprop="url">
-                  数据结构与算法学习笔记：树和二叉树
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T13:13:10+08:00" content="2016-10-03">
-              2016-10-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/数据结构与算法学习笔记：树和二叉树.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="数据结构与算法学习笔记：树和二叉树.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/数据结构与算法学习笔记：树和二叉树.html" class="leancloud_visitors" data-flag-title="数据结构与算法学习笔记：树和二叉树">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/数据结构与算法学习笔记：树和二叉树.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/Machine-Learning学习笔记：决策树与随机森林.html" itemprop="url">
-                  Machine Learning学习笔记：决策树与随机森林
-                </a>
+                Machine Learning学习笔记：决策树与随机森林
               
             
           </h1>
@@ -1404,9 +371,7 @@
       
 
       
-        
-          
-            <a id="more"></a>
+        <a id="more"></a>
 <h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>&emsp;&emsp;决策树是一种基本的分类与回归算法，属于<strong>贪婪算法</strong>，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程<br>&emsp;&emsp;决策树的特点：</p>
 <ul>
 <li><strong>优点</strong>：计算复杂度不高，输出结果可直观理解数据，对中间值得缺失不敏感，可以处理不相关特征数据</li>
@@ -1459,40 +424,101 @@
 </ol>
 <h3 id="scikit-learn中的Random-Forest算法"><a href="#scikit-learn中的Random-Forest算法" class="headerlink" title="scikit-learn中的Random Forest算法"></a>scikit-learn中的Random Forest算法</h3><p>参考代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sklearn.ensemble.RandomForestClassfier</div><div class="line">clf = RandomForestClassifier([parameters]) <span class="comment">#generator the entity object of classifier</span></div><div class="line">parameters:</div><div class="line">n_estimators：指定随机森林中树的数目，越多越好，不超过内存即可</div><div class="line">criterion:指定在分裂使用的决策算法，取值有“entropy”、“gini”等</div><div class="line">max_features:单个决策树使用特征的最大数量，取值为<span class="string">"Auto"</span>，<span class="string">"None"</span>，<span class="string">"sqrt"</span>，<span class="string">"0.X"</span>。回归问题，max_features=n_features,分类问题，max_features=sqrt(n_features),<span class="string">"sqrt"</span>即为全部特征数目的平均根</div><div class="line">max_depth:默认为<span class="keyword">None</span>，一般可不改动</div><div class="line">min_simples_split:</div><div class="line">min_samples_leaf:最小叶片大小。默认值为<span class="number">1</span>，可设置为<span class="number">50</span>。叶是决策树的末端节点，较小的叶子使模型更容易捕捉训练数据中的噪声。</div><div class="line">min_weight_fraction_leaf:</div><div class="line">max_leaf_nodes:</div><div class="line">min_impurity_split:</div><div class="line">bootstrap:</div><div class="line">oob_score:这是一个随机森林交叉验证方法，取值为boolean类型，<span class="string">"True"</span>,<span class="string">"False"</span></div><div class="line">n_jobs:指定并行训练时使用的进程数。“<span class="number">-1</span>”表示使用所有处理器</div><div class="line">random_state:经验值<span class="string">"random_state=50"</span></div><div class="line">verbose:</div><div class="line">warm_state:</div><div class="line">class_weight:</div></pre></td></tr></table></figure>
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>感谢果冻君，受益匪浅！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-qrd.png" alt="摇摇果冻 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-qcode.jpg" alt="摇摇果冻 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/数据结构与算法学习笔记：树和二叉树.html" rel="prev" title="数据结构与算法学习笔记：树和二叉树">
+                数据结构与算法学习笔记：树和二叉树 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="Machine-Learning学习笔记：决策树与随机森林.html"
+     data-title="Machine Learning学习笔记：决策树与随机森林"
+     data-content=""
+     data-url="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1500,6 +526,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="Machine-Learning学习笔记：决策树与随机森林.html"
+           data-title="Machine Learning学习笔记：决策树与随机森林" data-url="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1519,8 +553,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/don't-fear.jpg"
@@ -1632,6 +675,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-number">1.</span> <span class="nav-text">决策树(Decision Tree)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树模型"><span class="nav-number">1.1.</span> <span class="nav-text">决策树模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特征选择"><span class="nav-number">1.1.1.</span> <span class="nav-text">特征选择</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树生成算法"><span class="nav-number">1.2.</span> <span class="nav-text">决策树生成算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ID3算法"><span class="nav-number">1.2.1.</span> <span class="nav-text">ID3算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C4-5算法"><span class="nav-number">1.2.2.</span> <span class="nav-text">C4.5算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树的剪枝"><span class="nav-number">1.3.</span> <span class="nav-text">决策树的剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CART算法"><span class="nav-number">1.3.1.</span> <span class="nav-text">CART算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林算法"><span class="nav-number">2.</span> <span class="nav-text">随机森林算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bagging方法"><span class="nav-number">2.1.</span> <span class="nav-text">Bagging方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap抽样"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrap抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林算法的具体步骤："><span class="nav-number">2.3.</span> <span class="nav-text">随机森林算法的具体步骤：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scikit-learn中的Random-Forest算法"><span class="nav-number">2.4.</span> <span class="nav-text">scikit-learn中的Random Forest算法</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1751,6 +805,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
