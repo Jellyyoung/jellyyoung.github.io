@@ -303,8 +303,12 @@
 <li><a href="http://blog.csdn.net/column/details/why-bug.html" target="_blank" rel="external">CSDN专栏：Python爬虫入门教程</a></li>
 <li><a href="https://segmentfault.com/t/%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB/blogs?page=1" target="_blank" rel="external">Segmentfault专栏：网页爬虫</a></li>
 <li><a href="http://chenqx.github.io/2014/11/09/Scrapy-Tutorial-for-BBSSpider/" target="_blank" rel="external">Scrapy爬虫抓取网站数据</a></li>
-<li><a href="https://github.com/search?q=crawler&amp;ref=cmdform" target="_blank" rel="external">Github上开源的爬虫框架</a><h3 id="python爬虫实战"><a href="#python爬虫实战" class="headerlink" title="python爬虫实战"></a>python爬虫实战</h3></li>
-<li><a href="http://www.cnblogs.com/wanghzh/p/5824181.html" target="_blank" rel="external">战神王恒：用python爬虫框架Scrapy爬取心目中的女神</a><h3 id="爬虫书籍推荐"><a href="#爬虫书籍推荐" class="headerlink" title="爬虫书籍推荐"></a>爬虫书籍推荐</h3></li>
+<li><a href="https://github.com/search?q=crawler&amp;ref=cmdform" target="_blank" rel="external">Github上开源的爬虫框架</a></li>
+</ol>
+<h3 id="python爬虫实战"><a href="#python爬虫实战" class="headerlink" title="python爬虫实战"></a>python爬虫实战</h3><ol>
+<li><a href="http://www.cnblogs.com/wanghzh/p/5824181.html" target="_blank" rel="external">战神王恒：用python爬虫框架Scrapy爬取心目中的女神</a></li>
+</ol>
+<h3 id="爬虫书籍推荐"><a href="#爬虫书籍推荐" class="headerlink" title="爬虫书籍推荐"></a>爬虫书籍推荐</h3><ol>
 <li>《用python写网络爬虫》</li>
 <li>《Python网络数据采集》</li>
 <li>《干净的数据——数据清洗入门与实践》</li>
