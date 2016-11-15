@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,pandas," />
+  <meta name="keywords" content="机器学习,Machine Learning,数据集," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
+<meta name="description" content="&amp;emsp;&amp;emsp;本文翻译自Analytics Vidhya网站的一篇文章，17 Ultimate Data Science Projects To Boost Your Knowledge and Skills，有翻译不准的地方还请指正。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pandas学习笔记">
-<meta property="og:url" content="http://yaodong.ml/pandas学习笔记.html">
+<meta property="og:title" content="17个适合练手的数据科学项目数据集">
+<meta property="og:url" content="http://yaodong.ml/17个适合练手的数据科学项目数据集.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
-<meta property="og:updated_time" content="2016-11-11T07:47:29.648Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本文翻译自Analytics Vidhya网站的一篇文章，17 Ultimate Data Science Projects To Boost Your Knowledge and Skills，有翻译不准的地方还请指正。">
+<meta property="og:updated_time" content="2016-11-15T17:08:42.773Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pandas学习笔记">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
+<meta name="twitter:title" content="17个适合练手的数据科学项目数据集">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文翻译自Analytics Vidhya网站的一篇文章，17 Ultimate Data Science Projects To Boost Your Knowledge and Skills，有翻译不准的地方还请指正。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/pandas学习笔记.html"/>
+  <link rel="canonical" href="http://yaodong.ml/17个适合练手的数据科学项目数据集.html"/>
 
 
-  <title> pandas学习笔记 | Jellyyoung's Blog </title>
+  <title> 17个适合练手的数据科学项目数据集 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                pandas学习笔记
+                17个适合练手的数据科学项目数据集
               
             
           </h1>
@@ -290,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-02T20:12:28+08:00" content="2016-11-02">
-              2016-11-02
+            <time itemprop="dateCreated" datetime="2016-11-16T01:03:40+08:00" content="2016-11-16">
+              2016-11-16
             </time>
           </span>
 
@@ -304,8 +304,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/学习资源/" itemprop="url" rel="index">
+                    <span itemprop="name">学习资源</span>
                   </a>
                 </span>
 
@@ -320,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/pandas学习笔记.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="pandas学习笔记.html" itemprop="commentsCount"></span>
+                <a href="/17个适合练手的数据科学项目数据集.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="17个适合练手的数据科学项目数据集.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/pandas学习笔记.html" class="leancloud_visitors" data-flag-title="pandas学习笔记">
+             <span id="/17个适合练手的数据科学项目数据集.html" class="leancloud_visitors" data-flag-title="17个适合练手的数据科学项目数据集">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,18 +353,49 @@
       
 
       
-        <p>&emsp;&emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。<br><a id="more"></a><br>&emsp;&emsp;本博文主要是记录博主学习pandas的相关笔记，大部分学习内容来自于总结<a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html" target="_blank" rel="external">pandas documenation</a>和《利用Python进行数据分析》的pandas的相关章节。<br>&emsp;&emsp;pandas中的两个主要的数据结构是<strong>Series</strong>和<strong>DataFrame</strong>，对此不做过多的理论介绍，<strong>本博文侧重于记录如何使用pandas</strong>。</p>
-<h4 id="导入pandas、numpy、matplotlib包："><a href="#导入pandas、numpy、matplotlib包：" class="headerlink" title="导入pandas、numpy、matplotlib包："></a>导入pandas、numpy、matplotlib包：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> scipy <span class="keyword">as</span> sp</div><div class="line"><span class="keyword">import</span> matplot.pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
-<h4 id="创建Series"><a href="#创建Series" class="headerlink" title="创建Series"></a>创建<strong>Series</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s = pd.Series([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,np.nan,<span class="number">6</span>,<span class="number">8</span>])</div><div class="line">%<span class="comment">#Series具有index属性和values属性，索引从0开始。创建Series时也可指定index的类型</span></div><div class="line">obj = pd.Series([<span class="number">4</span>,<span class="number">-7</span>,<span class="number">5</span>,<span class="number">3</span>],index=[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>])</div><div class="line">%<span class="comment">#可通过索引值获取Series结构的值：</span></div><div class="line">series[index]</div></pre></td></tr></table></figure>
-<h4 id="根据字典创建DataFrame对象："><a href="#根据字典创建DataFrame对象：" class="headerlink" title="根据字典创建DataFrame对象："></a>根据字典创建<strong>DataFrame</strong>对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">df2 = pd.DataFrame(</div><div class="line">    &#123; <span class="string">'A'</span> : <span class="number">1.</span>,</div><div class="line">      <span class="string">'B'</span> : pd.Timestamp(<span class="string">'20130102'</span>),</div><div class="line">      <span class="string">'C'</span> : pd.Series(<span class="number">1</span>,index=list(range(<span class="number">4</span>)),dtype=<span class="string">'float32'</span>),</div><div class="line">      <span class="string">'D'</span> : np.array([<span class="number">3</span>] * <span class="number">4</span>,dtype=<span class="string">'int32'</span>),</div><div class="line">      <span class="string">'E'</span> : pd.Categorical([<span class="string">"test"</span>,<span class="string">"train"</span>,<span class="string">"test"</span>,<span class="string">"train"</span>]),</div><div class="line">      <span class="string">'F'</span> : <span class="string">'foo'</span></div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
-<h4 id="使用pandas创建时间日期戳对象："><a href="#使用pandas创建时间日期戳对象：" class="headerlink" title="使用pandas创建时间日期戳对象："></a>使用pandas创建时间日期戳对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">6</span>]: dates = pd.date_range(<span class="string">'20130101'</span>, periods=<span class="number">6</span>)</div><div class="line">In [<span class="number">7</span>]: dates</div><div class="line">Out[<span class="number">7</span>]: </div><div class="line">DatetimeIndex([<span class="string">'2013-01-01'</span>, <span class="string">'2013-01-02'</span>, <span class="string">'2013-01-03'</span>, <span class="string">'2013-01-04'</span>,</div><div class="line">               <span class="string">'2013-01-05'</span>, <span class="string">'2013-01-06'</span>],</div><div class="line">              dtype=<span class="string">'datetime64[ns]'</span>, freq=<span class="string">'D'</span>)</div><div class="line">In [<span class="number">8</span>]: df = pd.DataFrame(np.random.randn(<span class="number">6</span>,<span class="number">4</span>), index=dates, columns=list(<span class="string">'ABCD'</span>))</div><div class="line">In [<span class="number">9</span>]: df</div><div class="line">Out[<span class="number">9</span>]: </div><div class="line">                A         B         C         D</div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-01</span>  <span class="number">0.469112</span> <span class="number">-0.282863</span> <span class="number">-1.509059</span> <span class="number">-1.135632</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-02</span>  <span class="number">1.212112</span> <span class="number">-0.173215</span>  <span class="number">0.119209</span> <span class="number">-1.044236</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-03</span> <span class="number">-0.861849</span> <span class="number">-2.104569</span> <span class="number">-0.494929</span>  <span class="number">1.071804</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-04</span>  <span class="number">0.721555</span> <span class="number">-0.706771</span> <span class="number">-1.039575</span>  <span class="number">0.271860</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-05</span> <span class="number">-0.424972</span>  <span class="number">0.567020</span>  <span class="number">0.276232</span> <span class="number">-1.087401</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-06</span> <span class="number">-0.673690</span>  <span class="number">0.113648</span> <span class="number">-1.478427</span>  <span class="number">0.524988</span></div></pre></td></tr></table></figure>
-<h4 id="对DataFrame对象进行排序"><a href="#对DataFrame对象进行排序" class="headerlink" title="对DataFrame对象进行排序"></a>对DataFrame对象进行排序</h4><p>&emsp;&emsp;根据属性进行排序：<code>sort_index(axis=1,ascending=False)</code>函数<br>&emsp;&emsp;根据某个属性的值进行排序：<code>sort_values(by=&#39;column_name&#39;)</code>函数</p>
-<h4 id="获取DataFrame对象的指定行或列"><a href="#获取DataFrame对象的指定行或列" class="headerlink" title="获取DataFrame对象的指定行或列"></a>获取DataFrame对象的指定行或列</h4><p>&emsp;&emsp;df.loc()：根据元素的具体值获取DataFrame对象的行或列<br>&emsp;&emsp;df.iloc()：根据具体数字作为索引来获取DataFrame对象的行或列<br>&emsp;&emsp;df.at()：获取指定的元素<br>&emsp;&emsp;df.iat()：获取指定的元素</p>
-<h4 id="pandas处理缺失值"><a href="#pandas处理缺失值" class="headerlink" title="pandas处理缺失值"></a>pandas处理缺失值</h4><p>&emsp;&emsp;df.dropna(how=”any”)：删除DataFrame对象的缺失值<br>&emsp;&emsp;df.fillna(value=5)：用value的值来代替DataFrame对象的缺失值<br>&emsp;&emsp;pd.isnull(df)：判断DataFrame对象的各属性值是否为空</p>
-<h4 id="pandas合并、连结DataFrame对象"><a href="#pandas合并、连结DataFrame对象" class="headerlink" title="pandas合并、连结DataFrame对象"></a>pandas合并、连结DataFrame对象</h4><p>&emsp;&emsp;<strong>pd.concat([df1,df2],axis=0 or 1)</strong><br>&emsp;&emsp;<strong>pd.merge()</strong>：类SQL式合并DataFrame对象<br>&emsp;&emsp;<strong>df.append(series, ignore_index=True)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">77</span>]: left = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'lval'</span>: [<span class="number">1</span>, <span class="number">2</span>]&#125;)</div><div class="line">In [<span class="number">78</span>]: right = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'rval'</span>: [<span class="number">4</span>, <span class="number">5</span>]&#125;)</div><div class="line">In [<span class="number">79</span>]: left</div><div class="line">Out[<span class="number">79</span>]: </div><div class="line">               key  lval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">2</span></div><div class="line">In [<span class="number">80</span>]: right</div><div class="line">Out[<span class="number">80</span>]: </div><div class="line">               key  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">5</span></div><div class="line">In [<span class="number">81</span>]: pd.merge(left, right, on=<span class="string">'key'</span>)</div><div class="line">Out[<span class="number">81</span>]: </div><div class="line">               key  lval  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span>     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">1</span>     <span class="number">5</span></div><div class="line">            <span class="number">2</span>  foo     <span class="number">2</span>     <span class="number">4</span></div><div class="line">            <span class="number">3</span>  foo     <span class="number">2</span>     <span class="number">5</span></div></pre></td></tr></table></figure>
-<h4 id="pandas的DataFrame对象的相关属性"><a href="#pandas的DataFrame对象的相关属性" class="headerlink" title="pandas的DataFrame对象的相关属性"></a><strong>pandas的DataFrame对象的相关属性</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">df2.A                  df2.boxplot</div><div class="line">df2.abs                df2.C</div><div class="line">df2.add                df2.clip</div><div class="line">df2.add_prefix         df2.clip_lower</div><div class="line">df2.add_suffix         df2.clip_upper</div><div class="line">df2.align              df2.columns</div><div class="line">df2.all                df2.combine</div><div class="line">df2.any                df2.combineAdd</div><div class="line">df2.append             df2.combine_first</div><div class="line">df2.apply              df2.combineMult</div><div class="line">df2.applymap           df2.compound</div><div class="line">df2.as_blocks          df2.consolidate</div><div class="line">df2.asfreq             df2.convert_objects</div><div class="line">df2.as_matrix          df2.copy</div><div class="line">df2.astype             df2.corr</div><div class="line">df2.at                 df2.corrwith</div><div class="line">df2.at_time            df2.count</div><div class="line">df2.axes               df2.cov</div><div class="line">df2.B                  df2.cummax</div><div class="line">df2.between_time       df2.cummin</div><div class="line">df2.bfill              df2.cumprod</div><div class="line">df2.blocks             df2.cumsum</div><div class="line">df2.bool               df2.D</div></pre></td></tr></table></figure>
-<h4 id="pandas的相关函数："><a href="#pandas的相关函数：" class="headerlink" title="pandas的相关函数："></a>pandas的相关函数：</h4><p>&emsp;&emsp;<strong>pd.Tiimestamp()</strong>：把字符串转化为日期时间戳对象<br>&emsp;&emsp;<strong>np.array()</strong>：创建numpy的ndarray对象<br>&emsp;&emsp;<strong>df.dtypes</strong>：查看DataFrame对象的每个属性的数据类型<br>&emsp;&emsp;<strong>df.head()</strong>：查看DataFrame对象头部的若干条记录<br>&emsp;&emsp;<strong>df.tail()</strong>：查看DataFrame对象尾部的若干条记录<br>&emsp;&emsp;<strong>df.columns</strong>：获取DataFrame对象的属性名字<br>&emsp;&emsp;<strong>df.index</strong>：获取DataFrame对象的索引值<br>&emsp;&emsp;<strong>df.values</strong>：获取DataFrame对象属性值<br>&emsp;&emsp;<strong>df.describe()</strong>：获取DataFrame对象的相关信息<br>&emsp;&emsp;<strong>df.copy()</strong>：显性复制DataFrame对象<br>&emsp;&emsp;<strong>series.shift()</strong>：对Series对象的数据循环移动n位<br>&emsp;&emsp;<strong>df.apply(</strong>lambda function<strong>)</strong>：对DataFrame对象应用函数<br>&emsp;&emsp;<strong>series.value_counts()</strong>：统计Series对象的每个取值的频数<br>&emsp;&emsp;<strong>series.str.lower()</strong>：把字符转化为小写<br>&emsp;&emsp;<strong>df.groupby(column_name).sum()</strong>：以group的形式统计相关信息<br>&emsp;&emsp;stacked = df.stack()：<br>&emsp;&emsp;stacked.unstack()</p>
+        <p>&emsp;&emsp;本文翻译自Analytics Vidhya网站的一篇文章，<a href="https://www.analyticsvidhya.com/blog/2016/10/17-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/" target="_blank" rel="external">17 Ultimate Data Science Projects To Boost Your Knowledge and Skills</a>，有翻译不准的地方还请指正。<br><a id="more"></a><br>&emsp;&emsp;数据科学项目可以为你的机器学习生涯开辟一条康庄大道，通过它们你不仅可以提升实战经验，也可以让你的简历更加吸引人。相应的实战经验在找工作过程中会很加分，而大部分人缺少的就是这一点。<br>&emsp;&emsp;本博文列出来自不同领域、不同量级的数据集来满足机器学习实战的需求。<br>&emsp;&emsp;为了适应具有不同基础的读者的需求，本博文把数据集划分为三个等级：<br>&emsp;&emsp;<strong>初级</strong>：该级别的数据较好处理，不需要太过复杂的数据科学技术。只需要基本的回归或者分类算法就能处理，这些方法在网上也有足够多的免费教程。本文也将提供一些教程来帮助你起步。<br>&emsp;&emsp;<strong>中级</strong>：这个级别有一定挑战性，数据集的量相对较大，而且需要一些模式识别方面的技能。同样，特征工程也是必要技能之一。处理这些数据你可以使用所有现有的机器学习技术。<br>&emsp;&emsp;<strong>高级</strong>：这个级别适合那些对于神经网络、深度学习和推荐系统等已有了解的人们。集合中的特征往往是高维数据，处理它们可能需要一些富有创造性的方法和技巧。</p>
+<h3 id="数据集概览"><a href="#数据集概览" class="headerlink" title="数据集概览"></a>数据集概览</h3><h4 id="初级"><a href="#初级" class="headerlink" title="初级"></a>初级</h4><ul>
+<li>Iris Data</li>
+<li>Titanic Data</li>
+<li>Loan Prediction Data</li>
+<li>Bigmart Sales Data</li>
+<li>Boston Housing Data</li>
+</ul>
+<h4 id="中级"><a href="#中级" class="headerlink" title="中级"></a>中级</h4><ul>
+<li>Human Activity Recognition Data</li>
+<li>Black Friday Data</li>
+<li>Siam Competition Data</li>
+<li>Trip History Data</li>
+<li>Million Song Data</li>
+<li>Census Income Data</li>
+<li>Movie Lens Data</li>
+</ul>
+<h4 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h4><ul>
+<li>Identify your Digits</li>
+<li>Yelp Data</li>
+<li>ImageNet Data</li>
+<li>KDD Cup 1998</li>
+<li>Chicago Crime Data</li>
+</ul>
+<h3 id="初级水平数据集"><a href="#初级水平数据集" class="headerlink" title="初级水平数据集"></a>初级水平数据集</h3><h4 id="1-Iris-Data-Set（鸢尾花）"><a href="#1-Iris-Data-Set（鸢尾花）" class="headerlink" title="1. Iris Data Set（鸢尾花）"></a>1. Iris Data Set（鸢尾花）</h4><p>&emsp;&emsp;这可能是模式识别领域最入门的、资源最丰富的数据集。学习分类技术没有比iris数据集更简单的了。如果你刚刚开始接触数据科学，这就是你开始的地方。里面只包含了150行4列的数据。<br>&emsp;&emsp;<strong>问题</strong>: 根据已有的特征给花分类。<br>&emsp;&emsp;<a href="https://archive.ics.uci.edu/ml/datasets/Iris" target="_blank" rel="external">Iris数据集</a><br>&emsp;&emsp;<a href="http://www.slideshare.net/thoi_gian/iris-data-analysis-with-r" target="_blank" rel="external">教程</a></p>
+<h4 id="2-Titanic-Data-Set（泰坦尼克之灾）"><a href="#2-Titanic-Data-Set（泰坦尼克之灾）" class="headerlink" title="2. Titanic Data Set（泰坦尼克之灾）"></a>2. Titanic Data Set（泰坦尼克之灾）</h4><p>&emsp;&emsp;这是数据科学社群里另一个在全世界都被经常引用的数据集。在一些教程的指导下，这个项目应该可以给你足够的动力继续在数据科学领域深入下去。这个数据集有足够的空间去支持一些疯狂的想法！只要你合理的混合变量。这个数据集有891行12列。<br>&emsp;&emsp;<strong>问题</strong>：预测泰坦尼克上的乘客是否能存活。<br>&emsp;&emsp;<a href="https://www.kaggle.com/c/titanic" target="_blank" rel="external">Titanic数据集</a><br>&emsp;&emsp;<a href="http://trevorstephens.com/kaggle-titanic-tutorial/getting-started-with-r/" target="_blank" rel="external">教程</a></p>
+<h4 id="3-Loan-Prediction-Data-Set（借贷预测）"><a href="#3-Loan-Prediction-Data-Set（借贷预测）" class="headerlink" title="3. Loan Prediction Data Set（借贷预测）"></a>3. Loan Prediction Data Set（借贷预测）</h4><p>&emsp;&emsp;在所有的行业里，保险业是运用分析和数据科学最多的领域。这个数据集将会让你充分体验到处理保险公司的数据是什么感觉。包括有哪些挑战，有哪些策略被用到，哪些变量会影响到结果等等。这是一个分类问题。这个数据集包含615行13列。<br>&emsp;&emsp;<strong>问题</strong>: 预测一项贷款是否会被批准。<br>&emsp;&emsp;<a href="https://datahack.analyticsvidhya.com/contest/practice-problem-loan-prediction-iii/" target="_blank" rel="external">数据集</a><br>&emsp;&emsp;<a href="https://www.analyticsvidhya.com/blog/2016/01/complete-tutorial-learn-data-science-python-scratch-2/" target="_blank" rel="external">教程</a></p>
+<h4 id="4-Bigmart-Sales-Data-Set（超市销量）"><a href="#4-Bigmart-Sales-Data-Set（超市销量）" class="headerlink" title="4. Bigmart Sales Data Set（超市销量）"></a>4. Bigmart Sales Data Set（超市销量）</h4><p>&emsp;&emsp;零售业是另一个充分利用分析技术来优化商业流程的行业。一些像商品放置，库存管理，定制供应，商品捆绑的任务，我们可以用数据科学巧妙地处理。正如名字所说，里面包含了商店的交易数据。这是一个回归问题。数据包含8523行12列。<br>&emsp;&emsp;<strong>问题</strong>: 预测销售。<br>&emsp;&emsp;<a href="https://datahack.analyticsvidhya.com/contest/practice-problem-big-mart-sales-iii/" target="_blank" rel="external">数据集</a><br>&emsp;&emsp;<a href="https://www.analyticsvidhya.com/blog/2016/02/bigmart-sales-solution-top-20/" target="_blank" rel="external">教程</a></p>
+<h4 id="5-Boston-Housing-Data-Set（波士顿房价）"><a href="#5-Boston-Housing-Data-Set（波士顿房价）" class="headerlink" title="5. Boston Housing Data Set（波士顿房价）"></a>5. Boston Housing Data Set（波士顿房价）</h4><p>&emsp;&emsp;该数据集也是模式识别文献中的典型数据集，该数据集得名是因为波士顿的房地产行业，同时它也是一个回归问题。该数据集共有14列8506行。<br>典型问题：预测房屋售价的中间值。<br>&emsp;&emsp;<strong>问题</strong>: 预测业主拥有的房屋的中位数。<br>&emsp;&emsp;<a href="http://archive.ics.uci.edu/ml/datasets/Housing" target="_blank" rel="external">数据集</a><br>&emsp;&emsp;<a href="https://www.analyticsvidhya.com/blog/2015/11/started-machine-learning-ms-excel-xl-miner/" target="_blank" rel="external">教程</a></p>
+<h3 id="中级水平数据集"><a href="#中级水平数据集" class="headerlink" title="中级水平数据集"></a>中级水平数据集</h3><h4 id="1-Human-Activity-Recognition（人类活动预测）"><a href="#1-Human-Activity-Recognition（人类活动预测）" class="headerlink" title="1. Human Activity Recognition（人类活动预测）"></a>1. Human Activity Recognition（人类活动预测）</h4><p>&emsp;&emsp;这项数据集是由装备了嵌入式惯性传感器的智能手机采集的30个人体实验对象记录所构成。许多机器学习课程用这个数据集作为学生的练习项目。这是一个多元分类问题。数据集包含10299行561列。<br>&emsp;&emsp;<strong>问题</strong>: 预测人类的活动范畴。<br>&emsp;&emsp;<a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" target="_blank" rel="external">数据集</a></p>
+<h4 id="2-Black-Friday-Data-Set（黑色星期五）"><a href="#2-Black-Friday-Data-Set（黑色星期五）" class="headerlink" title="2. Black Friday Data Set（黑色星期五）"></a>2. Black Friday Data Set（黑色星期五）</h4><p>&emsp;&emsp;这是一家零售企业的交易数据，可以锻炼你在特征工程方面的技能，同时分析他也需要你对消费行为的理解。适用于做回归分析。数据集包含550069行12列。<br>&emsp;&emsp;问题: 预测消费金额。<br>&emsp;&emsp;<a href="https://datahack.analyticsvidhya.com/contest/black-friday/" target="_blank" rel="external">数据集</a></p>
+<h4 id="3-Text-Mining-Data-Set（文本挖掘）"><a href="#3-Text-Mining-Data-Set（文本挖掘）" class="headerlink" title="3. Text Mining Data Set（文本挖掘）"></a>3. Text Mining Data Set（文本挖掘）</h4><p>&emsp;&emsp;这个数据集源自2007年的暹罗大赛。该数据集包含航空公司飞行数据中关于航空安全问题的报告，属于多标记分类的高维问题。数据集包含有30438列21519行。<br>&emsp;&emsp;<strong>问题</strong>: 根据标签给文档分类。<br>&emsp;&emsp;<a href="http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multilabel.html#siam-competition2007" target="_blank" rel="external">数据集</a><br>&emsp;&emsp;<a href="https://catalog.data.gov/dataset/siam-2007-text-mining-competition-dataset/resource/794f14ae-8135-41d2-88c8-86bf8fad9cf6/proxy" target="_blank" rel="external">教程</a></p>
+<h4 id="4-Trip-History-Data-Set（旅行历史）"><a href="#4-Trip-History-Data-Set（旅行历史）" class="headerlink" title="4. Trip History Data Set（旅行历史）"></a>4. Trip History Data Set（旅行历史）</h4><p>&emsp;&emsp;这个数据集来自美国的一个自行车分享服务。本数据集能帮助你你练习专业的数据清理技能。数据集提供了从2014第四季度以来的数据。每一个文件都有7列。<br>&emsp;&emsp;<strong>问题</strong>: 预测用户的类别。<br>&emsp;&emsp;<a href="https://www.capitalbikeshare.com/trip-history-data" target="_blank" rel="external">数据集</a></p>
+<h4 id="5-Million-Song-Data-Set（音乐数据）"><a href="#5-Million-Song-Data-Set（音乐数据）" class="headerlink" title="5. Million Song Data Set（音乐数据）"></a>5. Million Song Data Set（音乐数据）</h4><p>&emsp;&emsp;该数据集是一个回归问题。它包括515345个样本，每个样本有90个变量。不过，这还只是百万首歌曲数据库中的一个小子集。<br>&emsp;&emsp;<strong>问题</strong>：预测歌曲的最佳发布时间<br>&emsp;&emsp;<a href="http://archive.ics.uci.edu/ml/datasets/YearPredictionMSD" target="_blank" rel="external">数据集</a></p>
+<h4 id="6-Census-Income-Data-Set"><a href="#6-Census-Income-Data-Set" class="headerlink" title="6. Census Income Data Set"></a>6. Census Income Data Set</h4><p>&emsp;&emsp;这是一个经典的一个非平衡分类机器学习问题。机器学习现在正被广泛的应用于解决非平衡问题，例如癌症检测，诈骗检测等等。这个数据集包含了48842行14列。作为指导，你可以参考<a href="https://www.analyticsvidhya.com/blog/2016/09/this-machine-learning-project-on-imbalanced-data-can-add-value-to-your-resume/" target="_blank" rel="external">非平衡数据项目</a>。<br>&emsp;&emsp;<strong>问题</strong>: 预测美国人口的收入等级。<br>&emsp;&emsp;<a href="http://archive.ics.uci.edu/ml/machine-learning-databases/census-income-mld/" target="_blank" rel="external">数据集</a></p>
+<h4 id="7-Movie-Lens-Data-Set-（电影推荐）"><a href="#7-Movie-Lens-Data-Set-（电影推荐）" class="headerlink" title="7. Movie Lens Data Set （电影推荐）"></a>7. Movie Lens Data Set （电影推荐）</h4><p>&emsp;&emsp;这个数据集让你建立一个推荐系统。这是数据科学领域最受欢迎的数据集之一。具有不同维度的版本。这里我选择了一个数据量相对较小的版本，包括了6000用户对4000部电影的1百万条评分记录。<br>&emsp;&emsp;<strong>问题</strong>: 给用户推荐新电影。<br>&emsp;&emsp;<a href="http://grouplens.org/datasets/movielens/1m/" target="_blank" rel="external">数据集</a></p>
+<h3 id="高级水平数据集"><a href="#高级水平数据集" class="headerlink" title="高级水平数据集"></a>高级水平数据集</h3><h4 id="1-Identify-your-Digits-Data-Set"><a href="#1-Identify-your-Digits-Data-Set" class="headerlink" title="1. Identify your Digits Data Set"></a>1. Identify your Digits Data Set</h4><p>&emsp;&emsp;这个数据集让你学习，分析和识别图像里的元素。这正是你的相机如何检测你的脸部的，利用图像识别。现在到你建立并测试这个技术了。这是一个图像识别问题。这个数据集包含7000张28×28大小的图片，一共31MB。<br>&emsp;&emsp;<strong>问题</strong>: 识别照片中的元素。<br>&emsp;&emsp;<a href="https://datahack.analyticsvidhya.com/contest/practice-problem-identify-the-digits/" target="_blank" rel="external">数据集</a></p>
+<h4 id="2-Yelp-Data-Set（Yelp数据集）"><a href="#2-Yelp-Data-Set（Yelp数据集）" class="headerlink" title="2. Yelp Data Set（Yelp数据集）"></a>2. Yelp Data Set（Yelp数据集）</h4><p>&emsp;&emsp;这个数据集是Yelp数据挑战赛第8轮的问题之一。它包含了将近200000个图像，存储在大小接近2GB的3个json文件中。这些图像包括4个国家10个城市的本土商业信息，你将要使用季节分析、文化分析、文本挖掘、社会图挖掘等技术来处理这个数据集。<br>&emsp;&emsp;<strong>问题</strong>: 从图中挖掘信息<br>&emsp;&emsp;<a href="https://www.yelp.com/dataset_challenge" target="_blank" rel="external">数据集</a></p>
+<h4 id="3-Image-Net-Data-Set（ImageNet数据集）"><a href="#3-Image-Net-Data-Set（ImageNet数据集）" class="headerlink" title="3. Image Net Data Set（ImageNet数据集）"></a>3. Image Net Data Set（ImageNet数据集）</h4><p>&emsp;&emsp;这个数据集可以用来做对象识别，定位，分类和屏幕解析等问题。所有图像都可以免费得到。你可以搜索任一种类的图像来做项目。目前，这个图像引擎有14197122个不同尺寸的图像，总计140GB。<br>&emsp;&emsp;<strong>问题</strong>: 取决于你下载的图像类型<br>&emsp;&emsp;<a href="http://image-net.org/download-imageurls" target="_blank" rel="external">数据集</a></p>
+<h4 id="4-KDD-1999-Data-Set"><a href="#4-KDD-1999-Data-Set" class="headerlink" title="4. KDD 1999 Data Set"></a>4. KDD 1999 Data Set</h4><p>&emsp;&emsp;是KDD让这个世界知道了还有数据挖掘比赛。这个数据集是一个分类问题。有400万行和48列，大约1.2GB。<br>&emsp;&emsp;<strong>问题</strong>: 给网络入侵检测器分好坏。<br>&emsp;&emsp;<a href="https://archive.ics.uci.edu/ml/datasets/KDD+Cup+1999+Data" target="_blank" rel="external">数据集</a></p>
+<h4 id="5-Chicago-Crime-Data-Set"><a href="#5-Chicago-Crime-Data-Set" class="headerlink" title="5. Chicago Crime Data Set"></a>5. Chicago Crime Data Set</h4><p>&emsp;&emsp;数据科学家都要求具备处理大数据集的能力，各种企业也倾向于处理大规模数据。这个数据集会给你提供足够多的帮助让你在自己机器上处理大数据积累经验。问题很简单，但是数据管理才是关键。这个数据集有6M的数据，是一个多元分类问题。<br>&emsp;&emsp;<strong>问题</strong>:预测犯罪类型。<br>&emsp;&emsp;<a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2" target="_blank" rel="external">数据集</a>，点击 Export -&gt; CSV，下载数据。</p>
+<hr>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>&emsp;&emsp;请不要致力于完成所有的项目，你应当根据自己的需求挑选所属领域、数据量大小都最适合你的数据集。你如果你是个机器学习的新手，就不要拿高级的数据集练手，毕竟贪多嚼不烂，还是一步步踏踏实实地来。<br>&emsp;&emsp;一旦你完成了2-3个项目，请立即修改你的CV并把相应文件上传到你的github（非常重要），现在很多招聘者通过github来挑选员工。</p>
 
       
     </div>
@@ -408,9 +439,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag">#python</a>
+            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
           
-            <a href="/tags/pandas/" rel="tag">#pandas</a>
+            <a href="/tags/Machine-Learning/" rel="tag">#Machine Learning</a>
+          
+            <a href="/tags/数据集/" rel="tag">#数据集</a>
           
         </div>
       
@@ -419,17 +452,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Window下python的Xgboost框架安装教程.html" rel="next" title="Window下python的Xgboost框架安装教程">
-                <i class="fa fa-chevron-left"></i> Window下python的Xgboost框架安装教程
+              <a href="/算法设计思想之分支界限.html" rel="next" title="算法设计思想之分支界限">
+                <i class="fa fa-chevron-left"></i> 算法设计思想之分支界限
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/MySQL学习笔记.html" rel="prev" title="MySQL学习笔记">
-                MySQL学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -444,10 +473,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="pandas学习笔记.html"
-     data-title="pandas学习笔记"
+        <div class="ds-share flat" data-thread-key="17个适合练手的数据科学项目数据集.html"
+     data-title="17个适合练手的数据科学项目数据集"
      data-content=""
-     data-url="http://yaodong.ml/pandas学习笔记.html">
+     data-url="http://yaodong.ml/17个适合练手的数据科学项目数据集.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -474,8 +503,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="pandas学习笔记.html"
-           data-title="pandas学习笔记" data-url="http://yaodong.ml/pandas学习笔记.html">
+      <div class="ds-thread" data-thread-key="17个适合练手的数据科学项目数据集.html"
+           data-title="17个适合练手的数据科学项目数据集" data-url="http://yaodong.ml/17个适合练手的数据科学项目数据集.html">
       </div>
     
   </div>
@@ -628,7 +657,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入pandas、numpy、matplotlib包："><span class="nav-number">1.</span> <span class="nav-text">导入pandas、numpy、matplotlib包：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Series"><span class="nav-number">2.</span> <span class="nav-text">创建Series</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据字典创建DataFrame对象："><span class="nav-number">3.</span> <span class="nav-text">根据字典创建DataFrame对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用pandas创建时间日期戳对象："><span class="nav-number">4.</span> <span class="nav-text">使用pandas创建时间日期戳对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对DataFrame对象进行排序"><span class="nav-number">5.</span> <span class="nav-text">对DataFrame对象进行排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取DataFrame对象的指定行或列"><span class="nav-number">6.</span> <span class="nav-text">获取DataFrame对象的指定行或列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas处理缺失值"><span class="nav-number">7.</span> <span class="nav-text">pandas处理缺失值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas合并、连结DataFrame对象"><span class="nav-number">8.</span> <span class="nav-text">pandas合并、连结DataFrame对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的DataFrame对象的相关属性"><span class="nav-number">9.</span> <span class="nav-text">pandas的DataFrame对象的相关属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的相关函数："><span class="nav-number">10.</span> <span class="nav-text">pandas的相关函数：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集概览"><span class="nav-number">1.</span> <span class="nav-text">数据集概览</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初级"><span class="nav-number">1.1.</span> <span class="nav-text">初级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中级"><span class="nav-number">1.2.</span> <span class="nav-text">中级</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级"><span class="nav-number">1.3.</span> <span class="nav-text">高级</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初级水平数据集"><span class="nav-number">2.</span> <span class="nav-text">初级水平数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Iris-Data-Set（鸢尾花）"><span class="nav-number">2.1.</span> <span class="nav-text">1. Iris Data Set（鸢尾花）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Titanic-Data-Set（泰坦尼克之灾）"><span class="nav-number">2.2.</span> <span class="nav-text">2. Titanic Data Set（泰坦尼克之灾）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Loan-Prediction-Data-Set（借贷预测）"><span class="nav-number">2.3.</span> <span class="nav-text">3. Loan Prediction Data Set（借贷预测）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Bigmart-Sales-Data-Set（超市销量）"><span class="nav-number">2.4.</span> <span class="nav-text">4. Bigmart Sales Data Set（超市销量）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Boston-Housing-Data-Set（波士顿房价）"><span class="nav-number">2.5.</span> <span class="nav-text">5. Boston Housing Data Set（波士顿房价）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中级水平数据集"><span class="nav-number">3.</span> <span class="nav-text">中级水平数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Human-Activity-Recognition（人类活动预测）"><span class="nav-number">3.1.</span> <span class="nav-text">1. Human Activity Recognition（人类活动预测）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Black-Friday-Data-Set（黑色星期五）"><span class="nav-number">3.2.</span> <span class="nav-text">2. Black Friday Data Set（黑色星期五）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Text-Mining-Data-Set（文本挖掘）"><span class="nav-number">3.3.</span> <span class="nav-text">3. Text Mining Data Set（文本挖掘）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Trip-History-Data-Set（旅行历史）"><span class="nav-number">3.4.</span> <span class="nav-text">4. Trip History Data Set（旅行历史）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Million-Song-Data-Set（音乐数据）"><span class="nav-number">3.5.</span> <span class="nav-text">5. Million Song Data Set（音乐数据）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Census-Income-Data-Set"><span class="nav-number">3.6.</span> <span class="nav-text">6. Census Income Data Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Movie-Lens-Data-Set-（电影推荐）"><span class="nav-number">3.7.</span> <span class="nav-text">7. Movie Lens Data Set （电影推荐）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级水平数据集"><span class="nav-number">4.</span> <span class="nav-text">高级水平数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Identify-your-Digits-Data-Set"><span class="nav-number">4.1.</span> <span class="nav-text">1. Identify your Digits Data Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Yelp-Data-Set（Yelp数据集）"><span class="nav-number">4.2.</span> <span class="nav-text">2. Yelp Data Set（Yelp数据集）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Image-Net-Data-Set（ImageNet数据集）"><span class="nav-number">4.3.</span> <span class="nav-text">3. Image Net Data Set（ImageNet数据集）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-KDD-1999-Data-Set"><span class="nav-number">4.4.</span> <span class="nav-text">4. KDD 1999 Data Set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Chicago-Crime-Data-Set"><span class="nav-number">4.5.</span> <span class="nav-text">5. Chicago Crime Data Set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
           </div>
         </section>
