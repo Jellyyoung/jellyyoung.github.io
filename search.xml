@@ -782,8 +782,9 @@
 </ol>
 <ul>
 <li>Apache Spark 2.0.1 ML/MLlib (最新稳定版）</li>
-<li>Google TensorFlow 0.11 （最新稳定版）​<h3 id="关于公开课的下载"><a href="#关于公开课的下载" class="headerlink" title="关于公开课的下载"></a>关于公开课的下载</h3>&emsp;&emsp;edX在每个课程视频下面提供了下载链接，注册课程后学习的时候可以看到。Coursera官方推荐的公开课批量下载工具：<a href="https://github.com/jplehmann/coursera" target="_blank" rel="external">Coursera Downloader</a>，Python开源工具包 — This script makes it easier to batch download lecture resources (e.g., videos, ppt, etc) for Coursera classes。另外，<a href="http://weibo.com/royguo1988" target="_blank" rel="external">郭宽Oct</a>写的下载脚本 <a href="https://github.com/royguo/CourseraDownloader" target="_blank" rel="external">CourseraDownloader</a>，简单、方便、好用</li>
+<li>Google TensorFlow 0.11 （最新稳定版）​</li>
 </ul>
+<h3 id="关于公开课的下载"><a href="#关于公开课的下载" class="headerlink" title="关于公开课的下载"></a>关于公开课的下载</h3><p>&emsp;&emsp;edX在每个课程视频下面提供了下载链接，注册课程后学习的时候可以看到。Coursera官方推荐的公开课批量下载工具：<a href="https://github.com/jplehmann/coursera" target="_blank" rel="external">Coursera Downloader</a>，Python开源工具包 — This script makes it easier to batch download lecture resources (e.g., videos, ppt, etc) for Coursera classes。另外，<a href="http://weibo.com/royguo1988" target="_blank" rel="external">郭宽Oct</a>写的下载脚本 <a href="https://github.com/royguo/CourseraDownloader" target="_blank" rel="external">CourseraDownloader</a>，简单、方便、好用</p>
 ]]></content>
     </entry>
     
