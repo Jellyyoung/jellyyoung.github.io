@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yaodong.ml/算法设计思想之回溯算法.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
-<meta property="og:updated_time" content="2016-11-15T08:16:01.706Z">
+<meta property="og:updated_time" content="2016-11-15T08:21:30.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法设计思想之回溯算法">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
@@ -371,16 +371,18 @@
 <li>针对所给问题，定义问题的解空间</li>
 <li>确定易于搜索的解空间结构</li>
 <li>构造约束函数和限界函数，避免冗余的无效搜索</li>
-<li>以深度优先遍历（<strong>DFS</strong>）搜索解空间树，并在搜索过程中用剪枝函数避免无效搜索<h3 id="回溯算法的适用情形"><a href="#回溯算法的适用情形" class="headerlink" title="回溯算法的适用情形"></a>回溯算法的适用情形</h3></li>
+<li>以深度优先遍历（<strong>DFS</strong>）搜索解空间树，并在搜索过程中用剪枝函数避免无效搜索</li>
 </ul>
-<ol>
+<h3 id="回溯算法的适用情形"><a href="#回溯算法的适用情形" class="headerlink" title="回溯算法的适用情形"></a>回溯算法的适用情形</h3><ol>
 <li>给定的问题有很多组解，要求寻找问题的解集或者寻找满足某些约束条件的最佳解时，可以考虑使用回溯法</li>
 <li>回溯算法虽然属于暴力求解范畴，但是回溯思想能避免很多不必要的穷举式搜索。因此回溯算法适用于求解一些组合数很大的问题</li>
 <li>回溯算法的终止条件要注意以下两种情况：</li>
 </ol>
 <ul>
 <li>回溯算法用于求问题的所有解时，要回溯到解状态树的根结点，且根结点的所有子树都已被搜索遍才结束</li>
-<li>回溯算法用于求问题的任一解时，只要搜索到问题的一个解就可以结束<h3 id="回溯算法的应用"><a href="#回溯算法的应用" class="headerlink" title="回溯算法的应用"></a>回溯算法的应用</h3></li>
+<li>回溯算法用于求问题的任一解时，只要搜索到问题的一个解就可以结束</li>
+</ul>
+<h3 id="回溯算法的应用"><a href="#回溯算法的应用" class="headerlink" title="回溯算法的应用"></a>回溯算法的应用</h3><ul>
 <li>八皇后问题</li>
 </ul>
 

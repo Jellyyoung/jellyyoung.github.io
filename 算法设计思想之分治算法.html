@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://yaodong.ml/算法设计思想之分治算法.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
-<meta property="og:updated_time" content="2016-11-15T08:10:36.009Z">
+<meta property="og:updated_time" content="2016-11-15T08:23:37.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法设计思想之分治算法">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
@@ -372,7 +372,9 @@
 <li>原问题可分解成若干个规模较小、与原问题性质相同的子问题，即原问题具有<strong>最优子结构</strong>性质，这条特性反映了递归思想</li>
 <li>原复杂问题分解得到的子问题相互之间是独立的，即<strong>子问题之间不包含公共的问题</strong></li>
 <li>子问题的解可以合并为原复杂问题的解</li>
-<li>算法求解过程中至少含有两个递归调用，也就是说，只进行一次递归调用的不属于分治算法范畴<h3 id="分治算法与动态规划算法的区别"><a href="#分治算法与动态规划算法的区别" class="headerlink" title="分治算法与动态规划算法的区别"></a>分治算法与动态规划算法的区别</h3></li>
+<li>算法求解过程中至少含有两个递归调用，也就是说，只进行一次递归调用的不属于分治算法范畴</li>
+</ol>
+<h3 id="分治算法与动态规划算法的区别"><a href="#分治算法与动态规划算法的区别" class="headerlink" title="分治算法与动态规划算法的区别"></a>分治算法与动态规划算法的区别</h3><ol>
 <li>分治法与动态规划都要求原问题具有最有子结构，都是将问题分解成若干个规模较小的子问题</li>
 <li>动态规划是将原问题分解为多个相同性质的子问题，这些子问题相互之间有联系，有重叠。分治法将分解后的子问题看成是相互独立的。</li>
 <li>动态规划通过迭代法自底向上求解，通过子问题的求解进而寻找原问题的最优解。而分治法是利用递归对各个子问题独立求解，最后将各子问题的解进行合并形成原问题的解。</li>
