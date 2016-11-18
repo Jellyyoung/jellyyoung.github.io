@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yaodong.ml/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
+    
+    <lastmod>2016-11-18T08:47:15.754Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
+    
+    <lastmod>2016-11-18T05:58:53.388Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</loc>
     
-    <lastmod>2016-11-18T03:02:30.264Z</lastmod>
+    <lastmod>2016-11-18T03:05:10.006Z</lastmod>
     
   </url>
   
@@ -19,20 +33,6 @@
     <loc>http://yaodong.ml/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</loc>
     
     <lastmod>2016-11-15T10:36:59.794Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
-    
-    <lastmod>2016-11-15T10:34:45.201Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</loc>
-    
-    <lastmod>2016-11-15T10:29:35.312Z</lastmod>
     
   </url>
   

@@ -337,26 +337,6 @@
       <title><![CDATA[python爬虫学习资源汇总]]></title>
       <url>http://yaodong.ml/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;最近想参加数据类的比赛，暂时没有时间学爬虫。本博文整理了爬虫的相关学习资源，以后有时间了再学爬虫。欢迎交流。<br><a id="more"></a><br>&emsp;&emsp;<strong>爬虫</strong>就是自动抓取目标网站上的全部或部分资源。目前用于爬虫的编程语言也较多，本人擅长python和java，因此本博文涉及的学习资源大多是<strong>java</strong>和<strong>python</strong>相关的。本文会不定时更新。</p>
-<h3 id="知乎上关于爬虫的问题"><a href="#知乎上关于爬虫的问题" class="headerlink" title="知乎上关于爬虫的问题"></a>知乎上关于爬虫的问题</h3><ol>
-<li><a href="https://www.zhihu.com/question/20899988" target="_blank" rel="external">如何入门 Python 爬虫 - 知乎？</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/21479334?refer=passer" target="_blank" rel="external">如何学习Python爬虫(入门篇)？</a>，比较推荐这个，系统地整理了爬虫入门学习资源</li>
-<li><a href="https://www.zhihu.com/question/47883186" target="_blank" rel="external">零基础如何学爬虫技术？ - 知乎</a></li>
-<li><a href="https://www.zhihu.com/question/27621722" target="_blank" rel="external">利用爬虫技术能做到哪些很酷很有趣很有用的事情？ - 知乎</a></li>
-<li><a href="https://www.zhihu.com/question/35461941" target="_blank" rel="external">Python 爬虫进阶？ - 知乎</a></li>
-<li><a href="https://www.zhihu.com/topic/19794679/hot" target="_blank" rel="external">网页爬虫 - 知乎专栏</a></li>
-</ol>
-<h3 id="爬虫相关的学习教程、博客"><a href="#爬虫相关的学习教程、博客" class="headerlink" title="爬虫相关的学习教程、博客"></a>爬虫相关的学习教程、博客</h3><ol>
-<li><a href="http://www.lining0806.com/category/spider/" target="_blank" rel="external">宁哥的小站：网络爬虫</a></li>
-<li><a href="http://cuiqingcai.com/1052.html" target="_blank" rel="external">python爬虫学习系列教程|静觅</a></li>
-<li><a href="http://cuiqingcai.com/" target="_blank" rel="external">静觅博客</a></li>
-<li><a href="http://blog.csdn.net/column/details/why-bug.html" target="_blank" rel="external">CSDN专栏：Python爬虫入门教程</a></li>
-<li><a href="https://segmentfault.com/t/%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB/blogs?page=1" target="_blank" rel="external">Segmentfault专栏：网页爬虫</a></li>
-<li><a href="http://chenqx.github.io/2014/11/09/Scrapy-Tutorial-for-BBSSpider/" target="_blank" rel="external">Scrapy爬虫抓取网站数据</a></li>
-<li><a href="https://github.com/search?q=crawler&amp;ref=cmdform" target="_blank" rel="external">Github上开源的爬虫框架</a></li>
-</ol>
-<h3 id="python爬虫实战"><a href="#python爬虫实战" class="headerlink" title="python爬虫实战"></a>python爬虫实战</h3><ol>
-<li><a href="http://www.cnblogs.com/wanghzh/p/5824181.html" target="_blank" rel="external">战神王恒：用python爬虫框架Scrapy爬取心目中的女神</a></li>
-</ol>
 <h3 id="爬虫书籍推荐"><a href="#爬虫书籍推荐" class="headerlink" title="爬虫书籍推荐"></a>爬虫书籍推荐</h3><ol>
 <li>《用python写网络爬虫》</li>
 <li>《Python网络数据采集》</li>
@@ -776,6 +756,7 @@
 </ol>
 <ul>
 <li>链接点<a href="https://zh.coursera.org/specializations/machine-learning" target="_blank" rel="external">这里</a></li>
+<li>机器学习基石的<a href="https://www.douban.com/doulist/3440234/" target="_blank" rel="external">听课笔记</a></li>
 </ul>
 <ol>
 <li><strong>机器学习技法（by 林轩田）</strong>【Coursera】</li>
@@ -787,7 +768,11 @@
 <ol>
 <li><strong>CS231n: Convolutional Neural Networks for Visual Recognition</strong></li>
 <li><strong>CS224d：Deep Learning and Natual Language Processing</strong></li>
+<li><strong>卡耐基梅隆大学 - 统计机器学习公开课</strong></li>
 </ol>
+<ul>
+<li><a href="http://www.stat.cmu.edu/~larry/=sml/" target="_blank" rel="external">官网链接</a></li>
+</ul>
 <hr>
 <h3 id="Machine-Learning-amp-Deep-Learning教程"><a href="#Machine-Learning-amp-Deep-Learning教程" class="headerlink" title="Machine Learning&amp;Deep Learning教程"></a>Machine Learning&amp;Deep Learning教程</h3><ol>
 <li><a href="http://deeplearning.net/tutorial/contents.html" target="_blank" rel="external">Deep Learning Documentation 0.1</a></li>
@@ -797,8 +782,10 @@
 <li><a href="http://keras-cn.readthedocs.io/en/latest/" target="_blank" rel="external">Keras中文文档</a></li>
 <li>CSDN博客的专栏：<a href="http://blog.csdn.net/column/details/dl-computer-vision.html" target="_blank" rel="external">深度学习与计算机视觉系列</a></li>
 <li><a href="http://my.csdn.net/yaoqiang2011" target="_blank" rel="external">寒小阳</a>的CSDN博客：<a href="http://blog.csdn.net/column/details/machine-learning-dm.html" target="_blank" rel="external">机器学习系列</a></li>
+<li><a href="http://blog.jasonding.top/" target="_blank" rel="external">Jason’s TechBlog</a>的<a href="http://blog.jasonding.top/2018/01/01/MLStick/" target="_blank" rel="external">机器学习系列学习笔记</a></li>
 <li><a href="http://my.csdn.net/longxinchen_ml" target="_blank" rel="external">龙心尘</a>的CSDN博客：<a href="http://blog.csdn.net/longxinchen_ml/article/category/6256967" target="_blank" rel="external">深度学习与自然语言处理</a></li>
 <li><a href="http://blog.csdn.net/abcjennifer/article/category/1173803" target="_blank" rel="external">Rachel-Zhang</a>的CSDN博客</li>
+<li>Dark_Scope的CSDN博客：<a href="http://blog.csdn.net/Dark_Scope/article/category/1277457/3" target="_blank" rel="external">机器学习笔记</a></li>
 <li>周志华的<strong>《机器学习》</strong></li>
 <li>Ian Goodfellow and Yoshua Bengio的<strong>《Deep Learning》</strong></li>
 <li>知乎上的CS231n课程笔记翻译系列，点<a href="https://zhuanlan.zhihu.com/p/20870307?refer=intelligentunit" target="_blank" rel="external">这里</a></li>
