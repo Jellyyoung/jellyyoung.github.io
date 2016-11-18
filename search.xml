@@ -1465,7 +1465,7 @@
     <entry>
       <title><![CDATA[Machine Learning学习笔记：决策树与随机森林]]></title>
       <url>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</url>
-      <content type="html"><![CDATA[<a id="more"></a>
+      <content type="html"><![CDATA[<p>&emsp;&emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。<br><a id="more"></a></p>
 <h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>&emsp;&emsp;决策树是一种基本的分类与回归算法，属于<strong>贪婪算法</strong>，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程<br>&emsp;&emsp;决策树的特点：</p>
 <ul>
 <li><strong>优点</strong>：计算复杂度不高，输出结果可直观理解数据，对中间值得缺失不敏感，可以处理不相关特征数据</li>
