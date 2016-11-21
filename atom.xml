@@ -377,7 +377,7 @@
     <link href="http://yaodong.ml/2016%E6%A0%A1%E6%8B%9B%EF%BC%9A%E7%99%BE%E5%BA%A6%E3%80%81360%E3%80%81%E7%BE%8E%E5%9B%A2%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B2%97%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86%E3%80%90%E8%BD%AC%E8%87%AA%E7%89%9B%E5%AE%A2%E3%80%91.html"/>
     <id>http://yaodong.ml/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html</id>
     <published>2016-11-12T07:28:05.000Z</published>
-    <updated>2016-11-12T07:29:25.261Z</updated>
+    <updated>2016-11-21T15:39:02.869Z</updated>
     
     <content type="html"><![CDATA[<p>&emsp;&emsp;本文转自<a href="https://www.nowcoder.com/" target="_blank" rel="external">牛客网</a>的<a href="https://www.nowcoder.com/discuss?type=2" target="_blank" rel="external">笔经面经</a>板块，原文作者为stupidjoey，<a href="https://www.nowcoder.com/discuss/3243" target="_blank" rel="external">原文链接</a>。<br><a id="more"></a><br>&emsp;&emsp;今天下午在教室自习，顺便还投了一些公司，准备笔试面试，突然接到百度hr的电话，顺利拿到offer。期间，我有点屌丝地反复问她这个offer是确定的吧，不会被取消吧，因为前几天看到百度缩招的消息，哈哈，hr跟我确定这个offer不会变，就等着签三方了。lz是硕士，属于计算机相关专业，无实习经历。<br>&emsp;&emsp;关于机器学习岗的面经比较少，本着回报牛客网的目的，决定写写面经。</p>
 <hr>
@@ -402,7 +402,9 @@
 <h4 id="如何准备机器学习面试？"><a href="#如何准备机器学习面试？" class="headerlink" title="如何准备机器学习面试？"></a>如何准备机器学习面试？</h4><p>&emsp;&emsp;就我面过的公司来说，机器学习方面的问题完全是与你自己以及面试官自身的水平有关的，如果你很牛，面试官也很牛，你们可能会讨论到很高大上的算法上去，但一般来说，李航的那本书应该是够了。<br>&emsp;&emsp;关于大数据处理的问题要好好准备一下，我记得july好像有篇博客专门讲这个，有大概10种工具处理大数据问题，你可以挨个轮番用。<br>&emsp;&emsp;数据结构和算法是一定要好好准备的<br>&emsp;&emsp;笔试题，机器学习岗位，我知道BAT、美团、蘑菇街等很多有针对算法岗单独的题，但还是要编程，还是要考基础知识，所以都要好好准备才行，不要像我到处挂笔试。。</p>
 <hr>
 <p>&emsp;&emsp;美团可能挂了，我准备签百度了，不过部门貌似很边缘，看来还是和自己的能力挂钩的。。。其实我一直觉得能拿到offer挺幸运的，从8月份开始找工作到现在，我一共就面了3次<br>360内推，笔试很差，内推的师兄叫hr把我加到面试名单，我才有了面试机会，2轮技术面+1轮hr面在一个下午搞定，技术面面得不好，hr让回去等消息，然后就没有消息了。<br>&emsp;&emsp;百度，百度笔试做的很差，但好像笔试不怎么刷人，所以抓住机会，一直撑到三面<br>&emsp;&emsp;美团，每个参加美团笔试的人都说题简单，而且写代码还支持python，这个要赞！ 当天下午4点吃了个面包，从5点开始，一直撑到晚上快8点，挺完3面。<br>其他公司都挂在笔试。。。。。。。。。<br>&emsp;&emsp;我讲这个，是想说，在找工作的过程中，一定要挺住，挂笔试挂面试不可怕，可怕的是你放弃自己，我在10月1号之前做了很多公司的笔试，次次都挂，但我都是洗个澡，换条内裤，第二天继续到教室自习。整个找工作过程中，我从来不刷朋友圈，别人到处吃喝玩乐跟我无关，不想受到别人的打扰。<br>&emsp;&emsp;今天在朋友圈发了个状态，写道：拿到offer是因为运气，心里高兴是因为付出。<br>&emsp;&emsp;感谢牛客网以及牛客的QQ群在我找工作的时候一直陪伴我，说实话，找不到工作的时候看到群里有一大群人也找不到，心里还是挺开心的，觉得自己也没那么差，嘿嘿，但我真 心 祝愿每一个人都能拿到自己心仪的offer。<br>&emsp;&emsp;O(∩_∩)O谢谢～</p>
-<div align="right"><font size="5">2015.10.23</font></div>]]></content>
+<div align="right"><font size="5">2015.10.23</font></div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=35447858&auto=1&height=66"></iframe>]]></content>
     
     <summary type="html">
     
@@ -504,7 +506,7 @@
     <link href="http://yaodong.ml/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html"/>
     <id>http://yaodong.ml/python爬虫学习资源汇总.html</id>
     <published>2016-11-03T07:37:38.000Z</published>
-    <updated>2016-11-18T08:47:15.754Z</updated>
+    <updated>2016-11-18T08:51:41.275Z</updated>
     
     <content type="html"><![CDATA[<p>&emsp;&emsp;最近想参加数据类的比赛，暂时没有时间学爬虫。本博文整理了爬虫的相关学习资源，以后有时间了再学爬虫。欢迎交流。<br><a id="more"></a><br>&emsp;&emsp;<strong>爬虫</strong>就是自动抓取目标网站上的全部或部分资源。目前用于爬虫的编程语言也较多，本人擅长python和java，因此本博文涉及的学习资源大多是<strong>java</strong>和<strong>python</strong>相关的。本文会不定时更新。</p>
 <h3 id="爬虫书籍推荐"><a href="#爬虫书籍推荐" class="headerlink" title="爬虫书籍推荐"></a>爬虫书籍推荐</h3><ol>
@@ -953,9 +955,9 @@
       <category term="原创" scheme="http://yaodong.ml/categories/%E5%8E%9F%E5%88%9B/"/>
     
     
-      <category term="python" scheme="http://yaodong.ml/tags/python/"/>
-    
       <category term="Xgboost" scheme="http://yaodong.ml/tags/Xgboost/"/>
+    
+      <category term="python" scheme="http://yaodong.ml/tags/python/"/>
     
   </entry>
   
