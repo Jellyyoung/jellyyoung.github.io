@@ -4,6 +4,69 @@
   
     
     <entry>
+      <title><![CDATA[Ubuntu安装软件过程记录]]></title>
+      <url>http://yaodong.ml/Ubuntu%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95.html</url>
+      <content type="html"><![CDATA[<p>&emsp;&emsp;本文记录Ubuntu系统的软件安装历程。<br><a id="more"></a></p>
+<p>&emsp;&emsp;电脑型号：美版 Y50-70<br>&emsp;&emsp;是否双系统：是<br>&emsp;&emsp;WIndow系统版本：Windows 8.1专业版64位<br>&emsp;&emsp;Linux系统版本：Ubuntu 16.04 LTS 64位</p>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>&emsp;&emsp;Git是分布式版本控制系统，程序员必备。</p>
+<ol>
+<li>检查系统是否安装git：在命令行窗口输入<code>git</code>，如果系统提示<code>The Program &#39;git&#39; is currently not installed.</code>，则说明系统没有安装<code>git</code>。</li>
+<li><p>安装Git：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后，检查是否安装成功</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git --version</div></pre></td></tr></table></figure>
+</li>
+<li><p>成功安装<code>Git</code>后，配置用户名和Email。配置完成后，在用户文件夹下会自动生成<code>.gitconfig</code>文件。若要查看<code>Git</code>的全局配置信息，在控制台输入<code>git config -l</code>即可。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"YourName"</span></div><div class="line">git config --global user.email <span class="string">"username@email.com"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>创建用于验证的公钥。<code>Git</code>通过SSH的方式访问远程资源库，因此需要在本地创建验证公钥。创建公钥成功后，在<code>~/.ssh/</code>目录下会生成<code>id_rsa.pub</code>文件。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -C <span class="string">'username@email.com'</span> -t rsa</div><div class="line">ssh -v git@github.com</div></pre></td></tr></table></figure>
+</li>
+<li><p>上传公钥。在Github主界面点击右上角的<code>Account Settings</code>，选择<code>SSH Public Keys</code> ，选中<code>添加</code>，Title推荐以电脑用户名命名，Key的内容拷贝自<code>~/.ssh/id_rsa.pub</code>中的内容。上传公钥完成后，使用<code>ssh -v git@github.com</code>进行测试。</p>
+</li>
+</ol>
+<h3 id="安装Adobe-Flash-Player"><a href="#安装Adobe-Flash-Player" class="headerlink" title="安装Adobe Flash Player"></a>安装Adobe Flash Player</h3><p>&emsp;&emsp;Ubuntu系统自带Firefox浏览器，但是打开视频网站时提示需要安装flash插件。使用下列指令安装flash插件后，要重启Firefox浏览器才能生效。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install flashplugin-installer</div></pre></td></tr></table></figure></p>
+<h3 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks"></a>安装Shadowsocks</h3><p>&emsp;&emsp;shadowsocks的客户端使用<code>shadowsocks-qt5</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure></p>
+<h3 id="安装Sublime-Text"><a href="#安装Sublime-Text" class="headerlink" title="安装Sublime Text"></a>安装Sublime Text</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/sublime-text-3 <span class="comment"># 添加sublime text 3的仓库</span></div><div class="line">sudo apt-get update <span class="comment"># 更新软件库</span></div><div class="line">sudo apt-get install sublime-text-installer <span class="comment"># 安装Sublime Text 3</span></div></pre></td></tr></table></figure>
+<h3 id="安装Xgboost"><a href="#安装Xgboost" class="headerlink" title="安装Xgboost"></a>安装Xgboost</h3><p>&emsp;&emsp;Xgbsoost不再过多介绍，可参考<a href="https://github.com/dmlc/xgboost" target="_blank" rel="external">Github库</a>和<a href="https://xgboost.readthedocs.io/en/latest/" target="_blank" rel="external">官方文档</a>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Github</div><div class="line">git <span class="built_in">clone</span> --recursive https://github.com/dmlc/xgboost</div><div class="line"><span class="built_in">cd</span> ./xgboost</div><div class="line">make -j4 <span class="comment"># 或者只使用make亦可</span></div><div class="line"><span class="built_in">cd</span> xgboost/python-package/</div><div class="line">python setup.py install <span class="comment"># 不能使用sudo</span></div></pre></td></tr></table></figure></p>
+<h3 id="安装网易云音乐"><a href="#安装网易云音乐" class="headerlink" title="安装网易云音乐"></a>安装网易云音乐</h3><p>&emsp;&emsp;去<a href="http://music.163.com/#/download" target="_blank" rel="external">官网</a>下载<code>NetEaseMusic.deb</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Download/</div><div class="line">sudo dpkg -i netease_music.deb</div><div class="line">sudo apt-get <span class="_">-f</span> install</div><div class="line">sudo dpkg -i netease_music.deb</div></pre></td></tr></table></figure></p>
+<h3 id="安装wps-office"><a href="#安装wps-office" class="headerlink" title="安装wps office"></a>安装wps office</h3><p>&emsp;&emsp;下载<code>wps_office.deb</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Download/</div><div class="line">sudo dpkg -i wps_office.deb</div><div class="line">sudo apt-get <span class="_">-f</span> install</div><div class="line">sudo dpkg -i wps_office.deb</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;安装完成后，提示“系统确实字体：Wingdings、Wingdings 2、Wingdings 3、…”。解决办法：下载缺失字体，解压到<code>/home/username/.fonts</code>和<code>/root/.fonts</code>目录下，重启程序即可。</p>
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><ol>
+<li>当前用户下的环境变量：<code>/home/username/.bashrc</code></li>
+<li><code>root</code>用户的环境变量位置：<code>/root/.bashrc</code></li>
+<li>每次修改环境变量配置后，都要使用<code>source /home/username/.bashrc</code>或<code>/root/.bashrc</code>指令更新环境变量</li>
+</ol>
+<h3 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h3><ol>
+<li>下载源文件<code>jdk-8uxx-linux-x64.tar.gz</code></li>
+<li><p>找到源文件位置，将<code>jdk</code>解压到指定文件夹下</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf jdk-8uxx-linux-x64.tar.gz /opt/java</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量。当前用户下的环境变量文件位置为<code>/home/username/.bashrc</code>， <code>root</code>用户的环境变量文件位置为<code>/root/.bashrc</code></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> JAVA_HOME=/opt/java/jdk1.8.0_xx</div><div class="line"><span class="built_in">export</span> JRE_HOME=/opt/java/jdk_1.8.0_xx/jre</div><div class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$CLASSPATH</span>:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JRE_HOME</span>/lib</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新环境变量</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /home/username/.bashrc</div><div class="line"><span class="built_in">source</span> /root/.bashrc</div></pre></td></tr></table></figure>
+</li>
+<li><p>检查Java是否安装成功，</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java --version</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="安装Scala"><a href="#安装Scala" class="headerlink" title="安装Scala"></a>安装Scala</h3><p>&emsp;&emsp;Ubuntu系统安装<code>Scala</code>的过程与安装<code>Java</code>的过程相似，可参考前文的<code>Java</code>安装教程。</p>
+<h3 id="安装Eclipse"><a href="#安装Eclipse" class="headerlink" title="安装Eclipse"></a>安装Eclipse</h3><ol>
+<li>Eclipse官网<a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">地址</a>，下载<code>eclipse-java-mars-linux-gtk-x86_64.tar.gz</code></li>
+<li><p>将源文件解压到指定文件夹下</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/</div><div class="line">sudo tar -zxvf eclipse-java-mars-linux-gtk-x86_64.tar.gz /opt/</div></pre></td></tr></table></figure>
+</li>
+<li><p>要想在控制台下直接启动Eclipse，则将Eclipse启动脚本的目录加入到环境变量文件<code>.bashrc</code>即可。</p>
+</li>
+</ol>
+<h3 id="安装Matlab"><a href="#安装Matlab" class="headerlink" title="安装Matlab"></a>安装Matlab</h3><p>&emsp;&emsp;为防止出错，应在<code>root</code>用户下安装，本安装教程假设用户打开matlab安装界面后可以自主安装，关于Matlab的激活本教程不做赘述。获取Linux版的Matlab镜像：<code>Matlab-R2015a-linux-x64.iso</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo mount -o loop /home/username/Software/Matlab-R2015a-linux-x64.iso /nmt/</div><div class="line"><span class="built_in">cd</span> /mnt/matlab</div><div class="line">sudo ./install</div><div class="line">sudo umount /mnt/matlab</div></pre></td></tr></table></figure>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[17个适合练手的数据科学项目数据集]]></title>
       <url>http://yaodong.ml/17%E4%B8%AA%E9%80%82%E5%90%88%E7%BB%83%E6%89%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E9%9B%86.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本文翻译自Analytics Vidhya网站的一篇文章，<a href="https://www.analyticsvidhya.com/blog/2016/10/17-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/" target="_blank" rel="external">17 Ultimate Data Science Projects To Boost Your Knowledge and Skills</a>，有翻译不准的地方还请指正。<br><a id="more"></a><br>&emsp;&emsp;数据科学项目可以为你的机器学习生涯开辟一条康庄大道，通过它们你不仅可以提升实战经验，也可以让你的简历更加吸引人。相应的实战经验在找工作过程中会很加分，而大部分人缺少的就是这一点。<br>&emsp;&emsp;本博文列出来自不同领域、不同量级的数据集来满足机器学习实战的需求。<br>&emsp;&emsp;为了适应具有不同基础的读者的需求，本博文把数据集划分为三个等级：<br>&emsp;&emsp;<strong>初级</strong>：该级别的数据较好处理，不需要太过复杂的数据科学技术。只需要基本的回归或者分类算法就能处理，这些方法在网上也有足够多的免费教程。本文也将提供一些教程来帮助你起步。<br>&emsp;&emsp;<strong>中级</strong>：这个级别有一定挑战性，数据集的量相对较大，而且需要一些模式识别方面的技能。同样，特征工程也是必要技能之一。处理这些数据你可以使用所有现有的机器学习技术。<br>&emsp;&emsp;<strong>高级</strong>：这个级别适合那些对于神经网络、深度学习和推荐系统等已有了解的人们。集合中的特征往往是高维数据，处理它们可能需要一些富有创造性的方法和技巧。</p>
@@ -454,9 +517,9 @@
 <li>创建一个使用gbk字符集的mydb2数据库：<br>  <code>CREATE DATABASE mydb2 CHARACTER SET gbk;</code></li>
 <li>创建一个使用gbk字符集，并带校对规则的mydb3数据库：<br><code>CREATE DATABASE mydb3 CHARACTER SET gbk COLLATE gbk_chinese_ci;</code></li>
 <li>删除数据库mydb3：<code>DROP DATABASE mydb3;</code></li>
-<li>查看服务器中的数据库，并把mydb2的字符集修改为utf8：<br><code>ALTER DATABASE mydb2 CHARACTER SET utf8;</code><h3 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h3></li>
+<li>查看服务器中的数据库，并把mydb2的字符集修改为utf8：<br><code>ALTER DATABASE mydb2 CHARACTER SET utf8;</code></li>
 </ul>
-<ol>
+<h3 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h3><ol>
 <li>整数类型：<ul>
 <li>标准类型：<strong>INT</strong>，<strong>SMALLINT</strong></li>
 <li>扩展类型：<strong>TINYIINT</strong>，<strong>MEDIUMINT</strong>，<strong>BIGINT</strong></li>
