@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="算法,算法设计," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。">
+<meta name="description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于贪心算法设计思想的学习总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Machine Learning学习笔记：决策树与随机森林">
-<meta property="og:url" content="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html">
+<meta property="og:title" content="算法设计思想之贪心算法">
+<meta property="og:url" content="http://yaodong.ml/article/算法设计思想之贪心算法.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。">
-<meta property="og:updated_time" content="2016-11-18T03:05:10.006Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于贪心算法设计思想的学习总结。">
+<meta property="og:updated_time" content="2016-11-15T08:17:32.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Machine Learning学习笔记：决策树与随机森林">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。">
+<meta name="twitter:title" content="算法设计思想之贪心算法">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于贪心算法设计思想的学习总结。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html"/>
+  <link rel="canonical" href="http://yaodong.ml/article/算法设计思想之贪心算法.html"/>
 
 
-  <title> Machine Learning学习笔记：决策树与随机森林 | Jellyyoung's Blog </title>
+  <title> 算法设计思想之贪心算法 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                Machine Learning学习笔记：决策树与随机森林
+                算法设计思想之贪心算法
               
             
           </h1>
@@ -290,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-03T12:54:14+08:00" content="2016-10-03">
-              2016-10-03
+            <time itemprop="dateCreated" datetime="2016-11-15T16:11:25+08:00" content="2016-11-15">
+              2016-11-15
             </time>
           </span>
 
@@ -320,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/Machine-Learning学习笔记：决策树与随机森林.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="Machine-Learning学习笔记：决策树与随机森林.html" itemprop="commentsCount"></span>
+                <a href="/article/算法设计思想之贪心算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="article/算法设计思想之贪心算法.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/Machine-Learning学习笔记：决策树与随机森林.html" class="leancloud_visitors" data-flag-title="Machine Learning学习笔记：决策树与随机森林">
+             <span id="/article/算法设计思想之贪心算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之贪心算法">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,59 +353,39 @@
       
 
       
-        <p>&emsp;&emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。<br><a id="more"></a></p>
-<h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>&emsp;&emsp;决策树是一种基本的分类与回归算法，属于<strong>贪婪算法</strong>，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程<br>&emsp;&emsp;决策树的特点：</p>
-<ul>
-<li><strong>优点</strong>：计算复杂度不高，输出结果可直观理解数据，对中间值得缺失不敏感，可以处理不相关特征数据</li>
-<li><strong>缺点</strong>：可能会出现Over Fittting</li>
-<li>适用数据类型：数值型和标称型</li>
-</ul>
-<p>&emsp;&emsp;决策树的路径及其对应的<code>if-then</code>重要性质：路径之间是互斥且完备的。也就是说，每一个实例都被决策树的一条路径覆盖，且只能被一条路径或者一条规则覆盖。这里的覆盖是指实例的特征与路径上的特征或实例满足规则的条件</p>
-<h3 id="决策树模型"><a href="#决策树模型" class="headerlink" title="决策树模型"></a>决策树模型</h3><p>&emsp;&emsp;决策树模型学习过程可分为3个步骤：<strong>特征选择</strong>，<strong>决策树的生成</strong>，<strong>决策树的修剪</strong></p>
-<h4 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h4><p>&emsp;&emsp;构建决策树，实质是对训练数据集进行超平面划分，不同的样本特征在划分数据集时重要性不同，因此选择特征顺序的不同将会生成不同的决策树。为使数据集的分类结果更纯净，更能直观表达数据的本质属性，构造决策树之前先评估不同特征的重要性。</p>
-<h3 id="决策树生成算法"><a href="#决策树生成算法" class="headerlink" title="决策树生成算法"></a>决策树生成算法</h3><p>&emsp;&emsp;<strong>ID3</strong>与<strong>C4.5</strong>都是决策树的经典分类决策树算法。<strong>ID3</strong>算法与<strong>C4.5</strong>算法的不同之处在于ID3算法采用信息增益作为特征选择准则，而C4.5采用的是信息增益比作为准则</p>
-<h4 id="ID3算法"><a href="#ID3算法" class="headerlink" title="ID3算法"></a>ID3算法</h4><p>&emsp;&emsp;<strong>ID3</strong>算法的核心是在决策树的各个节点上应用信息增益准则选择特征，递归地构建决策树。<br>&emsp;&emsp;<strong>ID3</strong>算法的实质是用最大似然法进行概率模型的选择。算法思路为：</p>
-<ul>
-<li>从根节点开始，对结点计算所有可能的特征的信息增益，选择信息增益最大的特征作为结点的特征，由该特征的不同取值建立子节点</li>
-<li>再对子结点递归调用以上方法，构建决策树。直到所有特征的信息增益均很小或没有特征可以选择为止。</li>
-</ul>
-<h4 id="C4-5算法"><a href="#C4-5算法" class="headerlink" title="C4.5算法"></a>C4.5算法</h4><p>&emsp;&emsp;<strong>ID3</strong>算法由于只有树的生成，所以该算法生成的树容易产生过拟合。<strong>C4.5</strong>算法对<strong>ID3</strong>算法进行了改进，选用信息增益比作为特征选择准则。</p>
-<h3 id="决策树的剪枝"><a href="#决策树的剪枝" class="headerlink" title="决策树的剪枝"></a>决策树的剪枝</h3><p>&emsp;&emsp;用决策树生成算法递归产生决策树，容易出现过拟合，原因在于决策树的生成过程过多考虑如何提高对训练数据的正确分类，从而构建的决策树趋于复杂<br>&emsp;&emsp;在决策树学习中，将已生成的树进行简化的过程称为剪枝，具体来说就是剪掉一些子树或叶子结点，并将其根节点或父结点作为新的叶子结点，进而简化决策树模型<br>&emsp;&emsp;决策树的剪枝通过极小化决策树整体的损失函数（代价函数）来实现，即<script type="math/tex">C_\alpha(T)=C(T)+\alpha|T|</script></p>
-<h4 id="CART算法"><a href="#CART算法" class="headerlink" title="CART算法"></a>CART算法</h4><p>&emsp;&emsp;<strong>CART</strong>算法是一种既可以用于分类也可用作回归的决策树算法。<strong>CART</strong>算法分为以下两步：</p>
+        <p>&emsp;&emsp;本博文记录了博主关于贪心算法设计思想的学习总结。<br><a id="more"></a></p>
+<blockquote>
+<p><strong>贪心算法（greedy algorithm）</strong>，又称<strong>贪婪算法</strong>，在每一步都选择当前状态下能达到最好或最优的策略，从而希望算法结束时的结果就是全局最优的算法。换句话说，贪心算法不考虑全局只考虑局部最优，基于当前状态做出局部最优选择。</p>
+</blockquote>
+<h3 id="贪心算法的基本步骤"><a href="#贪心算法的基本步骤" class="headerlink" title="贪心算法的基本步骤"></a>贪心算法的基本步骤</h3><p>&emsp;&emsp;贪心算法把原问题可分解为多个子问题，然后贪心算法以迭代的方式作出每一步的贪心选择策略，每作一次贪心选择就将原复杂问题化简为规模更小的子问题。一直迭代求解子问题的局部最优解，最终子问题的最优解能递推到原复杂问题的最优解。<br>&emsp;&emsp;<strong>贪心算法求解问题的步骤</strong>：</p>
 <ol>
-<li>决策树生成：基于训练数据集生成决策树，生成的决策树要尽量大</li>
-<li>决策树剪枝：用验证数据集对已生成的树进行剪枝并选择最优子树，此过程中，用损失函数最小化作为剪枝的标准</li>
+<li>对问题进行分析，确定原问题的最优子结构</li>
+<li>针对分解后的各子问题，设计递归求解算法</li>
+<li>证明原问题总是有一个最优解是贪心选择得到的，即证明贪心选择是安全的</li>
+<li>证明剩余的子问题的最优解结合贪心选择策略，可以得到原问题的最优解</li>
+<li>设计出一个实现贪心策略的递归算法，并将递归算法转换成迭代算法</li>
 </ol>
-<hr>
-<h2 id="随机森林算法"><a href="#随机森林算法" class="headerlink" title="随机森林算法"></a>随机森林算法</h2><h3 id="Bagging方法"><a href="#Bagging方法" class="headerlink" title="Bagging方法"></a>Bagging方法</h3><p>&emsp;&emsp;Bagging方法就是将所有training data放进一个“黑色”的bag中，然后从这个bag中随机抽取部分数据生成新的训练集。随机森林算法中，样本训练集本省可以使用bagging方法，同样，样本的feature也可以进行bagging。从随机性来看，bagging技术可以有效的减小方差，即减小过拟合程度<br>&emsp;&emsp;随机森林是一种经典而强大的机器学习算法，具有回归和分类的功能。随机森林算法由若干决策树组成，这些决策树一般采用随机的方法生成，因此也叫做随机决策树。随机森林算法中的各决策树之间是没有关联的。</p>
-<p>&emsp;&emsp;随机森林算法的<strong>特点</strong>：</p>
-<ul>
-<li>适合用于多分类问题，算法训练和预测速度快，容易实现并行化</li>
-<li>可有效估计缺失数据，即有一定程度的数据容错能力，当数据集中有大比例的数据缺失时仍然可以保持精度不变和能够有效地处理大的数据集</li>
-<li>不会出现过拟合</li>
-<li>能够处理很高维度（feature很多）的数据，并且不用做特征选择</li>
-<li>对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
-<li>可检测样本的各特征（维度）之间的相互影响程度，判断特征对所解决问题的重要性程度</li>
-<li>可直接处理大规模的的变量（群）</li>
-<li>在创建森林即分类的过程中，对泛化误差的估计是内部无偏估计</li>
-<li>随机森林算法也是一种数据降维的方法，用于处理缺失值、异常值</li>
+<p>&emsp;&emsp;贪心算法通常用于求解一些最优化问题。 贪心算法并不总能求得问题的整体最优解，但是由于贪心法的高效性以及其所求得的答案通常很接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。</p>
+<h3 id="贪心算法的适用情形"><a href="#贪心算法的适用情形" class="headerlink" title="贪心算法的适用情形"></a>贪心算法的适用情形</h3><ol>
+<li>给定的问题是否能使用贪心算法策略求解，首先要确定该问题是否具有<strong>贪心选择性质</strong>。贪心选择性质是指一系列子问题的局部最优策略可以导致产生全局最优解。给定问题的整体最优解可以通过这些子问题的局部最优解得到。这也是贪心算法与动态规划算法的主要区别</li>
+<li>给定问题是否具有贪心选择性质，需要证明子问题每一步进行的贪心选择最终导致问题的整体最优解。</li>
+<li>一个问题的最优解包含其子问题的最优解，或者局部最优解能决定全局最优解，则称此问题具有<strong>最优子结构性质</strong>。贪心算法可用于求解具有最优子结构性质的问题。<br>因此当问题具有最优子结构性质时，可以考虑使用贪心算法。</li>
+<li>贪心算法中，每一步的贪心选择可以依赖于以往的选择策略，但决不依赖于未来子问题的选择，也不依赖于将来子问题的解。简单来说，<strong>Greedy Algorithm</strong>选择的贪心策略必须具备无后效性，即将来子问题的选择策略不会影响先前子问题的求解。所以对所采用的贪心策略一定要仔细分析其是否满足<strong>无后效性</strong>。</li>
+</ol>
+<h3 id="贪心算法与动态规划算法的区别"><a href="#贪心算法与动态规划算法的区别" class="headerlink" title="贪心算法与动态规划算法的区别"></a>贪心算法与动态规划算法的区别</h3><ol>
+<li>动态规划算法通常以自底向上的方式迭代求解各子问题，而贪心算法则通常以自顶向下的方式对问题进行求解。</li>
+<li>在动态规划算法中，原问题每步所作的选择往往依赖于相关子问题的解。只有在求解相关子问题之后，原问题才能作出在当前状态的选择。而在贪心算法中，仅在当前状态下作出最好选择，即局部最优解，然后再求解相应的子问题。</li>
+<li>贪心算法与动态规划的不同在于它每对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。</li>
+</ol>
+<h3 id="贪心算法的应用"><a href="#贪心算法的应用" class="headerlink" title="贪心算法的应用"></a>贪心算法的应用</h3><ul>
+<li><code>Dijkstra</code>算法</li>
+<li><code>Prim</code>算法</li>
+<li><code>Kruskal</code>算法</li>
+<li><code>Huffman</code>编码</li>
+<li>磁盘文件的存储算法</li>
+<li>生产调度问题</li>
 </ul>
-<h3 id="Bootstrap抽样"><a href="#Bootstrap抽样" class="headerlink" title="Bootstrap抽样"></a>Bootstrap抽样</h3><p>&emsp;&emsp;随机森林算法中包含了对输入数据的重复自抽样过程，即所谓的bootstrap抽样。大约三分之一的数据集将用于测试而不是模型的训练，这样的数据被称为out of bag samples。</p>
-<p>&emsp;&emsp;bootstrap抽样与bagging的区别是：在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。<br>&emsp;&emsp;综上可知，随机森林算法的的两个随机采样的过程保证了随机性，所以即使对最终的各决策树不剪枝，也不会出现over-fitting。</p>
-<h3 id="随机森林算法的具体步骤："><a href="#随机森林算法的具体步骤：" class="headerlink" title="随机森林算法的具体步骤："></a>随机森林算法的具体步骤：</h3><ol>
-<li>通过自助法（bootstrap）重采样技术，从原始训练样本集中有放回地重复随机抽取N个样本生成新的训练样本集合</li>
-<li>对随机采样得到的新训练数据集，构建决策树，在每个节点执行以下操作：</li>
-</ol>
-<ul>
-<li>从样本数据的M个features中随机选取m($m&lt;&lt;M$)个feature</li>
-<li>对这m个features，选择特定的度量准则分割节点</li>
-<li>重复上述操作N次，从而生成与样本数量相等的决策树</li>
-</ul>
-<ol>
-<li>对于每一个测试样例，对k颗决策树的预测结果进行投票。票数最多的结果就是随机森林的分裂（预测）结果</li>
-</ol>
-<h3 id="scikit-learn中的Random-Forest算法"><a href="#scikit-learn中的Random-Forest算法" class="headerlink" title="scikit-learn中的Random Forest算法"></a>scikit-learn中的Random Forest算法</h3><p>参考代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sklearn.ensemble.RandomForestClassfier</div><div class="line">clf = RandomForestClassifier([parameters]) <span class="comment">#generator the entity object of classifier</span></div><div class="line">parameters:</div><div class="line">n_estimators：指定随机森林中树的数目，越多越好，不超过内存即可</div><div class="line">criterion:指定在分裂使用的决策算法，取值有“entropy”、“gini”等</div><div class="line">max_features:单个决策树使用特征的最大数量，取值为<span class="string">"Auto"</span>，<span class="string">"None"</span>，<span class="string">"sqrt"</span>，<span class="string">"0.X"</span>。回归问题，max_features=n_features,分类问题，max_features=sqrt(n_features),<span class="string">"sqrt"</span>即为全部特征数目的平均根</div><div class="line">max_depth:默认为<span class="keyword">None</span>，一般可不改动</div><div class="line">min_simples_split:</div><div class="line">min_samples_leaf:最小叶片大小。默认值为<span class="number">1</span>，可设置为<span class="number">50</span>。叶是决策树的末端节点，较小的叶子使模型更容易捕捉训练数据中的噪声。</div><div class="line">min_weight_fraction_leaf:</div><div class="line">max_leaf_nodes:</div><div class="line">min_impurity_split:</div><div class="line">bootstrap:</div><div class="line">oob_score:这是一个随机森林交叉验证方法，取值为boolean类型，<span class="string">"True"</span>,<span class="string">"False"</span></div><div class="line">n_jobs:指定并行训练时使用的进程数。“<span class="number">-1</span>”表示使用所有处理器</div><div class="line">random_state:经验值<span class="string">"random_state=50"</span></div><div class="line">verbose:</div><div class="line">warm_state:</div><div class="line">class_weight:</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -448,7 +428,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
           
         </div>
       
@@ -457,12 +439,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/article/算法设计思想之分治算法.html" rel="next" title="算法设计思想之分治算法">
+                <i class="fa fa-chevron-left"></i> 算法设计思想之分治算法
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/数据结构与算法学习笔记：树和二叉树.html" rel="prev" title="数据结构与算法学习笔记：树和二叉树">
-                数据结构与算法学习笔记：树和二叉树 <i class="fa fa-chevron-right"></i>
+              <a href="/article/算法设计思想之回溯算法.html" rel="prev" title="算法设计思想之回溯算法">
+                算法设计思想之回溯算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -478,10 +464,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="Machine-Learning学习笔记：决策树与随机森林.html"
-     data-title="Machine Learning学习笔记：决策树与随机森林"
+        <div class="ds-share flat" data-thread-key="article/算法设计思想之贪心算法.html"
+     data-title="算法设计思想之贪心算法"
      data-content=""
-     data-url="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html">
+     data-url="http://yaodong.ml/article/算法设计思想之贪心算法.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -508,8 +494,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="Machine-Learning学习笔记：决策树与随机森林.html"
-           data-title="Machine Learning学习笔记：决策树与随机森林" data-url="http://yaodong.ml/Machine-Learning学习笔记：决策树与随机森林.html">
+      <div class="ds-thread" data-thread-key="article/算法设计思想之贪心算法.html"
+           data-title="算法设计思想之贪心算法" data-url="http://yaodong.ml/article/算法设计思想之贪心算法.html">
       </div>
     
   </div>
@@ -662,7 +648,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树-Decision-Tree"><span class="nav-number">1.</span> <span class="nav-text">决策树(Decision Tree)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树模型"><span class="nav-number">1.1.</span> <span class="nav-text">决策树模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特征选择"><span class="nav-number">1.1.1.</span> <span class="nav-text">特征选择</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树生成算法"><span class="nav-number">1.2.</span> <span class="nav-text">决策树生成算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ID3算法"><span class="nav-number">1.2.1.</span> <span class="nav-text">ID3算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C4-5算法"><span class="nav-number">1.2.2.</span> <span class="nav-text">C4.5算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树的剪枝"><span class="nav-number">1.3.</span> <span class="nav-text">决策树的剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CART算法"><span class="nav-number">1.3.1.</span> <span class="nav-text">CART算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林算法"><span class="nav-number">2.</span> <span class="nav-text">随机森林算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bagging方法"><span class="nav-number">2.1.</span> <span class="nav-text">Bagging方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap抽样"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrap抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林算法的具体步骤："><span class="nav-number">2.3.</span> <span class="nav-text">随机森林算法的具体步骤：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scikit-learn中的Random-Forest算法"><span class="nav-number">2.4.</span> <span class="nav-text">scikit-learn中的Random Forest算法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法的基本步骤"><span class="nav-number">1.</span> <span class="nav-text">贪心算法的基本步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法的适用情形"><span class="nav-number">2.</span> <span class="nav-text">贪心算法的适用情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法与动态规划算法的区别"><span class="nav-number">3.</span> <span class="nav-text">贪心算法与动态规划算法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贪心算法的应用"><span class="nav-number">4.</span> <span class="nav-text">贪心算法的应用</span></a></li></ol></div>
             
           </div>
         </section>

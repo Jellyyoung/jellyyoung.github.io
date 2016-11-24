@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[Ubuntu安装软件过程记录]]></title>
-      <url>http://yaodong.ml/Ubuntu%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95.html</url>
+      <url>http://yaodong.ml/article/Ubuntu%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本文记录Ubuntu系统的软件安装历程。<br><a id="more"></a></p>
 <p>&emsp;&emsp;电脑型号：美版 Y50-70<br>&emsp;&emsp;是否双系统：是<br>&emsp;&emsp;WIndow系统版本：Windows 8.1专业版64位<br>&emsp;&emsp;Linux系统版本：Ubuntu 16.04 LTS 64位</p>
 <h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>&emsp;&emsp;Git是分布式版本控制系统，程序员必备。</p>
@@ -68,7 +68,7 @@
     
     <entry>
       <title><![CDATA[17个适合练手的数据科学项目数据集]]></title>
-      <url>http://yaodong.ml/17%E4%B8%AA%E9%80%82%E5%90%88%E7%BB%83%E6%89%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E9%9B%86.html</url>
+      <url>http://yaodong.ml/article/17%E4%B8%AA%E9%80%82%E5%90%88%E7%BB%83%E6%89%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E9%A1%B9%E7%9B%AE%E6%95%B0%E6%8D%AE%E9%9B%86.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本文翻译自Analytics Vidhya网站的一篇文章，<a href="https://www.analyticsvidhya.com/blog/2016/10/17-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/" target="_blank" rel="external">17 Ultimate Data Science Projects To Boost Your Knowledge and Skills</a>，有翻译不准的地方还请指正。<br><a id="more"></a><br>&emsp;&emsp;数据科学项目可以为你的机器学习生涯开辟一条康庄大道，通过它们你不仅可以提升实战经验，也可以让你的简历更加吸引人。相应的实战经验在找工作过程中会很加分，而大部分人缺少的就是这一点。<br>&emsp;&emsp;本博文列出来自不同领域、不同量级的数据集来满足机器学习实战的需求。<br>&emsp;&emsp;为了适应具有不同基础的读者的需求，本博文把数据集划分为三个等级：<br>&emsp;&emsp;<strong>初级</strong>：该级别的数据较好处理，不需要太过复杂的数据科学技术。只需要基本的回归或者分类算法就能处理，这些方法在网上也有足够多的免费教程。本文也将提供一些教程来帮助你起步。<br>&emsp;&emsp;<strong>中级</strong>：这个级别有一定挑战性，数据集的量相对较大，而且需要一些模式识别方面的技能。同样，特征工程也是必要技能之一。处理这些数据你可以使用所有现有的机器学习技术。<br>&emsp;&emsp;<strong>高级</strong>：这个级别适合那些对于神经网络、深度学习和推荐系统等已有了解的人们。集合中的特征往往是高维数据，处理它们可能需要一些富有创造性的方法和技巧。</p>
 <h3 id="数据集概览"><a href="#数据集概览" class="headerlink" title="数据集概览"></a>数据集概览</h3><h4 id="初级"><a href="#初级" class="headerlink" title="初级"></a>初级</h4><ul>
 <li>Iris Data</li>
@@ -117,7 +117,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之分支界限]]></title>
-      <url>http://yaodong.ml/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%94%AF%E7%95%8C%E9%99%90.html</url>
+      <url>http://yaodong.ml/article/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%94%AF%E7%95%8C%E9%99%90.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于分支界限算法设计思想的学习总结。<br><a id="more"></a><br>&emsp;&emsp; 类似于回溯法，<strong>分支限界法（branch-and-bound method）</strong>也是一种在问题的解空间树T上搜索问题解的算法。但分支限界法的求解目标则是找出满足约束条件的一个解，或是在满足约束条件的解中找出使某一目标函数值达到极大或极小的解，即在某种意义下的最优解。<br>&emsp;&emsp;<strong>分支限界法（branch-and-bound method）</strong>， “<strong>分支</strong>”是指采用广度优先遍历的策略，依次生成扩展结点的所有分支（即：儿子结点）；“<strong>限界</strong>”是在结点扩展过程中，计算结点的上界（或下界），并根据“剪枝函数”剪去搜索树的某些分支，从而提高搜索效率。</p>
 <h3 id="分支限界算法的基本思想"><a href="#分支限界算法的基本思想" class="headerlink" title="分支限界算法的基本思想"></a>分支限界算法的基本思想</h3><p>&emsp;&emsp;按照广度优先遍历的原则，一个活结点一旦成为扩展结点（E-结点）R后，算法将依次生成它的全部孩子结点，将那些导致不可行解或导致非最优解的儿子舍弃，其余儿子加入活结点表中。然后，从活结点表中取出一个结点作为当前扩展结点。重复上述结点扩展过程，直至找到问题的解或判定无解为止。</p>
 <h3 id="常见的分支限界法"><a href="#常见的分支限界法" class="headerlink" title="常见的分支限界法"></a>常见的分支限界法</h3><h4 id="FIFO分支限界法-队列式分支限界法"><a href="#FIFO分支限界法-队列式分支限界法" class="headerlink" title="FIFO分支限界法(队列式分支限界法)"></a>FIFO分支限界法(队列式分支限界法)</h4><p>&emsp;&emsp;基本思想：按照队列先进先出(FIFO)原则选取下一个活结点为扩展结点。<br>&emsp;&emsp;搜索策略：一开始，根结点是唯一的活结点，根结点入队。从活结点队中取出根结点后，作为当前扩展结点。对当前扩展结点，先从左到右地产生它的所有儿子，用约束条件检查，把所有满足约束函数的儿子加入活结点队列中。再从活结点表中取出队首结点（队中最先进来的结点）为当前扩展结点，……，直到找到一个解或活结点队列为空为止。</p>
@@ -141,7 +141,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之回溯算法]]></title>
-      <url>http://yaodong.ml/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95.html</url>
+      <url>http://yaodong.ml/article/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于回溯算法设计思想的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>回溯（Backtracking）算法</strong>也叫试探法，属于暴力求解的范畴。<strong>回溯（Backtracking）算法</strong>是一种既有系统性又有跳跃性的的搜索算法，适用于求解具有约束条件，并且有多个候选解的问题。</p>
@@ -179,7 +179,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之贪心算法]]></title>
-      <url>http://yaodong.ml/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95.html</url>
+      <url>http://yaodong.ml/article/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于贪心算法设计思想的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>贪心算法（greedy algorithm）</strong>，又称<strong>贪婪算法</strong>，在每一步都选择当前状态下能达到最好或最优的策略，从而希望算法结束时的结果就是全局最优的算法。换句话说，贪心算法不考虑全局只考虑局部最优，基于当前状态做出局部最优选择。</p>
@@ -217,7 +217,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之分治算法]]></title>
-      <url>http://yaodong.ml/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95.html</url>
+      <url>http://yaodong.ml/article/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于分治算法设计思想的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>分治法（Divide and Conquer）</strong>是基于多项分支递归的一种很重要的算法范式思想。分治的意思是“分而治之”，把复杂问题分解成多个规模较小、相对独立、与原问题形式相同的子问题，子问题的求解很简单很直观，原问题的解即子问题的解的合并。</p>
@@ -261,7 +261,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之动态规划]]></title>
-      <url>http://yaodong.ml/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html</url>
+      <url>http://yaodong.ml/article/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>动态规划</strong>（Dynamic programming，简称<strong>DP</strong>）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。</p>
@@ -315,7 +315,7 @@
     
     <entry>
       <title><![CDATA[2016校招：百度、360、美团机器学习岗面试经历【转自牛客】]]></title>
-      <url>http://yaodong.ml/2016%E6%A0%A1%E6%8B%9B%EF%BC%9A%E7%99%BE%E5%BA%A6%E3%80%81360%E3%80%81%E7%BE%8E%E5%9B%A2%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B2%97%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86%E3%80%90%E8%BD%AC%E8%87%AA%E7%89%9B%E5%AE%A2%E3%80%91.html</url>
+      <url>http://yaodong.ml/article/2016%E6%A0%A1%E6%8B%9B%EF%BC%9A%E7%99%BE%E5%BA%A6%E3%80%81360%E3%80%81%E7%BE%8E%E5%9B%A2%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B2%97%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86%E3%80%90%E8%BD%AC%E8%87%AA%E7%89%9B%E5%AE%A2%E3%80%91.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本文转自<a href="https://www.nowcoder.com/" target="_blank" rel="external">牛客网</a>的<a href="https://www.nowcoder.com/discuss?type=2" target="_blank" rel="external">笔经面经</a>板块，原文作者为stupidjoey，<a href="https://www.nowcoder.com/discuss/3243" target="_blank" rel="external">原文链接</a>。<br><a id="more"></a><br>&emsp;&emsp;今天下午在教室自习，顺便还投了一些公司，准备笔试面试，突然接到百度hr的电话，顺利拿到offer。期间，我有点屌丝地反复问她这个offer是确定的吧，不会被取消吧，因为前几天看到百度缩招的消息，哈哈，hr跟我确定这个offer不会变，就等着签三方了。lz是硕士，属于计算机相关专业，无实习经历。<br>&emsp;&emsp;关于机器学习岗的面经比较少，本着回报牛客网的目的，决定写写面经。</p>
 <hr>
 <h3 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h3><p>&emsp;&emsp;在天津参加的百度的三轮面试，分三天面完。</p>
@@ -346,7 +346,7 @@
     
     <entry>
       <title><![CDATA[Python学习笔记之面向对象高级编程]]></title>
-      <url>http://yaodong.ml/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html</url>
+      <url>http://yaodong.ml/article/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文是python面向对象高级编程的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
 <h3 id="使用-slot-限制动态添加属性"><a href="#使用-slot-限制动态添加属性" class="headerlink" title="使用__slot__限制动态添加属性"></a>使用<code>__slot__</code>限制动态添加属性</h3><p>&emsp;&emsp;python作为一门动态语言，比静态语言更灵活，功能更强大。python可以实现对类的具体对象添加属性和方法，但是对类的一个具体实例动态添加属性和方法只对当前实例对象有效，对该类的其他实例对象是不起作用的。<br>&emsp;&emsp;给类的所有实例对象都绑定属性方法，可以<code>MethodType()</code>函数通过给class绑定属性和方法实现：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> types <span class="keyword">import</span> MethodType</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_method</span><span class="params">(self,var)</span>:</span></div><div class="line">    self.var = var</div><div class="line">% 给MyObject类添加new_method方法</div><div class="line">MyObject.new_method = MethodType(new_method,<span class="keyword">None</span>,MyObject)</div></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;python语言的动态特性允许在程序运行的过程中为对象的所属类添加属性或方法。相应地，为了保护自定义类的固有属性和方法，在定义class时需要通过一定的措施来限制对该class动态添加属性和方法。在定义class时，可添加一个<code>__slots__</code>变量，来限制该class能添加的属性：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line">    __slots__ = (<span class="string">"name"</span>,<span class="string">"age"</span>)   <span class="comment"># 用tuple定义允许绑定的属性名称</span></div></pre></td></tr></table></figure></p>
@@ -371,7 +371,7 @@
     
     <entry>
       <title><![CDATA[Python学习笔记之高级函数]]></title>
-      <url>http://yaodong.ml/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0.html</url>
+      <url>http://yaodong.ml/article/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文是python的高级函数语法的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
 <h2 id="Python学习笔记之高级函数"><a href="#Python学习笔记之高级函数" class="headerlink" title="Python学习笔记之高级函数"></a>Python学习笔记之高级函数</h2><h3 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator(生成器)"></a>Generator(生成器)</h3><p>&emsp;&emsp;通过列表生成式生成的list直接保存在内存中，容量有限。如果列表中的元素可以根据某种算法推导得到，那么就可以在循环的过程中推导后续的元素值。Python中，这种一边循环一边计算的机制，称为生成器（Generator）。<br>&emsp;&emsp;创建generator：把一个列表生成式的[]改成()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>g</div><div class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x104feab40</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;generator中保存的不是具体的数据，而是循环生成元素所用到得算法或推导公式，因此，如果要计算generator后续元素的值，须先计算出之前的元素值，这一点与数据结构中的链表的性质很像。generator也是可迭代对象，因此可使用generator.next()或for循环来输出元素值。</p>
@@ -400,7 +400,7 @@
     
     <entry>
       <title><![CDATA[python爬虫学习资源汇总]]></title>
-      <url>http://yaodong.ml/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</url>
+      <url>http://yaodong.ml/article/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;最近想参加数据类的比赛，暂时没有时间学爬虫。本博文整理了爬虫的相关学习资源，以后有时间了再学爬虫。欢迎交流。<br><a id="more"></a><br>&emsp;&emsp;<strong>爬虫</strong>就是自动抓取目标网站上的全部或部分资源。目前用于爬虫的编程语言也较多，本人擅长python和java，因此本博文涉及的学习资源大多是<strong>java</strong>和<strong>python</strong>相关的。本文会不定时更新。</p>
 <h3 id="爬虫书籍推荐"><a href="#爬虫书籍推荐" class="headerlink" title="爬虫书籍推荐"></a>爬虫书籍推荐</h3><ol>
 <li>《用python写网络爬虫》</li>
@@ -413,7 +413,7 @@
     
     <entry>
       <title><![CDATA[MySQL学习笔记]]></title>
-      <url>http://yaodong.ml/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
+      <url>http://yaodong.ml/article/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录MySQL的相关学习笔记，欢迎指正。<br><a id="more"></a></p>
 <h3 id="数据库简介"><a href="#数据库简介" class="headerlink" title="数据库简介"></a>数据库简介</h3><ol>
 <li>常用关系数据库：</li>
@@ -736,7 +736,7 @@
     
     <entry>
       <title><![CDATA[pandas学习笔记]]></title>
-      <url>http://yaodong.ml/pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
+      <url>http://yaodong.ml/article/pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。<br><a id="more"></a><br>&emsp;&emsp;本博文主要是记录博主学习pandas的相关笔记，大部分学习内容来自于总结<a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html" target="_blank" rel="external">pandas documenation</a>和《利用Python进行数据分析》的pandas的相关章节。<br>&emsp;&emsp;pandas中的两个主要的数据结构是<strong>Series</strong>和<strong>DataFrame</strong>，对此不做过多的理论介绍，<strong>本博文侧重于记录如何使用pandas</strong>。</p>
 <h4 id="导入pandas、numpy、matplotlib包："><a href="#导入pandas、numpy、matplotlib包：" class="headerlink" title="导入pandas、numpy、matplotlib包："></a>导入pandas、numpy、matplotlib包：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> scipy <span class="keyword">as</span> sp</div><div class="line"><span class="keyword">import</span> matplot.pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
 <h4 id="创建Series"><a href="#创建Series" class="headerlink" title="创建Series"></a>创建<strong>Series</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s = pd.Series([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,np.nan,<span class="number">6</span>,<span class="number">8</span>])</div><div class="line">%<span class="comment">#Series具有index属性和values属性，索引从0开始。创建Series时也可指定index的类型</span></div><div class="line">obj = pd.Series([<span class="number">4</span>,<span class="number">-7</span>,<span class="number">5</span>,<span class="number">3</span>],index=[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>])</div><div class="line">%<span class="comment">#可通过索引值获取Series结构的值：</span></div><div class="line">series[index]</div></pre></td></tr></table></figure>
@@ -754,7 +754,7 @@
     
     <entry>
       <title><![CDATA[Window下python的Xgboost框架安装教程]]></title>
-      <url>http://yaodong.ml/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</url>
+      <url>http://yaodong.ml/article/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;<a href="http://xgboost.readthedocs.io/en/latest/" target="_blank" rel="external">Xgboost</a>是<a href="http://homes.cs.washington.edu/~tqchen/" target="_blank" rel="external">Tianqi Chen</a>大神实现的一个boost算法框架。在Kaggle比赛的很多题目中都大放异彩，Xgboost诞生之后获奖无数，是个值得强力推荐的机器学习实战框架。<br><a id="more"></a><br>&emsp;&emsp;本博文记录了在Windows平台下的Anaconda中安装Xgboost。Window平台对机器学习、深度学习的最新成果的支持与Linux/Ubuntu的差距简直不要太大，安装过程中也踩了不少坑。本博文特将Xgboost的安装过程作简单整理，希望对大家能够有所帮助。<br>&emsp;&emsp;果冻君的电脑配置环境是：</p>
 <ul>
 <li>操作系统：Window 8.1 <strong>64</strong>位</li>
@@ -790,7 +790,7 @@
     
     <entry>
       <title><![CDATA[Machine Learning学习笔记：特征工程]]></title>
-      <url>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</url>
+      <url>http://yaodong.ml/article/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;<strong>特征工程（Feature Engineering）</strong>包括特征构建(<strong>Construction</strong>)、特征提取(<strong>Extraction</strong>)、特征选择(<strong>Selection</strong>)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>Feature engineering</strong> is the process of using domain knowledge of the data to create features that make machine learning algorithms work. Feature engineering is fundamental to the application of machine learning, and is both difficult and expensive. The need for manual feature engineering can be obviated by automated feature learning<br><strong>特征工程</strong>是利用数据科学领域的相关知识来创建、提取、选择能使机器学习算法达到最佳性能的特征的过程。</p>
@@ -819,7 +819,7 @@
     
     <entry>
       <title><![CDATA[Machine Learning学习笔记：判别模型与生成模型]]></title>
-      <url>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</url>
+      <url>http://yaodong.ml/article/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文简单介绍了判别模型与生成模型的定义、优缺点以及相互之间的关系。<br><a id="more"></a></p>
 <h3 id="生成模型和判别模型的定义"><a href="#生成模型和判别模型的定义" class="headerlink" title="生成模型和判别模型的定义"></a>生成模型和判别模型的定义</h3><p>&emsp;&emsp;监督学习的任务就是从数据中学习一个模型（也叫分类器），对给定的输入<strong>X</strong>预测相应的输出<strong>Y</strong>。决策函数为<strong>Y=<em>f</em>(X)</strong>或者条件概率分布<strong>P(Y|X)</strong>。实际上通过条件概率分布<strong>P(Y|X)</strong>进行预测也是隐含着表达成决策函数<strong>Y=<em>f</em>(X)</strong>的形式的。<br>&emsp;&emsp;监督学习方法分为<strong>生成方法</strong>（Generative approach）和<strong>判别方法</strong>（Discriminative approach），相应的机器学习模型分别称为<strong>生成模型</strong>（Generative Model）和<strong>判别模型</strong>（Discriminative Model）：</p>
 <ul>
@@ -843,7 +843,7 @@
     
     <entry>
       <title><![CDATA[JavaEE很全面的面试题（转自jackfrued）]]></title>
-      <url>http://yaodong.ml/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</url>
+      <url>http://yaodong.ml/article/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;Java面试题在google上能搜到很多，但是绝大部分博客或网站上的Java面试题都不全面。<strong>本博客非原创</strong>，博主果冻君作为一只<strong>搬运工</strong>，本博客<strong>汇总</strong>了CSDN博客上<a href="http://my.csdn.net/jackfrued" target="_blank" rel="external">jackfrued</a>的Java面试题全集。<br><a id="more"></a><br>&nbsp;<br>&emsp;&emsp;本博客只汇总了此大神博客上的Java面试题目，具体答案请移步原著博客：</p>
 <ul>
 <li><a href="http://blog.csdn.net/jackfrued/article/details/44921941" target="_blank" rel="external">Java面试题全集（上）</a></li>
@@ -864,7 +864,7 @@
     
     <entry>
       <title><![CDATA[Java开发岗位面试题汇总]]></title>
-      <url>http://yaodong.ml/Java%E5%BC%80%E5%8F%91%E5%B2%97%E4%BD%8D%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.html</url>
+      <url>http://yaodong.ml/article/Java%E5%BC%80%E5%8F%91%E5%B2%97%E4%BD%8D%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.html</url>
       <content type="html"><![CDATA[<p>&nbsp;<br>&emsp;&emsp;Java面试题在google上能搜到很多，但是绝大部分博客或网站上的Java面试题都不全面。<strong>本博客非原创</strong>，博主果冻君作为一只<strong>搬运工</strong>，本博客<strong>汇总</strong>了网上能搜到的大部分Java面试题。<br><a id="more"></a></p>
 <p>&emsp;&emsp;由于是汇总，因此本博文中可能会有少量的重复试题，浏览时遇到重复试题跳过即可。</p>
 <h2 id="Java面试题：part-1"><a href="#Java面试题：part-1" class="headerlink" title="Java面试题：part 1"></a>Java面试题：part 1</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3><ol>
@@ -1319,7 +1319,7 @@
     
     <entry>
       <title><![CDATA[数据结构与算法学习笔记：树和二叉树]]></title>
-      <url>http://yaodong.ml/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</url>
+      <url>http://yaodong.ml/article/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。<br><a id="more"></a></p>
 <h3 id="树与二叉树的相关概念"><a href="#树与二叉树的相关概念" class="headerlink" title="树与二叉树的相关概念"></a>树与二叉树的相关概念</h3><p>&emsp;&emsp;二叉树的左右子树有严格的顺序，不可颠倒，这是二叉树与普通树的关键区别。<br>&emsp;&emsp;<strong>二叉搜索树</strong>：二叉树的一个节点的左子节点的关键字值小于这个节点，右子节点的关键字值大于（或等于）这个父节点。<br>&emsp;&emsp;<strong>平衡树与非平衡树</strong>：左子节点与左子节点对称的树为平衡树，否则就是非平衡树。<br>&emsp;&emsp;<strong>满二叉树</strong>：满二叉树除最后一层无任何子节点外，其余每一层的所有结点都有两个子结点。也就是说，除叶子结点外的所有结点均有两个子结点。满二叉树的结点数达到最大值。<strong>满二叉树的所有叶子结点必须在同一层上</strong>。<br>&emsp;&emsp;<strong>完全二叉树</strong>：完全二叉树是由满二叉树而引出来的。对于深度为<strong>K</strong>的，有<strong>N</strong>个结点的二叉树，当且仅当其编号为<strong><em>i</em></strong>的结点与深度为<strong>K</strong>的满二叉树中编号为<strong><em>i</em></strong>的结点在二叉树中的位置一一对应时称之为完全二叉树。<br>&emsp;&emsp;<strong>霍夫曼树</strong>：一种特殊结构的二叉树，每个节点要么没有子节点，要么有两个子节点。<br>&emsp;&emsp;二叉树结合了有序数组和链表的优点：在二叉树中，数据的查找效率跟在有序数组中查找一样高，同时插入、删除数据的效率和在链表中一样高。<br>&emsp;&emsp;二叉树的工作效率：时间复杂度为<strong>O(logN)</strong>。总的来说，树对所有的数据存储操作都很高效。<br>&emsp;&emsp;满二叉树的相关性质：</p>
 <ul>
@@ -1415,7 +1415,7 @@
     
     <entry>
       <title><![CDATA[Machine Learning学习笔记：决策树与随机森林]]></title>
-      <url>http://yaodong.ml/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</url>
+      <url>http://yaodong.ml/article/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。<br><a id="more"></a></p>
 <h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>&emsp;&emsp;决策树是一种基本的分类与回归算法，属于<strong>贪婪算法</strong>，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程<br>&emsp;&emsp;决策树的特点：</p>
 <ul>
