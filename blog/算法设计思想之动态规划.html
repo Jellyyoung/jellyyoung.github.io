@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="python,pandas," />
+  <meta name="keywords" content="算法,算法设计," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
+<meta name="description" content="&amp;emsp;&amp;emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pandas学习笔记">
-<meta property="og:url" content="http://yaodong.ml/article/pandas学习笔记.html">
+<meta property="og:title" content="算法设计思想之动态规划">
+<meta property="og:url" content="http://yaodong.ml/blog/算法设计思想之动态规划.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
-<meta property="og:updated_time" content="2016-11-11T07:47:29.648Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。">
+<meta property="og:updated_time" content="2016-11-15T08:15:52.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pandas学习笔记">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
+<meta name="twitter:title" content="算法设计思想之动态规划">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/article/pandas学习笔记.html"/>
+  <link rel="canonical" href="http://yaodong.ml/blog/算法设计思想之动态规划.html"/>
 
 
-  <title> pandas学习笔记 | Jellyyoung's Blog </title>
+  <title> 算法设计思想之动态规划 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                pandas学习笔记
+                算法设计思想之动态规划
               
             
           </h1>
@@ -290,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-02T20:12:28+08:00" content="2016-11-02">
-              2016-11-02
+            <time itemprop="dateCreated" datetime="2016-11-15T15:59:11+08:00" content="2016-11-15">
+              2016-11-15
             </time>
           </span>
 
@@ -320,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/article/pandas学习笔记.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="article/pandas学习笔记.html" itemprop="commentsCount"></span>
+                <a href="/blog/算法设计思想之动态规划.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/算法设计思想之动态规划.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/article/pandas学习笔记.html" class="leancloud_visitors" data-flag-title="pandas学习笔记">
+             <span id="/blog/算法设计思想之动态规划.html" class="leancloud_visitors" data-flag-title="算法设计思想之动态规划">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,18 +353,54 @@
       
 
       
-        <p>&emsp;&emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。<br><a id="more"></a><br>&emsp;&emsp;本博文主要是记录博主学习pandas的相关笔记，大部分学习内容来自于总结<a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html" target="_blank" rel="external">pandas documenation</a>和《利用Python进行数据分析》的pandas的相关章节。<br>&emsp;&emsp;pandas中的两个主要的数据结构是<strong>Series</strong>和<strong>DataFrame</strong>，对此不做过多的理论介绍，<strong>本博文侧重于记录如何使用pandas</strong>。</p>
-<h4 id="导入pandas、numpy、matplotlib包："><a href="#导入pandas、numpy、matplotlib包：" class="headerlink" title="导入pandas、numpy、matplotlib包："></a>导入pandas、numpy、matplotlib包：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> scipy <span class="keyword">as</span> sp</div><div class="line"><span class="keyword">import</span> matplot.pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
-<h4 id="创建Series"><a href="#创建Series" class="headerlink" title="创建Series"></a>创建<strong>Series</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s = pd.Series([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,np.nan,<span class="number">6</span>,<span class="number">8</span>])</div><div class="line">%<span class="comment">#Series具有index属性和values属性，索引从0开始。创建Series时也可指定index的类型</span></div><div class="line">obj = pd.Series([<span class="number">4</span>,<span class="number">-7</span>,<span class="number">5</span>,<span class="number">3</span>],index=[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>])</div><div class="line">%<span class="comment">#可通过索引值获取Series结构的值：</span></div><div class="line">series[index]</div></pre></td></tr></table></figure>
-<h4 id="根据字典创建DataFrame对象："><a href="#根据字典创建DataFrame对象：" class="headerlink" title="根据字典创建DataFrame对象："></a>根据字典创建<strong>DataFrame</strong>对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">df2 = pd.DataFrame(</div><div class="line">    &#123; <span class="string">'A'</span> : <span class="number">1.</span>,</div><div class="line">      <span class="string">'B'</span> : pd.Timestamp(<span class="string">'20130102'</span>),</div><div class="line">      <span class="string">'C'</span> : pd.Series(<span class="number">1</span>,index=list(range(<span class="number">4</span>)),dtype=<span class="string">'float32'</span>),</div><div class="line">      <span class="string">'D'</span> : np.array([<span class="number">3</span>] * <span class="number">4</span>,dtype=<span class="string">'int32'</span>),</div><div class="line">      <span class="string">'E'</span> : pd.Categorical([<span class="string">"test"</span>,<span class="string">"train"</span>,<span class="string">"test"</span>,<span class="string">"train"</span>]),</div><div class="line">      <span class="string">'F'</span> : <span class="string">'foo'</span></div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
-<h4 id="使用pandas创建时间日期戳对象："><a href="#使用pandas创建时间日期戳对象：" class="headerlink" title="使用pandas创建时间日期戳对象："></a>使用pandas创建时间日期戳对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">6</span>]: dates = pd.date_range(<span class="string">'20130101'</span>, periods=<span class="number">6</span>)</div><div class="line">In [<span class="number">7</span>]: dates</div><div class="line">Out[<span class="number">7</span>]: </div><div class="line">DatetimeIndex([<span class="string">'2013-01-01'</span>, <span class="string">'2013-01-02'</span>, <span class="string">'2013-01-03'</span>, <span class="string">'2013-01-04'</span>,</div><div class="line">               <span class="string">'2013-01-05'</span>, <span class="string">'2013-01-06'</span>],</div><div class="line">              dtype=<span class="string">'datetime64[ns]'</span>, freq=<span class="string">'D'</span>)</div><div class="line">In [<span class="number">8</span>]: df = pd.DataFrame(np.random.randn(<span class="number">6</span>,<span class="number">4</span>), index=dates, columns=list(<span class="string">'ABCD'</span>))</div><div class="line">In [<span class="number">9</span>]: df</div><div class="line">Out[<span class="number">9</span>]: </div><div class="line">                A         B         C         D</div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-01</span>  <span class="number">0.469112</span> <span class="number">-0.282863</span> <span class="number">-1.509059</span> <span class="number">-1.135632</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-02</span>  <span class="number">1.212112</span> <span class="number">-0.173215</span>  <span class="number">0.119209</span> <span class="number">-1.044236</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-03</span> <span class="number">-0.861849</span> <span class="number">-2.104569</span> <span class="number">-0.494929</span>  <span class="number">1.071804</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-04</span>  <span class="number">0.721555</span> <span class="number">-0.706771</span> <span class="number">-1.039575</span>  <span class="number">0.271860</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-05</span> <span class="number">-0.424972</span>  <span class="number">0.567020</span>  <span class="number">0.276232</span> <span class="number">-1.087401</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-06</span> <span class="number">-0.673690</span>  <span class="number">0.113648</span> <span class="number">-1.478427</span>  <span class="number">0.524988</span></div></pre></td></tr></table></figure>
-<h4 id="对DataFrame对象进行排序"><a href="#对DataFrame对象进行排序" class="headerlink" title="对DataFrame对象进行排序"></a>对DataFrame对象进行排序</h4><p>&emsp;&emsp;根据属性进行排序：<code>sort_index(axis=1,ascending=False)</code>函数<br>&emsp;&emsp;根据某个属性的值进行排序：<code>sort_values(by=&#39;column_name&#39;)</code>函数</p>
-<h4 id="获取DataFrame对象的指定行或列"><a href="#获取DataFrame对象的指定行或列" class="headerlink" title="获取DataFrame对象的指定行或列"></a>获取DataFrame对象的指定行或列</h4><p>&emsp;&emsp;df.loc()：根据元素的具体值获取DataFrame对象的行或列<br>&emsp;&emsp;df.iloc()：根据具体数字作为索引来获取DataFrame对象的行或列<br>&emsp;&emsp;df.at()：获取指定的元素<br>&emsp;&emsp;df.iat()：获取指定的元素</p>
-<h4 id="pandas处理缺失值"><a href="#pandas处理缺失值" class="headerlink" title="pandas处理缺失值"></a>pandas处理缺失值</h4><p>&emsp;&emsp;df.dropna(how=”any”)：删除DataFrame对象的缺失值<br>&emsp;&emsp;df.fillna(value=5)：用value的值来代替DataFrame对象的缺失值<br>&emsp;&emsp;pd.isnull(df)：判断DataFrame对象的各属性值是否为空</p>
-<h4 id="pandas合并、连结DataFrame对象"><a href="#pandas合并、连结DataFrame对象" class="headerlink" title="pandas合并、连结DataFrame对象"></a>pandas合并、连结DataFrame对象</h4><p>&emsp;&emsp;<strong>pd.concat([df1,df2],axis=0 or 1)</strong><br>&emsp;&emsp;<strong>pd.merge()</strong>：类SQL式合并DataFrame对象<br>&emsp;&emsp;<strong>df.append(series, ignore_index=True)</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">77</span>]: left = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'lval'</span>: [<span class="number">1</span>, <span class="number">2</span>]&#125;)</div><div class="line">In [<span class="number">78</span>]: right = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'rval'</span>: [<span class="number">4</span>, <span class="number">5</span>]&#125;)</div><div class="line">In [<span class="number">79</span>]: left</div><div class="line">Out[<span class="number">79</span>]: </div><div class="line">               key  lval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">2</span></div><div class="line">In [<span class="number">80</span>]: right</div><div class="line">Out[<span class="number">80</span>]: </div><div class="line">               key  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">5</span></div><div class="line">In [<span class="number">81</span>]: pd.merge(left, right, on=<span class="string">'key'</span>)</div><div class="line">Out[<span class="number">81</span>]: </div><div class="line">               key  lval  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span>     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">1</span>     <span class="number">5</span></div><div class="line">            <span class="number">2</span>  foo     <span class="number">2</span>     <span class="number">4</span></div><div class="line">            <span class="number">3</span>  foo     <span class="number">2</span>     <span class="number">5</span></div></pre></td></tr></table></figure>
-<h4 id="pandas的DataFrame对象的相关属性"><a href="#pandas的DataFrame对象的相关属性" class="headerlink" title="pandas的DataFrame对象的相关属性"></a><strong>pandas的DataFrame对象的相关属性</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">df2.A                  df2.boxplot</div><div class="line">df2.abs                df2.C</div><div class="line">df2.add                df2.clip</div><div class="line">df2.add_prefix         df2.clip_lower</div><div class="line">df2.add_suffix         df2.clip_upper</div><div class="line">df2.align              df2.columns</div><div class="line">df2.all                df2.combine</div><div class="line">df2.any                df2.combineAdd</div><div class="line">df2.append             df2.combine_first</div><div class="line">df2.apply              df2.combineMult</div><div class="line">df2.applymap           df2.compound</div><div class="line">df2.as_blocks          df2.consolidate</div><div class="line">df2.asfreq             df2.convert_objects</div><div class="line">df2.as_matrix          df2.copy</div><div class="line">df2.astype             df2.corr</div><div class="line">df2.at                 df2.corrwith</div><div class="line">df2.at_time            df2.count</div><div class="line">df2.axes               df2.cov</div><div class="line">df2.B                  df2.cummax</div><div class="line">df2.between_time       df2.cummin</div><div class="line">df2.bfill              df2.cumprod</div><div class="line">df2.blocks             df2.cumsum</div><div class="line">df2.bool               df2.D</div></pre></td></tr></table></figure>
-<h4 id="pandas的相关函数："><a href="#pandas的相关函数：" class="headerlink" title="pandas的相关函数："></a>pandas的相关函数：</h4><p>&emsp;&emsp;<strong>pd.Tiimestamp()</strong>：把字符串转化为日期时间戳对象<br>&emsp;&emsp;<strong>np.array()</strong>：创建numpy的ndarray对象<br>&emsp;&emsp;<strong>df.dtypes</strong>：查看DataFrame对象的每个属性的数据类型<br>&emsp;&emsp;<strong>df.head()</strong>：查看DataFrame对象头部的若干条记录<br>&emsp;&emsp;<strong>df.tail()</strong>：查看DataFrame对象尾部的若干条记录<br>&emsp;&emsp;<strong>df.columns</strong>：获取DataFrame对象的属性名字<br>&emsp;&emsp;<strong>df.index</strong>：获取DataFrame对象的索引值<br>&emsp;&emsp;<strong>df.values</strong>：获取DataFrame对象属性值<br>&emsp;&emsp;<strong>df.describe()</strong>：获取DataFrame对象的相关信息<br>&emsp;&emsp;<strong>df.copy()</strong>：显性复制DataFrame对象<br>&emsp;&emsp;<strong>series.shift()</strong>：对Series对象的数据循环移动n位<br>&emsp;&emsp;<strong>df.apply(</strong>lambda function<strong>)</strong>：对DataFrame对象应用函数<br>&emsp;&emsp;<strong>series.value_counts()</strong>：统计Series对象的每个取值的频数<br>&emsp;&emsp;<strong>series.str.lower()</strong>：把字符转化为小写<br>&emsp;&emsp;<strong>df.groupby(column_name).sum()</strong>：以group的形式统计相关信息<br>&emsp;&emsp;stacked = df.stack()：<br>&emsp;&emsp;stacked.unstack()</p>
+        <p>&emsp;&emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。<br><a id="more"></a></p>
+<blockquote>
+<p><strong>动态规划</strong>（Dynamic programming，简称<strong>DP</strong>）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。</p>
+</blockquote>
+<p>&emsp;&emsp;动态规划的基本思想：要求解给定问题的最优解，把给定的复杂问题分解成多个规模较小的子问题，且子问题是同质的。动态规划中，欲求给定问题的最优解，首先要求解子问题的最优解，$DP$对同 的子问题只求解一次，并存储子问题的求解结果，便于后续求解使用时查询。</p>
+<p>&emsp;&emsp;动态规划算法设计思想中的两个重要概念：状态和状态转移方程。根据子问题定义状态，描述状态之间的如何转移的方程称为状态转移方程。大部分情况下，某个状态只与它前面出现的状态有关， 而独立于后面的状态。<br>&nbsp;<br>&emsp;&emsp;动态规划算法主要分为有两步：1.将给定的问题（或子问题）抽象为状态（对应空间复杂度） 2.根据状态推导出子问题之间的状态转移方程（对应时间复杂度）。</p>
+<h3 id="动态规划算法的总结"><a href="#动态规划算法的总结" class="headerlink" title="动态规划算法的总结"></a>动态规划算法的总结</h3><p>&emsp;&emsp;动态规划通常用于解决最优化问题。<br>&emsp;&emsp;动态规划算法的时间复杂度远小于暴力求解和回溯法。<br>&emsp;&emsp;采用动态规划思想解决问题的前提是所给定问题具有<strong>最优子结构</strong>和<strong>重叠子问题</strong>的性质：</p>
+<ul>
+<li><strong>最优子结构</strong>是指问题的最优解包含其子问题的最优解。动态规划按照自底向上的策略利用最优子结构，即首先找到子问题的最优解，然后逐步向上寻找问题的一个最优解。最优子结构在求解的过程中以两种方式变化：</li>
+</ul>
+<ol>
+<li>有多少个子问题被使用在原问题的一个最优解中</li>
+<li>构建问题的最优解时使用子问题时有多少种选择或组合</li>
+</ol>
+<ul>
+<li><strong>重叠子问题</strong>是指用来解决原问题的递归算法可以反复地解同样的子问题，而不是总是产生新的子问题。重叠子问题的一个重要性质是同一个算法被不断递归调用以求解同一性质的问题</li>
+<li>简而言之，动态规划的核心就是寻找问题的最优子结构，找到最优子结构之后将问题分解成几个同质的子问题，使用同一算法递归求解子问题，并把每个子问题的求解结果保存在辅助表中，供求解后续问题时查询使用，每次查表的时间复杂度为常数</li>
+</ul>
+<p>&emsp;&emsp;<strong>算法思想</strong>是将给定的问题分解成几个相互不独立的子问题，各子问题之间是同质的，又称重叠子问题。对每个子问题只求解一次，并将其计算结果保存到辅助表中，便于后续子问题的计算。动态规划算法的设计步骤如下：</p>
+<ol>
+<li>描述问题的最优解的结构：分析给定问题出现最优解的情形，将给定的问题抽象化</li>
+<li>将给定问题分解成同质的子问题，分析子问题如何才能得到最优解，并给出子问题最优解的递归公式</li>
+<li>根据递归公式，采用自底向上的策略，计算每个子问题的最优解，将结果保存到辅助表中</li>
+<li>根据每个子问题的最优解，选择或构造给定问题的最优解</li>
+</ol>
+<h3 id="动态规划的应用"><a href="#动态规划的应用" class="headerlink" title="动态规划的应用"></a>动态规划的应用</h3><ul>
+<li><p>斐波那契数列</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 使用动态规划算法思想求解斐波那契数列</div><div class="line"> * <span class="doctag">@param</span> num: 要求的斐波那契数列的第idx个数</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span>[] fib = <span class="keyword">new</span> <span class="keyword">int</span>[num];<span class="comment">//数组默认初始化元素全为0</span></div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span>(num == <span class="number">1</span> || num == <span class="number">2</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    fib[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">    fib[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt; num;i++) &#123;</div><div class="line">        fib[i] = fib[i-<span class="number">1</span>] + fib[i-<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fib[num-<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>求最长递增子序列（不连续）（LIS）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 动态规划思想求解最长非降子序列(longest increasing subsequence,LIS)</div><div class="line"> * 代码以辅助理解动态规划算法的思想为目的，根据实际需求对形参进行改动</div><div class="line"> * <span class="doctag">@param</span> </div><div class="line"> * <span class="doctag">@return</span> 最长非降子序列的长度</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">solution_LIS</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span>[] series = &#123;<span class="number">5</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>&#125;;</div><div class="line">    <span class="keyword">int</span> num_length = series.length;</div><div class="line">    <span class="keyword">if</span> (num_length == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//定义longest数组，longest[i]表示前i个数中以series[i]结尾的最长非降子序列的长度</span></div><div class="line">    <span class="keyword">int</span>[] longest = <span class="keyword">new</span> <span class="keyword">int</span>[num_length];</div><div class="line">    </div><div class="line">    <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; num_length;i++) &#123;</div><div class="line">        longest[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;j++) &#123;</div><div class="line">            <span class="keyword">if</span>((series[j] &lt;= series[i]) &amp;&amp; (longest[j]+<span class="number">1</span> &gt; longest[i])) &#123;</div><div class="line">                longest[i] = longest[j] + <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(longest[i] &gt; len)</div><div class="line">            len = longest[i];</div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">return</span> len;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>0-1背包问题<br>&emsp;&emsp;一位游客去森林里探险，发现了一堆宝石，宝石的数量为$N$。他的背包的容量有限，只能带走一部分宝石。游客该如何选择哪些宝石带走，以获得最大利益？（宝石的编号为$0\sim N-1$）,编号为$i$的宝石的体积和价值分别为$vol[i]$和$w[i]$，背包的容量为$C$。</li>
+<li>最大连续子序列之和<ul>
+<li>最长公共子序列</li>
+<li><strong>Leetcode 198</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="使用动态规划思想的算法"><a href="#使用动态规划思想的算法" class="headerlink" title="使用动态规划思想的算法"></a>使用动态规划思想的算法</h3><ul>
+<li><strong>Floyd-Warshall</strong>算法</li>
+<li><strong>Viterbi</strong>算法</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li>Anker关于动态规划的总结：<a href="http://www.cnblogs.com/Anker/archive/2013/03/15/2961725.html" target="_blank" rel="external">《算法导论》读书笔记之动态规划</a></li>
+</ul>
 
       
     </div>
@@ -408,9 +444,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/python/" rel="tag">#python</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
-            <a href="/tags/pandas/" rel="tag">#pandas</a>
+            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
           
         </div>
       
@@ -419,16 +455,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/Window下python的Xgboost框架安装教程.html" rel="next" title="Window下python的Xgboost框架安装教程">
-                <i class="fa fa-chevron-left"></i> Window下python的Xgboost框架安装教程
+              <a href="/blog/2016校招：百度、360、美团机器学习岗面试经历【转自牛客】.html" rel="next" title="2016校招：百度、360、美团机器学习岗面试经历【转自牛客】">
+                <i class="fa fa-chevron-left"></i> 2016校招：百度、360、美团机器学习岗面试经历【转自牛客】
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/article/MySQL学习笔记.html" rel="prev" title="MySQL学习笔记">
-                MySQL学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/算法设计思想之分治算法.html" rel="prev" title="算法设计思想之分治算法">
+                算法设计思想之分治算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -444,10 +480,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="article/pandas学习笔记.html"
-     data-title="pandas学习笔记"
+        <div class="ds-share flat" data-thread-key="blog/算法设计思想之动态规划.html"
+     data-title="算法设计思想之动态规划"
      data-content=""
-     data-url="http://yaodong.ml/article/pandas学习笔记.html">
+     data-url="http://yaodong.ml/blog/算法设计思想之动态规划.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -474,8 +510,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="article/pandas学习笔记.html"
-           data-title="pandas学习笔记" data-url="http://yaodong.ml/article/pandas学习笔记.html">
+      <div class="ds-thread" data-thread-key="blog/算法设计思想之动态规划.html"
+           data-title="算法设计思想之动态规划" data-url="http://yaodong.ml/blog/算法设计思想之动态规划.html">
       </div>
     
   </div>
@@ -628,7 +664,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入pandas、numpy、matplotlib包："><span class="nav-number">1.</span> <span class="nav-text">导入pandas、numpy、matplotlib包：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Series"><span class="nav-number">2.</span> <span class="nav-text">创建Series</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据字典创建DataFrame对象："><span class="nav-number">3.</span> <span class="nav-text">根据字典创建DataFrame对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用pandas创建时间日期戳对象："><span class="nav-number">4.</span> <span class="nav-text">使用pandas创建时间日期戳对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对DataFrame对象进行排序"><span class="nav-number">5.</span> <span class="nav-text">对DataFrame对象进行排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取DataFrame对象的指定行或列"><span class="nav-number">6.</span> <span class="nav-text">获取DataFrame对象的指定行或列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas处理缺失值"><span class="nav-number">7.</span> <span class="nav-text">pandas处理缺失值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas合并、连结DataFrame对象"><span class="nav-number">8.</span> <span class="nav-text">pandas合并、连结DataFrame对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的DataFrame对象的相关属性"><span class="nav-number">9.</span> <span class="nav-text">pandas的DataFrame对象的相关属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的相关函数："><span class="nav-number">10.</span> <span class="nav-text">pandas的相关函数：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#动态规划算法的总结"><span class="nav-number">1.</span> <span class="nav-text">动态规划算法的总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态规划的应用"><span class="nav-number">2.</span> <span class="nav-text">动态规划的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用动态规划思想的算法"><span class="nav-number">3.</span> <span class="nav-text">使用动态规划思想的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>

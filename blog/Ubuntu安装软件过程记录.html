@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法,算法设计," />
+  <meta name="keywords" content="ubuntu," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分支界限算法设计思想的学习总结。">
+<meta name="description" content="&amp;emsp;&amp;emsp;本文记录Ubuntu系统的软件安装历程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法设计思想之分支界限">
-<meta property="og:url" content="http://yaodong.ml/article/算法设计思想之分支界限.html">
+<meta property="og:title" content="Ubuntu安装软件过程记录">
+<meta property="og:url" content="http://yaodong.ml/blog/Ubuntu安装软件过程记录.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分支界限算法设计思想的学习总结。">
-<meta property="og:updated_time" content="2016-11-15T08:19:15.922Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本文记录Ubuntu系统的软件安装历程。">
+<meta property="og:updated_time" content="2016-11-23T07:34:15.868Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法设计思想之分支界限">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分支界限算法设计思想的学习总结。">
+<meta name="twitter:title" content="Ubuntu安装软件过程记录">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文记录Ubuntu系统的软件安装历程。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/article/算法设计思想之分支界限.html"/>
+  <link rel="canonical" href="http://yaodong.ml/blog/Ubuntu安装软件过程记录.html"/>
 
 
-  <title> 算法设计思想之分支界限 | Jellyyoung's Blog </title>
+  <title> Ubuntu安装软件过程记录 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                算法设计思想之分支界限
+                Ubuntu安装软件过程记录
               
             
           </h1>
@@ -290,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-15T16:13:30+08:00" content="2016-11-15">
-              2016-11-15
+            <time itemprop="dateCreated" datetime="2016-11-23T15:31:38+08:00" content="2016-11-23">
+              2016-11-23
             </time>
           </span>
 
@@ -304,8 +304,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/原创/" itemprop="url" rel="index">
+                    <span itemprop="name">原创</span>
                   </a>
                 </span>
 
@@ -320,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/article/算法设计思想之分支界限.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="article/算法设计思想之分支界限.html" itemprop="commentsCount"></span>
+                <a href="/blog/Ubuntu安装软件过程记录.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/Ubuntu安装软件过程记录.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/article/算法设计思想之分支界限.html" class="leancloud_visitors" data-flag-title="算法设计思想之分支界限">
+             <span id="/blog/Ubuntu安装软件过程记录.html" class="leancloud_visitors" data-flag-title="Ubuntu安装软件过程记录">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,25 +353,64 @@
       
 
       
-        <p>&emsp;&emsp;本博文记录了博主关于分支界限算法设计思想的学习总结。<br><a id="more"></a><br>&emsp;&emsp; 类似于回溯法，<strong>分支限界法（branch-and-bound method）</strong>也是一种在问题的解空间树T上搜索问题解的算法。但分支限界法的求解目标则是找出满足约束条件的一个解，或是在满足约束条件的解中找出使某一目标函数值达到极大或极小的解，即在某种意义下的最优解。<br>&emsp;&emsp;<strong>分支限界法（branch-and-bound method）</strong>， “<strong>分支</strong>”是指采用广度优先遍历的策略，依次生成扩展结点的所有分支（即：儿子结点）；“<strong>限界</strong>”是在结点扩展过程中，计算结点的上界（或下界），并根据“剪枝函数”剪去搜索树的某些分支，从而提高搜索效率。</p>
-<h3 id="分支限界算法的基本思想"><a href="#分支限界算法的基本思想" class="headerlink" title="分支限界算法的基本思想"></a>分支限界算法的基本思想</h3><p>&emsp;&emsp;按照广度优先遍历的原则，一个活结点一旦成为扩展结点（E-结点）R后，算法将依次生成它的全部孩子结点，将那些导致不可行解或导致非最优解的儿子舍弃，其余儿子加入活结点表中。然后，从活结点表中取出一个结点作为当前扩展结点。重复上述结点扩展过程，直至找到问题的解或判定无解为止。</p>
-<h3 id="常见的分支限界法"><a href="#常见的分支限界法" class="headerlink" title="常见的分支限界法"></a>常见的分支限界法</h3><h4 id="FIFO分支限界法-队列式分支限界法"><a href="#FIFO分支限界法-队列式分支限界法" class="headerlink" title="FIFO分支限界法(队列式分支限界法)"></a>FIFO分支限界法(队列式分支限界法)</h4><p>&emsp;&emsp;基本思想：按照队列先进先出(FIFO)原则选取下一个活结点为扩展结点。<br>&emsp;&emsp;搜索策略：一开始，根结点是唯一的活结点，根结点入队。从活结点队中取出根结点后，作为当前扩展结点。对当前扩展结点，先从左到右地产生它的所有儿子，用约束条件检查，把所有满足约束函数的儿子加入活结点队列中。再从活结点表中取出队首结点（队中最先进来的结点）为当前扩展结点，……，直到找到一个解或活结点队列为空为止。</p>
-<h4 id="Least-Cost分支限界法-优先队列式分支限界法"><a href="#Least-Cost分支限界法-优先队列式分支限界法" class="headerlink" title="Least Cost分支限界法(优先队列式分支限界法)"></a>Least Cost分支限界法(优先队列式分支限界法)</h4><p>&emsp;&emsp;基本思想：为了加速搜索的进程，应采用有效地方式选择活结点进行扩展。按照优先队列中规定的优先级选取优先级最高的结点成为当前扩展结点。<br>&emsp;&emsp;搜索策略：对每一活结点计算一个优先级（某些信息的函数值），并根据这些优先级；从当前活结点表中优先选择一个优先级最高（最有利）的结点作为扩展结点，使搜索朝着解空间树上有最优解的分支推进，以便尽快地找出一个最优解。再从活结点表中下一个优先级别最高的结点为当前扩展结点，……，直到找到一个解或活结点队列为空为止。</p>
-<h3 id="分支限界算法与回溯法的区别"><a href="#分支限界算法与回溯法的区别" class="headerlink" title="分支限界算法与回溯法的区别"></a>分支限界算法与回溯法的区别</h3><p>&emsp;&emsp;分支限界算法与回溯法都是在所给定问题的解空间树上搜索问题的解的算法。但二者也有一些不同之处：</p>
-<ul>
-<li><strong>算法目标不同</strong>：回溯算法的目的是找出解空间树中满足约束条件的所有解，而分支限界法的求解目标则是找出满足约束条件的一个解，或是在满足约束条件的条件下找出在某种意义下的最优解。 </li>
-<li><strong>搜索方式的不同</strong>：回溯法以深度优先遍历的方式搜索解空间树，而分支限界法则以广度优先遍历或以最小耗费优先的方式搜索解空间树</li>
-</ul>
-<h3 id="分支界限的应用"><a href="#分支界限的应用" class="headerlink" title="分支界限的应用"></a>分支界限的应用</h3><ol>
-<li>队列式分支限界法：按照队列先进先出（FIFO）原则选取下一个结点为扩展结点。 </li>
-<li>优先队列式分支限界法：按照优先队列中规定的优先级选取优先级最高的结点成为当前扩展结点。</li>
-<li>单源最短路径问题</li>
-<li>装载问题、批处理作业问题、布线问题</li>
-<li>0-1背包问题</li>
-<li>旅行售货员问题</li>
-<li>栈式搜索方法，按照FILO</li>
+        <p>&emsp;&emsp;本文记录Ubuntu系统的软件安装历程。<br><a id="more"></a></p>
+<p>&emsp;&emsp;电脑型号：美版 Y50-70<br>&emsp;&emsp;是否双系统：是<br>&emsp;&emsp;WIndow系统版本：Windows 8.1专业版64位<br>&emsp;&emsp;Linux系统版本：Ubuntu 16.04 LTS 64位</p>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>&emsp;&emsp;Git是分布式版本控制系统，程序员必备。</p>
+<ol>
+<li>检查系统是否安装git：在命令行窗口输入<code>git</code>，如果系统提示<code>The Program &#39;git&#39; is currently not installed.</code>，则说明系统没有安装<code>git</code>。</li>
+<li><p>安装Git：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后，检查是否安装成功</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git --version</div></pre></td></tr></table></figure>
+</li>
+<li><p>成功安装<code>Git</code>后，配置用户名和Email。配置完成后，在用户文件夹下会自动生成<code>.gitconfig</code>文件。若要查看<code>Git</code>的全局配置信息，在控制台输入<code>git config -l</code>即可。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"YourName"</span></div><div class="line">git config --global user.email <span class="string">"username@email.com"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>创建用于验证的公钥。<code>Git</code>通过SSH的方式访问远程资源库，因此需要在本地创建验证公钥。创建公钥成功后，在<code>~/.ssh/</code>目录下会生成<code>id_rsa.pub</code>文件。</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -C <span class="string">'username@email.com'</span> -t rsa</div><div class="line">ssh -v git@github.com</div></pre></td></tr></table></figure>
+</li>
+<li><p>上传公钥。在Github主界面点击右上角的<code>Account Settings</code>，选择<code>SSH Public Keys</code> ，选中<code>添加</code>，Title推荐以电脑用户名命名，Key的内容拷贝自<code>~/.ssh/id_rsa.pub</code>中的内容。上传公钥完成后，使用<code>ssh -v git@github.com</code>进行测试。</p>
+</li>
 </ol>
-
+<h3 id="安装Adobe-Flash-Player"><a href="#安装Adobe-Flash-Player" class="headerlink" title="安装Adobe Flash Player"></a>安装Adobe Flash Player</h3><p>&emsp;&emsp;Ubuntu系统自带Firefox浏览器，但是打开视频网站时提示需要安装flash插件。使用下列指令安装flash插件后，要重启Firefox浏览器才能生效。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install flashplugin-installer</div></pre></td></tr></table></figure></p>
+<h3 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks"></a>安装Shadowsocks</h3><p>&emsp;&emsp;shadowsocks的客户端使用<code>shadowsocks-qt5</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure></p>
+<h3 id="安装Sublime-Text"><a href="#安装Sublime-Text" class="headerlink" title="安装Sublime Text"></a>安装Sublime Text</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/sublime-text-3 <span class="comment"># 添加sublime text 3的仓库</span></div><div class="line">sudo apt-get update <span class="comment"># 更新软件库</span></div><div class="line">sudo apt-get install sublime-text-installer <span class="comment"># 安装Sublime Text 3</span></div></pre></td></tr></table></figure>
+<h3 id="安装Xgboost"><a href="#安装Xgboost" class="headerlink" title="安装Xgboost"></a>安装Xgboost</h3><p>&emsp;&emsp;Xgbsoost不再过多介绍，可参考<a href="https://github.com/dmlc/xgboost" target="_blank" rel="external">Github库</a>和<a href="https://xgboost.readthedocs.io/en/latest/" target="_blank" rel="external">官方文档</a>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Github</div><div class="line">git <span class="built_in">clone</span> --recursive https://github.com/dmlc/xgboost</div><div class="line"><span class="built_in">cd</span> ./xgboost</div><div class="line">make -j4 <span class="comment"># 或者只使用make亦可</span></div><div class="line"><span class="built_in">cd</span> xgboost/python-package/</div><div class="line">python setup.py install <span class="comment"># 不能使用sudo</span></div></pre></td></tr></table></figure></p>
+<h3 id="安装网易云音乐"><a href="#安装网易云音乐" class="headerlink" title="安装网易云音乐"></a>安装网易云音乐</h3><p>&emsp;&emsp;去<a href="http://music.163.com/#/download" target="_blank" rel="external">官网</a>下载<code>NetEaseMusic.deb</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Download/</div><div class="line">sudo dpkg -i netease_music.deb</div><div class="line">sudo apt-get <span class="_">-f</span> install</div><div class="line">sudo dpkg -i netease_music.deb</div></pre></td></tr></table></figure></p>
+<h3 id="安装wps-office"><a href="#安装wps-office" class="headerlink" title="安装wps office"></a>安装wps office</h3><p>&emsp;&emsp;下载<code>wps_office.deb</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Download/</div><div class="line">sudo dpkg -i wps_office.deb</div><div class="line">sudo apt-get <span class="_">-f</span> install</div><div class="line">sudo dpkg -i wps_office.deb</div></pre></td></tr></table></figure></p>
+<p>&emsp;&emsp;安装完成后，提示“系统确实字体：Wingdings、Wingdings 2、Wingdings 3、…”。解决办法：下载缺失字体，解压到<code>/home/username/.fonts</code>和<code>/root/.fonts</code>目录下，重启程序即可。</p>
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><ol>
+<li>当前用户下的环境变量：<code>/home/username/.bashrc</code></li>
+<li><code>root</code>用户的环境变量位置：<code>/root/.bashrc</code></li>
+<li>每次修改环境变量配置后，都要使用<code>source /home/username/.bashrc</code>或<code>/root/.bashrc</code>指令更新环境变量</li>
+</ol>
+<h3 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h3><ol>
+<li>下载源文件<code>jdk-8uxx-linux-x64.tar.gz</code></li>
+<li><p>找到源文件位置，将<code>jdk</code>解压到指定文件夹下</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf jdk-8uxx-linux-x64.tar.gz /opt/java</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置环境变量。当前用户下的环境变量文件位置为<code>/home/username/.bashrc</code>， <code>root</code>用户的环境变量文件位置为<code>/root/.bashrc</code></p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> JAVA_HOME=/opt/java/jdk1.8.0_xx</div><div class="line"><span class="built_in">export</span> JRE_HOME=/opt/java/jdk_1.8.0_xx/jre</div><div class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$CLASSPATH</span>:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JRE_HOME</span>/lib</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新环境变量</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /home/username/.bashrc</div><div class="line"><span class="built_in">source</span> /root/.bashrc</div></pre></td></tr></table></figure>
+</li>
+<li><p>检查Java是否安装成功，</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java --version</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="安装Scala"><a href="#安装Scala" class="headerlink" title="安装Scala"></a>安装Scala</h3><p>&emsp;&emsp;Ubuntu系统安装<code>Scala</code>的过程与安装<code>Java</code>的过程相似，可参考前文的<code>Java</code>安装教程。</p>
+<h3 id="安装Eclipse"><a href="#安装Eclipse" class="headerlink" title="安装Eclipse"></a>安装Eclipse</h3><ol>
+<li>Eclipse官网<a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">地址</a>，下载<code>eclipse-java-mars-linux-gtk-x86_64.tar.gz</code></li>
+<li><p>将源文件解压到指定文件夹下</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/</div><div class="line">sudo tar -zxvf eclipse-java-mars-linux-gtk-x86_64.tar.gz /opt/</div></pre></td></tr></table></figure>
+</li>
+<li><p>要想在控制台下直接启动Eclipse，则将Eclipse启动脚本的目录加入到环境变量文件<code>.bashrc</code>即可。</p>
+</li>
+</ol>
+<h3 id="安装Matlab"><a href="#安装Matlab" class="headerlink" title="安装Matlab"></a>安装Matlab</h3><p>&emsp;&emsp;为防止出错，应在<code>root</code>用户下安装，本安装教程假设用户打开matlab安装界面后可以自主安装，关于Matlab的激活本教程不做赘述。获取Linux版的Matlab镜像：<code>Matlab-R2015a-linux-x64.iso</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo mount -o loop /home/username/Software/Matlab-R2015a-linux-x64.iso /nmt/</div><div class="line"><span class="built_in">cd</span> /mnt/matlab</div><div class="line">sudo ./install</div><div class="line">sudo umount /mnt/matlab</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -414,9 +453,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag">#算法</a>
-          
-            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
           
         </div>
       
@@ -425,17 +462,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/算法设计思想之回溯算法.html" rel="next" title="算法设计思想之回溯算法">
-                <i class="fa fa-chevron-left"></i> 算法设计思想之回溯算法
+              <a href="/blog/17个适合练手的数据科学项目数据集.html" rel="next" title="17个适合练手的数据科学项目数据集">
+                <i class="fa fa-chevron-left"></i> 17个适合练手的数据科学项目数据集
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/article/17个适合练手的数据科学项目数据集.html" rel="prev" title="17个适合练手的数据科学项目数据集">
-                17个适合练手的数据科学项目数据集 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -450,10 +483,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="article/算法设计思想之分支界限.html"
-     data-title="算法设计思想之分支界限"
+        <div class="ds-share flat" data-thread-key="blog/Ubuntu安装软件过程记录.html"
+     data-title="Ubuntu安装软件过程记录"
      data-content=""
-     data-url="http://yaodong.ml/article/算法设计思想之分支界限.html">
+     data-url="http://yaodong.ml/blog/Ubuntu安装软件过程记录.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -480,8 +513,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="article/算法设计思想之分支界限.html"
-           data-title="算法设计思想之分支界限" data-url="http://yaodong.ml/article/算法设计思想之分支界限.html">
+      <div class="ds-thread" data-thread-key="blog/Ubuntu安装软件过程记录.html"
+           data-title="Ubuntu安装软件过程记录" data-url="http://yaodong.ml/blog/Ubuntu安装软件过程记录.html">
       </div>
     
   </div>
@@ -634,7 +667,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分支限界算法的基本思想"><span class="nav-number">1.</span> <span class="nav-text">分支限界算法的基本思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的分支限界法"><span class="nav-number">2.</span> <span class="nav-text">常见的分支限界法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FIFO分支限界法-队列式分支限界法"><span class="nav-number">2.1.</span> <span class="nav-text">FIFO分支限界法(队列式分支限界法)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Least-Cost分支限界法-优先队列式分支限界法"><span class="nav-number">2.2.</span> <span class="nav-text">Least Cost分支限界法(优先队列式分支限界法)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支限界算法与回溯法的区别"><span class="nav-number">3.</span> <span class="nav-text">分支限界算法与回溯法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支界限的应用"><span class="nav-number">4.</span> <span class="nav-text">分支界限的应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Adobe-Flash-Player"><span class="nav-number">2.</span> <span class="nav-text">安装Adobe Flash Player</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Shadowsocks"><span class="nav-number">3.</span> <span class="nav-text">安装Shadowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Sublime-Text"><span class="nav-number">4.</span> <span class="nav-text">安装Sublime Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Xgboost"><span class="nav-number">5.</span> <span class="nav-text">安装Xgboost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装网易云音乐"><span class="nav-number">6.</span> <span class="nav-text">安装网易云音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装wps-office"><span class="nav-number">7.</span> <span class="nav-text">安装wps office</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量配置"><span class="nav-number">8.</span> <span class="nav-text">环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Java"><span class="nav-number">9.</span> <span class="nav-text">安装Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Scala"><span class="nav-number">10.</span> <span class="nav-text">安装Scala</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Eclipse"><span class="nav-number">11.</span> <span class="nav-text">安装Eclipse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Matlab"><span class="nav-number">12.</span> <span class="nav-text">安装Matlab</span></a></li></ol></div>
             
           </div>
         </section>

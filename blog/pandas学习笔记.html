@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ubuntu," />
+  <meta name="keywords" content="python,pandas," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;本文记录Ubuntu系统的软件安装历程。">
+<meta name="description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu安装软件过程记录">
-<meta property="og:url" content="http://yaodong.ml/article/Ubuntu安装软件过程记录.html">
+<meta property="og:title" content="pandas学习笔记">
+<meta property="og:url" content="http://yaodong.ml/blog/pandas学习笔记.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;本文记录Ubuntu系统的软件安装历程。">
-<meta property="og:updated_time" content="2016-11-23T07:34:15.868Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
+<meta property="og:updated_time" content="2016-11-11T07:47:29.648Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu安装软件过程记录">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文记录Ubuntu系统的软件安装历程。">
+<meta name="twitter:title" content="pandas学习笔记">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/article/Ubuntu安装软件过程记录.html"/>
+  <link rel="canonical" href="http://yaodong.ml/blog/pandas学习笔记.html"/>
 
 
-  <title> Ubuntu安装软件过程记录 | Jellyyoung's Blog </title>
+  <title> pandas学习笔记 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                Ubuntu安装软件过程记录
+                pandas学习笔记
               
             
           </h1>
@@ -290,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-23T15:31:38+08:00" content="2016-11-23">
-              2016-11-23
+            <time itemprop="dateCreated" datetime="2016-11-02T20:12:28+08:00" content="2016-11-02">
+              2016-11-02
             </time>
           </span>
 
@@ -304,8 +304,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/原创/" itemprop="url" rel="index">
-                    <span itemprop="name">原创</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -320,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/article/Ubuntu安装软件过程记录.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="article/Ubuntu安装软件过程记录.html" itemprop="commentsCount"></span>
+                <a href="/blog/pandas学习笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="blog/pandas学习笔记.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/article/Ubuntu安装软件过程记录.html" class="leancloud_visitors" data-flag-title="Ubuntu安装软件过程记录">
+             <span id="/blog/pandas学习笔记.html" class="leancloud_visitors" data-flag-title="pandas学习笔记">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,64 +353,19 @@
       
 
       
-        <p>&emsp;&emsp;本文记录Ubuntu系统的软件安装历程。<br><a id="more"></a></p>
-<p>&emsp;&emsp;电脑型号：美版 Y50-70<br>&emsp;&emsp;是否双系统：是<br>&emsp;&emsp;WIndow系统版本：Windows 8.1专业版64位<br>&emsp;&emsp;Linux系统版本：Ubuntu 16.04 LTS 64位</p>
-<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>&emsp;&emsp;Git是分布式版本控制系统，程序员必备。</p>
-<ol>
-<li>检查系统是否安装git：在命令行窗口输入<code>git</code>，如果系统提示<code>The Program &#39;git&#39; is currently not installed.</code>，则说明系统没有安装<code>git</code>。</li>
-<li><p>安装Git：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
-</li>
-<li><p>安装完成后，检查是否安装成功</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git --version</div></pre></td></tr></table></figure>
-</li>
-<li><p>成功安装<code>Git</code>后，配置用户名和Email。配置完成后，在用户文件夹下会自动生成<code>.gitconfig</code>文件。若要查看<code>Git</code>的全局配置信息，在控制台输入<code>git config -l</code>即可。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"YourName"</span></div><div class="line">git config --global user.email <span class="string">"username@email.com"</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>创建用于验证的公钥。<code>Git</code>通过SSH的方式访问远程资源库，因此需要在本地创建验证公钥。创建公钥成功后，在<code>~/.ssh/</code>目录下会生成<code>id_rsa.pub</code>文件。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -C <span class="string">'username@email.com'</span> -t rsa</div><div class="line">ssh -v git@github.com</div></pre></td></tr></table></figure>
-</li>
-<li><p>上传公钥。在Github主界面点击右上角的<code>Account Settings</code>，选择<code>SSH Public Keys</code> ，选中<code>添加</code>，Title推荐以电脑用户名命名，Key的内容拷贝自<code>~/.ssh/id_rsa.pub</code>中的内容。上传公钥完成后，使用<code>ssh -v git@github.com</code>进行测试。</p>
-</li>
-</ol>
-<h3 id="安装Adobe-Flash-Player"><a href="#安装Adobe-Flash-Player" class="headerlink" title="安装Adobe Flash Player"></a>安装Adobe Flash Player</h3><p>&emsp;&emsp;Ubuntu系统自带Firefox浏览器，但是打开视频网站时提示需要安装flash插件。使用下列指令安装flash插件后，要重启Firefox浏览器才能生效。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install flashplugin-installer</div></pre></td></tr></table></figure></p>
-<h3 id="安装Shadowsocks"><a href="#安装Shadowsocks" class="headerlink" title="安装Shadowsocks"></a>安装Shadowsocks</h3><p>&emsp;&emsp;shadowsocks的客户端使用<code>shadowsocks-qt5</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure></p>
-<h3 id="安装Sublime-Text"><a href="#安装Sublime-Text" class="headerlink" title="安装Sublime Text"></a>安装Sublime Text</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:webupd8team/sublime-text-3 <span class="comment"># 添加sublime text 3的仓库</span></div><div class="line">sudo apt-get update <span class="comment"># 更新软件库</span></div><div class="line">sudo apt-get install sublime-text-installer <span class="comment"># 安装Sublime Text 3</span></div></pre></td></tr></table></figure>
-<h3 id="安装Xgboost"><a href="#安装Xgboost" class="headerlink" title="安装Xgboost"></a>安装Xgboost</h3><p>&emsp;&emsp;Xgbsoost不再过多介绍，可参考<a href="https://github.com/dmlc/xgboost" target="_blank" rel="external">Github库</a>和<a href="https://xgboost.readthedocs.io/en/latest/" target="_blank" rel="external">官方文档</a>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Github</div><div class="line">git <span class="built_in">clone</span> --recursive https://github.com/dmlc/xgboost</div><div class="line"><span class="built_in">cd</span> ./xgboost</div><div class="line">make -j4 <span class="comment"># 或者只使用make亦可</span></div><div class="line"><span class="built_in">cd</span> xgboost/python-package/</div><div class="line">python setup.py install <span class="comment"># 不能使用sudo</span></div></pre></td></tr></table></figure></p>
-<h3 id="安装网易云音乐"><a href="#安装网易云音乐" class="headerlink" title="安装网易云音乐"></a>安装网易云音乐</h3><p>&emsp;&emsp;去<a href="http://music.163.com/#/download" target="_blank" rel="external">官网</a>下载<code>NetEaseMusic.deb</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Download/</div><div class="line">sudo dpkg -i netease_music.deb</div><div class="line">sudo apt-get <span class="_">-f</span> install</div><div class="line">sudo dpkg -i netease_music.deb</div></pre></td></tr></table></figure></p>
-<h3 id="安装wps-office"><a href="#安装wps-office" class="headerlink" title="安装wps office"></a>安装wps office</h3><p>&emsp;&emsp;下载<code>wps_office.deb</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/Download/</div><div class="line">sudo dpkg -i wps_office.deb</div><div class="line">sudo apt-get <span class="_">-f</span> install</div><div class="line">sudo dpkg -i wps_office.deb</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;安装完成后，提示“系统确实字体：Wingdings、Wingdings 2、Wingdings 3、…”。解决办法：下载缺失字体，解压到<code>/home/username/.fonts</code>和<code>/root/.fonts</code>目录下，重启程序即可。</p>
-<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><ol>
-<li>当前用户下的环境变量：<code>/home/username/.bashrc</code></li>
-<li><code>root</code>用户的环境变量位置：<code>/root/.bashrc</code></li>
-<li>每次修改环境变量配置后，都要使用<code>source /home/username/.bashrc</code>或<code>/root/.bashrc</code>指令更新环境变量</li>
-</ol>
-<h3 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h3><ol>
-<li>下载源文件<code>jdk-8uxx-linux-x64.tar.gz</code></li>
-<li><p>找到源文件位置，将<code>jdk</code>解压到指定文件夹下</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf jdk-8uxx-linux-x64.tar.gz /opt/java</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置环境变量。当前用户下的环境变量文件位置为<code>/home/username/.bashrc</code>， <code>root</code>用户的环境变量文件位置为<code>/root/.bashrc</code></p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> JAVA_HOME=/opt/java/jdk1.8.0_xx</div><div class="line"><span class="built_in">export</span> JRE_HOME=/opt/java/jdk_1.8.0_xx/jre</div><div class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$CLASSPATH</span>:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JRE_HOME</span>/lib</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>/bin</div></pre></td></tr></table></figure>
-</li>
-<li><p>更新环境变量</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /home/username/.bashrc</div><div class="line"><span class="built_in">source</span> /root/.bashrc</div></pre></td></tr></table></figure>
-</li>
-<li><p>检查Java是否安装成功，</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java --version</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="安装Scala"><a href="#安装Scala" class="headerlink" title="安装Scala"></a>安装Scala</h3><p>&emsp;&emsp;Ubuntu系统安装<code>Scala</code>的过程与安装<code>Java</code>的过程相似，可参考前文的<code>Java</code>安装教程。</p>
-<h3 id="安装Eclipse"><a href="#安装Eclipse" class="headerlink" title="安装Eclipse"></a>安装Eclipse</h3><ol>
-<li>Eclipse官网<a href="http://www.eclipse.org/downloads/" target="_blank" rel="external">地址</a>，下载<code>eclipse-java-mars-linux-gtk-x86_64.tar.gz</code></li>
-<li><p>将源文件解压到指定文件夹下</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /home/username/</div><div class="line">sudo tar -zxvf eclipse-java-mars-linux-gtk-x86_64.tar.gz /opt/</div></pre></td></tr></table></figure>
-</li>
-<li><p>要想在控制台下直接启动Eclipse，则将Eclipse启动脚本的目录加入到环境变量文件<code>.bashrc</code>即可。</p>
-</li>
-</ol>
-<h3 id="安装Matlab"><a href="#安装Matlab" class="headerlink" title="安装Matlab"></a>安装Matlab</h3><p>&emsp;&emsp;为防止出错，应在<code>root</code>用户下安装，本安装教程假设用户打开matlab安装界面后可以自主安装，关于Matlab的激活本教程不做赘述。获取Linux版的Matlab镜像：<code>Matlab-R2015a-linux-x64.iso</code>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo mount -o loop /home/username/Software/Matlab-R2015a-linux-x64.iso /nmt/</div><div class="line"><span class="built_in">cd</span> /mnt/matlab</div><div class="line">sudo ./install</div><div class="line">sudo umount /mnt/matlab</div></pre></td></tr></table></figure>
+        <p>&emsp;&emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。<br><a id="more"></a><br>&emsp;&emsp;本博文主要是记录博主学习pandas的相关笔记，大部分学习内容来自于总结<a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html" target="_blank" rel="external">pandas documenation</a>和《利用Python进行数据分析》的pandas的相关章节。<br>&emsp;&emsp;pandas中的两个主要的数据结构是<strong>Series</strong>和<strong>DataFrame</strong>，对此不做过多的理论介绍，<strong>本博文侧重于记录如何使用pandas</strong>。</p>
+<h4 id="导入pandas、numpy、matplotlib包："><a href="#导入pandas、numpy、matplotlib包：" class="headerlink" title="导入pandas、numpy、matplotlib包："></a>导入pandas、numpy、matplotlib包：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> scipy <span class="keyword">as</span> sp</div><div class="line"><span class="keyword">import</span> matplot.pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
+<h4 id="创建Series"><a href="#创建Series" class="headerlink" title="创建Series"></a>创建<strong>Series</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s = pd.Series([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,np.nan,<span class="number">6</span>,<span class="number">8</span>])</div><div class="line">%<span class="comment">#Series具有index属性和values属性，索引从0开始。创建Series时也可指定index的类型</span></div><div class="line">obj = pd.Series([<span class="number">4</span>,<span class="number">-7</span>,<span class="number">5</span>,<span class="number">3</span>],index=[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>])</div><div class="line">%<span class="comment">#可通过索引值获取Series结构的值：</span></div><div class="line">series[index]</div></pre></td></tr></table></figure>
+<h4 id="根据字典创建DataFrame对象："><a href="#根据字典创建DataFrame对象：" class="headerlink" title="根据字典创建DataFrame对象："></a>根据字典创建<strong>DataFrame</strong>对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">df2 = pd.DataFrame(</div><div class="line">    &#123; <span class="string">'A'</span> : <span class="number">1.</span>,</div><div class="line">      <span class="string">'B'</span> : pd.Timestamp(<span class="string">'20130102'</span>),</div><div class="line">      <span class="string">'C'</span> : pd.Series(<span class="number">1</span>,index=list(range(<span class="number">4</span>)),dtype=<span class="string">'float32'</span>),</div><div class="line">      <span class="string">'D'</span> : np.array([<span class="number">3</span>] * <span class="number">4</span>,dtype=<span class="string">'int32'</span>),</div><div class="line">      <span class="string">'E'</span> : pd.Categorical([<span class="string">"test"</span>,<span class="string">"train"</span>,<span class="string">"test"</span>,<span class="string">"train"</span>]),</div><div class="line">      <span class="string">'F'</span> : <span class="string">'foo'</span></div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<h4 id="使用pandas创建时间日期戳对象："><a href="#使用pandas创建时间日期戳对象：" class="headerlink" title="使用pandas创建时间日期戳对象："></a>使用pandas创建时间日期戳对象：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">6</span>]: dates = pd.date_range(<span class="string">'20130101'</span>, periods=<span class="number">6</span>)</div><div class="line">In [<span class="number">7</span>]: dates</div><div class="line">Out[<span class="number">7</span>]: </div><div class="line">DatetimeIndex([<span class="string">'2013-01-01'</span>, <span class="string">'2013-01-02'</span>, <span class="string">'2013-01-03'</span>, <span class="string">'2013-01-04'</span>,</div><div class="line">               <span class="string">'2013-01-05'</span>, <span class="string">'2013-01-06'</span>],</div><div class="line">              dtype=<span class="string">'datetime64[ns]'</span>, freq=<span class="string">'D'</span>)</div><div class="line">In [<span class="number">8</span>]: df = pd.DataFrame(np.random.randn(<span class="number">6</span>,<span class="number">4</span>), index=dates, columns=list(<span class="string">'ABCD'</span>))</div><div class="line">In [<span class="number">9</span>]: df</div><div class="line">Out[<span class="number">9</span>]: </div><div class="line">                A         B         C         D</div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-01</span>  <span class="number">0.469112</span> <span class="number">-0.282863</span> <span class="number">-1.509059</span> <span class="number">-1.135632</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-02</span>  <span class="number">1.212112</span> <span class="number">-0.173215</span>  <span class="number">0.119209</span> <span class="number">-1.044236</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-03</span> <span class="number">-0.861849</span> <span class="number">-2.104569</span> <span class="number">-0.494929</span>  <span class="number">1.071804</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-04</span>  <span class="number">0.721555</span> <span class="number">-0.706771</span> <span class="number">-1.039575</span>  <span class="number">0.271860</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-05</span> <span class="number">-0.424972</span>  <span class="number">0.567020</span>  <span class="number">0.276232</span> <span class="number">-1.087401</span></div><div class="line"><span class="number">2013</span><span class="number">-01</span><span class="number">-06</span> <span class="number">-0.673690</span>  <span class="number">0.113648</span> <span class="number">-1.478427</span>  <span class="number">0.524988</span></div></pre></td></tr></table></figure>
+<h4 id="对DataFrame对象进行排序"><a href="#对DataFrame对象进行排序" class="headerlink" title="对DataFrame对象进行排序"></a>对DataFrame对象进行排序</h4><p>&emsp;&emsp;根据属性进行排序：<code>sort_index(axis=1,ascending=False)</code>函数<br>&emsp;&emsp;根据某个属性的值进行排序：<code>sort_values(by=&#39;column_name&#39;)</code>函数</p>
+<h4 id="获取DataFrame对象的指定行或列"><a href="#获取DataFrame对象的指定行或列" class="headerlink" title="获取DataFrame对象的指定行或列"></a>获取DataFrame对象的指定行或列</h4><p>&emsp;&emsp;df.loc()：根据元素的具体值获取DataFrame对象的行或列<br>&emsp;&emsp;df.iloc()：根据具体数字作为索引来获取DataFrame对象的行或列<br>&emsp;&emsp;df.at()：获取指定的元素<br>&emsp;&emsp;df.iat()：获取指定的元素</p>
+<h4 id="pandas处理缺失值"><a href="#pandas处理缺失值" class="headerlink" title="pandas处理缺失值"></a>pandas处理缺失值</h4><p>&emsp;&emsp;df.dropna(how=”any”)：删除DataFrame对象的缺失值<br>&emsp;&emsp;df.fillna(value=5)：用value的值来代替DataFrame对象的缺失值<br>&emsp;&emsp;pd.isnull(df)：判断DataFrame对象的各属性值是否为空</p>
+<h4 id="pandas合并、连结DataFrame对象"><a href="#pandas合并、连结DataFrame对象" class="headerlink" title="pandas合并、连结DataFrame对象"></a>pandas合并、连结DataFrame对象</h4><p>&emsp;&emsp;<strong>pd.concat([df1,df2],axis=0 or 1)</strong><br>&emsp;&emsp;<strong>pd.merge()</strong>：类SQL式合并DataFrame对象<br>&emsp;&emsp;<strong>df.append(series, ignore_index=True)</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">In [<span class="number">77</span>]: left = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'lval'</span>: [<span class="number">1</span>, <span class="number">2</span>]&#125;)</div><div class="line">In [<span class="number">78</span>]: right = pd.DataFrame(&#123;<span class="string">'key'</span>: [<span class="string">'foo'</span>, <span class="string">'foo'</span>], <span class="string">'rval'</span>: [<span class="number">4</span>, <span class="number">5</span>]&#125;)</div><div class="line">In [<span class="number">79</span>]: left</div><div class="line">Out[<span class="number">79</span>]: </div><div class="line">               key  lval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">2</span></div><div class="line">In [<span class="number">80</span>]: right</div><div class="line">Out[<span class="number">80</span>]: </div><div class="line">               key  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">5</span></div><div class="line">In [<span class="number">81</span>]: pd.merge(left, right, on=<span class="string">'key'</span>)</div><div class="line">Out[<span class="number">81</span>]: </div><div class="line">               key  lval  rval</div><div class="line">            <span class="number">0</span>  foo     <span class="number">1</span>     <span class="number">4</span></div><div class="line">            <span class="number">1</span>  foo     <span class="number">1</span>     <span class="number">5</span></div><div class="line">            <span class="number">2</span>  foo     <span class="number">2</span>     <span class="number">4</span></div><div class="line">            <span class="number">3</span>  foo     <span class="number">2</span>     <span class="number">5</span></div></pre></td></tr></table></figure>
+<h4 id="pandas的DataFrame对象的相关属性"><a href="#pandas的DataFrame对象的相关属性" class="headerlink" title="pandas的DataFrame对象的相关属性"></a><strong>pandas的DataFrame对象的相关属性</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">df2.A                  df2.boxplot</div><div class="line">df2.abs                df2.C</div><div class="line">df2.add                df2.clip</div><div class="line">df2.add_prefix         df2.clip_lower</div><div class="line">df2.add_suffix         df2.clip_upper</div><div class="line">df2.align              df2.columns</div><div class="line">df2.all                df2.combine</div><div class="line">df2.any                df2.combineAdd</div><div class="line">df2.append             df2.combine_first</div><div class="line">df2.apply              df2.combineMult</div><div class="line">df2.applymap           df2.compound</div><div class="line">df2.as_blocks          df2.consolidate</div><div class="line">df2.asfreq             df2.convert_objects</div><div class="line">df2.as_matrix          df2.copy</div><div class="line">df2.astype             df2.corr</div><div class="line">df2.at                 df2.corrwith</div><div class="line">df2.at_time            df2.count</div><div class="line">df2.axes               df2.cov</div><div class="line">df2.B                  df2.cummax</div><div class="line">df2.between_time       df2.cummin</div><div class="line">df2.bfill              df2.cumprod</div><div class="line">df2.blocks             df2.cumsum</div><div class="line">df2.bool               df2.D</div></pre></td></tr></table></figure>
+<h4 id="pandas的相关函数："><a href="#pandas的相关函数：" class="headerlink" title="pandas的相关函数："></a>pandas的相关函数：</h4><p>&emsp;&emsp;<strong>pd.Tiimestamp()</strong>：把字符串转化为日期时间戳对象<br>&emsp;&emsp;<strong>np.array()</strong>：创建numpy的ndarray对象<br>&emsp;&emsp;<strong>df.dtypes</strong>：查看DataFrame对象的每个属性的数据类型<br>&emsp;&emsp;<strong>df.head()</strong>：查看DataFrame对象头部的若干条记录<br>&emsp;&emsp;<strong>df.tail()</strong>：查看DataFrame对象尾部的若干条记录<br>&emsp;&emsp;<strong>df.columns</strong>：获取DataFrame对象的属性名字<br>&emsp;&emsp;<strong>df.index</strong>：获取DataFrame对象的索引值<br>&emsp;&emsp;<strong>df.values</strong>：获取DataFrame对象属性值<br>&emsp;&emsp;<strong>df.describe()</strong>：获取DataFrame对象的相关信息<br>&emsp;&emsp;<strong>df.copy()</strong>：显性复制DataFrame对象<br>&emsp;&emsp;<strong>series.shift()</strong>：对Series对象的数据循环移动n位<br>&emsp;&emsp;<strong>df.apply(</strong>lambda function<strong>)</strong>：对DataFrame对象应用函数<br>&emsp;&emsp;<strong>series.value_counts()</strong>：统计Series对象的每个取值的频数<br>&emsp;&emsp;<strong>series.str.lower()</strong>：把字符转化为小写<br>&emsp;&emsp;<strong>df.groupby(column_name).sum()</strong>：以group的形式统计相关信息<br>&emsp;&emsp;stacked = df.stack()：<br>&emsp;&emsp;stacked.unstack()</p>
+
       
     </div>
 
@@ -453,7 +408,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/pandas/" rel="tag">#pandas</a>
           
         </div>
       
@@ -462,13 +419,17 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/article/17个适合练手的数据科学项目数据集.html" rel="next" title="17个适合练手的数据科学项目数据集">
-                <i class="fa fa-chevron-left"></i> 17个适合练手的数据科学项目数据集
+              <a href="/blog/Window下python的Xgboost框架安装教程.html" rel="next" title="Window下python的Xgboost框架安装教程">
+                <i class="fa fa-chevron-left"></i> Window下python的Xgboost框架安装教程
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/MySQL学习笔记.html" rel="prev" title="MySQL学习笔记">
+                MySQL学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -483,10 +444,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="article/Ubuntu安装软件过程记录.html"
-     data-title="Ubuntu安装软件过程记录"
+        <div class="ds-share flat" data-thread-key="blog/pandas学习笔记.html"
+     data-title="pandas学习笔记"
      data-content=""
-     data-url="http://yaodong.ml/article/Ubuntu安装软件过程记录.html">
+     data-url="http://yaodong.ml/blog/pandas学习笔记.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -513,8 +474,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="article/Ubuntu安装软件过程记录.html"
-           data-title="Ubuntu安装软件过程记录" data-url="http://yaodong.ml/article/Ubuntu安装软件过程记录.html">
+      <div class="ds-thread" data-thread-key="blog/pandas学习笔记.html"
+           data-title="pandas学习笔记" data-url="http://yaodong.ml/blog/pandas学习笔记.html">
       </div>
     
   </div>
@@ -667,7 +628,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Adobe-Flash-Player"><span class="nav-number">2.</span> <span class="nav-text">安装Adobe Flash Player</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Shadowsocks"><span class="nav-number">3.</span> <span class="nav-text">安装Shadowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Sublime-Text"><span class="nav-number">4.</span> <span class="nav-text">安装Sublime Text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Xgboost"><span class="nav-number">5.</span> <span class="nav-text">安装Xgboost</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装网易云音乐"><span class="nav-number">6.</span> <span class="nav-text">安装网易云音乐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装wps-office"><span class="nav-number">7.</span> <span class="nav-text">安装wps office</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量配置"><span class="nav-number">8.</span> <span class="nav-text">环境变量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Java"><span class="nav-number">9.</span> <span class="nav-text">安装Java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Scala"><span class="nav-number">10.</span> <span class="nav-text">安装Scala</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Eclipse"><span class="nav-number">11.</span> <span class="nav-text">安装Eclipse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Matlab"><span class="nav-number">12.</span> <span class="nav-text">安装Matlab</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#导入pandas、numpy、matplotlib包："><span class="nav-number">1.</span> <span class="nav-text">导入pandas、numpy、matplotlib包：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Series"><span class="nav-number">2.</span> <span class="nav-text">创建Series</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据字典创建DataFrame对象："><span class="nav-number">3.</span> <span class="nav-text">根据字典创建DataFrame对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用pandas创建时间日期戳对象："><span class="nav-number">4.</span> <span class="nav-text">使用pandas创建时间日期戳对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对DataFrame对象进行排序"><span class="nav-number">5.</span> <span class="nav-text">对DataFrame对象进行排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取DataFrame对象的指定行或列"><span class="nav-number">6.</span> <span class="nav-text">获取DataFrame对象的指定行或列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas处理缺失值"><span class="nav-number">7.</span> <span class="nav-text">pandas处理缺失值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas合并、连结DataFrame对象"><span class="nav-number">8.</span> <span class="nav-text">pandas合并、连结DataFrame对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的DataFrame对象的相关属性"><span class="nav-number">9.</span> <span class="nav-text">pandas的DataFrame对象的相关属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pandas的相关函数："><span class="nav-number">10.</span> <span class="nav-text">pandas的相关函数：</span></a></li></ol></div>
             
           </div>
         </section>
