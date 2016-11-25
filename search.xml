@@ -4,6 +4,54 @@
   
     
     <entry>
+      <title><![CDATA[机器学习、深度学习理论知识框架]]></title>
+      <url>http://yaodong.ml/articles/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%81%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%A1%86%E6%9E%B6.html</url>
+      <content type="html"><![CDATA[<p>&emsp;&emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。<br><a id="more"></a></p>
+<h2 id="机器学习-Machine-Learning-ML"><a href="#机器学习-Machine-Learning-ML" class="headerlink" title="机器学习(Machine Learning, ML)"></a>机器学习(Machine Learning, ML)</h2><h3 id="机器学习基本概念"><a href="#机器学习基本概念" class="headerlink" title="机器学习基本概念"></a>机器学习基本概念</h3><h4 id="三要素：模型、策略、算法"><a href="#三要素：模型、策略、算法" class="headerlink" title="三要素：模型、策略、算法"></a>三要素：模型、策略、算法</h4><h4 id="欠拟合-amp-过拟合"><a href="#欠拟合-amp-过拟合" class="headerlink" title="欠拟合&amp;过拟合"></a>欠拟合&amp;过拟合</h4><h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><h4 id="偏差-方差、化误差"><a href="#偏差-方差、化误差" class="headerlink" title="偏差-方差、化误差"></a>偏差-方差、化误差</h4><h4 id="交叉验证-amp-t检验等"><a href="#交叉验证-amp-t检验等" class="headerlink" title="交叉验证&amp;t检验等"></a>交叉验证&amp;t检验等</h4><h4 id="分类模型的精确率、召回率"><a href="#分类模型的精确率、召回率" class="headerlink" title="分类模型的精确率、召回率"></a>分类模型的精确率、召回率</h4><h4 id="ROC曲线-amp-AUC曲线"><a href="#ROC曲线-amp-AUC曲线" class="headerlink" title="ROC曲线&amp;AUC曲线"></a>ROC曲线&amp;AUC曲线</h4><h4 id="样本不均衡、数据集采样方法"><a href="#样本不均衡、数据集采样方法" class="headerlink" title="样本不均衡、数据集采样方法"></a>样本不均衡、数据集采样方法</h4><h4 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h4><h4 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h4><h3 id="线性回归（Linear-Regression）"><a href="#线性回归（Linear-Regression）" class="headerlink" title="线性回归（Linear Regression）"></a>线性回归（Linear Regression）</h3><ul>
+<li>损失函数</li>
+<li>梯度下降法</li>
+<li>最小二乘法</li>
+</ul>
+<h3 id="对数回归"><a href="#对数回归" class="headerlink" title="对数回归"></a>对数回归</h3><ul>
+<li>概率分布</li>
+<li>代价函数</li>
+<li>极大似然估计</li>
+<li>梯度上升法</li>
+<li>牛顿法</li>
+<li>Softmax多分类学习</li>
+</ul>
+<h3 id="最大熵模型"><a href="#最大熵模型" class="headerlink" title="最大熵模型"></a>最大熵模型</h3><h3 id="聚类算法"><a href="#聚类算法" class="headerlink" title="聚类算法"></a>聚类算法</h3><ul>
+<li>距离度量</li>
+<li>k近邻算法</li>
+<li>k均值算法</li>
+<li>高斯混合聚类</li>
+<li>密度聚类</li>
+<li>层次聚类</li>
+</ul>
+<h3 id="决策树算法"><a href="#决策树算法" class="headerlink" title="决策树算法"></a>决策树算法</h3><ul>
+<li>选择准则：信息增益、信息增益比、基尼指数</li>
+<li>ID3算法</li>
+<li>C4.5算法</li>
+<li>CART算法</li>
+<li>决策树的剪枝</li>
+</ul>
+<h3 id="朴素贝叶斯模型"><a href="#朴素贝叶斯模型" class="headerlink" title="朴素贝叶斯模型"></a>朴素贝叶斯模型</h3><ol>
+<li>概率分布的公式推导</li>
+<li>极大似然估计、贝叶斯估计</li>
+</ol>
+<h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><ul>
+<li>函数间隔、几何间隔</li>
+<li>支持向量</li>
+<li>拉格朗日对偶算法</li>
+<li>软间隔、硬间隔</li>
+<li>核函数、核方法</li>
+<li>序列最小最优化算法（SMO）</li>
+</ul>
+<h3 id="高斯混合模型（Gaussian-Mix-Model-GMM）"><a href="#高斯混合模型（Gaussian-Mix-Model-GMM）" class="headerlink" title="高斯混合模型（Gaussian Mix Model, GMM）"></a>高斯混合模型（Gaussian Mix Model, GMM）</h3><h3 id="EM算法（Expection-Maximization-期望最大化）"><a href="#EM算法（Expection-Maximization-期望最大化）" class="headerlink" title="EM算法（Expection-Maximization, 期望最大化）"></a>EM算法（Expection-Maximization, 期望最大化）</h3><h3 id="主成分分析（Principal-Component-Analysis-PCA）"><a href="#主成分分析（Principal-Component-Analysis-PCA）" class="headerlink" title="主成分分析（Principal Component Analysis, PCA）"></a>主成分分析（Principal Component Analysis, PCA）</h3><h3 id="关联分析（Apriori算法）"><a href="#关联分析（Apriori算法）" class="headerlink" title="关联分析（Apriori算法）"></a>关联分析（Apriori算法）</h3><h3 id="独立成分分析（Independent-Component-Analysis-ICA）"><a href="#独立成分分析（Independent-Component-Analysis-ICA）" class="headerlink" title="独立成分分析（Independent Component Analysis, ICA）"></a>独立成分分析（Independent Component Analysis, ICA）</h3><h3 id="线性判别分析（Linear-Discriminant-Analysis-LDA）"><a href="#线性判别分析（Linear-Discriminant-Analysis-LDA）" class="headerlink" title="线性判别分析（Linear Discriminant Analysis, LDA）"></a>线性判别分析（Linear Discriminant Analysis, LDA）</h3><h3 id="高斯判别分析（Gaussian-Discriminant-Analysis-GDA）"><a href="#高斯判别分析（Gaussian-Discriminant-Analysis-GDA）" class="headerlink" title="高斯判别分析（Gaussian Discriminant Analysis, GDA）"></a>高斯判别分析（Gaussian Discriminant Analysis, GDA）</h3><h3 id="因子分析（Factor-Analysis-FA）"><a href="#因子分析（Factor-Analysis-FA）" class="headerlink" title="因子分析（Factor Analysis, FA）"></a>因子分析（Factor Analysis, FA）</h3><h3 id="Boosting方法"><a href="#Boosting方法" class="headerlink" title="Boosting方法"></a>Boosting方法</h3><h3 id="随机森林算法"><a href="#随机森林算法" class="headerlink" title="随机森林算法"></a>随机森林算法</h3><h3 id="隐马尔科夫模型"><a href="#隐马尔科夫模型" class="headerlink" title="隐马尔科夫模型"></a>隐马尔科夫模型</h3><h3 id="条件随机场"><a href="#条件随机场" class="headerlink" title="条件随机场"></a>条件随机场</h3><h3 id="强化学习（Reinforcement-Learning）"><a href="#强化学习（Reinforcement-Learning）" class="headerlink" title="强化学习（Reinforcement Learning）"></a>强化学习（Reinforcement Learning）</h3><h2 id="深度学习（Deep-Learning-DL）"><a href="#深度学习（Deep-Learning-DL）" class="headerlink" title="深度学习（Deep Learning, DL）"></a>深度学习（Deep Learning, DL）</h2><p>&emsp;&emsp;比较权威的学习教程：<a href="http://www.deeplearning.net/tutorial/" target="_blank" rel="external">Deep Learning Tutorial</a>、<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">Deep Learning Book</a> by <code>Ian GoodFellow</code></p>
+<h3 id="反向传播算法-BP"><a href="#反向传播算法-BP" class="headerlink" title="反向传播算法(BP)"></a>反向传播算法(BP)</h3><h3 id="多层感知机（MLP）"><a href="#多层感知机（MLP）" class="headerlink" title="多层感知机（MLP）"></a>多层感知机（MLP）</h3><h3 id="卷积神经网络（CNN）"><a href="#卷积神经网络（CNN）" class="headerlink" title="卷积神经网络（CNN）"></a>卷积神经网络（CNN）</h3><h3 id="自编码网络（AutoEncoder）"><a href="#自编码网络（AutoEncoder）" class="headerlink" title="自编码网络（AutoEncoder）"></a>自编码网络（AutoEncoder）</h3><h4 id="栈式自编码网络（SAE）"><a href="#栈式自编码网络（SAE）" class="headerlink" title="栈式自编码网络（SAE）"></a>栈式自编码网络（SAE）</h4><h4 id="降噪自编码网络（SDA）"><a href="#降噪自编码网络（SDA）" class="headerlink" title="降噪自编码网络（SDA）"></a>降噪自编码网络（SDA）</h4><h4 id="卷积自编码网络（CAE）"><a href="#卷积自编码网络（CAE）" class="headerlink" title="卷积自编码网络（CAE）"></a>卷积自编码网络（CAE）</h4><h3 id="深度置信网络（DBN）"><a href="#深度置信网络（DBN）" class="headerlink" title="深度置信网络（DBN）"></a>深度置信网络（DBN）</h3><h4 id="限制玻尔兹曼机（RBM）"><a href="#限制玻尔兹曼机（RBM）" class="headerlink" title="限制玻尔兹曼机（RBM）"></a>限制玻尔兹曼机（RBM）</h4><h3 id="递归神经网络（RNN-amp-LSTM）"><a href="#递归神经网络（RNN-amp-LSTM）" class="headerlink" title="递归神经网络（RNN&amp;LSTM）"></a>递归神经网络（RNN&amp;LSTM）</h3><h3 id="深度残差网络（Deep-Residual-Learning）"><a href="#深度残差网络（Deep-Residual-Learning）" class="headerlink" title="深度残差网络（Deep Residual Learning）"></a>深度残差网络（Deep Residual Learning）</h3>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Ubuntu安装软件过程记录]]></title>
       <url>http://yaodong.ml/articles/Ubuntu%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本文记录Ubuntu系统的软件安装历程。<br><a id="more"></a></p>

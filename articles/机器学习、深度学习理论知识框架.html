@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="算法,算法设计," />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
+<meta name="description" content="&amp;emsp;&amp;emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法设计思想之分治算法">
-<meta property="og:url" content="http://yaodong.ml/articles/算法设计思想之分治算法.html">
+<meta property="og:title" content="机器学习、深度学习理论知识框架">
+<meta property="og:url" content="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
-<meta property="og:updated_time" content="2016-11-15T08:25:50.266Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。">
+<meta property="og:updated_time" content="2016-11-25T07:47:10.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法设计思想之分治算法">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。">
+<meta name="twitter:title" content="机器学习、深度学习理论知识框架">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。">
 
 
 
@@ -116,10 +116,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/articles/算法设计思想之分治算法.html"/>
+  <link rel="canonical" href="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html"/>
 
 
-  <title> 算法设计思想之分治算法 | Jellyyoung's Blog </title>
+  <title> 机器学习、深度学习理论知识框架 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +278,7 @@
             
             
               
-                算法设计思想之分治算法
+                机器学习、深度学习理论知识框架
               
             
           </h1>
@@ -290,8 +290,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-15T16:08:14+08:00" content="2016-11-15">
-              2016-11-15
+            <time itemprop="dateCreated" datetime="2016-11-25T15:45:16+08:00" content="2016-11-25">
+              2016-11-25
             </time>
           </span>
 
@@ -304,8 +304,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/原创/" itemprop="url" rel="index">
+                    <span itemprop="name">原创</span>
                   </a>
                 </span>
 
@@ -320,8 +320,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/articles/算法设计思想之分治算法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="articles/算法设计思想之分治算法.html" itemprop="commentsCount"></span>
+                <a href="/articles/机器学习、深度学习理论知识框架.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="articles/机器学习、深度学习理论知识框架.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/articles/算法设计思想之分治算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之分治算法">
+             <span id="/articles/机器学习、深度学习理论知识框架.html" class="leancloud_visitors" data-flag-title="机器学习、深度学习理论知识框架">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -353,45 +353,49 @@
       
 
       
-        <p>&emsp;&emsp;本博文记录了博主关于分治算法设计思想的学习总结。<br><a id="more"></a></p>
-<blockquote>
-<p><strong>分治法（Divide and Conquer）</strong>是基于多项分支递归的一种很重要的算法范式思想。分治的意思是“分而治之”，把复杂问题分解成多个规模较小、相对独立、与原问题形式相同的子问题，子问题的求解很简单很直观，原问题的解即子问题的解的合并。</p>
-</blockquote>
-<p>&emsp;&emsp;分治与递归经常同时应用在算法设计中，是诸多高效算法的基础，因此也产生了很多著名的高效算法。如（快速排序、归并排序）、傅里叶变换等。</p>
-<h3 id="分治算法的设计思想"><a href="#分治算法的设计思想" class="headerlink" title="分治算法的设计思想"></a>分治算法的设计思想</h3><ul>
-<li>将计算规模较大的复杂问题，分割成规模较小的相同性质的多个子问题，对简单的子问题进行逐个击破，分而治之</li>
-<li>使用数学上的不完全归纳法，寻找求解原问题的方程表达式，根据方程式设计递归程序Solution</li>
+        <p>&emsp;&emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。<br><a id="more"></a></p>
+<h2 id="机器学习-Machine-Learning-ML"><a href="#机器学习-Machine-Learning-ML" class="headerlink" title="机器学习(Machine Learning, ML)"></a>机器学习(Machine Learning, ML)</h2><h3 id="机器学习基本概念"><a href="#机器学习基本概念" class="headerlink" title="机器学习基本概念"></a>机器学习基本概念</h3><h4 id="三要素：模型、策略、算法"><a href="#三要素：模型、策略、算法" class="headerlink" title="三要素：模型、策略、算法"></a>三要素：模型、策略、算法</h4><h4 id="欠拟合-amp-过拟合"><a href="#欠拟合-amp-过拟合" class="headerlink" title="欠拟合&amp;过拟合"></a>欠拟合&amp;过拟合</h4><h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><h4 id="偏差-方差、化误差"><a href="#偏差-方差、化误差" class="headerlink" title="偏差-方差、化误差"></a>偏差-方差、化误差</h4><h4 id="交叉验证-amp-t检验等"><a href="#交叉验证-amp-t检验等" class="headerlink" title="交叉验证&amp;t检验等"></a>交叉验证&amp;t检验等</h4><h4 id="分类模型的精确率、召回率"><a href="#分类模型的精确率、召回率" class="headerlink" title="分类模型的精确率、召回率"></a>分类模型的精确率、召回率</h4><h4 id="ROC曲线-amp-AUC曲线"><a href="#ROC曲线-amp-AUC曲线" class="headerlink" title="ROC曲线&amp;AUC曲线"></a>ROC曲线&amp;AUC曲线</h4><h4 id="样本不均衡、数据集采样方法"><a href="#样本不均衡、数据集采样方法" class="headerlink" title="样本不均衡、数据集采样方法"></a>样本不均衡、数据集采样方法</h4><h4 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h4><h4 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h4><h3 id="线性回归（Linear-Regression）"><a href="#线性回归（Linear-Regression）" class="headerlink" title="线性回归（Linear Regression）"></a>线性回归（Linear Regression）</h3><ul>
+<li>损失函数</li>
+<li>梯度下降法</li>
+<li>最小二乘法</li>
 </ul>
-<h3 id="分治算法的递归求解步骤"><a href="#分治算法的递归求解步骤" class="headerlink" title="分治算法的递归求解步骤"></a>分治算法的递归求解步骤</h3><ol>
-<li><strong>分解</strong>：将原问题分解为若干个规模较小，相对独立，与原问题形式相同的子问题。</li>
-<li><strong>求解</strong>：若子问题规模较小且易于解决时，则直接解。否则，递归地解决各子问题。</li>
-<li><strong>合并</strong>：将各子问题的解合并为原问题的解。</li>
-</ol>
-<h3 id="分治算法的适用情形"><a href="#分治算法的适用情形" class="headerlink" title="分治算法的适用情形"></a>分治算法的适用情形</h3><ol>
-<li>原复杂问题的规模缩减到一定程度后可以很容易求解</li>
-<li>原问题可分解成若干个规模较小、与原问题性质相同的子问题，即原问题具有<strong>最优子结构</strong>性质，这条特性反映了递归思想</li>
-<li>原复杂问题分解得到的子问题相互之间是独立的，即<strong>子问题之间不包含公共的问题</strong></li>
-<li>子问题的解可以合并为原复杂问题的解</li>
-<li>算法求解过程中至少含有两个递归调用，也就是说，只进行一次递归调用的不属于分治算法范畴</li>
-</ol>
-<h3 id="分治算法与动态规划算法的区别"><a href="#分治算法与动态规划算法的区别" class="headerlink" title="分治算法与动态规划算法的区别"></a>分治算法与动态规划算法的区别</h3><ol>
-<li>分治法与动态规划都要求原问题具有最有子结构，都是将问题分解成若干个规模较小的子问题</li>
-<li>动态规划是将原问题分解为多个相同性质的子问题，这些子问题相互之间有联系，有重叠。分治法将分解后的子问题看成是相互独立的。</li>
-<li>动态规划通过迭代法自底向上求解，通过子问题的求解进而寻找原问题的最优解。而分治法是利用递归对各个子问题独立求解，最后将各子问题的解进行合并形成原问题的解。</li>
-<li>若原复杂问题分解之后得到的各子问题之间不独立，则可以考虑使用动态规划算法</li>
-</ol>
-<h3 id="分治算法的复杂度分析"><a href="#分治算法的复杂度分析" class="headerlink" title="分治算法的复杂度分析"></a>分治算法的复杂度分析</h3><p>&emsp;&emsp;假设分治算法策略将原问题分解为<code>K</code>个计算规模为<code>n/m</code>的同质子问题，<code>m</code>表示问题规模减小的因子，$f(n)$为分解与合并子问题的计算复杂度。原问题的时间复杂度可用如下的递归表达式表示：</p>
-<script type="math/tex; mode=display">T(n)=KT(n/m)+f(n)</script><h3 id="分治算法的应用"><a href="#分治算法的应用" class="headerlink" title="分治算法的应用"></a>分治算法的应用</h3><ul>
-<li>二分查找</li>
-<li>大整数乘法</li>
-<li>棋盘覆盖</li>
-<li>快速排序</li>
-<li>合并排序</li>
-<li>Strassen矩阵乘法</li>
-<li>最接近点对问题</li>
-<li>汉诺塔</li>
+<h3 id="对数回归"><a href="#对数回归" class="headerlink" title="对数回归"></a>对数回归</h3><ul>
+<li>概率分布</li>
+<li>代价函数</li>
+<li>极大似然估计</li>
+<li>梯度上升法</li>
+<li>牛顿法</li>
+<li>Softmax多分类学习</li>
 </ul>
-
+<h3 id="最大熵模型"><a href="#最大熵模型" class="headerlink" title="最大熵模型"></a>最大熵模型</h3><h3 id="聚类算法"><a href="#聚类算法" class="headerlink" title="聚类算法"></a>聚类算法</h3><ul>
+<li>距离度量</li>
+<li>k近邻算法</li>
+<li>k均值算法</li>
+<li>高斯混合聚类</li>
+<li>密度聚类</li>
+<li>层次聚类</li>
+</ul>
+<h3 id="决策树算法"><a href="#决策树算法" class="headerlink" title="决策树算法"></a>决策树算法</h3><ul>
+<li>选择准则：信息增益、信息增益比、基尼指数</li>
+<li>ID3算法</li>
+<li>C4.5算法</li>
+<li>CART算法</li>
+<li>决策树的剪枝</li>
+</ul>
+<h3 id="朴素贝叶斯模型"><a href="#朴素贝叶斯模型" class="headerlink" title="朴素贝叶斯模型"></a>朴素贝叶斯模型</h3><ol>
+<li>概率分布的公式推导</li>
+<li>极大似然估计、贝叶斯估计</li>
+</ol>
+<h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><ul>
+<li>函数间隔、几何间隔</li>
+<li>支持向量</li>
+<li>拉格朗日对偶算法</li>
+<li>软间隔、硬间隔</li>
+<li>核函数、核方法</li>
+<li>序列最小最优化算法（SMO）</li>
+</ul>
+<h3 id="高斯混合模型（Gaussian-Mix-Model-GMM）"><a href="#高斯混合模型（Gaussian-Mix-Model-GMM）" class="headerlink" title="高斯混合模型（Gaussian Mix Model, GMM）"></a>高斯混合模型（Gaussian Mix Model, GMM）</h3><h3 id="EM算法（Expection-Maximization-期望最大化）"><a href="#EM算法（Expection-Maximization-期望最大化）" class="headerlink" title="EM算法（Expection-Maximization, 期望最大化）"></a>EM算法（Expection-Maximization, 期望最大化）</h3><h3 id="主成分分析（Principal-Component-Analysis-PCA）"><a href="#主成分分析（Principal-Component-Analysis-PCA）" class="headerlink" title="主成分分析（Principal Component Analysis, PCA）"></a>主成分分析（Principal Component Analysis, PCA）</h3><h3 id="关联分析（Apriori算法）"><a href="#关联分析（Apriori算法）" class="headerlink" title="关联分析（Apriori算法）"></a>关联分析（Apriori算法）</h3><h3 id="独立成分分析（Independent-Component-Analysis-ICA）"><a href="#独立成分分析（Independent-Component-Analysis-ICA）" class="headerlink" title="独立成分分析（Independent Component Analysis, ICA）"></a>独立成分分析（Independent Component Analysis, ICA）</h3><h3 id="线性判别分析（Linear-Discriminant-Analysis-LDA）"><a href="#线性判别分析（Linear-Discriminant-Analysis-LDA）" class="headerlink" title="线性判别分析（Linear Discriminant Analysis, LDA）"></a>线性判别分析（Linear Discriminant Analysis, LDA）</h3><h3 id="高斯判别分析（Gaussian-Discriminant-Analysis-GDA）"><a href="#高斯判别分析（Gaussian-Discriminant-Analysis-GDA）" class="headerlink" title="高斯判别分析（Gaussian Discriminant Analysis, GDA）"></a>高斯判别分析（Gaussian Discriminant Analysis, GDA）</h3><h3 id="因子分析（Factor-Analysis-FA）"><a href="#因子分析（Factor-Analysis-FA）" class="headerlink" title="因子分析（Factor Analysis, FA）"></a>因子分析（Factor Analysis, FA）</h3><h3 id="Boosting方法"><a href="#Boosting方法" class="headerlink" title="Boosting方法"></a>Boosting方法</h3><h3 id="随机森林算法"><a href="#随机森林算法" class="headerlink" title="随机森林算法"></a>随机森林算法</h3><h3 id="隐马尔科夫模型"><a href="#隐马尔科夫模型" class="headerlink" title="隐马尔科夫模型"></a>隐马尔科夫模型</h3><h3 id="条件随机场"><a href="#条件随机场" class="headerlink" title="条件随机场"></a>条件随机场</h3><h3 id="强化学习（Reinforcement-Learning）"><a href="#强化学习（Reinforcement-Learning）" class="headerlink" title="强化学习（Reinforcement Learning）"></a>强化学习（Reinforcement Learning）</h3><h2 id="深度学习（Deep-Learning-DL）"><a href="#深度学习（Deep-Learning-DL）" class="headerlink" title="深度学习（Deep Learning, DL）"></a>深度学习（Deep Learning, DL）</h2><p>&emsp;&emsp;比较权威的学习教程：<a href="http://www.deeplearning.net/tutorial/" target="_blank" rel="external">Deep Learning Tutorial</a>、<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">Deep Learning Book</a> by <code>Ian GoodFellow</code></p>
+<h3 id="反向传播算法-BP"><a href="#反向传播算法-BP" class="headerlink" title="反向传播算法(BP)"></a>反向传播算法(BP)</h3><h3 id="多层感知机（MLP）"><a href="#多层感知机（MLP）" class="headerlink" title="多层感知机（MLP）"></a>多层感知机（MLP）</h3><h3 id="卷积神经网络（CNN）"><a href="#卷积神经网络（CNN）" class="headerlink" title="卷积神经网络（CNN）"></a>卷积神经网络（CNN）</h3><h3 id="自编码网络（AutoEncoder）"><a href="#自编码网络（AutoEncoder）" class="headerlink" title="自编码网络（AutoEncoder）"></a>自编码网络（AutoEncoder）</h3><h4 id="栈式自编码网络（SAE）"><a href="#栈式自编码网络（SAE）" class="headerlink" title="栈式自编码网络（SAE）"></a>栈式自编码网络（SAE）</h4><h4 id="降噪自编码网络（SDA）"><a href="#降噪自编码网络（SDA）" class="headerlink" title="降噪自编码网络（SDA）"></a>降噪自编码网络（SDA）</h4><h4 id="卷积自编码网络（CAE）"><a href="#卷积自编码网络（CAE）" class="headerlink" title="卷积自编码网络（CAE）"></a>卷积自编码网络（CAE）</h4><h3 id="深度置信网络（DBN）"><a href="#深度置信网络（DBN）" class="headerlink" title="深度置信网络（DBN）"></a>深度置信网络（DBN）</h3><h4 id="限制玻尔兹曼机（RBM）"><a href="#限制玻尔兹曼机（RBM）" class="headerlink" title="限制玻尔兹曼机（RBM）"></a>限制玻尔兹曼机（RBM）</h4><h3 id="递归神经网络（RNN-amp-LSTM）"><a href="#递归神经网络（RNN-amp-LSTM）" class="headerlink" title="递归神经网络（RNN&amp;LSTM）"></a>递归神经网络（RNN&amp;LSTM）</h3><h3 id="深度残差网络（Deep-Residual-Learning）"><a href="#深度残差网络（Deep-Residual-Learning）" class="headerlink" title="深度残差网络（Deep Residual Learning）"></a>深度残差网络（Deep Residual Learning）</h3>
       
     </div>
 
@@ -434,9 +438,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag">#算法</a>
-          
-            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
+            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
           
         </div>
       
@@ -445,17 +447,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/articles/算法设计思想之动态规划.html" rel="next" title="算法设计思想之动态规划">
-                <i class="fa fa-chevron-left"></i> 算法设计思想之动态规划
+              <a href="/articles/Ubuntu安装软件过程记录.html" rel="next" title="Ubuntu安装软件过程记录">
+                <i class="fa fa-chevron-left"></i> Ubuntu安装软件过程记录
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/articles/算法设计思想之贪心算法.html" rel="prev" title="算法设计思想之贪心算法">
-                算法设计思想之贪心算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,10 +468,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="articles/算法设计思想之分治算法.html"
-     data-title="算法设计思想之分治算法"
+        <div class="ds-share flat" data-thread-key="articles/机器学习、深度学习理论知识框架.html"
+     data-title="机器学习、深度学习理论知识框架"
      data-content=""
-     data-url="http://yaodong.ml/articles/算法设计思想之分治算法.html">
+     data-url="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -500,8 +498,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="articles/算法设计思想之分治算法.html"
-           data-title="算法设计思想之分治算法" data-url="http://yaodong.ml/articles/算法设计思想之分治算法.html">
+      <div class="ds-thread" data-thread-key="articles/机器学习、深度学习理论知识框架.html"
+           data-title="机器学习、深度学习理论知识框架" data-url="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html">
       </div>
     
   </div>
@@ -654,7 +652,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的设计思想"><span class="nav-number">1.</span> <span class="nav-text">分治算法的设计思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的递归求解步骤"><span class="nav-number">2.</span> <span class="nav-text">分治算法的递归求解步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的适用情形"><span class="nav-number">3.</span> <span class="nav-text">分治算法的适用情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法与动态规划算法的区别"><span class="nav-number">4.</span> <span class="nav-text">分治算法与动态规划算法的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的复杂度分析"><span class="nav-number">5.</span> <span class="nav-text">分治算法的复杂度分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分治算法的应用"><span class="nav-number">6.</span> <span class="nav-text">分治算法的应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习-Machine-Learning-ML"><span class="nav-number">1.</span> <span class="nav-text">机器学习(Machine Learning, ML)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">机器学习基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三要素：模型、策略、算法"><span class="nav-number">1.1.1.</span> <span class="nav-text">三要素：模型、策略、算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欠拟合-amp-过拟合"><span class="nav-number">1.1.2.</span> <span class="nav-text">欠拟合&过拟合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则化"><span class="nav-number">1.1.3.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差-方差、化误差"><span class="nav-number">1.1.4.</span> <span class="nav-text">偏差-方差、化误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交叉验证-amp-t检验等"><span class="nav-number">1.1.5.</span> <span class="nav-text">交叉验证&t检验等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类模型的精确率、召回率"><span class="nav-number">1.1.6.</span> <span class="nav-text">分类模型的精确率、召回率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ROC曲线-amp-AUC曲线"><span class="nav-number">1.1.7.</span> <span class="nav-text">ROC曲线&AUC曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样本不均衡、数据集采样方法"><span class="nav-number">1.1.8.</span> <span class="nav-text">样本不均衡、数据集采样方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据降维"><span class="nav-number">1.1.9.</span> <span class="nav-text">数据降维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判别模型和生成模型"><span class="nav-number">1.1.10.</span> <span class="nav-text">判别模型和生成模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归（Linear-Regression）"><span class="nav-number">1.2.</span> <span class="nav-text">线性回归（Linear Regression）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对数回归"><span class="nav-number">1.3.</span> <span class="nav-text">对数回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大熵模型"><span class="nav-number">1.4.</span> <span class="nav-text">最大熵模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类算法"><span class="nav-number">1.5.</span> <span class="nav-text">聚类算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树算法"><span class="nav-number">1.6.</span> <span class="nav-text">决策树算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#朴素贝叶斯模型"><span class="nav-number">1.7.</span> <span class="nav-text">朴素贝叶斯模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持向量机"><span class="nav-number">1.8.</span> <span class="nav-text">支持向量机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯混合模型（Gaussian-Mix-Model-GMM）"><span class="nav-number">1.9.</span> <span class="nav-text">高斯混合模型（Gaussian Mix Model, GMM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EM算法（Expection-Maximization-期望最大化）"><span class="nav-number">1.10.</span> <span class="nav-text">EM算法（Expection-Maximization, 期望最大化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主成分分析（Principal-Component-Analysis-PCA）"><span class="nav-number">1.11.</span> <span class="nav-text">主成分分析（Principal Component Analysis, PCA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联分析（Apriori算法）"><span class="nav-number">1.12.</span> <span class="nav-text">关联分析（Apriori算法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独立成分分析（Independent-Component-Analysis-ICA）"><span class="nav-number">1.13.</span> <span class="nav-text">独立成分分析（Independent Component Analysis, ICA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性判别分析（Linear-Discriminant-Analysis-LDA）"><span class="nav-number">1.14.</span> <span class="nav-text">线性判别分析（Linear Discriminant Analysis, LDA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯判别分析（Gaussian-Discriminant-Analysis-GDA）"><span class="nav-number">1.15.</span> <span class="nav-text">高斯判别分析（Gaussian Discriminant Analysis, GDA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#因子分析（Factor-Analysis-FA）"><span class="nav-number">1.16.</span> <span class="nav-text">因子分析（Factor Analysis, FA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boosting方法"><span class="nav-number">1.17.</span> <span class="nav-text">Boosting方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林算法"><span class="nav-number">1.18.</span> <span class="nav-text">随机森林算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐马尔科夫模型"><span class="nav-number">1.19.</span> <span class="nav-text">隐马尔科夫模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件随机场"><span class="nav-number">1.20.</span> <span class="nav-text">条件随机场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强化学习（Reinforcement-Learning）"><span class="nav-number">1.21.</span> <span class="nav-text">强化学习（Reinforcement Learning）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习（Deep-Learning-DL）"><span class="nav-number">2.</span> <span class="nav-text">深度学习（Deep Learning, DL）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播算法-BP"><span class="nav-number">2.1.</span> <span class="nav-text">反向传播算法(BP)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层感知机（MLP）"><span class="nav-number">2.2.</span> <span class="nav-text">多层感知机（MLP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积神经网络（CNN）"><span class="nav-number">2.3.</span> <span class="nav-text">卷积神经网络（CNN）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自编码网络（AutoEncoder）"><span class="nav-number">2.4.</span> <span class="nav-text">自编码网络（AutoEncoder）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈式自编码网络（SAE）"><span class="nav-number">2.4.1.</span> <span class="nav-text">栈式自编码网络（SAE）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#降噪自编码网络（SDA）"><span class="nav-number">2.4.2.</span> <span class="nav-text">降噪自编码网络（SDA）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积自编码网络（CAE）"><span class="nav-number">2.4.3.</span> <span class="nav-text">卷积自编码网络（CAE）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深度置信网络（DBN）"><span class="nav-number">2.5.</span> <span class="nav-text">深度置信网络（DBN）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#限制玻尔兹曼机（RBM）"><span class="nav-number">2.5.1.</span> <span class="nav-text">限制玻尔兹曼机（RBM）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归神经网络（RNN-amp-LSTM）"><span class="nav-number">2.6.</span> <span class="nav-text">递归神经网络（RNN&LSTM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深度残差网络（Deep-Residual-Learning）"><span class="nav-number">2.7.</span> <span class="nav-text">深度残差网络（Deep Residual Learning）</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
