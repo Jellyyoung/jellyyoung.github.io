@@ -1098,9 +1098,9 @@
       <category term="原创" scheme="http://yaodong.ml/categories/%E5%8E%9F%E5%88%9B/"/>
     
     
-      <category term="Xgboost" scheme="http://yaodong.ml/tags/Xgboost/"/>
-    
       <category term="python" scheme="http://yaodong.ml/tags/python/"/>
+    
+      <category term="Xgboost" scheme="http://yaodong.ml/tags/Xgboost/"/>
     
   </entry>
   
