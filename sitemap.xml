@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yaodong.ml/about/index.html</loc>
+    
+    <lastmod>2017-01-02T06:52:10.705Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yaodong.ml/articles/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
     
     <lastmod>2016-12-01T07:00:52.901Z</lastmod>
@@ -152,13 +159,6 @@
     <loc>http://yaodong.ml/articles/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</loc>
     
     <lastmod>2016-11-11T07:41:35.846Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/about/index.html</loc>
-    
-    <lastmod>2016-10-23T16:37:49.781Z</lastmod>
     
   </url>
   

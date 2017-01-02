@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://yaodong.ml/articles/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</loc>
     <lastmod>2016-12-01T07:00:52.901Z</lastmod>
@@ -52,9 +53,9 @@
         <title>Window下python的Xgboost框架安装教程</title>
         <pubTime>2016-10-14T11:43:42.000Z</pubTime>
         
-        <tag>python</tag>
-         
         <tag>Xgboost</tag>
+         
+        <tag>python</tag>
          
          
            
@@ -442,7 +443,6 @@
     </data>
     </url>
 
-    
     
     
     
