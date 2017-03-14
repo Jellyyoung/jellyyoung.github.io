@@ -13,54 +13,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[机器学习、深度学习理论知识框架]]></title>
-      <url>http://yaodong.ml/articles/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%81%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E6%A1%86%E6%9E%B6.html</url>
-      <content type="html"><![CDATA[<p>&emsp;&emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。<br><a id="more"></a></p>
-<h2 id="机器学习-Machine-Learning-ML"><a href="#机器学习-Machine-Learning-ML" class="headerlink" title="机器学习(Machine Learning, ML)"></a>机器学习(Machine Learning, ML)</h2><h3 id="机器学习基本概念"><a href="#机器学习基本概念" class="headerlink" title="机器学习基本概念"></a>机器学习基本概念</h3><h4 id="三要素：模型、策略、算法"><a href="#三要素：模型、策略、算法" class="headerlink" title="三要素：模型、策略、算法"></a>三要素：模型、策略、算法</h4><h4 id="欠拟合-amp-过拟合"><a href="#欠拟合-amp-过拟合" class="headerlink" title="欠拟合&amp;过拟合"></a>欠拟合&amp;过拟合</h4><h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><h4 id="偏差-方差、化误差"><a href="#偏差-方差、化误差" class="headerlink" title="偏差-方差、化误差"></a>偏差-方差、化误差</h4><h4 id="交叉验证-amp-t检验等"><a href="#交叉验证-amp-t检验等" class="headerlink" title="交叉验证&amp;t检验等"></a>交叉验证&amp;t检验等</h4><h4 id="分类模型的精确率、召回率"><a href="#分类模型的精确率、召回率" class="headerlink" title="分类模型的精确率、召回率"></a>分类模型的精确率、召回率</h4><h4 id="ROC曲线-amp-AUC曲线"><a href="#ROC曲线-amp-AUC曲线" class="headerlink" title="ROC曲线&amp;AUC曲线"></a>ROC曲线&amp;AUC曲线</h4><h4 id="样本不均衡、数据集采样方法"><a href="#样本不均衡、数据集采样方法" class="headerlink" title="样本不均衡、数据集采样方法"></a>样本不均衡、数据集采样方法</h4><h4 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h4><h4 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h4><h3 id="线性回归（Linear-Regression）"><a href="#线性回归（Linear-Regression）" class="headerlink" title="线性回归（Linear Regression）"></a>线性回归（Linear Regression）</h3><ul>
-<li>损失函数</li>
-<li>梯度下降法</li>
-<li>最小二乘法</li>
-</ul>
-<h3 id="对数回归"><a href="#对数回归" class="headerlink" title="对数回归"></a>对数回归</h3><ul>
-<li>概率分布</li>
-<li>代价函数</li>
-<li>极大似然估计</li>
-<li>梯度上升法</li>
-<li>牛顿法</li>
-<li>Softmax多分类学习</li>
-</ul>
-<h3 id="最大熵模型"><a href="#最大熵模型" class="headerlink" title="最大熵模型"></a>最大熵模型</h3><h3 id="聚类算法"><a href="#聚类算法" class="headerlink" title="聚类算法"></a>聚类算法</h3><ul>
-<li>距离度量</li>
-<li>k近邻算法</li>
-<li>k均值算法</li>
-<li>高斯混合聚类</li>
-<li>密度聚类</li>
-<li>层次聚类</li>
-</ul>
-<h3 id="决策树算法"><a href="#决策树算法" class="headerlink" title="决策树算法"></a>决策树算法</h3><ul>
-<li>选择准则：信息增益、信息增益比、基尼指数</li>
-<li>ID3算法</li>
-<li>C4.5算法</li>
-<li>CART算法</li>
-<li>决策树的剪枝</li>
-</ul>
-<h3 id="朴素贝叶斯模型"><a href="#朴素贝叶斯模型" class="headerlink" title="朴素贝叶斯模型"></a>朴素贝叶斯模型</h3><ol>
-<li>概率分布的公式推导</li>
-<li>极大似然估计、贝叶斯估计</li>
-</ol>
-<h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><ul>
-<li>函数间隔、几何间隔</li>
-<li>支持向量</li>
-<li>拉格朗日对偶算法</li>
-<li>软间隔、硬间隔</li>
-<li>核函数、核方法</li>
-<li>序列最小最优化算法（SMO）</li>
-</ul>
-<h3 id="高斯混合模型（Gaussian-Mix-Model-GMM）"><a href="#高斯混合模型（Gaussian-Mix-Model-GMM）" class="headerlink" title="高斯混合模型（Gaussian Mix Model, GMM）"></a>高斯混合模型（Gaussian Mix Model, GMM）</h3><h3 id="EM算法（Expection-Maximization-期望最大化）"><a href="#EM算法（Expection-Maximization-期望最大化）" class="headerlink" title="EM算法（Expection-Maximization, 期望最大化）"></a>EM算法（Expection-Maximization, 期望最大化）</h3><h3 id="主成分分析（Principal-Component-Analysis-PCA）"><a href="#主成分分析（Principal-Component-Analysis-PCA）" class="headerlink" title="主成分分析（Principal Component Analysis, PCA）"></a>主成分分析（Principal Component Analysis, PCA）</h3><h3 id="关联分析（Apriori算法）"><a href="#关联分析（Apriori算法）" class="headerlink" title="关联分析（Apriori算法）"></a>关联分析（Apriori算法）</h3><h3 id="独立成分分析（Independent-Component-Analysis-ICA）"><a href="#独立成分分析（Independent-Component-Analysis-ICA）" class="headerlink" title="独立成分分析（Independent Component Analysis, ICA）"></a>独立成分分析（Independent Component Analysis, ICA）</h3><h3 id="线性判别分析（Linear-Discriminant-Analysis-LDA）"><a href="#线性判别分析（Linear-Discriminant-Analysis-LDA）" class="headerlink" title="线性判别分析（Linear Discriminant Analysis, LDA）"></a>线性判别分析（Linear Discriminant Analysis, LDA）</h3><h3 id="高斯判别分析（Gaussian-Discriminant-Analysis-GDA）"><a href="#高斯判别分析（Gaussian-Discriminant-Analysis-GDA）" class="headerlink" title="高斯判别分析（Gaussian Discriminant Analysis, GDA）"></a>高斯判别分析（Gaussian Discriminant Analysis, GDA）</h3><h3 id="因子分析（Factor-Analysis-FA）"><a href="#因子分析（Factor-Analysis-FA）" class="headerlink" title="因子分析（Factor Analysis, FA）"></a>因子分析（Factor Analysis, FA）</h3><h3 id="Boosting方法"><a href="#Boosting方法" class="headerlink" title="Boosting方法"></a>Boosting方法</h3><h3 id="随机森林算法"><a href="#随机森林算法" class="headerlink" title="随机森林算法"></a>随机森林算法</h3><h3 id="隐马尔科夫模型"><a href="#隐马尔科夫模型" class="headerlink" title="隐马尔科夫模型"></a>隐马尔科夫模型</h3><h3 id="条件随机场"><a href="#条件随机场" class="headerlink" title="条件随机场"></a>条件随机场</h3><h3 id="强化学习（Reinforcement-Learning）"><a href="#强化学习（Reinforcement-Learning）" class="headerlink" title="强化学习（Reinforcement Learning）"></a>强化学习（Reinforcement Learning）</h3><h2 id="深度学习（Deep-Learning-DL）"><a href="#深度学习（Deep-Learning-DL）" class="headerlink" title="深度学习（Deep Learning, DL）"></a>深度学习（Deep Learning, DL）</h2><p>&emsp;&emsp;比较权威的学习教程：<a href="http://www.deeplearning.net/tutorial/" target="_blank" rel="external">Deep Learning Tutorial</a>、<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">Deep Learning Book</a> by <code>Ian GoodFellow</code></p>
-<h3 id="反向传播算法-BP"><a href="#反向传播算法-BP" class="headerlink" title="反向传播算法(BP)"></a>反向传播算法(BP)</h3><h3 id="多层感知机（MLP）"><a href="#多层感知机（MLP）" class="headerlink" title="多层感知机（MLP）"></a>多层感知机（MLP）</h3><h3 id="卷积神经网络（CNN）"><a href="#卷积神经网络（CNN）" class="headerlink" title="卷积神经网络（CNN）"></a>卷积神经网络（CNN）</h3><h3 id="自编码网络（AutoEncoder）"><a href="#自编码网络（AutoEncoder）" class="headerlink" title="自编码网络（AutoEncoder）"></a>自编码网络（AutoEncoder）</h3><h4 id="栈式自编码网络（SAE）"><a href="#栈式自编码网络（SAE）" class="headerlink" title="栈式自编码网络（SAE）"></a>栈式自编码网络（SAE）</h4><h4 id="降噪自编码网络（SDA）"><a href="#降噪自编码网络（SDA）" class="headerlink" title="降噪自编码网络（SDA）"></a>降噪自编码网络（SDA）</h4><h4 id="卷积自编码网络（CAE）"><a href="#卷积自编码网络（CAE）" class="headerlink" title="卷积自编码网络（CAE）"></a>卷积自编码网络（CAE）</h4><h3 id="深度置信网络（DBN）"><a href="#深度置信网络（DBN）" class="headerlink" title="深度置信网络（DBN）"></a>深度置信网络（DBN）</h3><h4 id="限制玻尔兹曼机（RBM）"><a href="#限制玻尔兹曼机（RBM）" class="headerlink" title="限制玻尔兹曼机（RBM）"></a>限制玻尔兹曼机（RBM）</h4><h3 id="递归神经网络（RNN-amp-LSTM）"><a href="#递归神经网络（RNN-amp-LSTM）" class="headerlink" title="递归神经网络（RNN&amp;LSTM）"></a>递归神经网络（RNN&amp;LSTM）</h3><h3 id="深度残差网络（Deep-Residual-Learning）"><a href="#深度残差网络（Deep-Residual-Learning）" class="headerlink" title="深度残差网络（Deep Residual Learning）"></a>深度残差网络（Deep Residual Learning）</h3>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Ubuntu安装软件过程记录]]></title>
       <url>http://yaodong.ml/articles/Ubuntu%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本文记录Ubuntu系统的软件安装历程。<br><a id="more"></a></p>
@@ -174,7 +126,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之分支界限]]></title>
-      <url>http://yaodong.ml/articles/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%94%AF%E7%95%8C%E9%99%90.html</url>
+      <url>http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%94%AF%E7%95%8C%E9%99%90.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于分支界限算法设计思想的学习总结。<br><a id="more"></a><br>&emsp;&emsp; 类似于回溯法，<strong>分支限界法（branch-and-bound method）</strong>也是一种在问题的解空间树T上搜索问题解的算法。但分支限界法的求解目标则是找出满足约束条件的一个解，或是在满足约束条件的解中找出使某一目标函数值达到极大或极小的解，即在某种意义下的最优解。<br>&emsp;&emsp;<strong>分支限界法（branch-and-bound method）</strong>， “<strong>分支</strong>”是指采用广度优先遍历的策略，依次生成扩展结点的所有分支（即：儿子结点）；“<strong>限界</strong>”是在结点扩展过程中，计算结点的上界（或下界），并根据“剪枝函数”剪去搜索树的某些分支，从而提高搜索效率。</p>
 <h3 id="分支限界算法的基本思想"><a href="#分支限界算法的基本思想" class="headerlink" title="分支限界算法的基本思想"></a>分支限界算法的基本思想</h3><p>&emsp;&emsp;按照广度优先遍历的原则，一个活结点一旦成为扩展结点（E-结点）R后，算法将依次生成它的全部孩子结点，将那些导致不可行解或导致非最优解的儿子舍弃，其余儿子加入活结点表中。然后，从活结点表中取出一个结点作为当前扩展结点。重复上述结点扩展过程，直至找到问题的解或判定无解为止。</p>
 <h3 id="常见的分支限界法"><a href="#常见的分支限界法" class="headerlink" title="常见的分支限界法"></a>常见的分支限界法</h3><h4 id="FIFO分支限界法-队列式分支限界法"><a href="#FIFO分支限界法-队列式分支限界法" class="headerlink" title="FIFO分支限界法(队列式分支限界法)"></a>FIFO分支限界法(队列式分支限界法)</h4><p>&emsp;&emsp;基本思想：按照队列先进先出(FIFO)原则选取下一个活结点为扩展结点。<br>&emsp;&emsp;搜索策略：一开始，根结点是唯一的活结点，根结点入队。从活结点队中取出根结点后，作为当前扩展结点。对当前扩展结点，先从左到右地产生它的所有儿子，用约束条件检查，把所有满足约束函数的儿子加入活结点队列中。再从活结点表中取出队首结点（队中最先进来的结点）为当前扩展结点，……，直到找到一个解或活结点队列为空为止。</p>
@@ -198,7 +150,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之回溯算法]]></title>
-      <url>http://yaodong.ml/articles/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95.html</url>
+      <url>http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于回溯算法设计思想的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>回溯（Backtracking）算法</strong>也叫试探法，属于暴力求解的范畴。<strong>回溯（Backtracking）算法</strong>是一种既有系统性又有跳跃性的的搜索算法，适用于求解具有约束条件，并且有多个候选解的问题。</p>
@@ -236,7 +188,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之贪心算法]]></title>
-      <url>http://yaodong.ml/articles/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95.html</url>
+      <url>http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于贪心算法设计思想的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>贪心算法（greedy algorithm）</strong>，又称<strong>贪婪算法</strong>，在每一步都选择当前状态下能达到最好或最优的策略，从而希望算法结束时的结果就是全局最优的算法。换句话说，贪心算法不考虑全局只考虑局部最优，基于当前状态做出局部最优选择。</p>
@@ -274,7 +226,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之分治算法]]></title>
-      <url>http://yaodong.ml/articles/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95.html</url>
+      <url>http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于分治算法设计思想的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>分治法（Divide and Conquer）</strong>是基于多项分支递归的一种很重要的算法范式思想。分治的意思是“分而治之”，把复杂问题分解成多个规模较小、相对独立、与原问题形式相同的子问题，子问题的求解很简单很直观，原问题的解即子问题的解的合并。</p>
@@ -318,7 +270,7 @@
     
     <entry>
       <title><![CDATA[算法设计思想之动态规划]]></title>
-      <url>http://yaodong.ml/articles/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html</url>
+      <url>http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>动态规划</strong>（Dynamic programming，简称<strong>DP</strong>）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。</p>
@@ -371,39 +323,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[2016校招：百度、360、美团机器学习岗面试经历【转自牛客】]]></title>
-      <url>http://yaodong.ml/articles/2016%E6%A0%A1%E6%8B%9B%EF%BC%9A%E7%99%BE%E5%BA%A6%E3%80%81360%E3%80%81%E7%BE%8E%E5%9B%A2%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B2%97%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86%E3%80%90%E8%BD%AC%E8%87%AA%E7%89%9B%E5%AE%A2%E3%80%91.html</url>
-      <content type="html"><![CDATA[<p>&emsp;&emsp;本文转自<a href="https://www.nowcoder.com/" target="_blank" rel="external">牛客网</a>的<a href="https://www.nowcoder.com/discuss?type=2" target="_blank" rel="external">笔经面经</a>板块，原文作者为stupidjoey，<a href="https://www.nowcoder.com/discuss/3243" target="_blank" rel="external">原文链接</a>。<br><a id="more"></a><br>&emsp;&emsp;今天下午在教室自习，顺便还投了一些公司，准备笔试面试，突然接到百度hr的电话，顺利拿到offer。期间，我有点屌丝地反复问她这个offer是确定的吧，不会被取消吧，因为前几天看到百度缩招的消息，哈哈，hr跟我确定这个offer不会变，就等着签三方了。lz是硕士，属于计算机相关专业，无实习经历。<br>&emsp;&emsp;关于机器学习岗的面经比较少，本着回报牛客网的目的，决定写写面经。</p>
-<hr>
-<h3 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h3><p>&emsp;&emsp;在天津参加的百度的三轮面试，分三天面完。</p>
-<h4 id="一面（1小时）"><a href="#一面（1小时）" class="headerlink" title="一面（1小时）"></a>一面（1小时）</h4><p>&emsp;&emsp;问项目<br>&emsp;&emsp;逻辑回归估计参数时的目标函数（就是极大似然估计那部分）<br>&emsp;&emsp;写代码，翻转二叉树<br>&emsp;&emsp;其他内容我忘了，大部分时间在问项目</p>
-<h4 id="二面（1小时20分钟）"><a href="#二面（1小时20分钟）" class="headerlink" title="二面（1小时20分钟）"></a>二面（1小时20分钟）</h4><p>&emsp;&emsp;面试官语速很快，难度比一面高很多<br>&emsp;&emsp;问项目<br>&emsp;&emsp;逻辑回归估计参数时的目标函数（第二次）<br>&emsp;&emsp;逻辑回归估计参数时的目标函数 如果加上一个先验的服从高斯分布的假设，会是什么样（其实就是在后面乘一个东西，取log后就变成加一个东西，实际就变成一个正则项）<br>&emsp;&emsp;SVM在哪个地方引入的核函数<br>&emsp;&emsp;如果用高斯核可以升到多少维（无限维）<br>&emsp;&emsp;什么是贝叶斯估计<br>&emsp;&emsp;k折交叉验证中k取值多少有什么关系？知道bias和variance吗？（估计是和这两个东西有关，知乎上有个问题讨论了k值大小与bias和variance的关系）<br>&emsp;&emsp;过拟合了怎么办<br>&emsp;&emsp;设计一个结构存取稀疏矩阵（面试官最后告诉我了一个极度压缩的存法，相同行或列存偏差）<br>&emsp;&emsp;平衡二叉树是什么？<br>&emsp;&emsp;系统设计题，给一个query，如何快速从10亿个query中找出和它最相似的 （面试官说可以对每个query找1000个最相似的，存起来，每天离线更新）<br>&emsp;&emsp;编程题，给了一个链表，第1个结点标号为1，把链表中标号在M到N区间的部分反转<br>&emsp;&emsp;编程题，在一个字符串中，找出最长的无重复字符的字串（这个问题还是有难度的，我碰巧想到了用hash，但没想到完整解法，用hash的解法复杂度在O(N^2)，在网上查了下，好像还有更快解法）</p>
-<h4 id="三面（1小时）"><a href="#三面（1小时）" class="headerlink" title="三面（1小时）"></a>三面（1小时）</h4><p>&emsp;&emsp;逻辑回归估计参数时的目标函数（第三次）<br>&emsp;&emsp;逻辑回归的值表示概率吗？（值越大可能性越高，但不能说是概率）<br>&emsp;&emsp;分类模型和回归模型的区别？<br>&emsp;&emsp;分类模型可以做回归分析吗？反过来可以吗？<br>&emsp;&emsp;开放性问题：设计一个合理的电梯调度策略，调度两个电梯 ，考虑满足基本的接送需求，满足能耗最小，满足用户等待时间最短（面试官的想法，类似进程调度问题，每一时刻只可能有一个用户按按钮，把这条指令接收，判断当前电梯能否满足，能满足就执行，不能满足则放入一个队列里，实际情况还要细化）<br>&emsp;&emsp;常用排序算法的时间和空间复杂度<br>&emsp;&emsp;10.12号参加的第三轮面试，从5点面到6点，天已经黑了，我正对着面试官，面试官背后的窗户开着，外面高楼的灯光射进来，房间里只开了一盏台灯，发着淡黄色的光，想开放题的时候觉得时间过得好慢，周围好安静，我想我会永远铭记这一瞬间！</p>
-<hr>
-<h3 id="美团"><a href="#美团" class="headerlink" title="美团"></a>美团</h3><p>&emsp;&emsp;在面完百度三面回学校的公交上，接到了美团的面试邀请电话。10月15号参加了美团的三轮面试。</p>
-<h4 id="一面（1小时）-1"><a href="#一面（1小时）-1" class="headerlink" title="一面（1小时）"></a>一面（1小时）</h4><p>&emsp;&emsp;问会什么机器学习算法，讲下SVM的原理，我把SVM的公式推导了一部分，面试官就着公式问了一些问题<br>&emsp;&emsp;你简历里说用过random forest和GBDT，讲一下他们的区别<br>&emsp;&emsp;数据库索引用什么建的（b+树，并不知道原理）<br>&emsp;&emsp;写sql（并不会）<br>&emsp;&emsp;tcp关闭连接的过程， 为什么要四次？<br>&emsp;&emsp;写代码：str2Int</p>
-<h4 id="二面（1小时）"><a href="#二面（1小时）" class="headerlink" title="二面（1小时）"></a>二面（1小时）</h4><p>&emsp;&emsp;讲项目<br>&emsp;&emsp;面试官是做NLP的，看我有个比赛涉及到NLP的内容，就问了我很多NLP的知识，比如做情绪分析，他态度很好，以一种讨论的方法跟我交流<br>&emsp;&emsp;问了一个概率题  54张牌，分成6份，每份9张牌，大小王在一起的概率（8/53）<br>&emsp;&emsp;问了操作系统的内存管理， 分页和分段的区别<br>&emsp;&emsp;银行家算法原理<br>&emsp;&emsp;写程序，翻转链表</p>
-<h4 id="三面（40分钟）"><a href="#三面（40分钟）" class="headerlink" title="三面（40分钟）"></a>三面（40分钟）</h4><p>&emsp;&emsp;讲项目。我花了10几分钟，费尽口舌，绘声绘色地讲了在实验室的项目。面试官直接抛出一句：我觉得你这个项目一点都不牛逼 ！尴尬，双方停顿了10秒～ （所以我要滚蛋了？）<br>&emsp;&emsp;我觉得你设计的算法没什么创新性，在其他论文里可以找到很多类似的（补刀，但其实说的很对。。。我花了好几分钟来圆场，解释自己不能滚蛋，不是，解释自己的项目还是有价值的原因。。。。。<br>&emsp;&emsp;机器学习的大概过程是什么？<br>&emsp;&emsp;特征选取怎么选？为什么信息增益可以用来选特征？<br>&emsp;&emsp;哪个项目是跟人合作的？（在实验室的项目，和导师合作）<br>&emsp;&emsp;有没有和导师意见不同的时候，怎么做的？<br>&emsp;&emsp;有没有接触过机器学习的前沿，深度学习看过paper没有？（并没有）</p>
-<hr>
-<h3 id="360（内推）"><a href="#360（内推）" class="headerlink" title="360（内推）"></a>360（内推）</h3><h4 id="一面（1小时30分钟）"><a href="#一面（1小时30分钟）" class="headerlink" title="一面（1小时30分钟）"></a>一面（1小时30分钟）</h4><p>&emsp;&emsp;花了很长时间讲了一个自己做的很水的比赛，属于NLP相关，面试官也是NLP，感觉他没怎么听懂。<br>&emsp;&emsp;写程序，最短编辑距离<br>&emsp;&emsp;如何从很多的query中找出一个query（我开始想到hash，后来经提示我想到了前缀树）<br>&emsp;&emsp;若允许有错误，可以再怎么解决（面试官提示了布隆过滤器）</p>
-<h4 id="二面（1小时）-1"><a href="#二面（1小时）-1" class="headerlink" title="二面（1小时）"></a>二面（1小时）</h4><p>&emsp;&emsp;讲项目，根据项目问问题<br>&emsp;&emsp;问我知道倒排索引不？<br>&emsp;&emsp;想考察我学习能力，所以决定教教我倒排索引 ，简单画了个图，问了相关的问题<br>&emsp;&emsp;很多数中找前k大数</p>
-<h4 id="三面（HR面）"><a href="#三面（HR面）" class="headerlink" title="三面（HR面）"></a>三面（HR面）</h4><p>&emsp;&emsp;最有成就感的事？<br>&emsp;&emsp;和计算机专业的比有什么优势，什么劣势？<br> &emsp;&emsp;有女朋友吗？ （并没有）<br>&emsp;&emsp;其他忘了</p>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>&emsp;&emsp;就我自己仅有的几次机器学习岗面试做一下总结：</p>
-<h4 id="公司喜好"><a href="#公司喜好" class="headerlink" title="公司喜好"></a>公司喜好</h4><p>&emsp;&emsp;百度会先问你熟悉的东西，有项目和比赛都会先问，这些答得好，后面会容易很多。所以，好好准备简历，并且把写到简历里的部分都熟悉一下。<br>&emsp;&emsp;美团问的感觉比较死，操作系统/计算机网络/数据库等常见问题都还是会涉及到。<br>&emsp;&emsp;360因为是搜索部门，问了很多搜索相关的知识。</p>
-<h4 id="不会的问题如何回答"><a href="#不会的问题如何回答" class="headerlink" title="不会的问题如何回答"></a>不会的问题如何回答</h4><p>&emsp;&emsp;很多帖子里都谈到过这一点，在机器学习岗面试中，我很认同的一种方式是尽量的向面试官输出你的知识，不会就先说相关的。<br>&emsp;&emsp;如果还不会，适当的找面试官要提示。<br>&emsp;&emsp;百度二面那个query找相似的系统设计题，我先后说了前缀树，kd树等解决方案，虽然不对，但面试至少知道我了解这些东西。</p>
-<h4 id="面对面试官的刁难怎么办？"><a href="#面对面试官的刁难怎么办？" class="headerlink" title="面对面试官的刁难怎么办？"></a>面对面试官的刁难怎么办？</h4><p>&emsp;&emsp;如我在美团三面的时候，面试冷冷地一句你这项目一点也不牛逼，就把我弄傻了，因为其他面试官都不会这么直接。如果你是大牛，你的项目肯定很牛，面试官肯定不会说这种话。如果你水平一般，不要有什么反抗的态度，你也是在找工作，如果你向往这家公司，不会因为一个面试官的态度不好，就改变你对公司的态度吧，回答的态度还是要温和一点，拿到offer才是王道，被拒了在网上到处骂是弱者的行为。</p>
-<h4 id="如何准备机器学习面试？"><a href="#如何准备机器学习面试？" class="headerlink" title="如何准备机器学习面试？"></a>如何准备机器学习面试？</h4><p>&emsp;&emsp;就我面过的公司来说，机器学习方面的问题完全是与你自己以及面试官自身的水平有关的，如果你很牛，面试官也很牛，你们可能会讨论到很高大上的算法上去，但一般来说，李航的那本书应该是够了。<br>&emsp;&emsp;关于大数据处理的问题要好好准备一下，我记得july好像有篇博客专门讲这个，有大概10种工具处理大数据问题，你可以挨个轮番用。<br>&emsp;&emsp;数据结构和算法是一定要好好准备的<br>&emsp;&emsp;笔试题，机器学习岗位，我知道BAT、美团、蘑菇街等很多有针对算法岗单独的题，但还是要编程，还是要考基础知识，所以都要好好准备才行，不要像我到处挂笔试。。</p>
-<hr>
-<p>&emsp;&emsp;美团可能挂了，我准备签百度了，不过部门貌似很边缘，看来还是和自己的能力挂钩的。。。其实我一直觉得能拿到offer挺幸运的，从8月份开始找工作到现在，我一共就面了3次<br>360内推，笔试很差，内推的师兄叫hr把我加到面试名单，我才有了面试机会，2轮技术面+1轮hr面在一个下午搞定，技术面面得不好，hr让回去等消息，然后就没有消息了。<br>&emsp;&emsp;百度，百度笔试做的很差，但好像笔试不怎么刷人，所以抓住机会，一直撑到三面<br>&emsp;&emsp;美团，每个参加美团笔试的人都说题简单，而且写代码还支持python，这个要赞！ 当天下午4点吃了个面包，从5点开始，一直撑到晚上快8点，挺完3面。<br>其他公司都挂在笔试。。。。。。。。。<br>&emsp;&emsp;我讲这个，是想说，在找工作的过程中，一定要挺住，挂笔试挂面试不可怕，可怕的是你放弃自己，我在10月1号之前做了很多公司的笔试，次次都挂，但我都是洗个澡，换条内裤，第二天继续到教室自习。整个找工作过程中，我从来不刷朋友圈，别人到处吃喝玩乐跟我无关，不想受到别人的打扰。<br>&emsp;&emsp;今天在朋友圈发了个状态，写道：拿到offer是因为运气，心里高兴是因为付出。<br>&emsp;&emsp;感谢牛客网以及牛客的QQ群在我找工作的时候一直陪伴我，说实话，找不到工作的时候看到群里有一大群人也找不到，心里还是挺开心的，觉得自己也没那么差，嘿嘿，但我真 心 祝愿每一个人都能拿到自己心仪的offer。<br>&emsp;&emsp;O(∩_∩)O谢谢～</p>
-<div align="right"><font size="5">2015.10.23</font></div>
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=35447858&auto=1&height=66"></iframe>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Python学习笔记之面向对象高级编程]]></title>
-      <url>http://yaodong.ml/articles/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html</url>
+      <title><![CDATA[python学习笔记之面向对象高级编程]]></title>
+      <url>http://yaodong.ml/python/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文是python面向对象高级编程的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
 <h3 id="使用-slot-限制动态添加属性"><a href="#使用-slot-限制动态添加属性" class="headerlink" title="使用__slot__限制动态添加属性"></a>使用<code>__slot__</code>限制动态添加属性</h3><p>&emsp;&emsp;python作为一门动态语言，比静态语言更灵活，功能更强大。python可以实现对类的具体对象添加属性和方法，但是对类的一个具体实例动态添加属性和方法只对当前实例对象有效，对该类的其他实例对象是不起作用的。<br>&emsp;&emsp;给类的所有实例对象都绑定属性方法，可以<code>MethodType()</code>函数通过给class绑定属性和方法实现：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> types <span class="keyword">import</span> MethodType</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_method</span><span class="params">(self,var)</span>:</span></div><div class="line">    self.var = var</div><div class="line">% 给MyObject类添加new_method方法</div><div class="line">MyObject.new_method = MethodType(new_method,<span class="keyword">None</span>,MyObject)</div></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;python语言的动态特性允许在程序运行的过程中为对象的所属类添加属性或方法。相应地，为了保护自定义类的固有属性和方法，在定义class时需要通过一定的措施来限制对该class动态添加属性和方法。在定义class时，可添加一个<code>__slots__</code>变量，来限制该class能添加的属性：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line">    __slots__ = (<span class="string">"name"</span>,<span class="string">"age"</span>)   <span class="comment"># 用tuple定义允许绑定的属性名称</span></div></pre></td></tr></table></figure></p>
@@ -427,8 +348,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Python学习笔记之高级函数]]></title>
-      <url>http://yaodong.ml/articles/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0.html</url>
+      <title><![CDATA[python学习笔记之高级函数]]></title>
+      <url>http://yaodong.ml/python/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7%E5%87%BD%E6%95%B0.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文是python的高级函数语法的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
 <h2 id="Python学习笔记之高级函数"><a href="#Python学习笔记之高级函数" class="headerlink" title="Python学习笔记之高级函数"></a>Python学习笔记之高级函数</h2><h3 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator(生成器)"></a>Generator(生成器)</h3><p>&emsp;&emsp;通过列表生成式生成的list直接保存在内存中，容量有限。如果列表中的元素可以根据某种算法推导得到，那么就可以在循环的过程中推导后续的元素值。Python中，这种一边循环一边计算的机制，称为生成器（Generator）。<br>&emsp;&emsp;创建generator：把一个列表生成式的[]改成()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>g = (x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">10</span>))</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>g</div><div class="line">&lt;generator object &lt;genexpr&gt; at <span class="number">0x104feab40</span>&gt;</div></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;generator中保存的不是具体的数据，而是循环生成元素所用到得算法或推导公式，因此，如果要计算generator后续元素的值，须先计算出之前的元素值，这一点与数据结构中的链表的性质很像。generator也是可迭代对象，因此可使用generator.next()或for循环来输出元素值。</p>
@@ -452,19 +373,6 @@
 <p>&emsp;&emsp;Python的@语法：把@log放到now()函数的定义处，相当于执行了语句：now = log(now)<br>&emsp;&emsp;decorator的实质还是函数对象，具有<code>__name__</code>属性。执行输入参数是原函数（now）的decorator函数后，返回值最终是decorator函数内定义的新函数（wrapper）。即原函数经过decorator函数后，<code>__name__</code>属性发生了改变。因此为了避免某些依赖函数签名的代码执行出错，需要把原始函数的<code>__name__</code>等属性复制到generator内部的新函数中。Python内置的<code>functools.wraps</code>可以实现这个功能。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> functools</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></div><div class="line"><span class="meta">    @functools.wraps(func)</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kw)</span>:</span></div><div class="line">        <span class="keyword">print</span> <span class="string">'call %s():'</span> % func.__name__</div><div class="line">        <span class="keyword">return</span> func(*args, **kw)</div><div class="line">    <span class="keyword">return</span> wrapper</div></pre></td></tr></table></figure></p>
 <h4 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h4><p>&emsp;&emsp;Python的functools模块提供了偏函数（<strong>partial function</strong>）功能。偏函数的作用是把函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会传入指定默认值的参数。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">% int()函数可根据参数base,指定N进制转换</div><div class="line">def int2(x,base=2)</div><div class="line">    return int(x,base)</div><div class="line"></div><div class="line">% 用偏函数实现</div><div class="line">&gt;&gt;&gt; import functools</div><div class="line">&gt;&gt;&gt; int2 = functools.partial(int, base=2)</div><div class="line">&gt;&gt;&gt; int2('1000000')</div><div class="line">64</div><div class="line">&gt;&gt;&gt; int2('1010101')</div><div class="line">85</div></pre></td></tr></table></figure></p>
 <p>&emsp;&emsp;Python的functools模块把int(x,base=2)简化为int2，执行int2(‘10010’)相当于：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">kw = &#123; base: <span class="number">2</span> &#125;</div><div class="line">int(<span class="string">'10010'</span>, **kw)</div></pre></td></tr></table></figure></p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[python爬虫学习资源汇总]]></title>
-      <url>http://yaodong.ml/articles/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB.html</url>
-      <content type="html"><![CDATA[<p>&emsp;&emsp;最近想参加数据类的比赛，暂时没有时间学爬虫。本博文整理了爬虫的相关学习资源，以后有时间了再学爬虫。欢迎交流。<br><a id="more"></a><br>&emsp;&emsp;<strong>爬虫</strong>就是自动抓取目标网站上的全部或部分资源。目前用于爬虫的编程语言也较多，本人擅长python和java，因此本博文涉及的学习资源大多是<strong>java</strong>和<strong>python</strong>相关的。本文会不定时更新。</p>
-<h3 id="爬虫书籍推荐"><a href="#爬虫书籍推荐" class="headerlink" title="爬虫书籍推荐"></a>爬虫书籍推荐</h3><ol>
-<li>《用python写网络爬虫》</li>
-<li>《Python网络数据采集》</li>
-<li>《干净的数据——数据清洗入门与实践》</li>
-<li>《自己动手写网络爬虫（修订版）》</li>
-</ol>
 ]]></content>
     </entry>
     
@@ -793,7 +701,7 @@
     
     <entry>
       <title><![CDATA[pandas学习笔记]]></title>
-      <url>http://yaodong.ml/articles/pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
+      <url>http://yaodong.ml/python/pandas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;pandas是python环境中基于numpy构建的数据分析、数据处理框架。正是pandas的存在，使得ppython语言在数据分析领域变得强大而高效。<br><a id="more"></a><br>&emsp;&emsp;本博文主要是记录博主学习pandas的相关笔记，大部分学习内容来自于总结<a href="http://pandas.pydata.org/pandas-docs/stable/tutorials.html" target="_blank" rel="external">pandas documenation</a>和《利用Python进行数据分析》的pandas的相关章节。<br>&emsp;&emsp;pandas中的两个主要的数据结构是<strong>Series</strong>和<strong>DataFrame</strong>，对此不做过多的理论介绍，<strong>本博文侧重于记录如何使用pandas</strong>。</p>
 <h4 id="导入pandas、numpy、matplotlib包："><a href="#导入pandas、numpy、matplotlib包：" class="headerlink" title="导入pandas、numpy、matplotlib包："></a>导入pandas、numpy、matplotlib包：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">import</span> scipy <span class="keyword">as</span> sp</div><div class="line"><span class="keyword">import</span> matplot.pyplot <span class="keyword">as</span> plt</div></pre></td></tr></table></figure>
 <h4 id="创建Series"><a href="#创建Series" class="headerlink" title="创建Series"></a>创建<strong>Series</strong></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">s = pd.Series([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,np.nan,<span class="number">6</span>,<span class="number">8</span>])</div><div class="line">%<span class="comment">#Series具有index属性和values属性，索引从0开始。创建Series时也可指定index的类型</span></div><div class="line">obj = pd.Series([<span class="number">4</span>,<span class="number">-7</span>,<span class="number">5</span>,<span class="number">3</span>],index=[<span class="string">'A'</span>,<span class="string">'B'</span>,<span class="string">'C'</span>,<span class="string">'D'</span>])</div><div class="line">%<span class="comment">#可通过索引值获取Series结构的值：</span></div><div class="line">series[index]</div></pre></td></tr></table></figure>
@@ -847,7 +755,7 @@
     
     <entry>
       <title><![CDATA[Machine Learning学习笔记：特征工程]]></title>
-      <url>http://yaodong.ml/articles/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</url>
+      <url>http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;<strong>特征工程（Feature Engineering）</strong>包括特征构建(<strong>Construction</strong>)、特征提取(<strong>Extraction</strong>)、特征选择(<strong>Selection</strong>)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。<br><a id="more"></a></p>
 <blockquote>
 <p><strong>Feature engineering</strong> is the process of using domain knowledge of the data to create features that make machine learning algorithms work. Feature engineering is fundamental to the application of machine learning, and is both difficult and expensive. The need for manual feature engineering can be obviated by automated feature learning<br><strong>特征工程</strong>是利用数据科学领域的相关知识来创建、提取、选择能使机器学习算法达到最佳性能的特征的过程。</p>
@@ -876,7 +784,7 @@
     
     <entry>
       <title><![CDATA[Machine Learning学习笔记：判别模型与生成模型]]></title>
-      <url>http://yaodong.ml/articles/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</url>
+      <url>http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文简单介绍了判别模型与生成模型的定义、优缺点以及相互之间的关系。<br><a id="more"></a></p>
 <h3 id="生成模型和判别模型的定义"><a href="#生成模型和判别模型的定义" class="headerlink" title="生成模型和判别模型的定义"></a>生成模型和判别模型的定义</h3><p>&emsp;&emsp;监督学习的任务就是从数据中学习一个模型（也叫分类器），对给定的输入<strong>X</strong>预测相应的输出<strong>Y</strong>。决策函数为<strong>Y=<em>f</em>(X)</strong>或者条件概率分布<strong>P(Y|X)</strong>。实际上通过条件概率分布<strong>P(Y|X)</strong>进行预测也是隐含着表达成决策函数<strong>Y=<em>f</em>(X)</strong>的形式的。<br>&emsp;&emsp;监督学习方法分为<strong>生成方法</strong>（Generative approach）和<strong>判别方法</strong>（Discriminative approach），相应的机器学习模型分别称为<strong>生成模型</strong>（Generative Model）和<strong>判别模型</strong>（Discriminative Model）：</p>
 <ul>
@@ -899,484 +807,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JavaEE很全面的面试题（转自jackfrued）]]></title>
-      <url>http://yaodong.ml/articles/Java%20EE%E5%BE%88%E5%85%A8%E9%9D%A2%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E8%BD%AC%E8%87%AAjackfrued%EF%BC%89.html</url>
-      <content type="html"><![CDATA[<p>&emsp;&emsp;Java面试题在google上能搜到很多，但是绝大部分博客或网站上的Java面试题都不全面。<strong>本博客非原创</strong>，博主果冻君作为一只<strong>搬运工</strong>，本博客<strong>汇总</strong>了CSDN博客上<a href="http://my.csdn.net/jackfrued" target="_blank" rel="external">jackfrued</a>的Java面试题全集。<br><a id="more"></a><br>&nbsp;<br>&emsp;&emsp;本博客只汇总了此大神博客上的Java面试题目，具体答案请移步原著博客：</p>
-<ul>
-<li><a href="http://blog.csdn.net/jackfrued/article/details/44921941" target="_blank" rel="external">Java面试题全集（上）</a></li>
-<li><a href="http://blog.csdn.net/jackfrued/article/details/44931137" target="_blank" rel="external">Java面试题全集（中）</a></li>
-<li><a href="http://blog.csdn.net/jackfrued/article/details/44931161" target="_blank" rel="external">Java面试题全集（下）</a></li>
-</ul>
-<h3 id="Java-SE面试题"><a href="#Java-SE面试题" class="headerlink" title="Java SE面试题"></a>Java SE面试题</h3><blockquote>
-<p>这部分主要是Java SE相关的面试题，具有很强的通用性，即使不是Java程序员，只要你是Java语言的使用者，这部分都值得一读。</p>
-</blockquote>
-<h4 id="面向对象的特征有哪些方面？"><a href="#面向对象的特征有哪些方面？" class="headerlink" title="面向对象的特征有哪些方面？"></a>面向对象的特征有哪些方面？</h4><h4 id="访问修饰符public-private-protected-以及不写（默认）时的区别？"><a href="#访问修饰符public-private-protected-以及不写（默认）时的区别？" class="headerlink" title="访问修饰符public,private,protected,以及不写（默认）时的区别？"></a>访问修饰符public,private,protected,以及不写（默认）时的区别？</h4><h4 id="String-是最基本的数据类型吗？"><a href="#String-是最基本的数据类型吗？" class="headerlink" title="String 是最基本的数据类型吗？"></a>String 是最基本的数据类型吗？</h4><h4 id="float-f-3-4-是否正确？"><a href="#float-f-3-4-是否正确？" class="headerlink" title="float f=3.4;是否正确？"></a>float f=3.4;是否正确？</h4><h4 id="short-s1-1-s1-s1-1-有错吗-short-s1-1-s1-1-有错吗？"><a href="#short-s1-1-s1-s1-1-有错吗-short-s1-1-s1-1-有错吗？" class="headerlink" title="short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？"></a>short s1 = 1; s1 = s1 + 1;有错吗?short s1 = 1; s1 += 1;有错吗？</h4><h4 id="Java有没有goto？"><a href="#Java有没有goto？" class="headerlink" title="Java有没有goto？"></a>Java有没有goto？</h4><h4 id="int和Integer有什么区别？"><a href="#int和Integer有什么区别？" class="headerlink" title="int和Integer有什么区别？"></a>int和Integer有什么区别？</h4><h4 id="amp-和-amp-amp-的区别？"><a href="#amp-和-amp-amp-的区别？" class="headerlink" title="&amp;和&amp;&amp;的区别？"></a>&amp;和&amp;&amp;的区别？</h4><h4 id="解释内存中的栈-stack-、堆-heap-和静态区-static-area-的用法。"><a href="#解释内存中的栈-stack-、堆-heap-和静态区-static-area-的用法。" class="headerlink" title="解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。"></a>解释内存中的栈(stack)、堆(heap)和静态区(static area)的用法。</h4><h4 id="Math-round-11-5-等于多少？Math-round-11-5-等于多少？"><a href="#Math-round-11-5-等于多少？Math-round-11-5-等于多少？" class="headerlink" title="Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？"></a>Math.round(11.5) 等于多少？Math.round(-11.5)等于多少？</h4><h4 id="swtich-是否能作用在byte-上，是否能作用在long-上，是否能作用在String上？"><a href="#swtich-是否能作用在byte-上，是否能作用在long-上，是否能作用在String上？" class="headerlink" title="swtich 是否能作用在byte 上，是否能作用在long 上，是否能作用在String上？"></a>swtich 是否能作用在byte 上，是否能作用在long 上，是否能作用在String上？</h4><h4 id="用最有效率的方法计算2乘以8？"><a href="#用最有效率的方法计算2乘以8？" class="headerlink" title="用最有效率的方法计算2乘以8？"></a>用最有效率的方法计算2乘以8？</h4><h4 id="数组有没有length-方法？String有没有length-方法？"><a href="#数组有没有length-方法？String有没有length-方法？" class="headerlink" title="数组有没有length()方法？String有没有length()方法？"></a>数组有没有length()方法？String有没有length()方法？</h4><h4 id="在Java中，如何跳出当前的多重嵌套循环？"><a href="#在Java中，如何跳出当前的多重嵌套循环？" class="headerlink" title="在Java中，如何跳出当前的多重嵌套循环？"></a>在Java中，如何跳出当前的多重嵌套循环？</h4><h4 id="构造器（constructor）是否可被重写（override）？"><a href="#构造器（constructor）是否可被重写（override）？" class="headerlink" title="构造器（constructor）是否可被重写（override）？"></a>构造器（constructor）是否可被重写（override）？</h4><h4 id="两个对象值相同-x-equals-y-true-，但却可有不同的hash-code，这句话对不对？"><a href="#两个对象值相同-x-equals-y-true-，但却可有不同的hash-code，这句话对不对？" class="headerlink" title="两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？"></a>两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对？</h4><h4 id="是否可以继承String类？"><a href="#是否可以继承String类？" class="headerlink" title="是否可以继承String类？"></a>是否可以继承String类？</h4><h4 id="当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？"><a href="#当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？" class="headerlink" title="当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？"></a>当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递？</h4><h4 id="String和StringBuilder、StringBuffer的区别？"><a href="#String和StringBuilder、StringBuffer的区别？" class="headerlink" title="String和StringBuilder、StringBuffer的区别？"></a>String和StringBuilder、StringBuffer的区别？</h4><h4 id="重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？"><a href="#重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？" class="headerlink" title="重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？"></a>重载（Overload）和重写（Override）的区别。重载的方法能否根据返回类型进行区分？</h4><h4 id="描述一下JVM加载class文件的原理机制？"><a href="#描述一下JVM加载class文件的原理机制？" class="headerlink" title="描述一下JVM加载class文件的原理机制？"></a>描述一下JVM加载class文件的原理机制？</h4><h4 id="char型变量中能不能存贮一个中文汉字，为什么？"><a href="#char型变量中能不能存贮一个中文汉字，为什么？" class="headerlink" title="char型变量中能不能存贮一个中文汉字，为什么？"></a>char型变量中能不能存贮一个中文汉字，为什么？</h4><h4 id="抽象类（abstract-class）和接口（interface）有什么异同？"><a href="#抽象类（abstract-class）和接口（interface）有什么异同？" class="headerlink" title="抽象类（abstract class）和接口（interface）有什么异同？"></a>抽象类（abstract class）和接口（interface）有什么异同？</h4><h4 id="静态嵌套类-Static-Nested-Class-和内部类（Inner-Class）的不同？"><a href="#静态嵌套类-Static-Nested-Class-和内部类（Inner-Class）的不同？" class="headerlink" title="静态嵌套类(Static Nested Class)和内部类（Inner Class）的不同？"></a>静态嵌套类(Static Nested Class)和内部类（Inner Class）的不同？</h4><h4 id="Java-中会存在内存泄漏吗，请简单描述。"><a href="#Java-中会存在内存泄漏吗，请简单描述。" class="headerlink" title="Java 中会存在内存泄漏吗，请简单描述。"></a>Java 中会存在内存泄漏吗，请简单描述。</h4><h4 id="抽象的（abstract）方法是否可同时是静态的（static）-是否可同时是本地方法（native），是否可同时被synchronized修饰？"><a href="#抽象的（abstract）方法是否可同时是静态的（static）-是否可同时是本地方法（native），是否可同时被synchronized修饰？" class="headerlink" title="抽象的（abstract）方法是否可同时是静态的（static）,是否可同时是本地方法（native），是否可同时被synchronized修饰？"></a>抽象的（abstract）方法是否可同时是静态的（static）,是否可同时是本地方法（native），是否可同时被synchronized修饰？</h4><h4 id="阐述静态变量和实例变量的区别。"><a href="#阐述静态变量和实例变量的区别。" class="headerlink" title="阐述静态变量和实例变量的区别。"></a>阐述静态变量和实例变量的区别。</h4><h4 id="是否可以从一个静态（static）方法内部发出对非静态（non-static）方法的调用？"><a href="#是否可以从一个静态（static）方法内部发出对非静态（non-static）方法的调用？" class="headerlink" title="是否可以从一个静态（static）方法内部发出对非静态（non-static）方法的调用？"></a>是否可以从一个静态（static）方法内部发出对非静态（non-static）方法的调用？</h4><h4 id="如何实现对象克隆？"><a href="#如何实现对象克隆？" class="headerlink" title="如何实现对象克隆？"></a>如何实现对象克隆？</h4><h4 id="GC（gabage-collection）是什么？为什么要有GC？"><a href="#GC（gabage-collection）是什么？为什么要有GC？" class="headerlink" title="GC（gabage collection）是什么？为什么要有GC？"></a>GC（gabage collection）是什么？为什么要有GC？</h4><h4 id="String-s-new-String-“xyz”-创建了几个字符串对象？"><a href="#String-s-new-String-“xyz”-创建了几个字符串对象？" class="headerlink" title="String s = new String(“xyz”);创建了几个字符串对象？"></a>String s = new String(“xyz”);创建了几个字符串对象？</h4><h4 id="接口是否可继承（extends）接口？抽象类是否可实现（implements）接口？抽象类是否可继承具体类（concrete-class）？"><a href="#接口是否可继承（extends）接口？抽象类是否可实现（implements）接口？抽象类是否可继承具体类（concrete-class）？" class="headerlink" title="接口是否可继承（extends）接口？抽象类是否可实现（implements）接口？抽象类是否可继承具体类（concrete class）？"></a>接口是否可继承（extends）接口？抽象类是否可实现（implements）接口？抽象类是否可继承具体类（concrete class）？</h4><h4 id="一个”-java”源文件中是否可以包含多个类（不是内部类）？有什么限制？"><a href="#一个”-java”源文件中是否可以包含多个类（不是内部类）？有什么限制？" class="headerlink" title="一个”.java”源文件中是否可以包含多个类（不是内部类）？有什么限制？"></a>一个”.java”源文件中是否可以包含多个类（不是内部类）？有什么限制？</h4><h4 id="Anonymous-Inner-Class-匿名内部类-是否可以继承其它类？是否可以实现接口？"><a href="#Anonymous-Inner-Class-匿名内部类-是否可以继承其它类？是否可以实现接口？" class="headerlink" title="Anonymous Inner Class(匿名内部类)是否可以继承其它类？是否可以实现接口？"></a>Anonymous Inner Class(匿名内部类)是否可以继承其它类？是否可以实现接口？</h4><h4 id="内部类可以引用它的包含类（外部类）的成员吗？有没有什么限制？"><a href="#内部类可以引用它的包含类（外部类）的成员吗？有没有什么限制？" class="headerlink" title="内部类可以引用它的包含类（外部类）的成员吗？有没有什么限制？"></a>内部类可以引用它的包含类（外部类）的成员吗？有没有什么限制？</h4><h4 id="Java-中的final关键字有哪些用法？"><a href="#Java-中的final关键字有哪些用法？" class="headerlink" title="Java 中的final关键字有哪些用法？"></a>Java 中的final关键字有哪些用法？</h4><h4 id="数据类型之间的转换：如何将字符串转换为基本数据类型？如何将基本数据类型转换为字符串？"><a href="#数据类型之间的转换：如何将字符串转换为基本数据类型？如何将基本数据类型转换为字符串？" class="headerlink" title="数据类型之间的转换：如何将字符串转换为基本数据类型？如何将基本数据类型转换为字符串？"></a>数据类型之间的转换：如何将字符串转换为基本数据类型？如何将基本数据类型转换为字符串？</h4><h4 id="如何实现字符串的反转及替换？"><a href="#如何实现字符串的反转及替换？" class="headerlink" title="如何实现字符串的反转及替换？"></a>如何实现字符串的反转及替换？</h4><h4 id="怎样将GB2312编码的字符串转换为ISO-8859-1编码的字符串？"><a href="#怎样将GB2312编码的字符串转换为ISO-8859-1编码的字符串？" class="headerlink" title="怎样将GB2312编码的字符串转换为ISO-8859-1编码的字符串？"></a>怎样将GB2312编码的字符串转换为ISO-8859-1编码的字符串？</h4><h4 id="日期和时间：-如何取得年月日、小时分钟秒？-如何取得从1970年1月1日0时0分0秒到现在的毫秒数？如何取得某月的最后一天？-如何格式化日期？"><a href="#日期和时间：-如何取得年月日、小时分钟秒？-如何取得从1970年1月1日0时0分0秒到现在的毫秒数？如何取得某月的最后一天？-如何格式化日期？" class="headerlink" title="日期和时间： 如何取得年月日、小时分钟秒？ 如何取得从1970年1月1日0时0分0秒到现在的毫秒数？如何取得某月的最后一天？ 如何格式化日期？"></a>日期和时间： 如何取得年月日、小时分钟秒？ 如何取得从1970年1月1日0时0分0秒到现在的毫秒数？如何取得某月的最后一天？ 如何格式化日期？</h4><h4 id="打印昨天的当前时刻"><a href="#打印昨天的当前时刻" class="headerlink" title="打印昨天的当前时刻"></a>打印昨天的当前时刻</h4><h4 id="比较一下Java和JavaSciprt"><a href="#比较一下Java和JavaSciprt" class="headerlink" title="比较一下Java和JavaSciprt"></a>比较一下Java和JavaSciprt</h4><h4 id="什么时候用断言（assert）？"><a href="#什么时候用断言（assert）？" class="headerlink" title="什么时候用断言（assert）？"></a>什么时候用断言（assert）？</h4><h4 id="Error和Exception有什么区别？"><a href="#Error和Exception有什么区别？" class="headerlink" title="Error和Exception有什么区别？"></a>Error和Exception有什么区别？</h4><h4 id="try-里有一个return语句，那么紧跟在这个try后的finally-里的代码会不会被执行，什么时候被执行，在return前还是后"><a href="#try-里有一个return语句，那么紧跟在这个try后的finally-里的代码会不会被执行，什么时候被执行，在return前还是后" class="headerlink" title="try{}里有一个return语句，那么紧跟在这个try后的finally{}里的代码会不会被执行，什么时候被执行，在return前还是后?"></a>try{}里有一个return语句，那么紧跟在这个try后的finally{}里的代码会不会被执行，什么时候被执行，在return前还是后?</h4><h4 id="Java语言如何进行异常处理，关键字：throws、throw、try、catch、finally分别如何使用？"><a href="#Java语言如何进行异常处理，关键字：throws、throw、try、catch、finally分别如何使用？" class="headerlink" title="Java语言如何进行异常处理，关键字：throws、throw、try、catch、finally分别如何使用？"></a>Java语言如何进行异常处理，关键字：throws、throw、try、catch、finally分别如何使用？</h4><h4 id="运行时异常与受检异常有何异同？"><a href="#运行时异常与受检异常有何异同？" class="headerlink" title="运行时异常与受检异常有何异同？"></a>运行时异常与受检异常有何异同？</h4><h4 id="列出一些你常见的运行时异常？"><a href="#列出一些你常见的运行时异常？" class="headerlink" title="列出一些你常见的运行时异常？"></a>列出一些你常见的运行时异常？</h4><h4 id="阐述final、finally、finalize的区别。"><a href="#阐述final、finally、finalize的区别。" class="headerlink" title="阐述final、finally、finalize的区别。"></a>阐述final、finally、finalize的区别。</h4><h4 id="List、Set、Map是否继承自Collection接口？"><a href="#List、Set、Map是否继承自Collection接口？" class="headerlink" title="List、Set、Map是否继承自Collection接口？"></a>List、Set、Map是否继承自Collection接口？</h4><h4 id="阐述ArrayList、Vector、LinkedList的存储性能和特性。"><a href="#阐述ArrayList、Vector、LinkedList的存储性能和特性。" class="headerlink" title="阐述ArrayList、Vector、LinkedList的存储性能和特性。"></a>阐述ArrayList、Vector、LinkedList的存储性能和特性。</h4><h4 id="Collection和Collections的区别？"><a href="#Collection和Collections的区别？" class="headerlink" title="Collection和Collections的区别？"></a>Collection和Collections的区别？</h4><h4 id="TreeMap和TreeSet在排序时如何比较元素？Collections工具类中的sort-方法如何比较元素？"><a href="#TreeMap和TreeSet在排序时如何比较元素？Collections工具类中的sort-方法如何比较元素？" class="headerlink" title="TreeMap和TreeSet在排序时如何比较元素？Collections工具类中的sort()方法如何比较元素？"></a>TreeMap和TreeSet在排序时如何比较元素？Collections工具类中的sort()方法如何比较元素？</h4><h4 id="Thread类的sleep-方法和对象的wait-方法都可以让线程暂停执行，它们有什么区别"><a href="#Thread类的sleep-方法和对象的wait-方法都可以让线程暂停执行，它们有什么区别" class="headerlink" title="Thread类的sleep()方法和对象的wait()方法都可以让线程暂停执行，它们有什么区别?"></a>Thread类的sleep()方法和对象的wait()方法都可以让线程暂停执行，它们有什么区别?</h4><h4 id="线程的sleep-方法和yield-方法有什么区别？"><a href="#线程的sleep-方法和yield-方法有什么区别？" class="headerlink" title="线程的sleep()方法和yield()方法有什么区别？"></a>线程的sleep()方法和yield()方法有什么区别？</h4><h4 id="当一个线程进入一个对象的synchronized方法A之后，其它线程是否可进入此对象的synchronized方法B？"><a href="#当一个线程进入一个对象的synchronized方法A之后，其它线程是否可进入此对象的synchronized方法B？" class="headerlink" title="当一个线程进入一个对象的synchronized方法A之后，其它线程是否可进入此对象的synchronized方法B？"></a>当一个线程进入一个对象的synchronized方法A之后，其它线程是否可进入此对象的synchronized方法B？</h4><h4 id="请说出与线程同步以及线程调度相关的方法。"><a href="#请说出与线程同步以及线程调度相关的方法。" class="headerlink" title="请说出与线程同步以及线程调度相关的方法。"></a>请说出与线程同步以及线程调度相关的方法。</h4><h4 id="synchronized关键字的用法？"><a href="#synchronized关键字的用法？" class="headerlink" title="synchronized关键字的用法？"></a>synchronized关键字的用法？</h4><h4 id="举例说明同步和异步。"><a href="#举例说明同步和异步。" class="headerlink" title="举例说明同步和异步。"></a>举例说明同步和异步。</h4><h4 id="启动一个线程是调用run-还是start-方法？"><a href="#启动一个线程是调用run-还是start-方法？" class="headerlink" title="启动一个线程是调用run()还是start()方法？"></a>启动一个线程是调用run()还是start()方法？</h4><h4 id="什么是线程池（thread-pool）？"><a href="#什么是线程池（thread-pool）？" class="headerlink" title="什么是线程池（thread pool）？"></a>什么是线程池（thread pool）？</h4><h4 id="线程的基本状态以及状态之间的关系？"><a href="#线程的基本状态以及状态之间的关系？" class="headerlink" title="线程的基本状态以及状态之间的关系？"></a>线程的基本状态以及状态之间的关系？</h4><h4 id="简述synchronized-和java-util-concurrent-locks-Lock的异同？"><a href="#简述synchronized-和java-util-concurrent-locks-Lock的异同？" class="headerlink" title="简述synchronized 和java.util.concurrent.locks.Lock的异同？"></a>简述synchronized 和java.util.concurrent.locks.Lock的异同？</h4><h4 id="Java中如何实现序列化，有什么意义？"><a href="#Java中如何实现序列化，有什么意义？" class="headerlink" title="Java中如何实现序列化，有什么意义？"></a>Java中如何实现序列化，有什么意义？</h4><h4 id="Java中有几种类型的流？"><a href="#Java中有几种类型的流？" class="headerlink" title="Java中有几种类型的流？"></a>Java中有几种类型的流？</h4><h4 id="写一个方法，输入一个文件名和一个字符串，统计这个字符串在这个文件中出现的次数。"><a href="#写一个方法，输入一个文件名和一个字符串，统计这个字符串在这个文件中出现的次数。" class="headerlink" title="写一个方法，输入一个文件名和一个字符串，统计这个字符串在这个文件中出现的次数。"></a>写一个方法，输入一个文件名和一个字符串，统计这个字符串在这个文件中出现的次数。</h4><h4 id="如何用Java代码列出一个目录下所有的文件？"><a href="#如何用Java代码列出一个目录下所有的文件？" class="headerlink" title="如何用Java代码列出一个目录下所有的文件？"></a>如何用Java代码列出一个目录下所有的文件？</h4><h4 id="用Java的套接字编程实现一个多线程的回显（echo）服务器"><a href="#用Java的套接字编程实现一个多线程的回显（echo）服务器" class="headerlink" title="用Java的套接字编程实现一个多线程的回显（echo）服务器"></a>用Java的套接字编程实现一个多线程的回显（echo）服务器</h4><h4 id="XML文档定义有几种形式？它们之间有何本质区别？解析XML文档有哪几种方式？"><a href="#XML文档定义有几种形式？它们之间有何本质区别？解析XML文档有哪几种方式？" class="headerlink" title="XML文档定义有几种形式？它们之间有何本质区别？解析XML文档有哪几种方式？"></a>XML文档定义有几种形式？它们之间有何本质区别？解析XML文档有哪几种方式？</h4><h4 id="你在项目中哪些地方用到了XML？"><a href="#你在项目中哪些地方用到了XML？" class="headerlink" title="你在项目中哪些地方用到了XML？"></a>你在项目中哪些地方用到了XML？</h4><h4 id="阐述JDBC操作数据库的步骤。"><a href="#阐述JDBC操作数据库的步骤。" class="headerlink" title="阐述JDBC操作数据库的步骤。"></a>阐述JDBC操作数据库的步骤。</h4><h4 id="Statement和PreparedStatement有什么区别？哪个性能更好？"><a href="#Statement和PreparedStatement有什么区别？哪个性能更好？" class="headerlink" title="Statement和PreparedStatement有什么区别？哪个性能更好？"></a>Statement和PreparedStatement有什么区别？哪个性能更好？</h4><h4 id="使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？"><a href="#使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？" class="headerlink" title="使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？"></a>使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？</h4><h4 id="在进行数据库编程时，连接池有什么作用？"><a href="#在进行数据库编程时，连接池有什么作用？" class="headerlink" title="在进行数据库编程时，连接池有什么作用？"></a>在进行数据库编程时，连接池有什么作用？</h4><h4 id="什么是DAO模式？"><a href="#什么是DAO模式？" class="headerlink" title="什么是DAO模式？"></a>什么是DAO模式？</h4><h4 id="事务的ACID是指什么？"><a href="#事务的ACID是指什么？" class="headerlink" title="事务的ACID是指什么？"></a>事务的ACID是指什么？</h4><h4 id="JDBC中如何进行事务处理？"><a href="#JDBC中如何进行事务处理？" class="headerlink" title="JDBC中如何进行事务处理？"></a>JDBC中如何进行事务处理？</h4><h4 id="JDBC能否处理Blob和Clob？"><a href="#JDBC能否处理Blob和Clob？" class="headerlink" title="JDBC能否处理Blob和Clob？"></a>JDBC能否处理Blob和Clob？</h4><h4 id="简述正则表达式及其用途。"><a href="#简述正则表达式及其用途。" class="headerlink" title="简述正则表达式及其用途。"></a>简述正则表达式及其用途。</h4><h4 id="Java中是如何支持正则表达式操作的？"><a href="#Java中是如何支持正则表达式操作的？" class="headerlink" title="Java中是如何支持正则表达式操作的？"></a>Java中是如何支持正则表达式操作的？</h4><h4 id="获得一个类的类对象有哪些方式？"><a href="#获得一个类的类对象有哪些方式？" class="headerlink" title="获得一个类的类对象有哪些方式？"></a>获得一个类的类对象有哪些方式？</h4><h4 id="如何通过反射创建对象？"><a href="#如何通过反射创建对象？" class="headerlink" title="如何通过反射创建对象？"></a>如何通过反射创建对象？</h4><h4 id="如何通过反射获取和设置对象私有字段的值？"><a href="#如何通过反射获取和设置对象私有字段的值？" class="headerlink" title="如何通过反射获取和设置对象私有字段的值？"></a>如何通过反射获取和设置对象私有字段的值？</h4><h4 id="如何通过反射调用对象的方法？"><a href="#如何通过反射调用对象的方法？" class="headerlink" title="如何通过反射调用对象的方法？"></a>如何通过反射调用对象的方法？</h4><h4 id="简述一下面向对象的”六原则一法则”。"><a href="#简述一下面向对象的”六原则一法则”。" class="headerlink" title="简述一下面向对象的”六原则一法则”。"></a>简述一下面向对象的”六原则一法则”。</h4><h4 id="简述一下你了解的设计模式。"><a href="#简述一下你了解的设计模式。" class="headerlink" title="简述一下你了解的设计模式。"></a>简述一下你了解的设计模式。</h4><h4 id="用Java写一个单例类。"><a href="#用Java写一个单例类。" class="headerlink" title="用Java写一个单例类。"></a>用Java写一个单例类。</h4><h4 id="什么是UML？"><a href="#什么是UML？" class="headerlink" title="什么是UML？"></a>什么是UML？</h4><h4 id="UML中有哪些常用的图？"><a href="#UML中有哪些常用的图？" class="headerlink" title="UML中有哪些常用的图？"></a>UML中有哪些常用的图？</h4><h4 id="用Java写一个冒泡排序。"><a href="#用Java写一个冒泡排序。" class="headerlink" title="用Java写一个冒泡排序。"></a>用Java写一个冒泡排序。</h4><h4 id="用Java写一个折半查找"><a href="#用Java写一个折半查找" class="headerlink" title="用Java写一个折半查找"></a>用Java写一个折半查找</h4><h3 id="Java-Web面试题"><a href="#Java-Web面试题" class="headerlink" title="Java Web面试题"></a>Java Web面试题</h3><blockquote>
-<p>这部分主要是与Java Web和Web Service相关的面试题。</p>
-</blockquote>
-<h4 id="阐述Servlet和CGI的区别"><a href="#阐述Servlet和CGI的区别" class="headerlink" title="阐述Servlet和CGI的区别?"></a>阐述Servlet和CGI的区别?</h4><h4 id="Servlet接口中有哪些方法？"><a href="#Servlet接口中有哪些方法？" class="headerlink" title="Servlet接口中有哪些方法？"></a>Servlet接口中有哪些方法？</h4><h4 id="转发（forward）和重定向（redirect）的区别？"><a href="#转发（forward）和重定向（redirect）的区别？" class="headerlink" title="转发（forward）和重定向（redirect）的区别？"></a>转发（forward）和重定向（redirect）的区别？</h4><h4 id="JSP有哪些内置对象？作用分别是什么？"><a href="#JSP有哪些内置对象？作用分别是什么？" class="headerlink" title="JSP有哪些内置对象？作用分别是什么？"></a>JSP有哪些内置对象？作用分别是什么？</h4><h4 id="get和post请求的区别？"><a href="#get和post请求的区别？" class="headerlink" title="get和post请求的区别？"></a>get和post请求的区别？</h4><h4 id="常用的Web服务器有哪些？"><a href="#常用的Web服务器有哪些？" class="headerlink" title="常用的Web服务器有哪些？"></a>常用的Web服务器有哪些？</h4><h4 id="JSP和Servlet是什么关系？"><a href="#JSP和Servlet是什么关系？" class="headerlink" title="JSP和Servlet是什么关系？"></a>JSP和Servlet是什么关系？</h4><h4 id="讲解JSP中的四种作用域。"><a href="#讲解JSP中的四种作用域。" class="headerlink" title="讲解JSP中的四种作用域。"></a>讲解JSP中的四种作用域。</h4><h4 id="如何实现JSP或Servlet的单线程模式？"><a href="#如何实现JSP或Servlet的单线程模式？" class="headerlink" title="如何实现JSP或Servlet的单线程模式？"></a>如何实现JSP或Servlet的单线程模式？</h4><h4 id="实现会话跟踪的技术有哪些？"><a href="#实现会话跟踪的技术有哪些？" class="headerlink" title="实现会话跟踪的技术有哪些？"></a>实现会话跟踪的技术有哪些？</h4><h4 id="过滤器有哪些作用和用法？"><a href="#过滤器有哪些作用和用法？" class="headerlink" title="过滤器有哪些作用和用法？"></a>过滤器有哪些作用和用法？</h4><h4 id="监听器有哪些作用和用法？"><a href="#监听器有哪些作用和用法？" class="headerlink" title="监听器有哪些作用和用法？"></a>监听器有哪些作用和用法？</h4><h4 id="web-xml文件中可以配置哪些内容？"><a href="#web-xml文件中可以配置哪些内容？" class="headerlink" title="web.xml文件中可以配置哪些内容？"></a>web.xml文件中可以配置哪些内容？</h4><h4 id="你的项目中使用过哪些JSTL标签？"><a href="#你的项目中使用过哪些JSTL标签？" class="headerlink" title="你的项目中使用过哪些JSTL标签？"></a>你的项目中使用过哪些JSTL标签？</h4><h4 id="使用标签库有什么好处？如何自定义JSP标签？"><a href="#使用标签库有什么好处？如何自定义JSP标签？" class="headerlink" title="使用标签库有什么好处？如何自定义JSP标签？"></a>使用标签库有什么好处？如何自定义JSP标签？</h4><h4 id="说一下表达式语言（EL）的隐式对象及其作用。"><a href="#说一下表达式语言（EL）的隐式对象及其作用。" class="headerlink" title="说一下表达式语言（EL）的隐式对象及其作用。"></a>说一下表达式语言（EL）的隐式对象及其作用。</h4><h4 id="表达式语言（EL）支持哪些运算符？"><a href="#表达式语言（EL）支持哪些运算符？" class="headerlink" title="表达式语言（EL）支持哪些运算符？"></a>表达式语言（EL）支持哪些运算符？</h4><h4 id="Java-Web开发的Model-1和Model-2分别指的是什么？"><a href="#Java-Web开发的Model-1和Model-2分别指的是什么？" class="headerlink" title="Java Web开发的Model 1和Model 2分别指的是什么？"></a>Java Web开发的Model 1和Model 2分别指的是什么？</h4><h4 id="Servlet-3中的异步处理指的是什么？"><a href="#Servlet-3中的异步处理指的是什么？" class="headerlink" title="Servlet 3中的异步处理指的是什么？"></a>Servlet 3中的异步处理指的是什么？</h4><h4 id="如何在基于Java的Web项目中实现文件上传和下载？"><a href="#如何在基于Java的Web项目中实现文件上传和下载？" class="headerlink" title="如何在基于Java的Web项目中实现文件上传和下载？"></a>如何在基于Java的Web项目中实现文件上传和下载？</h4><h4 id="服务器收到用户提交的表单数据，到底是调用Servlet的doGet-还是doPost-方法？"><a href="#服务器收到用户提交的表单数据，到底是调用Servlet的doGet-还是doPost-方法？" class="headerlink" title="服务器收到用户提交的表单数据，到底是调用Servlet的doGet()还是doPost()方法？"></a>服务器收到用户提交的表单数据，到底是调用Servlet的doGet()还是doPost()方法？</h4><h4 id="JSP中的静态包含和动态包含有什么区别？"><a href="#JSP中的静态包含和动态包含有什么区别？" class="headerlink" title="JSP中的静态包含和动态包含有什么区别？"></a>JSP中的静态包含和动态包含有什么区别？</h4><h4 id="Servlet中如何获取用户提交的查询参数或表单数据？"><a href="#Servlet中如何获取用户提交的查询参数或表单数据？" class="headerlink" title="Servlet中如何获取用户提交的查询参数或表单数据？"></a>Servlet中如何获取用户提交的查询参数或表单数据？</h4><h4 id="Servlet中如何获取用户配置的初始化参数以及服务器上下文参数？"><a href="#Servlet中如何获取用户配置的初始化参数以及服务器上下文参数？" class="headerlink" title="Servlet中如何获取用户配置的初始化参数以及服务器上下文参数？"></a>Servlet中如何获取用户配置的初始化参数以及服务器上下文参数？</h4><h4 id="如何设置请求的编码以及响应内容的类型？"><a href="#如何设置请求的编码以及响应内容的类型？" class="headerlink" title="如何设置请求的编码以及响应内容的类型？"></a>如何设置请求的编码以及响应内容的类型？</h4><h4 id="解释一下网络应用的模式及其特点。"><a href="#解释一下网络应用的模式及其特点。" class="headerlink" title="解释一下网络应用的模式及其特点。"></a>解释一下网络应用的模式及其特点。</h4><h4 id="什么是Web-Service（Web服务）？"><a href="#什么是Web-Service（Web服务）？" class="headerlink" title="什么是Web Service（Web服务）？"></a>什么是Web Service（Web服务）？</h4><h4 id="解释一下SOAP、WSDL、UDDI的概念。"><a href="#解释一下SOAP、WSDL、UDDI的概念。" class="headerlink" title="解释一下SOAP、WSDL、UDDI的概念。"></a>解释一下SOAP、WSDL、UDDI的概念。</h4><h4 id="Java规范中和Web-Service相关的规范有哪些？"><a href="#Java规范中和Web-Service相关的规范有哪些？" class="headerlink" title="Java规范中和Web Service相关的规范有哪些？"></a>Java规范中和Web Service相关的规范有哪些？</h4><h4 id="介绍一下你了解的Java领域的Web-Service框架。"><a href="#介绍一下你了解的Java领域的Web-Service框架。" class="headerlink" title="介绍一下你了解的Java领域的Web Service框架。"></a>介绍一下你了解的Java领域的Web Service框架。</h4><h3 id="Java-EE面试题"><a href="#Java-EE面试题" class="headerlink" title="Java EE面试题"></a>Java EE面试题</h3><blockquote>
-<p>这部分主要是开源Java EE框架方面的内容，包括Hibernate、MyBatis、Spring、Spring MVC等框架。此外，这篇文章还对企业应用架构、大型网站架构和应用服务器优化等内容进行了简单的探讨。</p>
-</blockquote>
-<h4 id="什么是ORM？"><a href="#什么是ORM？" class="headerlink" title="什么是ORM？"></a>什么是ORM？</h4><h4 id="持久层设计要考虑的问题有哪些？你用过的持久层框架有哪些？"><a href="#持久层设计要考虑的问题有哪些？你用过的持久层框架有哪些？" class="headerlink" title="持久层设计要考虑的问题有哪些？你用过的持久层框架有哪些？"></a>持久层设计要考虑的问题有哪些？你用过的持久层框架有哪些？</h4><h4 id="Hibernate中SessionFactory是线程安全的吗？Session是线程安全的吗（两个线程能够共享同一个Session吗）？"><a href="#Hibernate中SessionFactory是线程安全的吗？Session是线程安全的吗（两个线程能够共享同一个Session吗）？" class="headerlink" title="Hibernate中SessionFactory是线程安全的吗？Session是线程安全的吗（两个线程能够共享同一个Session吗）？"></a>Hibernate中SessionFactory是线程安全的吗？Session是线程安全的吗（两个线程能够共享同一个Session吗）？</h4><h4 id="Hibernate中Session的load和get方法的区别是什么？"><a href="#Hibernate中Session的load和get方法的区别是什么？" class="headerlink" title="Hibernate中Session的load和get方法的区别是什么？"></a>Hibernate中Session的load和get方法的区别是什么？</h4><h4 id="Session的save-、update-、merge-、lock-、saveOrUpdate-和persist-方法分别是做什么的？有什么区别？"><a href="#Session的save-、update-、merge-、lock-、saveOrUpdate-和persist-方法分别是做什么的？有什么区别？" class="headerlink" title="Session的save()、update()、merge()、lock()、saveOrUpdate()和persist()方法分别是做什么的？有什么区别？"></a>Session的save()、update()、merge()、lock()、saveOrUpdate()和persist()方法分别是做什么的？有什么区别？</h4><h4 id="阐述Session加载实体对象的过程。"><a href="#阐述Session加载实体对象的过程。" class="headerlink" title="阐述Session加载实体对象的过程。"></a>阐述Session加载实体对象的过程。</h4><h4 id="Query接口的list方法和iterate方法有什么区别？"><a href="#Query接口的list方法和iterate方法有什么区别？" class="headerlink" title="Query接口的list方法和iterate方法有什么区别？"></a>Query接口的list方法和iterate方法有什么区别？</h4><h4 id="Hibernate如何实现分页查询？"><a href="#Hibernate如何实现分页查询？" class="headerlink" title="Hibernate如何实现分页查询？"></a>Hibernate如何实现分页查询？</h4><h4 id="锁机制有什么用？简述Hibernate的悲观锁和乐观锁机制。"><a href="#锁机制有什么用？简述Hibernate的悲观锁和乐观锁机制。" class="headerlink" title="锁机制有什么用？简述Hibernate的悲观锁和乐观锁机制。"></a>锁机制有什么用？简述Hibernate的悲观锁和乐观锁机制。</h4><h4 id="阐述实体对象的三种状态以及转换关系。"><a href="#阐述实体对象的三种状态以及转换关系。" class="headerlink" title="阐述实体对象的三种状态以及转换关系。"></a>阐述实体对象的三种状态以及转换关系。</h4><h4 id="如何理解Hibernate的延迟加载机制？在实际应用中，延迟加载与Session关闭的矛盾是如何处理的？"><a href="#如何理解Hibernate的延迟加载机制？在实际应用中，延迟加载与Session关闭的矛盾是如何处理的？" class="headerlink" title="如何理解Hibernate的延迟加载机制？在实际应用中，延迟加载与Session关闭的矛盾是如何处理的？"></a>如何理解Hibernate的延迟加载机制？在实际应用中，延迟加载与Session关闭的矛盾是如何处理的？</h4><h4 id="举一个多对多关联的例子，并说明如何实现多对多关联映射"><a href="#举一个多对多关联的例子，并说明如何实现多对多关联映射" class="headerlink" title="举一个多对多关联的例子，并说明如何实现多对多关联映射"></a>举一个多对多关联的例子，并说明如何实现多对多关联映射</h4><h4 id="谈一下你对继承映射的理解。"><a href="#谈一下你对继承映射的理解。" class="headerlink" title="谈一下你对继承映射的理解。"></a>谈一下你对继承映射的理解。</h4><h4 id="简述Hibernate常见优化策略。"><a href="#简述Hibernate常见优化策略。" class="headerlink" title="简述Hibernate常见优化策略。"></a>简述Hibernate常见优化策略。</h4><h4 id="谈一谈Hibernate的一级缓存、二级缓存和查询缓存。"><a href="#谈一谈Hibernate的一级缓存、二级缓存和查询缓存。" class="headerlink" title="谈一谈Hibernate的一级缓存、二级缓存和查询缓存。"></a>谈一谈Hibernate的一级缓存、二级缓存和查询缓存。</h4><h4 id="Hibernate中DetachedCriteria类是做什么的？"><a href="#Hibernate中DetachedCriteria类是做什么的？" class="headerlink" title="Hibernate中DetachedCriteria类是做什么的？"></a>Hibernate中DetachedCriteria类是做什么的？</h4><h4 id="OneToMany注解的mappedBy属性有什么作用？"><a href="#OneToMany注解的mappedBy属性有什么作用？" class="headerlink" title="@OneToMany注解的mappedBy属性有什么作用？"></a>@OneToMany注解的mappedBy属性有什么作用？</h4><h4 id="MyBatis中使用-和-书写占位符有什么区别？"><a href="#MyBatis中使用-和-书写占位符有什么区别？" class="headerlink" title="MyBatis中使用#和$书写占位符有什么区别？"></a>MyBatis中使用#和$书写占位符有什么区别？</h4><h4 id="解释一下MyBatis中命名空间（namespace）的作用。"><a href="#解释一下MyBatis中命名空间（namespace）的作用。" class="headerlink" title="解释一下MyBatis中命名空间（namespace）的作用。"></a>解释一下MyBatis中命名空间（namespace）的作用。</h4><h4 id="MyBatis中的动态SQL是什么意思？"><a href="#MyBatis中的动态SQL是什么意思？" class="headerlink" title="MyBatis中的动态SQL是什么意思？"></a>MyBatis中的动态SQL是什么意思？</h4><h4 id="什么是IoC和DI？DI是如何实现的？"><a href="#什么是IoC和DI？DI是如何实现的？" class="headerlink" title="什么是IoC和DI？DI是如何实现的？"></a>什么是IoC和DI？DI是如何实现的？</h4><h4 id="Spring中Bean的作用域有哪些？"><a href="#Spring中Bean的作用域有哪些？" class="headerlink" title="Spring中Bean的作用域有哪些？"></a>Spring中Bean的作用域有哪些？</h4><h4 id="解释一下什么叫AOP（面向切面编程）？"><a href="#解释一下什么叫AOP（面向切面编程）？" class="headerlink" title="解释一下什么叫AOP（面向切面编程）？"></a>解释一下什么叫AOP（面向切面编程）？</h4><h4 id="你是如何理解”横切关注”这个概念的？"><a href="#你是如何理解”横切关注”这个概念的？" class="headerlink" title="你是如何理解”横切关注”这个概念的？"></a>你是如何理解”横切关注”这个概念的？</h4><h4 id="你如何理解AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？"><a href="#你如何理解AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？" class="headerlink" title="你如何理解AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？"></a>你如何理解AOP中的连接点（Joinpoint）、切点（Pointcut）、增强（Advice）、引介（Introduction）、织入（Weaving）、切面（Aspect）这些概念？</h4><h4 id="Spring中自动装配的方式有哪些？"><a href="#Spring中自动装配的方式有哪些？" class="headerlink" title="Spring中自动装配的方式有哪些？"></a>Spring中自动装配的方式有哪些？</h4><h4 id="Spring中如何使Spring支持的事务管理类型有哪些？你在项目中使用哪种方式？-用注解来配置Bean？有哪些相关的注解？"><a href="#Spring中如何使Spring支持的事务管理类型有哪些？你在项目中使用哪种方式？-用注解来配置Bean？有哪些相关的注解？" class="headerlink" title="Spring中如何使Spring支持的事务管理类型有哪些？你在项目中使用哪种方式？ 用注解来配置Bean？有哪些相关的注解？"></a>Spring中如何使Spring支持的事务管理类型有哪些？你在项目中使用哪种方式？ 用注解来配置Bean？有哪些相关的注解？</h4><h4 id="如何在Web项目中配置Spring-MVC？"><a href="#如何在Web项目中配置Spring-MVC？" class="headerlink" title="如何在Web项目中配置Spring MVC？"></a>如何在Web项目中配置Spring MVC？</h4><h4 id="Spring-MVC的工作原理是怎样的？"><a href="#Spring-MVC的工作原理是怎样的？" class="headerlink" title="Spring MVC的工作原理是怎样的？"></a>Spring MVC的工作原理是怎样的？</h4><h4 id="如何在Spring-IoC容器中配置数据源？"><a href="#如何在Spring-IoC容器中配置数据源？" class="headerlink" title="如何在Spring IoC容器中配置数据源？"></a>如何在Spring IoC容器中配置数据源？</h4><h4 id="如何配置配置事务增强？"><a href="#如何配置配置事务增强？" class="headerlink" title="如何配置配置事务增强？"></a>如何配置配置事务增强？</h4><h4 id="选择使用Spring框架的原因（Spring框架为企业级开发带来的好处有哪些）？"><a href="#选择使用Spring框架的原因（Spring框架为企业级开发带来的好处有哪些）？" class="headerlink" title="选择使用Spring框架的原因（Spring框架为企业级开发带来的好处有哪些）？"></a>选择使用Spring框架的原因（Spring框架为企业级开发带来的好处有哪些）？</h4><h4 id="Spring-IoC容器配置Bean的方式？"><a href="#Spring-IoC容器配置Bean的方式？" class="headerlink" title="Spring IoC容器配置Bean的方式？"></a>Spring IoC容器配置Bean的方式？</h4><h4 id="阐述Spring框架中Bean的生命周期？"><a href="#阐述Spring框架中Bean的生命周期？" class="headerlink" title="阐述Spring框架中Bean的生命周期？"></a>阐述Spring框架中Bean的生命周期？</h4><h4 id="依赖注入时如何注入集合属性？"><a href="#依赖注入时如何注入集合属性？" class="headerlink" title="依赖注入时如何注入集合属性？"></a>依赖注入时如何注入集合属性？</h4><h4 id="Spring中的自动装配有哪些限制？"><a href="#Spring中的自动装配有哪些限制？" class="headerlink" title="Spring中的自动装配有哪些限制？"></a>Spring中的自动装配有哪些限制？</h4><h4 id="在Web项目中如何获得Spring的IoC容器？"><a href="#在Web项目中如何获得Spring的IoC容器？" class="headerlink" title="在Web项目中如何获得Spring的IoC容器？"></a>在Web项目中如何获得Spring的IoC容器？</h4><h4 id="大型网站在架构上应当考虑哪些问题？"><a href="#大型网站在架构上应当考虑哪些问题？" class="headerlink" title="大型网站在架构上应当考虑哪些问题？"></a>大型网站在架构上应当考虑哪些问题？</h4><h4 id="你用过的网站前端优化的技术有哪些？"><a href="#你用过的网站前端优化的技术有哪些？" class="headerlink" title="你用过的网站前端优化的技术有哪些？"></a>你用过的网站前端优化的技术有哪些？</h4><h4 id="你使用过的应用服务器优化技术有哪些？"><a href="#你使用过的应用服务器优化技术有哪些？" class="headerlink" title="你使用过的应用服务器优化技术有哪些？"></a>你使用过的应用服务器优化技术有哪些？</h4><h4 id="什么是XSS攻击？什么是SQL注入攻击？什么是CSRF攻击？"><a href="#什么是XSS攻击？什么是SQL注入攻击？什么是CSRF攻击？" class="headerlink" title="什么是XSS攻击？什么是SQL注入攻击？什么是CSRF攻击？"></a>什么是XSS攻击？什么是SQL注入攻击？什么是CSRF攻击？</h4><h4 id="什么是领域模型-domain-model-？贫血模型-anaemic-domain-model-和充血模型-rich-domain-model-有什么区别？"><a href="#什么是领域模型-domain-model-？贫血模型-anaemic-domain-model-和充血模型-rich-domain-model-有什么区别？" class="headerlink" title="什么是领域模型(domain model)？贫血模型(anaemic domain model)和充血模型(rich domain model)有什么区别？"></a>什么是领域模型(domain model)？贫血模型(anaemic domain model)和充血模型(rich domain model)有什么区别？</h4><h4 id="谈一谈测试驱动开发（TDD）的好处以及你的理解。"><a href="#谈一谈测试驱动开发（TDD）的好处以及你的理解。" class="headerlink" title="谈一谈测试驱动开发（TDD）的好处以及你的理解。"></a>谈一谈测试驱动开发（TDD）的好处以及你的理解。</h4>]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Java开发岗位面试题汇总]]></title>
-      <url>http://yaodong.ml/articles/Java%E5%BC%80%E5%8F%91%E5%B2%97%E4%BD%8D%E9%9D%A2%E8%AF%95%E9%A2%98%E6%B1%87%E6%80%BB.html</url>
-      <content type="html"><![CDATA[<p>&nbsp;<br>&emsp;&emsp;Java面试题在google上能搜到很多，但是绝大部分博客或网站上的Java面试题都不全面。<strong>本博客非原创</strong>，博主果冻君作为一只<strong>搬运工</strong>，本博客<strong>汇总</strong>了网上能搜到的大部分Java面试题。<br><a id="more"></a></p>
-<p>&emsp;&emsp;由于是汇总，因此本博文中可能会有少量的重复试题，浏览时遇到重复试题跳过即可。</p>
-<h2 id="Java面试题：part-1"><a href="#Java面试题：part-1" class="headerlink" title="Java面试题：part 1"></a>Java面试题：part 1</h2><h3 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h3><ol>
-<li>String类为什么是final的。</li>
-<li>HashMap的源码，实现原理，底层结构。</li>
-<li>说说你知道的几个Java集合类：list、set、queue、map实现类咯。。。</li>
-<li>描述一下ArrayList和LinkedList各自实现和区别</li>
-<li>Java中的队列都有哪些，有什么区别。</li>
-<li>反射中，Class.forName和classloader的区别</li>
-<li>Java7、Java8的新特性(baidu问的,好BT)</li>
-<li>Java数组和链表两种结构的操作效率，在哪些情况下(从开头开始，从结尾开始，从中间开始)，哪些操作(插入，查找，删除)的效率高</li>
-<li>Java内存泄露的问题调查定位：jmap，jstack的使用等等</li>
-<li>string、stringbuilder、stringbuffer区别</li>
-<li>hashtable和hashmap的区别</li>
-<li>异常的结构，运行时异常和非运行时异常，各举个例子</li>
-<li>String a= “abc” String b = “abc” String c = new String(“abc”) String d = “ab” + “c” .他们之间用 == 比较的结果</li>
-<li>String 类的常用方法</li>
-<li>Java 的引用类型有哪几种</li>
-<li>抽象类和接口的区别</li>
-<li>java的基础类型和字节大小。</li>
-<li>Hashtable,HashMap,ConcurrentHashMap 底层实现原理与线程安全问题（建议熟悉 jdk 源码，才能从容应答）</li>
-<li>如果不让你用Java Jdk提供的工具，你自己实现一个Map，你怎么做。说了好久，说了HashMap源代码，如果我做，就会借鉴HashMap的原理，说了一通HashMap实现</li>
-<li>Hash冲突怎么办？哪些解决散列冲突的方法？</li>
-<li>HashMap冲突很厉害，最差性能，你会怎么解决?从O（n）提升到log（n）咯，用二叉排序树的思路说了一通</li>
-<li>rehash</li>
-<li>hashCode() 与 equals() 生成算法、方法怎么重写</li>
-</ol>
-<h3 id="二、Java-IO"><a href="#二、Java-IO" class="headerlink" title="二、Java IO"></a>二、Java IO</h3><ol>
-<li>讲讲IO里面的常见类，字节流、字符流、接口、实现类、方法阻塞。</li>
-<li>讲讲NIO。</li>
-<li>String 编码UTF-8 和GBK的区别?</li>
-<li>什么时候使用字节流、什么时候使用字符流?</li>
-<li>递归读取文件夹下的文件，代码怎么实现</li>
-</ol>
-<h3 id="三、Java-Web"><a href="#三、Java-Web" class="headerlink" title="三、Java Web"></a>三、Java Web</h3><ol>
-<li>session和cookie的区别和联系，session的生命周期，多个服务部署时session管理。</li>
-<li>servlet的一些相关问题</li>
-<li>webservice相关问题</li>
-<li>jdbc连接，forname方式的步骤，怎么声明使用一个事务。举例并具体代码</li>
-<li>无框架下配置web.xml的主要配置内容</li>
-<li>jsp和servlet的区别</li>
-</ol>
-<h3 id="四、JVM"><a href="#四、JVM" class="headerlink" title="四、JVM"></a>四、JVM</h3><ol>
-<li>Java的内存模型以及GC算法</li>
-<li>jvm性能调优都做了什么</li>
-<li>介绍JVM中7个区域，然后把每个区域可能造成内存的溢出的情况说明</li>
-<li>介绍GC 和GC Root不正常引用。</li>
-<li>自己从classload 加载方式，加载机制说开去，从程序运行时数据区，讲到内存分配，讲到String常量池，讲到JVM垃圾回收机制，算法，hotspot。反正就是各种扩展</li>
-<li>jvm 如何分配直接内存， new 对象如何不分配在堆而是栈上，常量池解析</li>
-<li>数组多大放在 JVM 老年代（不只是设置 PretenureSizeThreshold ，问通常多大，没做过一问便知）</li>
-<li>老年代中数组的访问方式</li>
-<li>GC 算法，永久代对象如何 GC ， GC 有环怎么处理</li>
-<li>谁会被 GC ，什么时候 GC</li>
-<li>如果想不被 GC 怎么办</li>
-<li>如果想在 GC 中生存 1 次怎么办</li>
-</ol>
-<h3 id="五、开源框架"><a href="#五、开源框架" class="headerlink" title="五、开源框架"></a>五、开源框架</h3><ol>
-<li>hibernate和ibatis的区别</li>
-<li>讲讲mybatis的连接池。</li>
-<li>spring框架中需要引用哪些jar包，以及这些jar包的用途</li>
-<li>springMVC的原理</li>
-<li>springMVC注解的意思</li>
-<li>spring中beanFactory和ApplicationContext的联系和区别</li>
-<li>spring注入的几种方式（循环注入）</li>
-<li>spring如何实现事物管理的</li>
-<li>springIOC</li>
-<li>spring AOP的原理</li>
-<li>hibernate中的1级和2级缓存的使用方式以及区别原理（Lazy-Load的理解）</li>
-<li>Hibernate的原理体系架构，五大核心接口，Hibernate对象的三种状态转换，事务管理。</li>
-</ol>
-<h3 id="六、多线程"><a href="#六、多线程" class="headerlink" title="六、多线程"></a>六、多线程</h3><ol>
-<li>Java创建线程之后，直接调用start()方法和run()的区别</li>
-<li>常用的线程池模式以及不同线程池的使用场景</li>
-<li>newFixedThreadPool此种线程池如果线程数达到最大值后会怎么办，底层原理。</li>
-<li>多线程之间通信的同步问题，synchronized锁的是对象，衍伸出和synchronized相关很多的具体问题，例如同一个类不同方法都有synchronized锁，一个对象是否可以同时访问。或者一个类的static构造方法加上synchronized之后的锁的影响。</li>
-<li>了解可重入锁的含义，以及ReentrantLock 和synchronized的区别</li>
-<li>同步的数据结构，例如concurrentHashMap的源码理解以及内部实现原理，为什么他是同步的且效率高</li>
-<li>atomicinteger和volatile等线程安全操作的关键字的理解和使用</li>
-<li>线程间通信，wait和notify</li>
-<li>定时线程的使用</li>
-<li>场景：在一个主线程中，要求有大量(很多很多)子线程执行完之后，主线程才执行完成。多种方式，考虑效率。</li>
-<li>进程和线程的区别</li>
-<li>什么叫线程安全？举例说明</li>
-<li>线程的几种状态</li>
-<li>并发、同步的接口或方法</li>
-<li>HashMap 是否线程安全，为何不安全。 ConcurrentHashMap，线程安全，为何安全。底层实现是怎么样的。</li>
-<li>J.U.C下的常见类的使用。 ThreadPool的深入考察； BlockingQueue的使用。（take，poll的区别，put，offer的区别）；原子类的实现。</li>
-<li>简单介绍下多线程的情况，从建立一个线程开始。然后怎么控制同步过程，多线程常用的方法和结构</li>
-<li>volatile的理解</li>
-<li>实现多线程有几种方式，多线程同步怎么做，说说几个线程里常用的方法</li>
-</ol>
-<h3 id="七、网络通信"><a href="#七、网络通信" class="headerlink" title="七、网络通信"></a>七、网络通信</h3><ol>
-<li>http是无状态通信，http的请求方式有哪些，可以自己定义新的请求方式么。</li>
-<li>socket通信，以及长连接，分包，连接异常断开的处理。</li>
-<li>socket通信模型的使用，AIO和NIO。</li>
-<li>socket框架netty的使用，以及NIO的实现原理，为什么是异步非阻塞。</li>
-<li>同步和异步，阻塞和非阻塞。</li>
-<li>OSI七层模型，包括TCP,IP的一些基本知识</li>
-<li>http中，get post的区别</li>
-<li>说说http,tcp,udp之间关系和区别。</li>
-<li>说说浏览器访问www.taobao.com，经历了怎样的过程。</li>
-<li>HTTP协议、  HTTPS协议，SSL协议及完整交互过程；</li>
-<li>tcp的拥塞，快回传，ip的报文丢弃</li>
-<li>https处理的一个过程，对称加密和非对称加密</li>
-<li>head各个特点和区别</li>
-<li>说说浏览器访问www.taobao.com，经历了怎样的过程。</li>
-</ol>
-<h3 id="八、数据库MySql"><a href="#八、数据库MySql" class="headerlink" title="八、数据库MySql"></a>八、数据库MySql</h3><ol>
-<li>MySql的存储引擎的不同</li>
-<li>单个索引、联合索引、主键索引</li>
-<li>Mysql怎么分表，以及分表后如果想按条件分页查询怎么办(如果不是按分表字段来查询的话，几乎效率低下，无解)</li>
-<li>分表之后想让一个id多个表是自增的，效率实现</li>
-<li>MySql的主从实时备份同步的配置，以及原理(从库读主库的binlog)，读写分离</li>
-<li>写SQL语句。。。</li>
-<li>索引的数据结构，B+树</li>
-<li>事务的四个特性，以及各自的特点（原子、隔离）等等，项目怎么解决这些问题</li>
-<li>数据库的锁：行锁，表锁；乐观锁，悲观锁</li>
-<li>数据库事务的几种粒度；</li>
-<li>关系型和非关系型数据库区别</li>
-</ol>
-<h3 id="九、设计模式"><a href="#九、设计模式" class="headerlink" title="九、设计模式"></a>九、设计模式</h3><ol>
-<li>单例模式：饱汉、饿汉。以及饿汉中的延迟加载,双重检查</li>
-<li>工厂模式、装饰者模式、观察者模式。</li>
-<li>工厂方法模式的优点（低耦合、高内聚，开放封闭原则）</li>
-</ol>
-<h3 id="十、算法"><a href="#十、算法" class="headerlink" title="十、算法"></a>十、算法</h3><ol>
-<li>使用随机算法产生一个数，要求把1-1000w之间这些数全部生成（考察高效率，解决产生冲突的问题）</li>
-<li>两个有序数组的合并排序</li>
-<li>一个数组的倒序</li>
-<li>计算一个正整数的正平方根</li>
-<li>常见的那些查找、排序算法以及各自的时间复杂度</li>
-<li>二叉树的遍历算法</li>
-<li>DFS、BFS算法</li>
-<li>比较重要的数据结构，如链表，队列，栈的基本理解及大致实现。</li>
-<li>排序算法与时空复杂度（快排为什么不稳定，为什么你的项目还在用）</li>
-<li>逆波兰计算器</li>
-<li>Hoffman 编码</li>
-<li>查找树与红黑树</li>
-</ol>
-<h3 id="十一、并发与性能调优"><a href="#十一、并发与性能调优" class="headerlink" title="十一、并发与性能调优"></a>十一、并发与性能调优</h3><ol>
-<li>有个每秒钟5k个请求，查询手机号所属地的笔试题(记得不完整，没列出)，如何设计算法?请求再多，比如5w，如何设计整个系统?</li>
-<li>高并发情况下，我们系统是如何支撑大量的请求的</li>
-<li>集群如何同步会话状态</li>
-<li>负载均衡的原理</li>
-<li>如果有一个特别大的访问量，到数据库上，怎么做优化（DB设计，DBIO，SQL优化，Java优化）</li>
-<li>如果出现大面积并发，在不增加服务器的基础上，如何解决服务器响应不及时问题“。</li>
-<li>假如你的项目出现性能瓶颈了，你觉得可能会是哪些方面，怎么解决问题。</li>
-<li>如何查找 造成 性能瓶颈出现的位置，是哪个位置照成性能瓶颈。</li>
-<li>你的项目中使用过缓存机制吗？有没用用户非本地缓存</li>
-</ol>
-<h2 id="Java面试题：part-2"><a href="#Java面试题：part-2" class="headerlink" title="Java面试题：part 2"></a>Java面试题：part 2</h2><blockquote>
-<p>本部分将讨论Java面试中的各种不同类型的面试题，它们可以测试应聘者的Java和通用的面向对象编程的能力。</p>
-</blockquote>
-<h3 id="一、面向对象编程（OOP）的相关问题"><a href="#一、面向对象编程（OOP）的相关问题" class="headerlink" title="一、面向对象编程（OOP）的相关问题"></a>一、面向对象编程（OOP）的相关问题</h3><h4 id="面向对象编程开发的优点"><a href="#面向对象编程开发的优点" class="headerlink" title="面向对象编程开发的优点"></a>面向对象编程开发的优点</h4><ul>
-<li>代码开发模块化，更易维护和修改</li>
-<li>代码复用</li>
-<li>增强代码的可靠性和灵活性</li>
-<li>增加代码的可理解性</li>
-<li>面向对象编程有很多重要的特性：封装，继承，多态和抽象等<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4>&emsp;&emsp;封装给对象提供了隐藏内部特性和行为的能力。对象提供一些能被其他对象访问的方法来改变它内部的数据。在Java当中，有3种修饰符：public，private和protected。每一种修饰符给其他的位于同一个包或者不同包下面对象赋予了不同的访问权限。<br>&emsp;&emsp;下面列出了使用封装的一些好处：</li>
-<li>通过隐藏对象的属性来保护对象内部的状态</li>
-<li>提高了代码的可用性和可维护性，因为对象的行为可以被单独的改变或者是扩展</li>
-<li>禁止对象之间的不良交互提高模块化<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4>&emsp;&emsp;多态是编程语言给不同的底层数据类型做相同的接口展示的一种能力。一个多态类型上的操作可以应用到其他类型的值上面。</li>
-</ul>
-<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>&emsp;&emsp;继承给对象提供了从基类获取字段和方法的能力。继承提供了代码的重用行，也可以在不修改类的情况下给现存的类添加新特性。</p>
-<h4 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h4><p>&emsp;&emsp;抽象是把想法从具体的实例中分离出来的步骤，因此，要根据他们的功能而不是实现细节来创建类。Java支持创建只暴漏接口而不包含方法实现的抽象的类。这种抽象技术的主要目的是把类的行为和实现细节分离开。</p>
-<h4 id="抽象和封装的不同点"><a href="#抽象和封装的不同点" class="headerlink" title="抽象和封装的不同点"></a>抽象和封装的不同点</h4><p>&emsp;&emsp;抽象和封装是互补的概念。一方面，抽象关注对象的行为。另一方面，封装关注对象行为的细节。一般是通过隐藏对象内部状态信息做到封装，因此，封装可以看成是用来提供抽象的一种策略。</p>
-<h3 id="二、常见的Java细节问题"><a href="#二、常见的Java细节问题" class="headerlink" title="二、常见的Java细节问题"></a>二、常见的Java细节问题</h3><h4 id="1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"><a href="#1-什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？" class="headerlink" title="1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？"></a>1. 什么是Java虚拟机？为什么Java被称作是“平台无关的编程语言”？</h4><p>&emsp;&emsp;Java虚拟机是一个可以执行Java字节码的虚拟机进程。Java源文件被编译成能被Java虚拟机执行的字节码文件。<br>&emsp;&emsp;Java被设计成允许应用程序可以运行在任意的平台，而不需要程序员为每一个平台单独重写或者是重新编译。Java虚拟机让这个变为可能，因为它知道底层硬件平台的指令长度和其他特性。</p>
-<h4 id="2-JDK和JRE的区别是什么？"><a href="#2-JDK和JRE的区别是什么？" class="headerlink" title="2. JDK和JRE的区别是什么？"></a>2. JDK和JRE的区别是什么？</h4><p>&emsp;&emsp;Java运行时环境(JRE)是将要执行Java程序的Java虚拟机。它同时也包含了执行applet需要的浏览器插件。Java开发工具包(JDK)是完整的Java软件开发包，包含了JRE，编译器和其他的工具(比如：JavaDoc，Java调试器)，可以让开发者开发、编译、执行Java应用程序。</p>
-<h4 id="3-”static”关键字是什么意思？Java中是否可以覆盖-override-一个private或者是static的方法？"><a href="#3-”static”关键字是什么意思？Java中是否可以覆盖-override-一个private或者是static的方法？" class="headerlink" title="3. ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？"></a>3. ”static”关键字是什么意思？Java中是否可以覆盖(override)一个private或者是static的方法？</h4><p>&emsp;&emsp;“static”关键字表明一个成员变量或者是成员方法可以在没有所属的类的实例变量的情况下被访问。<br>&emsp;&emsp;Java中static方法不能被覆盖，因为方法覆盖是基于运行时动态绑定的，而static方法是编译时静态绑定的。static方法跟类的任何实例都不相关，所以概念上不适用。</p>
-<h4 id="4-是否可以在static环境中访问非static变量？"><a href="#4-是否可以在static环境中访问非static变量？" class="headerlink" title="4. 是否可以在static环境中访问非static变量？"></a>4. 是否可以在static环境中访问非static变量？</h4><p>&emsp;&emsp;static变量在Java中是属于类的，它在所有的实例中的值是一样的。当类被Java虚拟机载入的时候，会对static变量进行初始化。如果你的代码尝试不用实例来访问非static的变量，编译器会报错，因为这些变量还没有被创建出来，还没有跟任何实例关联上。</p>
-<h4 id="5-Java支持的数据类型有哪些？什么是自动拆装箱？"><a href="#5-Java支持的数据类型有哪些？什么是自动拆装箱？" class="headerlink" title="5. Java支持的数据类型有哪些？什么是自动拆装箱？"></a>5. Java支持的数据类型有哪些？什么是自动拆装箱？</h4><p>&emsp;&emsp;Java语言支持的8种基本数据类型是：byte、short、int、long、float、double、boolean、char<br>&emsp;&emsp;自动装箱是Java编译器在基本数据类型和对应的对象包装类型之间做的一个转化。比如：把int转化成Integer，double转化成double，等等。反之就是自动拆箱。</p>
-<h4 id="6-Java中的方法覆盖-Overriding-和方法重载-Overloading-是什么意思？"><a href="#6-Java中的方法覆盖-Overriding-和方法重载-Overloading-是什么意思？" class="headerlink" title="6. Java中的方法覆盖(Overriding)和方法重载(Overloading)是什么意思？"></a>6. Java中的方法覆盖(Overriding)和方法重载(Overloading)是什么意思？</h4><p>&emsp;&emsp;Java中的方法重载发生在同一个类里面两个或者是多个方法的方法名相同但是参数不同的情况。与此相对，方法覆盖是说子类重新定义了父类的方法。方法覆盖必须有相同的方法名，参数列表和返回类型。覆盖者可能不会限制它所覆盖的方法的访问。</p>
-<h4 id="7-Java中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？"><a href="#7-Java中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？" class="headerlink" title="7. Java中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？"></a>7. Java中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？</h4><p>&emsp;&emsp;当新对象被创建的时候，构造函数会被调用。每一个类都有构造函数。在程序员没有给类提供构造函数的情况下，Java编译器会为这个类创建一个默认的构造函数。<br>&emsp;&emsp;Java中构造函数重载和方法重载很相似。可以为一个类创建多个构造函数。每一个构造函数必须有它自己唯一的参数列表。<br>&emsp;&emsp;Java不支持像C++中那样的复制构造函数，这个不同点是因为如果你不自己写构造函数的情况下，Java不会创建默认的复制构造函数。</p>
-<h4 id="8-Java支持多继承么？"><a href="#8-Java支持多继承么？" class="headerlink" title="8. Java支持多继承么？"></a>8. Java支持多继承么？</h4><p>&emsp;&emsp;不支持，Java不支持多继承。每个类都只能继承一个类，但是可以实现多个接口。</p>
-<h4 id="9-接口和抽象类的区别是什么？"><a href="#9-接口和抽象类的区别是什么？" class="headerlink" title="9. 接口和抽象类的区别是什么？"></a>9. 接口和抽象类的区别是什么？</h4><p>&emsp;&emsp;Java提供和支持创建抽象类和接口。它们的实现有共同点，不同点在于：</p>
-<ul>
-<li>接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法</li>
-<li>类可以实现很多个接口，但是只能继承一个抽象类</li>
-<li>类如果要实现一个接口，它必须要实现接口声明的所有方法。但是，类可以不实现抽象类声明的所有方法，当然，在这种情况下，类也必须得声明成是抽象的</li>
-<li>抽象类可以在不提供接口方法实现的情况下实现接口</li>
-<li>Java接口中声明的变量默认都是final的。抽象类可以包含非final的变量</li>
-<li>Java接口中的成员函数默认是public的。抽象类的成员函数可以是private，protected或者是public</li>
-<li>接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含main方法的话是可以被调用的。<br>也可以参考JDK8中抽象类和接口的区别</li>
-</ul>
-<h4 id="10-什么是值传递和引用传递？"><a href="#10-什么是值传递和引用传递？" class="headerlink" title="10. 什么是值传递和引用传递？"></a>10. 什么是值传递和引用传递？</h4><p>&emsp;&emsp;对象被值传递，意味着传递了对象的一个副本。因此，就算是改变了对象副本，也不会影响源对象的值。<br>&emsp;&emsp;对象被引用传递，意味着传递的并不是实际的对象，而是对象的引用。因此，外部对引用对象所做的改变会反映到所有的对象上。</p>
-<h3 id="三、Java线程"><a href="#三、Java线程" class="headerlink" title="三、Java线程"></a>三、Java线程</h3><h4 id="11-进程和线程的区别是什么？"><a href="#11-进程和线程的区别是什么？" class="headerlink" title="11. 进程和线程的区别是什么？"></a>11. 进程和线程的区别是什么？</h4><p>&emsp;&emsp;进程是执行着的应用程序，而线程是进程内部的一个执行序列。一个进程可以有多个线程。线程又叫做轻量级进程。</p>
-<h4 id="12-创建线程有几种不同的方式？你喜欢哪一种？为什么？"><a href="#12-创建线程有几种不同的方式？你喜欢哪一种？为什么？" class="headerlink" title="12. 创建线程有几种不同的方式？你喜欢哪一种？为什么？"></a>12. 创建线程有几种不同的方式？你喜欢哪一种？为什么？</h4><p>&emsp;&emsp;有三种方式可以用来创建线程：</p>
-<ul>
-<li>继承Thread类</li>
-<li>实现Runnable接口</li>
-<li>应用程序可以使用Executor框架来创建线程池</li>
-</ul>
-<p>&emsp;&emsp;实现Runnable接口这种方式更受欢迎，因为这不需要继承Thread类。在应用设计中已经继承了别的对象的情况下，这需要多继承（而Java不支持多继承），只能实现接口。同时，线程池也是非常高效的，很容易实现和使用。</p>
-<h4 id="13-概括的解释下线程的几种可用状态。"><a href="#13-概括的解释下线程的几种可用状态。" class="headerlink" title="13. 概括的解释下线程的几种可用状态。"></a>13. 概括的解释下线程的几种可用状态。</h4><p>&emsp;&emsp;线程在执行过程中，可以处于下面几种状态：</p>
-<ul>
-<li>就绪(Runnable):线程准备运行，不一定立马就能开始执行</li>
-<li>运行(Running)：进程正在执行线程的代码</li>
-<li>等待(Waiting):线程处于阻塞的状态，等待外部的处理结束</li>
-<li>睡眠(Sleeping)：线程被强制睡眠</li>
-<li>I/O阻塞(Blocked on I/O)：等待I/O操作完成</li>
-<li>同步阻塞(Blocked on Synchronization)：等待获取锁</li>
-<li>死亡(Dead)：线程完成了执行</li>
-</ul>
-<h4 id="14-同步方法和同步代码块的区别是什么？"><a href="#14-同步方法和同步代码块的区别是什么？" class="headerlink" title="14. 同步方法和同步代码块的区别是什么？"></a>14. 同步方法和同步代码块的区别是什么？</h4><p>&emsp;&emsp;在Java语言中，每一个对象有一把锁。线程可以使用synchronized关键字来获取对象上的锁。synchronized关键字可应用在方法级别(粗粒度锁)或者是代码块级别(细粒度锁)。</p>
-<h4 id="15-在监视器-Monitor-内部，是如何做线程同步的？程序应该做哪种级别的同步？"><a href="#15-在监视器-Monitor-内部，是如何做线程同步的？程序应该做哪种级别的同步？" class="headerlink" title="15. 在监视器(Monitor)内部，是如何做线程同步的？程序应该做哪种级别的同步？"></a>15. 在监视器(Monitor)内部，是如何做线程同步的？程序应该做哪种级别的同步？</h4><p>&emsp;&emsp;监视器和锁在Java虚拟机中是一块使用的。监视器监视一块同步代码块，确保一次只有一个线程执行同步代码块。每一个监视器都和一个对象引用相关联。线程在获取锁之前不允许执行同步代码。</p>
-<h4 id="16-什么是死锁-deadlock-？"><a href="#16-什么是死锁-deadlock-？" class="headerlink" title="16. 什么是死锁(deadlock)？"></a>16. 什么是死锁(deadlock)？</h4><p>&emsp;&emsp;两个进程都在等待对方执行完毕才能继续往下执行的时候就发生了死锁。结果就是两个进程都陷入了无限的等待中。</p>
-<h4 id="17-如何确保N个线程可以访问N个资源同时又不导致死锁？"><a href="#17-如何确保N个线程可以访问N个资源同时又不导致死锁？" class="headerlink" title="17. 如何确保N个线程可以访问N个资源同时又不导致死锁？"></a>17. 如何确保N个线程可以访问N个资源同时又不导致死锁？</h4><p>&emsp;&emsp;使用多线程的时候，一种非常简单的避免死锁的方式就是：指定获取锁的顺序，并强制线程按照指定的顺序获取锁。因此，如果所有的线程都是以同样的顺序加锁和释放锁，就不会出现死锁了。</p>
-<h3 id="四、Java集合类"><a href="#四、Java集合类" class="headerlink" title="四、Java集合类"></a>四、Java集合类</h3><h4 id="18-Java集合类框架的基本接口有哪些？"><a href="#18-Java集合类框架的基本接口有哪些？" class="headerlink" title="18. Java集合类框架的基本接口有哪些？"></a>18. Java集合类框架的基本接口有哪些？</h4><p>&emsp;&emsp;Java集合类提供了一套设计良好的支持对一组对象进行操作的接口和类。Java集合类里面最基本的接口有：</p>
-<ul>
-<li>Collection：代表一组对象，每一个对象都是它的子元素</li>
-<li>Set：不包含重复元素的Collection</li>
-<li>List：有顺序的collection，并且可以包含重复元素</li>
-<li>Map：可以把键(key)映射到值(value)的对象，键不能重复</li>
-</ul>
-<h4 id="19-为什么集合类没有实现Cloneable和Serializable接口？"><a href="#19-为什么集合类没有实现Cloneable和Serializable接口？" class="headerlink" title="19. 为什么集合类没有实现Cloneable和Serializable接口？"></a>19. 为什么集合类没有实现Cloneable和Serializable接口？</h4><p>&emsp;&emsp;集合类接口指定了一组叫做元素的对象。集合类接口的每一种具体的实现类都可以选择以它自己的方式对元素进行保存和排序。有的集合类允许重复的键，有些不允许。</p>
-<h4 id="20-什么是迭代器-Iterator-？"><a href="#20-什么是迭代器-Iterator-？" class="headerlink" title="20. 什么是迭代器(Iterator)？"></a>20. 什么是迭代器(Iterator)？</h4><p>&emsp;&emsp;Iterator接口提供了很多对集合元素进行迭代的方法。每一个集合类都包含了可以返回迭代器实例的<br>迭代方法。迭代器可以在迭代的过程中删除底层集合的元素。<br>&emsp;&emsp;克隆(cloning)或者是序列化(serialization)的语义和含义是跟具体的实现相关的。因此，应该由集合类的具体实现来决定如何被克隆或者是序列化。</p>
-<h4 id="21-Iterator和ListIterator的区别是什么？"><a href="#21-Iterator和ListIterator的区别是什么？" class="headerlink" title="21. Iterator和ListIterator的区别是什么？"></a>21. Iterator和ListIterator的区别是什么？</h4><p>&emsp;&emsp;下面列出了他们的区别：</p>
-<ul>
-<li>Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List</li>
-<li>Iterator对集合只能是前向遍历，ListIterator既可以前向也可以后向</li>
-<li>ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等</li>
-</ul>
-<h4 id="22-快速失败-fail-fast-和安全失败-fail-safe-的区别是什么？"><a href="#22-快速失败-fail-fast-和安全失败-fail-safe-的区别是什么？" class="headerlink" title="22. 快速失败(fail-fast)和安全失败(fail-safe)的区别是什么？"></a>22. 快速失败(fail-fast)和安全失败(fail-safe)的区别是什么？</h4><p>&emsp;&emsp;Iterator的安全失败是基于对底层集合做拷贝，因此，它不受源集合上修改的影响。java.util包下面的所有的集合类都是快速失败的，而java.util.concurrent包下面的所有的类都是安全失败的。快速失败的迭代器会抛出ConcurrentModificationException异常，而安全失败的迭代器永远不会抛出这样的异常。</p>
-<h4 id="23-Java中的HashMap的工作原理是什么？"><a href="#23-Java中的HashMap的工作原理是什么？" class="headerlink" title="23. Java中的HashMap的工作原理是什么？"></a>23. Java中的HashMap的工作原理是什么？</h4><p>&emsp;&emsp;Java中的HashMap是以键值对(key-value)的形式存储元素的。HashMap需要一个hash函数，它使用hashCode()和equals()方法来向集合/从集合添加和检索元素。当调用put()方法的时候，HashMap会计算key的hash值，然后把键值对存储在集合中合适的索引上。如果key已经存在了，value会被更新成新值。HashMap的一些重要的特性是它的容量(capacity)，负载因子(load factor)和扩容极限(threshold resizing)。</p>
-<h4 id="24-hashCode-和equals-方法的重要性体现在什么地方？"><a href="#24-hashCode-和equals-方法的重要性体现在什么地方？" class="headerlink" title="24. hashCode()和equals()方法的重要性体现在什么地方？"></a>24. hashCode()和equals()方法的重要性体现在什么地方？</h4><p>&emsp;&emsp;Java中的HashMap使用hashCode()和equals()方法来确定键值对的索引，当根据键获取值的时候也会用到这两个方法。如果没有正确的实现这两个方法，两个不同的键可能会有相同的hash值，因此，可能会被集合认为是相等的。而且，这两个方法也用来发现重复元素。所以这两个方法的实现对HashMap的精确性和正确性是至关重要的。</p>
-<h4 id="25-HashMap和Hashtable有什么区别？"><a href="#25-HashMap和Hashtable有什么区别？" class="headerlink" title="25. HashMap和Hashtable有什么区别？"></a>25. HashMap和Hashtable有什么区别？</h4><ul>
-<li>HashMap和Hashtable都实现了Map接口，因此很多特性非常相似。但是，他们有以下不同点：</li>
-<li>HashMap允许键和值是null，而Hashtable不允许键或者值是null</li>
-<li>Hashtable是同步的，而HashMap不是。因此，HashMap更适合于单线程环境，而Hashtable适合于多线程环境</li>
-<li>HashMap提供了可供应用迭代的键的集合，因此，HashMap是快速失败的。另一方面，Hashtable提供了对键的列举(Enumeration)</li>
-<li>一般认为Hashtable是一个遗留的类</li>
-</ul>
-<h4 id="26-数组-Array-和列表-ArrayList-有什么区别？什么时候应该使用Array而不是ArrayList？"><a href="#26-数组-Array-和列表-ArrayList-有什么区别？什么时候应该使用Array而不是ArrayList？" class="headerlink" title="26. 数组(Array)和列表(ArrayList)有什么区别？什么时候应该使用Array而不是ArrayList？"></a>26. 数组(Array)和列表(ArrayList)有什么区别？什么时候应该使用Array而不是ArrayList？</h4><p>&emsp;&emsp;下面列出了Array和ArrayList的不同点</p>
-<ul>
-<li>Array可以包含基本类型和对象类型，ArrayList只能包含对象类型</li>
-<li>Array大小是固定的，ArrayList的大小是动态变化的</li>
-<li>ArrayList提供了更多的方法和特性，比如：addAll()，removeAll()，iterator()等等</li>
-</ul>
-<p>&emsp;&emsp;对于基本类型数据，集合使用自动装箱来减少编码工作量。但是，当处理固定大小的基本数据类型的时候，这种方式相对比较慢。</p>
-<h4 id="27-ArrayList和LinkedList有什么区别？"><a href="#27-ArrayList和LinkedList有什么区别？" class="headerlink" title="27. ArrayList和LinkedList有什么区别？"></a>27. ArrayList和LinkedList有什么区别？</h4><p>&emsp;&emsp;ArrayList和LinkedList都实现了List接口，他们有以下的不同点：</p>
-<ul>
-<li>ArrayList是基于索引的数据接口，它的底层是数组。它可以以O(1)时间复杂度对元素进行随机访问。与此对应，LinkedList是以元素列表的形式存储它的数据，每一个元素都和它的前一个和后一个元素链接在一起，在这种情况下，查找某个元素的时间复杂度是O(n)</li>
-<li>相对于ArrayList，LinkedList的插入，添加，删除操作速度更快，因为当元素被添加到集合任意位置的时候，不需要像数组那样重新计算大小或者是更新索引</li>
-<li>LinkedList比ArrayList更占内存，因为LinkedList为每一个节点存储了两个引用，一个指向前一个元素，一个指向下一个元素</li>
-</ul>
-<h4 id="28-Comparable和Comparator接口是干什么的？列出它们的区别。"><a href="#28-Comparable和Comparator接口是干什么的？列出它们的区别。" class="headerlink" title="28. Comparable和Comparator接口是干什么的？列出它们的区别。"></a>28. Comparable和Comparator接口是干什么的？列出它们的区别。</h4><p>&emsp;&emsp;Java提供了只包含一个compareTo()方法的Comparable接口。这个方法可以个给两个对象排序。具体来说，它返回负数，0，正数来表明输入对象小于，等于，大于已经存在的对象。<br>&emsp;&emsp;Java提供了包含compare()和equals()两个方法的Comparator接口。compare()方法用来给两个输入参数排序，返回负数，0，正数表明第一个参数是小于，等于，大于第二个参数。equals()方法需要一个对象作为参数，它用来决定输入参数是否和comparator相等。只有当输入参数也是一个comparator并且输入参数和当前comparator的排序结果是相同的时候，这个方法才返回true。</p>
-<h4 id="29-什么是Java优先级队列-Priority-Queue-？"><a href="#29-什么是Java优先级队列-Priority-Queue-？" class="headerlink" title="29. 什么是Java优先级队列(Priority Queue)？"></a>29. 什么是Java优先级队列(Priority Queue)？</h4><p>&emsp;&emsp;PriorityQueue是一个基于优先级堆的无界队列，它的元素是按照自然顺序(natural order)排序的。在创建的时候，我们可以给它提供一个负责给元素排序的比较器。PriorityQueue不允许null值，因为他们没有自然顺序，或者说他们没有任何的相关联的比较器。最后，PriorityQueue不是线程安全的，入队和出队的时间复杂度是O(log(n))。</p>
-<h4 id="30-你了解大O符号-big-O-notation-么？你能给出不同数据结构的例子么？"><a href="#30-你了解大O符号-big-O-notation-么？你能给出不同数据结构的例子么？" class="headerlink" title="30. 你了解大O符号(big-O notation)么？你能给出不同数据结构的例子么？"></a>30. 你了解大O符号(big-O notation)么？你能给出不同数据结构的例子么？</h4><p>&emsp;&emsp;大O符号描述了当数据结构里面的元素增加的时候，算法的规模或者是性能在最坏的场景下有多么好。<br>大O符号也可用来描述其他的行为，比如：内存消耗。因为集合类实际上是数据结构，我们一般使用大O符号基于时间，内存和性能来选择最好的实现。大O符号可以对大量数据的性能给出一个很好的说明。</p>
-<h4 id="31-如何权衡是使用无序的数组还是有序的数组？"><a href="#31-如何权衡是使用无序的数组还是有序的数组？" class="headerlink" title="31. 如何权衡是使用无序的数组还是有序的数组？"></a>31. 如何权衡是使用无序的数组还是有序的数组？</h4><p>&emsp;&emsp;有序数组最大的好处在于查找的时间复杂度是O(log n)，而无序数组是O(n)。有序数组的缺点是插入操作的时间复杂度是O(n)，因为值大的元素需要往后移动来给新元素腾位置。相反，无序数组的插入时间复杂度是常量O(1)。</p>
-<h4 id="32-Java集合类框架的最佳实践有哪些？"><a href="#32-Java集合类框架的最佳实践有哪些？" class="headerlink" title="32. Java集合类框架的最佳实践有哪些？"></a>32. Java集合类框架的最佳实践有哪些？</h4><ul>
-<li>根据应用的需要正确选择要使用的集合的类型对性能非常重要，比如：假如元素的大小是固定的，而且能事先知道，我们就应该用Array而不是ArrayList</li>
-<li>有些集合类允许指定初始容量。因此，如果我们能估计出存储的元素的数目，我们可以设置初始容量来避免重新计算hash值或者是扩容</li>
-<li>为了类型安全，可读性和健壮性的原因总是要使用泛型。同时，使用泛型还可以避免运行时的ClassCastException<br>使用JDK提供的不变类(immutable class)作为Map的键可以避免为我们自己的类实现hashCode()和equals()方法</li>
-<li>编程的时候接口优于实现</li>
-<li>底层的集合实际上是空的情况下，返回长度是0的集合或者是数组，不要返回null</li>
-</ul>
-<h4 id="33-Enumeration接口和Iterator接口的区别有哪些？"><a href="#33-Enumeration接口和Iterator接口的区别有哪些？" class="headerlink" title="33. Enumeration接口和Iterator接口的区别有哪些？"></a>33. Enumeration接口和Iterator接口的区别有哪些？</h4><ul>
-<li>Enumeration速度是Iterator的2倍，同时占用更少的内存</li>
-<li>Iterator远远比Enumeration安全，因为其他线程不能够修改正在被iterator遍历的集合里面的对象</li>
-<li>Iterator允许调用者删除底层集合里面的元素，这对Enumeration来说是不可能的</li>
-</ul>
-<h4 id="34-HashSet和TreeSet有什么区别？"><a href="#34-HashSet和TreeSet有什么区别？" class="headerlink" title="34. HashSet和TreeSet有什么区别？"></a>34. HashSet和TreeSet有什么区别？</h4><ul>
-<li>HashSet是由一个hash表来实现的，因此，它的元素是无序的。add()，remove()，contains()方法的时间复杂度是O(1)</li>
-<li>TreeSet是由一个树形的结构来实现的，它里面的元素是有序的。因此，add()，remove()，contains()方法的时间复杂度是O(logn)</li>
-</ul>
-<h3 id="五、Java垃圾回收机制"><a href="#五、Java垃圾回收机制" class="headerlink" title="五、Java垃圾回收机制"></a>五、Java垃圾回收机制</h3><h4 id="35-Java中垃圾回收有什么目的？什么时候进行垃圾回收？"><a href="#35-Java中垃圾回收有什么目的？什么时候进行垃圾回收？" class="headerlink" title="35. Java中垃圾回收有什么目的？什么时候进行垃圾回收？"></a>35. Java中垃圾回收有什么目的？什么时候进行垃圾回收？</h4><p>&emsp;&emsp;垃圾回收的目的是识别并且丢弃应用不再使用的对象来释放和重用资源。</p>
-<h4 id="36-System-gc-和Runtime-gc-会做什么事情？"><a href="#36-System-gc-和Runtime-gc-会做什么事情？" class="headerlink" title="36. System.gc()和Runtime.gc()会做什么事情？"></a>36. System.gc()和Runtime.gc()会做什么事情？</h4><p>&emsp;&emsp;这两个方法用来提示JVM要进行垃圾回收。但是，立即开始还是延迟进行垃圾回收是取决于JVM的。</p>
-<h4 id="37-finalize-方法什么时候被调用？析构函数-finalization-的目的是什么？"><a href="#37-finalize-方法什么时候被调用？析构函数-finalization-的目的是什么？" class="headerlink" title="37. finalize()方法什么时候被调用？析构函数(finalization)的目的是什么？"></a>37. finalize()方法什么时候被调用？析构函数(finalization)的目的是什么？</h4><p>&emsp;&emsp;在释放对象占用的内存之前，垃圾收集器会调用对象的finalize()方法。一般建议在该方法中释放对象持有的资源。</p>
-<h4 id="38-如果对象的引用被置为null，垃圾收集器是否会立即释放对象占用的内存？"><a href="#38-如果对象的引用被置为null，垃圾收集器是否会立即释放对象占用的内存？" class="headerlink" title="38. 如果对象的引用被置为null，垃圾收集器是否会立即释放对象占用的内存？"></a>38. 如果对象的引用被置为null，垃圾收集器是否会立即释放对象占用的内存？</h4><p>&emsp;&emsp;不会，在下一个垃圾回收周期中，这个对象将是可被回收的。</p>
-<h4 id="39-Java堆的结构是什么样子的？什么是堆中的永久代-Perm-Gen-space"><a href="#39-Java堆的结构是什么样子的？什么是堆中的永久代-Perm-Gen-space" class="headerlink" title="39. Java堆的结构是什么样子的？什么是堆中的永久代(Perm Gen space)?"></a>39. Java堆的结构是什么样子的？什么是堆中的永久代(Perm Gen space)?</h4><p>&emsp;&emsp;JVM的堆是运行时数据区，所有类的实例和数组都是在堆上分配内存。它在JVM启动的时候被创建。对象所占的堆内存是由自动内存管理系统也就是垃圾收集器回收。<br>&emsp;&emsp;堆内存是由存活和死亡的对象组成的。存活的对象是应用可以访问的，不会被垃圾回收。死亡的对象是应用不可访问尚且还没有被垃圾收集器回收掉的对象。一直到垃圾收集器把这些对象回收掉之前，他们会一直占据堆内存空间。</p>
-<h4 id="40-串行-serial-收集器和吞吐量-throughput-收集器的区别是什么？"><a href="#40-串行-serial-收集器和吞吐量-throughput-收集器的区别是什么？" class="headerlink" title="40. 串行(serial)收集器和吞吐量(throughput)收集器的区别是什么？"></a>40. 串行(serial)收集器和吞吐量(throughput)收集器的区别是什么？</h4><p>&emsp;&emsp;吞吐量收集器使用并行版本的新生代垃圾收集器，它用于中等规模和大规模数据的应用程序。而串行收集器对大多数的小应用(在现代处理器上需要大概100M左右的内存)就足够了。</p>
-<h4 id="41-在Java中，对象什么时候可以被垃圾回收？"><a href="#41-在Java中，对象什么时候可以被垃圾回收？" class="headerlink" title="41. 在Java中，对象什么时候可以被垃圾回收？"></a>41. 在Java中，对象什么时候可以被垃圾回收？</h4><p>&emsp;&emsp;当对象对当前使用这个对象的应用程序变得不可触及的时候，这个对象就可以被回收了。</p>
-<h4 id="42-JVM的永久代中会发生垃圾回收么？"><a href="#42-JVM的永久代中会发生垃圾回收么？" class="headerlink" title="42. JVM的永久代中会发生垃圾回收么？"></a>42. JVM的永久代中会发生垃圾回收么？</h4><p>&emsp;&emsp;垃圾回收不会发生在永久代，如果永久代满了或者是超过了临界值，会触发完全垃圾回收(Full GC)。如果你仔细查看垃圾收集器的输出信息，就会发现永久代也是被回收的。这就是为什么正确的永久代大小对避免Full GC是非常重要的原因。请参考下Java8：从永久代到元数据区(译者注：Java8中已经移除了永久代，新加了一个叫做元数据区的native内存区)</p>
-<h3 id="六、异常处理"><a href="#六、异常处理" class="headerlink" title="六、异常处理"></a>六、异常处理</h3><h4 id="43-Java中的两种异常类型是什么？他们有什么区别？"><a href="#43-Java中的两种异常类型是什么？他们有什么区别？" class="headerlink" title="43. Java中的两种异常类型是什么？他们有什么区别？"></a>43. Java中的两种异常类型是什么？他们有什么区别？</h4><p>&emsp;&emsp;Java中有两种异常：受检查的(checked)异常和不受检查的(unchecked)异常。不受检查的异常不需要在方法或者是构造函数上声明，就算方法或者是构造函数的执行可能会抛出这样的异常，并且不受检查的异常可以传播到方法或者是构造函数的外面。相反，受检查的异常必须要用throws语句在方法或者是构造函数上声明。这里有Java异常处理的一些小建议。</p>
-<h4 id="44-Java中Exception和Error有什么区别？throw和throws有什么区别？"><a href="#44-Java中Exception和Error有什么区别？throw和throws有什么区别？" class="headerlink" title="44. Java中Exception和Error有什么区别？throw和throws有什么区别？"></a>44. Java中Exception和Error有什么区别？throw和throws有什么区别？</h4><p>&emsp;&emsp;Exception和Error都是Throwable的子类。Exception用于用户程序可以捕获的异常情况。Error定义了不期望被用户程序捕获的异常。<br>&emsp;&emsp;throw关键字用来在程序中明确的抛出异常，相反，throws语句用来表明方法不能处理的异常。每一个方法都必须要指定哪些异常不能处理，所以方法的调用者才能够确保处理可能发生的异常，多个异常是用逗号分隔的。</p>
-<h4 id="45-异常处理的时候，finally代码块的重要性是什么？-译者注：作者标题的序号弄错了"><a href="#45-异常处理的时候，finally代码块的重要性是什么？-译者注：作者标题的序号弄错了" class="headerlink" title="45. 异常处理的时候，finally代码块的重要性是什么？(译者注：作者标题的序号弄错了)"></a>45. 异常处理的时候，finally代码块的重要性是什么？(译者注：作者标题的序号弄错了)</h4><p>&emsp;&emsp;无论是否抛出异常，finally代码块总是会被执行。就算是没有catch语句同时又抛出异常的情况下，finally代码块仍然会被执行。最后要说的是，finally代码块主要用来释放资源，比如：I/O缓冲区，数据库连接。</p>
-<h4 id="46-异常处理完成以后，Exception对象会发生什么变化？"><a href="#46-异常处理完成以后，Exception对象会发生什么变化？" class="headerlink" title="46. 异常处理完成以后，Exception对象会发生什么变化？"></a>46. 异常处理完成以后，Exception对象会发生什么变化？</h4><p>&emsp;&emsp;Exception对象会在下一个垃圾回收过程中被回收掉。</p>
-<h4 id="47-finally代码块和finalize-方法有什么区别？"><a href="#47-finally代码块和finalize-方法有什么区别？" class="headerlink" title="47. finally代码块和finalize()方法有什么区别？"></a>47. finally代码块和finalize()方法有什么区别？</h4><p>&emsp;&emsp;无论是否抛出异常，finally代码块都会执行，它主要是用来释放应用占用的资源。finalize()方法是Object类的一个protected方法，它是在对象被垃圾回收之前由Java虚拟机来调用的。</p>
-<h3 id="七、Java-Applet"><a href="#七、Java-Applet" class="headerlink" title="七、Java Applet"></a>七、Java Applet</h3><h4 id="48-什么是Applet？"><a href="#48-什么是Applet？" class="headerlink" title="48. 什么是Applet？"></a>48. 什么是Applet？</h4><p>&emsp;&emsp;java applet是能够被包含在HTML页面中并且能被启用了java的客户端浏览器执行的程序。Applet主要用来创建动态交互的web应用程序。</p>
-<h4 id="49-解释一下Applet的生命周期"><a href="#49-解释一下Applet的生命周期" class="headerlink" title="49. 解释一下Applet的生命周期"></a>49. 解释一下Applet的生命周期</h4><p>&emsp;&emsp;applet可以经历下面的状态：</p>
-<ul>
-<li>Init：每次被载入的时候都会被初始化</li>
-<li>Start：开始执行applet</li>
-<li>Stop：结束执行applet</li>
-<li>Destroy：卸载applet之前，做最后的清理工作</li>
-</ul>
-<h4 id="50-当applet被载入的时候会发生什么？"><a href="#50-当applet被载入的时候会发生什么？" class="headerlink" title="50. 当applet被载入的时候会发生什么？"></a>50. 当applet被载入的时候会发生什么？</h4><p>&emsp;&emsp;首先，创建applet控制类的实例，然后初始化applet，最后开始运行。</p>
-<h4 id="51-Applet和普通的Java应用程序有什么区别？"><a href="#51-Applet和普通的Java应用程序有什么区别？" class="headerlink" title="51. Applet和普通的Java应用程序有什么区别？"></a>51. Applet和普通的Java应用程序有什么区别？</h4><ul>
-<li>applet是运行在启用了java的浏览器中，Java应用程序是可以在浏览器之外运行的独立的Java程序。但是，它们都需要有Java虚拟机</li>
-<li>Java应用程序需要一个有特定方法签名的main函数来开始执行。Java applet不需要这样的函数来开始执行</li>
-<li>Java applet一般会使用很严格的安全策略，Java应用一般使用比较宽松的安全策略</li>
-</ul>
-<h4 id="52-Java-applet有哪些限制条件？"><a href="#52-Java-applet有哪些限制条件？" class="headerlink" title="52. Java applet有哪些限制条件？"></a>52. Java applet有哪些限制条件？</h4><p>&emsp;&emsp;主要是由于安全的原因，给applet施加了以下的限制：</p>
-<ul>
-<li>applet不能够载入类库或者定义本地方法</li>
-<li>applet不能在宿主机上读写文件</li>
-<li>applet不能读取特定的系统属性</li>
-<li>applet不能发起网络连接，除非是跟宿主机</li>
-<li>applet不能够开启宿主机上其他任何的程序</li>
-</ul>
-<h4 id="53-什么是不受信任的applet？"><a href="#53-什么是不受信任的applet？" class="headerlink" title="53. 什么是不受信任的applet？"></a>53. 什么是不受信任的applet？</h4><p>&emsp;&emsp;不受信任的applet是不能访问或是执行本地系统文件的Java applet，默认情况下，所有下载的applet都是不受信任的。</p>
-<h4 id="54-从网络上加载的applet和从本地文件系统加载的applet有什么区别？"><a href="#54-从网络上加载的applet和从本地文件系统加载的applet有什么区别？" class="headerlink" title="54. 从网络上加载的applet和从本地文件系统加载的applet有什么区别？"></a>54. 从网络上加载的applet和从本地文件系统加载的applet有什么区别？</h4><ul>
-<li>当applet是从网络上加载的时候，applet是由applet类加载器载入的，它受applet安全管理器的限制</li>
-<li>当applet是从客户端的本地磁盘载入的时候，applet是由文件系统加载器载入的</li>
-<li>从文件系统载入的applet允许在客户端读文件，写文件，加载类库，并且也允许执行其他程序，但是，却通不过字节码校验</li>
-</ul>
-<h4 id="55-applet类加载器是什么？它会做哪些工作？"><a href="#55-applet类加载器是什么？它会做哪些工作？" class="headerlink" title="55. applet类加载器是什么？它会做哪些工作？"></a>55. applet类加载器是什么？它会做哪些工作？</h4><p>&emsp;&emsp;当applet是从网络上加载的时候，它是由applet类加载器载入的。类加载器有自己的java名称空间等级结构。类加载器会保证来自文件系统的类有唯一的名称空间，来自网络资源的类有唯一的名称空间。<br>&emsp;&emsp;当浏览器通过网络载入applet的时候，applet的类被放置于和applet的源相关联的私有的名称空间中。然后，那些被类加载器载入进来的类都是通过了验证器验证的。验证器会检查类文件格式是否遵守Java语言规范，确保不会出现堆栈溢出(stack overflow)或者下溢(underflow)，传递给字节码指令的参数是正确的。</p>
-<h4 id="56-applet安全管理器是什么？它会做哪些工作？"><a href="#56-applet安全管理器是什么？它会做哪些工作？" class="headerlink" title="56. applet安全管理器是什么？它会做哪些工作？"></a>56. applet安全管理器是什么？它会做哪些工作？</h4><p>&emsp;&emsp;applet安全管理器是给applet施加限制条件的一种机制。浏览器可以只有一个安全管理器。安全管理器在启动的时候被创建，之后不能被替换覆盖或者是扩展。</p>
-<h3 id="八、Swing"><a href="#八、Swing" class="headerlink" title="八、Swing"></a>八、Swing</h3><h4 id="57-弹出式选择菜单-Choice-和列表-List-有什么区别"><a href="#57-弹出式选择菜单-Choice-和列表-List-有什么区别" class="headerlink" title="57. 弹出式选择菜单(Choice)和列表(List)有什么区别"></a>57. 弹出式选择菜单(Choice)和列表(List)有什么区别</h4><p>&emsp;&emsp;Choice是以一种紧凑的形式展示的，需要下拉才能看到所有的选项。Choice中一次只能选中一个选项。List同时可以有多个元素可见，支持选中一个或者多个元素。</p>
-<h4 id="58-什么是布局管理器？"><a href="#58-什么是布局管理器？" class="headerlink" title="58. 什么是布局管理器？"></a>58. 什么是布局管理器？</h4><p>&emsp;&emsp;布局管理器用来在容器中组织组件。</p>
-<h4 id="59-滚动条-Scrollbar-和滚动面板-JScrollPane-有什么区别？"><a href="#59-滚动条-Scrollbar-和滚动面板-JScrollPane-有什么区别？" class="headerlink" title="59. 滚动条(Scrollbar)和滚动面板(JScrollPane)有什么区别？"></a>59. 滚动条(Scrollbar)和滚动面板(JScrollPane)有什么区别？</h4><p>&emsp;&emsp;Scrollbar是一个组件，不是容器。而ScrollPane是容器。ScrollPane自己处理滚动事件。</p>
-<h4 id="60-哪些Swing的方法是线程安全的？"><a href="#60-哪些Swing的方法是线程安全的？" class="headerlink" title="60. 哪些Swing的方法是线程安全的？"></a>60. 哪些Swing的方法是线程安全的？</h4><p>&emsp;&emsp;只有3个线程安全的方法： repaint(), revalidate(), and invalidate()。</p>
-<h4 id="61-说出三种支持重绘-painting-的组件。"><a href="#61-说出三种支持重绘-painting-的组件。" class="headerlink" title="61. 说出三种支持重绘(painting)的组件。"></a>61. 说出三种支持重绘(painting)的组件。</h4><p>&emsp;&emsp;Canvas, Frame, Panel,和Applet支持重绘。</p>
-<h4 id="62-什么是裁剪-clipping-？"><a href="#62-什么是裁剪-clipping-？" class="headerlink" title="62. 什么是裁剪(clipping)？"></a>62. 什么是裁剪(clipping)？</h4><p>&emsp;&emsp;限制在一个给定的区域或者形状的绘图操作就做裁剪。</p>
-<h4 id="63-MenuItem和CheckboxMenuItem的区别是什么？"><a href="#63-MenuItem和CheckboxMenuItem的区别是什么？" class="headerlink" title="63. MenuItem和CheckboxMenuItem的区别是什么？"></a>63. MenuItem和CheckboxMenuItem的区别是什么？</h4><p>&emsp;&emsp;CheckboxMenuItem类继承自MenuItem类，支持菜单选项可以选中或者不选中。</p>
-<h4 id="64-边缘布局-BorderLayout-里面的元素是如何布局的？"><a href="#64-边缘布局-BorderLayout-里面的元素是如何布局的？" class="headerlink" title="64. 边缘布局(BorderLayout)里面的元素是如何布局的？"></a>64. 边缘布局(BorderLayout)里面的元素是如何布局的？</h4><p>&emsp;&emsp;BorderLayout里面的元素是按照容器的东西南北中进行布局的。</p>
-<h4 id="65-网格包布局-GridBagLayout-里面的元素是如何布局的？"><a href="#65-网格包布局-GridBagLayout-里面的元素是如何布局的？" class="headerlink" title="65. 网格包布局(GridBagLayout)里面的元素是如何布局的？"></a>65. 网格包布局(GridBagLayout)里面的元素是如何布局的？</h4><p>&emsp;&emsp;GridBagLayout里面的元素是按照网格进行布局的。不同大小的元素可能会占据网格的多于1行或一列。因此，行数和列数可以有不同的大小。</p>
-<h4 id="66-Window和Frame有什么区别？"><a href="#66-Window和Frame有什么区别？" class="headerlink" title="66. Window和Frame有什么区别？"></a>66. Window和Frame有什么区别？</h4><p>&emsp;&emsp;Frame类继承了Window类，它定义了一个可以有菜单栏的主应用窗口。</p>
-<h4 id="67-裁剪-clipping-和重绘-repainting-有什么联系？"><a href="#67-裁剪-clipping-和重绘-repainting-有什么联系？" class="headerlink" title="67. 裁剪(clipping)和重绘(repainting)有什么联系？"></a>67. 裁剪(clipping)和重绘(repainting)有什么联系？</h4><p>&emsp;&emsp;当窗口被AWT重绘线程进行重绘的时候，它会把裁剪区域设置成需要重绘的窗口的区域。</p>
-<h4 id="68-事件监听器接口-event-listener-interface-和事件适配器-event-adapter-有什么关系？"><a href="#68-事件监听器接口-event-listener-interface-和事件适配器-event-adapter-有什么关系？" class="headerlink" title="68. 事件监听器接口(event-listener interface)和事件适配器(event-adapter)有什么关系？"></a>68. 事件监听器接口(event-listener interface)和事件适配器(event-adapter)有什么关系？</h4><p>&emsp;&emsp;事件监听器接口定义了对特定的事件，事件处理器必须要实现的方法。事件适配器给事件监听器接口提供了默认的实现。</p>
-<h4 id="69-GUI组件如何来处理它自己的事件？"><a href="#69-GUI组件如何来处理它自己的事件？" class="headerlink" title="69. GUI组件如何来处理它自己的事件？"></a>69. GUI组件如何来处理它自己的事件？</h4><p>&emsp;&emsp;GUI组件可以处理它自己的事件，只要它实现相对应的事件监听器接口，并且把自己作为事件监听器。</p>
-<h4 id="70-Java的布局管理器比传统的窗口系统有哪些优势？"><a href="#70-Java的布局管理器比传统的窗口系统有哪些优势？" class="headerlink" title="70. Java的布局管理器比传统的窗口系统有哪些优势？"></a>70. Java的布局管理器比传统的窗口系统有哪些优势？</h4><p>&emsp;&emsp;Java使用布局管理器以一种一致的方式在所有的窗口平台上摆放组件。因为布局管理器不会和组件的绝对大小和位置相绑定，所以他们能够适应跨窗口系统的特定平台的不同。</p>
-<h4 id="71-Java的Swing组件使用了哪种设计模式？"><a href="#71-Java的Swing组件使用了哪种设计模式？" class="headerlink" title="71. Java的Swing组件使用了哪种设计模式？"></a>71. Java的Swing组件使用了哪种设计模式？</h4><p>&emsp;&emsp;Java中的Swing组件使用了MVC(视图-模型-控制器)设计模式。</p>
-<h3 id="九、JDBC"><a href="#九、JDBC" class="headerlink" title="九、JDBC"></a>九、JDBC</h3><h4 id="72-什么是JDBC？"><a href="#72-什么是JDBC？" class="headerlink" title="72. 什么是JDBC？"></a>72. 什么是JDBC？</h4><p>&emsp;&emsp;JDBC是允许用户在不同数据库之间做选择的一个抽象层。JDBC允许开发者用JAVA写数据库应用程序，而不需要关心底层特定数据库的细节。</p>
-<h4 id="73-解释下驱动-Driver-在JDBC中的角色。"><a href="#73-解释下驱动-Driver-在JDBC中的角色。" class="headerlink" title="73. 解释下驱动(Driver)在JDBC中的角色。"></a>73. 解释下驱动(Driver)在JDBC中的角色。</h4><p>&emsp;&emsp;JDBC驱动提供了特定厂商对JDBC API接口类的实现，驱动必须要提供java.sql包下面这些类的实现：Connection, Statement, PreparedStatement,CallableStatement, ResultSet和Driver。</p>
-<h4 id="74-Class-forName-方法有什么作用？"><a href="#74-Class-forName-方法有什么作用？" class="headerlink" title="74. Class.forName()方法有什么作用？"></a>74. Class.forName()方法有什么作用？</h4><p>&emsp;&emsp;这个方法用来载入跟数据库建立连接的驱动。</p>
-<h4 id="75-PreparedStatement比Statement有什么优势？"><a href="#75-PreparedStatement比Statement有什么优势？" class="headerlink" title="75. PreparedStatement比Statement有什么优势？"></a>75. PreparedStatement比Statement有什么优势？</h4><p>&emsp;&emsp;PreparedStatements是预编译的，因此，性能会更好。同时，不同的查询参数值，PreparedStatement可以重用。</p>
-<h4 id="76-什么时候使用CallableStatement？用来准备CallableStatement的方法是什么？"><a href="#76-什么时候使用CallableStatement？用来准备CallableStatement的方法是什么？" class="headerlink" title="76. 什么时候使用CallableStatement？用来准备CallableStatement的方法是什么？"></a>76. 什么时候使用CallableStatement？用来准备CallableStatement的方法是什么？</h4><p>&emsp;&emsp;CallableStatement用来执行存储过程。存储过程是由数据库存储和提供的。存储过程可以接受输入参数，也可以有返回结果。非常鼓励使用存储过程，因为它提供了安全性和模块化。准备一个CallableStatement的方法是：<code>CallableStament.prepareCall();</code></p>
-<h4 id="77-数据库连接池是什么意思？"><a href="#77-数据库连接池是什么意思？" class="headerlink" title="77. 数据库连接池是什么意思？"></a>77. 数据库连接池是什么意思？</h4><p>&emsp;&emsp;像打开关闭数据库连接这种和数据库的交互可能是很费时的，尤其是当客户端数量增加的时候，会消耗大量的资源，成本是非常高的。可以在应用服务器启动的时候建立很多个数据库连接并维护在一个池中。连接请求由池中的连接提供。在连接使用完毕以后，把连接归还到池中，以用于满足将来更多的请求。</p>
-<h3 id="十、远程方法调用（RMI）"><a href="#十、远程方法调用（RMI）" class="headerlink" title="十、远程方法调用（RMI）"></a>十、远程方法调用（RMI）</h3><h4 id="78-什么是RMI？"><a href="#78-什么是RMI？" class="headerlink" title="78. 什么是RMI？"></a>78. 什么是RMI？</h4><p>&emsp;&emsp;Java远程方法调用(Java RMI)是Java API对远程过程调用(RPC)提供的面向对象的等价形式，支持直接传输序列化的Java对象和分布式垃圾回收。远程方法调用可以看做是激活远程正在运行的对象上的方法的步骤。RMI对调用者是位置透明的，因为调用者感觉方法是执行在本地运行的对象上的。看下RMI的一些注意事项。</p>
-<h4 id="79-RMI体系结构的基本原则是什么？"><a href="#79-RMI体系结构的基本原则是什么？" class="headerlink" title="79. RMI体系结构的基本原则是什么？"></a>79. RMI体系结构的基本原则是什么？</h4><p>&emsp;&emsp;RMI体系结构是基于一个非常重要的行为定义和行为实现相分离的原则。RMI允许定义行为的代码和实现行为的代码相分离，并且运行在不同的JVM上。</p>
-<h4 id="80-RMI体系结构分哪几层？"><a href="#80-RMI体系结构分哪几层？" class="headerlink" title="80. RMI体系结构分哪几层？"></a>80. RMI体系结构分哪几层？</h4><p>&emsp;&emsp;<br>RMI体系结构分以下几层：</p>
-<ul>
-<li>存根和骨架层(Stub and Skeleton layer)：这一层对程序员是透明的，它主要负责拦截客户端发出的方法调用请求，然后把请求重定向给远程的RMI服务</li>
-<li>远程引用层(Remote Reference Layer)：RMI体系结构的第二层用来解析客户端对服务端远程对象的引用。这一层解析并管理客户端对服务端远程对象的引用。连接是点到点的</li>
-<li>传输层(Transport layer)：这一层负责连接参与服务的两个JVM。这一层是建立在网络上机器间的TCP/IP连接之上的。它提供了基本的连接服务，还有一些防火墙穿透策略</li>
-</ul>
-<h4 id="81-RMI中的远程接口-Remote-Interface-扮演了什么样的角色？"><a href="#81-RMI中的远程接口-Remote-Interface-扮演了什么样的角色？" class="headerlink" title="81. RMI中的远程接口(Remote Interface)扮演了什么样的角色？"></a>81. RMI中的远程接口(Remote Interface)扮演了什么样的角色？</h4><p>&emsp;&emsp;远程接口用来标识哪些方法是可以被非本地虚拟机调用的接口。远程对象必须要直接或者是间接实现远程接口。实现了远程接口的类应该声明被实现的远程接口，给每一个远程对象定义构造函数，给所有远程接口的方法提供实现。</p>
-<h4 id="82-java-rmi-Naming类扮演了什么样的角色？"><a href="#82-java-rmi-Naming类扮演了什么样的角色？" class="headerlink" title="82. java.rmi.Naming类扮演了什么样的角色？"></a>82. java.rmi.Naming类扮演了什么样的角色？</h4><p>&emsp;&emsp;java.rmi.Naming类用来存储和获取在远程对象注册表里面的远程对象的引用。Naming类的每一个方法接收一个URL格式的String对象作为它的参数。</p>
-<h4 id="83-RMI的绑定-Binding-是什么意思？"><a href="#83-RMI的绑定-Binding-是什么意思？" class="headerlink" title="83. RMI的绑定(Binding)是什么意思？"></a>83. RMI的绑定(Binding)是什么意思？</h4><p>&emsp;&emsp;绑定是为了查询找远程对象而给远程对象关联或者是注册以后会用到的名称的过程。远程对象可以使用Naming类的bind()或者rebind()方法跟名称相关联。</p>
-<h4 id="84-Naming类的bind-和rebind-方法有什么区别？"><a href="#84-Naming类的bind-和rebind-方法有什么区别？" class="headerlink" title="84. Naming类的bind()和rebind()方法有什么区别？"></a>84. Naming类的bind()和rebind()方法有什么区别？</h4><p>&emsp;&emsp;bind()方法负责把指定名称绑定给远程对象，rebind()方法负责把指定名称重新绑定到一个新的远程对象。如果那个名称已经绑定过了，先前的绑定会被替换掉。</p>
-<h4 id="85-让RMI程序能正确运行有哪些步骤？"><a href="#85-让RMI程序能正确运行有哪些步骤？" class="headerlink" title="85. 让RMI程序能正确运行有哪些步骤？"></a>85. 让RMI程序能正确运行有哪些步骤？</h4><p>&emsp;&emsp;为了让RMI程序能正确运行必须要包含以下几个步骤：</p>
-<ul>
-<li>编译所有的源文件</li>
-<li>使用rmic生成stub</li>
-<li>启动rmiregistry</li>
-<li>启动RMI服务器</li>
-<li>运行客户端程序</li>
-</ul>
-<h4 id="86-RMI的stub扮演了什么样的角色？"><a href="#86-RMI的stub扮演了什么样的角色？" class="headerlink" title="86. RMI的stub扮演了什么样的角色？"></a>86. RMI的stub扮演了什么样的角色？</h4><p>&emsp;&emsp;远程对象的stub扮演了远程对象的代表或者代理的角色。调用者在本地stub上调用方法，它负责在远程对象上执行方法。当stub的方法被调用的时候，会经历以下几个步骤：</p>
-<ul>
-<li>初始化到包含了远程对象的JVM的连接</li>
-<li>序列化参数到远程的JVM</li>
-<li>等待方法调用和执行的结果</li>
-<li>反序列化返回的值或者是方法没有执行成功情况下的异常</li>
-<li>把值返回给调用者</li>
-</ul>
-<h4 id="87-什么是分布式垃圾回收-DGC-？它是如何工作的？"><a href="#87-什么是分布式垃圾回收-DGC-？它是如何工作的？" class="headerlink" title="87. 什么是分布式垃圾回收(DGC)？它是如何工作的？"></a>87. 什么是分布式垃圾回收(DGC)？它是如何工作的？</h4><p>&emsp;&emsp;DGC叫做分布式垃圾回收。RMI使用DGC来做自动垃圾回收。因为RMI包含了跨虚拟机的远程对象的引用，垃圾回收是很困难的。DGC使用引用计数算法来给远程对象提供自动内存管理。</p>
-<h4 id="88-RMI中使用RMI安全管理器-RMISecurityManager-的目的是什么？"><a href="#88-RMI中使用RMI安全管理器-RMISecurityManager-的目的是什么？" class="headerlink" title="88. RMI中使用RMI安全管理器(RMISecurityManager)的目的是什么？"></a>88. RMI中使用RMI安全管理器(RMISecurityManager)的目的是什么？</h4><p>&emsp;&emsp;RMISecurityManager使用下载好的代码提供可被RMI应用程序使用的安全管理器。如果没有设置安全管理器，RMI的类加载器就不会从远程下载任何的类。</p>
-<h4 id="89-解释下Marshalling和demarshalling。"><a href="#89-解释下Marshalling和demarshalling。" class="headerlink" title="89. 解释下Marshalling和demarshalling。"></a>89. 解释下Marshalling和demarshalling。</h4><p>&emsp;&emsp;当应用程序希望把内存对象跨网络传递到另一台主机或者是持久化到存储的时候，就必须要把对象在内存里面的表示转化成合适的格式。这个过程就叫做Marshalling，反之就是demarshalling。</p>
-<h4 id="90-解释下Serialization和Deserialization。"><a href="#90-解释下Serialization和Deserialization。" class="headerlink" title="90. 解释下Serialization和Deserialization。"></a>90. 解释下Serialization和Deserialization。</h4><p>&emsp;&emsp;Java提供了一种叫做对象序列化的机制，他把对象表示成一连串的字节，里面包含了对象的数据，对象的类型信息，对象内部的数据的类型信息等等。因此，序列化可以看成是为了把对象存储在磁盘上或者是从磁盘上读出来并重建对象而把对象扁平化的一种方式。反序列化是把对象从扁平状态转化成活动对象的相反的步骤。</p>
-<h3 id="十一、Servlet"><a href="#十一、Servlet" class="headerlink" title="十一、Servlet"></a>十一、Servlet</h3><h4 id="91-什么是Servlet？"><a href="#91-什么是Servlet？" class="headerlink" title="91. 什么是Servlet？"></a>91. 什么是Servlet？</h4><p>&emsp;&emsp;Servlet是用来处理客户端请求并产生动态网页内容的Java类。Servlet主要是用来处理或者是存储HTML表单提交的数据，产生动态内容，在无状态的HTTP协议下管理状态信息。</p>
-<h4 id="92-说一下Servlet的体系结构。"><a href="#92-说一下Servlet的体系结构。" class="headerlink" title="92. 说一下Servlet的体系结构。"></a>92. 说一下Servlet的体系结构。</h4><p>&emsp;&emsp;<br>所有的Servlet都必须要实现的核心的接口是javax.servlet.Servlet。每一个Servlet都必须要直接或者是间接实现这个接口，或者是继承javax.servlet.GenericServlet或者javax.servlet.http.HTTPServlet。最后，Servlet使用多线程可以并行的为多个请求服务。</p>
-<h4 id="93-Applet和Servlet有什么区别？"><a href="#93-Applet和Servlet有什么区别？" class="headerlink" title="93. Applet和Servlet有什么区别？"></a>93. Applet和Servlet有什么区别？</h4><p>&emsp;&emsp;Applet是运行在客户端主机的浏览器上的客户端Java程序。而Servlet是运行在web服务器上的服务端的组件。applet可以使用用户界面类，而Servlet没有用户界面，相反，Servlet是等待客户端的HTTP请求，然后为请求产生响应。</p>
-<h4 id="94-GenericServlet和HttpServlet有什么区别？"><a href="#94-GenericServlet和HttpServlet有什么区别？" class="headerlink" title="94. GenericServlet和HttpServlet有什么区别？"></a>94. GenericServlet和HttpServlet有什么区别？</h4><p>&emsp;&emsp;GenericServlet是一个通用的协议无关的Servlet，它实现了Servlet和ServletConfig接口。继承自GenericServlet的Servlet应该要覆盖service()方法。最后，为了开发一个能用在网页上服务于使用HTTP协议请求的Servlet，你的Servlet必须要继承自HttpServlet。这里有Servlet的例子。</p>
-<h4 id="95-解释下Servlet的生命周期。"><a href="#95-解释下Servlet的生命周期。" class="headerlink" title="95. 解释下Servlet的生命周期。"></a>95. 解释下Servlet的生命周期。</h4><p>&emsp;&emsp;对每一个客户端的请求，Servlet引擎载入Servlet，调用它的init()方法，完成Servlet的初始化。然后，Servlet对象通过为每一个请求单独调用service()方法来处理所有随后来自客户端的请求，最后，调用Servlet(译者注：这里应该是Servlet而不是server)的destroy()方法把Servlet删除掉。</p>
-<h4 id="96-doGet-方法和doPost-方法有什么区别？"><a href="#96-doGet-方法和doPost-方法有什么区别？" class="headerlink" title="96. doGet()方法和doPost()方法有什么区别？"></a>96. doGet()方法和doPost()方法有什么区别？</h4><ul>
-<li>doGet：GET方法会把名值对追加在请求的URL后面。因为URL对字符数目有限制，进而限制了用在客户端请求的参数值的数目。并且请求中的参数值是可见的，因此，敏感信息不能用这种方式传递。</li>
-<li>doPOST：POST方法通过把请求参数值放在请求体中来克服GET方法的限制，因此，可以发送的参数的数目是没有限制的。最后，通过POST请求传递的敏感信息对外部客户端是不可见的。</li>
-</ul>
-<h4 id="97-什么是Web应用程序？"><a href="#97-什么是Web应用程序？" class="headerlink" title="97. 什么是Web应用程序？"></a>97. 什么是Web应用程序？</h4><p>&emsp;&emsp;Web应用程序是对Web或者是应用服务器的动态扩展。有两种类型的Web应用：面向表现的和面向服务的。面向表现的Web应用程序会产生包含了很多种标记语言和动态内容的交互的web页面作为对请求的响应。而面向服务的Web应用实现了Web服务的端点(endpoint)。一般来说，一个Web应用可以看成是一组安装在服务器URL名称空间的特定子集下面的Servlet的集合。</p>
-<h4 id="98-什么是服务端包含-Server-Side-Include-？"><a href="#98-什么是服务端包含-Server-Side-Include-？" class="headerlink" title="98. 什么是服务端包含(Server Side Include)？"></a>98. 什么是服务端包含(Server Side Include)？</h4><p>&emsp;&emsp;服务端包含(SSI)是一种简单的解释型服务端脚本语言，大多数时候仅用在Web上，用servlet标签嵌入进来。SSI最常用的场景把一个或多个文件包含到Web服务器的一个Web页面中。当浏览器访问Web页面的时候，Web服务器会用对应的servlet产生的文本来替换Web页面中的servlet标签。</p>
-<h4 id="99-什么是Servlet链-Servlet-Chaining-？"><a href="#99-什么是Servlet链-Servlet-Chaining-？" class="headerlink" title="99. 什么是Servlet链(Servlet Chaining)？"></a>99. 什么是Servlet链(Servlet Chaining)？</h4><p>&emsp;&emsp;Servlet链是把一个Servlet的输出发送给另一个Servlet的方法。第二个Servlet的输出可以发送给第三个Servlet，依次类推。链条上最后一个Servlet负责把响应发送给客户端。</p>
-<h4 id="100-如何知道是哪一个客户端的机器正在请求你的Servlet？"><a href="#100-如何知道是哪一个客户端的机器正在请求你的Servlet？" class="headerlink" title="100. 如何知道是哪一个客户端的机器正在请求你的Servlet？"></a>100. 如何知道是哪一个客户端的机器正在请求你的Servlet？</h4><p>&emsp;&emsp;ServletRequest类可以找出客户端机器的IP地址或者是主机名。getRemoteAddr()方法获取客户端主机的IP地址，getRemoteHost()可以获取主机名。看下这里的例子。</p>
-<h4 id="101-HTTP响应的结构是怎么样的？"><a href="#101-HTTP响应的结构是怎么样的？" class="headerlink" title="101. HTTP响应的结构是怎么样的？"></a>101. HTTP响应的结构是怎么样的？</h4><p>&emsp;&emsp;HTTP响应由三个部分组成：</p>
-<ul>
-<li>状态码(Status Code)：描述了响应的状态。可以用来检查是否成功的完成了请求。请求失败的情况下，状态码可用来找出失败的原因。如果Servlet没有返回状态码，默认会返回成功的状态码HttpServletResponse.SC_OK。</li>
-<li>HTTP头部(HTTP Header)：它们包含了更多关于响应的信息。比如：头部可以指定认为响应过期的过期日期，或者是指定用来给用户安全的传输实体内容的编码格式。如何在Serlet中检索HTTP的头部看这里。</li>
-<li>主体(Body)：它包含了响应的内容。它可以包含HTML代码，图片，等等。主体是由传输在HTTP消息中紧跟在头部后面的数据字节组成的。</li>
-</ul>
-<h4 id="102-什么是cookie？session和cookie有什么区别？"><a href="#102-什么是cookie？session和cookie有什么区别？" class="headerlink" title="102. 什么是cookie？session和cookie有什么区别？"></a>102. 什么是cookie？session和cookie有什么区别？</h4><p>&emsp;&emsp;cookie是Web服务器发送给浏览器的一块信息。浏览器会在本地文件中给每一个Web服务器存储cookie。以后浏览器在给特定的Web服务器发请求的时候，同时会发送所有为该服务器存储的cookie。下面列出了session和cookie的区别：</p>
-<ul>
-<li>无论客户端浏览器做怎么样的设置，session都应该能正常工作。客户端可以选择禁用cookie，但是，session仍然是能够工作的，因为客户端无法禁用服务端的session。</li>
-<li>在存储的数据量方面session和cookies也是不一样的。session能够存储任意的Java对象，cookie只能存储String类型的对象。</li>
-</ul>
-<h4 id="103-浏览器和Servlet通信使用的是什么协议？"><a href="#103-浏览器和Servlet通信使用的是什么协议？" class="headerlink" title="103. 浏览器和Servlet通信使用的是什么协议？"></a>103. 浏览器和Servlet通信使用的是什么协议？</h4><p>&emsp;&emsp;浏览器和Servlet通信使用的是HTTP协议。</p>
-<h4 id="104-什么是HTTP隧道？"><a href="#104-什么是HTTP隧道？" class="headerlink" title="104. 什么是HTTP隧道？"></a>104. 什么是HTTP隧道？</h4><p>&emsp;&emsp;HTTP隧道是一种利用HTTP或者是HTTPS把多种网络协议封装起来进行通信的技术。因此，HTTP协议扮演了一个打通用于通信的网络协议的管道的包装器的角色。把其他协议的请求掩盖成HTTP的请求就是HTTP隧道。</p>
-<h4 id="105-sendRedirect-和forward-方法有什么区别？"><a href="#105-sendRedirect-和forward-方法有什么区别？" class="headerlink" title="105. sendRedirect()和forward()方法有什么区别？"></a>105. sendRedirect()和forward()方法有什么区别？</h4><p>&emsp;&emsp;sendRedirect()方法会创建一个新的请求，而forward()方法只是把请求转发到一个新的目标上。重定向(redirect)以后，之前请求作用域范围以内的对象就失效了，因为会产生一个新的请求，而转发(forwarding)以后，之前请求作用域范围以内的对象还是能访问的。一般认为sendRedirect()比forward()要慢。</p>
-<h4 id="106-什么是URL编码和URL解码？"><a href="#106-什么是URL编码和URL解码？" class="headerlink" title="106. 什么是URL编码和URL解码？"></a>106. 什么是URL编码和URL解码？</h4><p>&emsp;&emsp;URL编码是负责把URL里面的空格和其他的特殊字符替换成对应的十六进制表示，反之就是解码。</p>
-<h3 id="十二、JSP"><a href="#十二、JSP" class="headerlink" title="十二、JSP"></a>十二、JSP</h3><h4 id="107-什么是JSP页面？"><a href="#107-什么是JSP页面？" class="headerlink" title="107. 什么是JSP页面？"></a>107. 什么是JSP页面？</h4><p>&emsp;&emsp;JSP页面是一种包含了静态数据和JSP元素两种类型的文本的文本文档。静态数据可以用任何基于文本的格式来表示，比如：HTML或者XML。JSP是一种混合了静态内容和动态产生的内容的技术。这里看下JSP的例子。</p>
-<h4 id="108-JSP请求是如何被处理的？"><a href="#108-JSP请求是如何被处理的？" class="headerlink" title="108. JSP请求是如何被处理的？"></a>108. JSP请求是如何被处理的？</h4><p>&emsp;&emsp;浏览器首先要请求一个以.jsp扩展名结尾的页面，发起JSP请求，然后，Web服务器读取这个请求，使用JSP编译器把JSP页面转化成一个Servlet类。需要注意的是，只有当第一次请求页面或者是JSP文件发生改变的时候JSP文件才会被编译，然后服务器调用servlet类，处理浏览器的请求。一旦请求执行结束，servlet会把响应发送给客户端。这里看下如何在JSP中获取请求参数。</p>
-<h4 id="109-JSP有什么优点？"><a href="#109-JSP有什么优点？" class="headerlink" title="109. JSP有什么优点？"></a>109. JSP有什么优点？</h4><p>&emsp;&emsp;下面列出了使用JSP的优点：</p>
-<ul>
-<li>JSP页面是被动态编译成Servlet的，因此，开发者可以很容易的更新展现代码</li>
-<li>JSP页面可以被预编译</li>
-<li>JSP页面可以很容易的和静态模板结合，包括：HTML或者XML，也可以很容易的和产生动态内容的代码结合起来</li>
-<li>开发者可以提供让页面设计者以类XML格式来访问的自定义的JSP标签库</li>
-<li>开发者可以在组件层做逻辑上的改变，而不需要编辑单独使用了应用层逻辑的页面</li>
-</ul>
-<h4 id="110-什么是JSP指令-Directive-？JSP中有哪些不同类型的指令？"><a href="#110-什么是JSP指令-Directive-？JSP中有哪些不同类型的指令？" class="headerlink" title="110. 什么是JSP指令(Directive)？JSP中有哪些不同类型的指令？"></a>110. 什么是JSP指令(Directive)？JSP中有哪些不同类型的指令？</h4><p>&emsp;&emsp;Directive是当JSP页面被编译成Servlet的时候，JSP引擎要处理的指令。Directive用来设置页面级别的指令，从外部文件插入数据，指定自定义的标签库。Directive是定义在&lt;%@ 和 %&gt;之间的。下面列出了不同类型的Directive：</p>
-<ul>
-<li>包含指令(Include directive)：用来包含文件和合并文件内容到当前的页面</li>
-<li>页面指令(Page directive)：用来定义JSP页面中特定的属性，比如错误页面和缓冲区</li>
-<li>Taglib指令： 用来声明页面中使用的自定义的标签库</li>
-</ul>
-<h4 id="111-什么是JSP动作-JSP-action-？"><a href="#111-什么是JSP动作-JSP-action-？" class="headerlink" title="111. 什么是JSP动作(JSP action)？"></a>111. 什么是JSP动作(JSP action)？</h4><p>&emsp;&emsp;JSP动作以XML语法的结构来控制Servlet引擎的行为。当JSP页面被请求的时候，JSP动作会被执行。它们可以被动态的插入到文件中，重用JavaBean组件，转发用户到其他的页面，或者是给Java插件产生HTML代码。下面列出了可用的动作：</p>
-<ul>
-<li>jsp:include-当JSP页面被请求的时候包含一个文件</li>
-<li>jsp:useBean-找出或者是初始化Javabean</li>
-<li>jsp:setProperty-设置JavaBean的属性</li>
-<li>jsp:getProperty-获取JavaBean的属性</li>
-<li>jsp:forward-把请求转发到新的页面</li>
-<li>jsp:plugin-产生特定浏览器的代码</li>
-</ul>
-<h4 id="112-什么是Scriptlets？"><a href="#112-什么是Scriptlets？" class="headerlink" title="112. 什么是Scriptlets？"></a>112. 什么是Scriptlets？</h4><p>&emsp;&emsp;JSP技术中，scriptlet是嵌入在JSP页面中的一段Java代码。scriptlet是位于标签内部的所有的东西，在标签与标签之间，用户可以添加任意有效的scriplet。</p>
-<h4 id="113-声明-Decalaration-在哪里？"><a href="#113-声明-Decalaration-在哪里？" class="headerlink" title="113. 声明(Decalaration)在哪里？"></a>113. 声明(Decalaration)在哪里？</h4><p>&emsp;&emsp;声明跟Java中的变量声明很相似，它用来声明随后要被表达式或者scriptlet使用的变量。添加的声明必须要用开始和结束标签包起来。</p>
-<h4 id="114-什么是表达式-Expression-？"><a href="#114-什么是表达式-Expression-？" class="headerlink" title="114. 什么是表达式(Expression)？"></a>114. 什么是表达式(Expression)？</h4><p>&emsp;&emsp;JSP表达式是Web服务器把脚本语言表达式的值转化成一个String对象，插入到返回给客户端的数据流中。表达式是在&lt;%=和%&gt;这两个标签之间定义的。</p>
-<h4 id="115-隐含对象是什么意思？有哪些隐含对象？"><a href="#115-隐含对象是什么意思？有哪些隐含对象？" class="headerlink" title="115. 隐含对象是什么意思？有哪些隐含对象？"></a>115. 隐含对象是什么意思？有哪些隐含对象？</h4><p>&emsp;&emsp;JSP隐含对象是页面中的一些Java对象，JSP容器让这些Java对象可以为开发者所使用。开发者不用明确的声明就可以直接使用他们。JSP隐含对象也叫做预定义变量。下面列出了JSP页面中的隐含对象：application、page、request、response、session、exception、out、config、pageContext</p>
-<h2 id="Java面试题：part-3"><a href="#Java面试题：part-3" class="headerlink" title="Java面试题：part 3"></a>Java面试题：part 3</h2><h4 id="Java的HashMap是如何工作的？"><a href="#Java的HashMap是如何工作的？" class="headerlink" title="Java的HashMap是如何工作的？"></a>Java的HashMap是如何工作的？</h4><p>&emsp;&emsp;<strong>HashMap</strong>是一个针对数据结构的键值，每个键都会有相应的值，关键是识别这样的值。HashMap 基于 hashing 原理，我们通过 put ()和 get ()方法储存和获取对象。当我们将键值对传递给 put ()方法时，它调用键对象的 hashCode ()方法来计算 hashcode，让后找到 bucket 位置来储存值对象。当获取对象时，通过键对象的 equals ()方法找到正确的键值对，然后返回值对象。HashMap 使用 LinkedList 来解决碰撞问题，当发生碰撞了，对象将会储存在 LinkedList 的下一个节点中。 HashMap 在每个 LinkedList 节点中储存键值对对象。</p>
-<h4 id="什么是快速失败的故障安全迭代器？"><a href="#什么是快速失败的故障安全迭代器？" class="headerlink" title="什么是快速失败的故障安全迭代器？"></a>什么是快速失败的故障安全迭代器？</h4><p>&emsp;&emsp;快速失败的Java迭代器可能会引发ConcurrentModifcationException在底层集合迭代过程中被修改。故障安全作为发生在实例中的一个副本迭代是不会抛出任何异常的。快速失败的故障安全范例定义了当遭遇故障时系统是如何反应的。例如，用于失败的快速迭代器ArrayList和用于故障安全的迭代器ConcurrentHashMap。</p>
-<h4 id="Java-BlockingQueue是什么？"><a href="#Java-BlockingQueue是什么？" class="headerlink" title="Java BlockingQueue是什么？"></a>Java BlockingQueue是什么？</h4><p>Java BlockingQueue是一个并发集合util包的一部分。BlockingQueue队列是一种支持操作，它等待元素变得可用时来检索，同样等待空间可用时来存储元素。</p>
-<h4 id="什么时候使用ConcurrentHashMap？"><a href="#什么时候使用ConcurrentHashMap？" class="headerlink" title="什么时候使用ConcurrentHashMap？"></a>什么时候使用ConcurrentHashMap？</h4><p>&emsp;&emsp;ConcurrentHashMap被作为故障安全迭代器的一个实例，它允许完整的并发检索和更新。当有大量的并发更新时，ConcurrentHashMap此时可以被使用。这非常类似于Hashtable，但ConcurrentHashMap不锁定整个表来提供并发，所以从这点上ConcurrentHashMap的性能似乎更好一些。所以当有大量更新时ConcurrentHashMap应该被使用。</p>
-<h4 id="哪一个List实现了最快插入？"><a href="#哪一个List实现了最快插入？" class="headerlink" title="哪一个List实现了最快插入？"></a>哪一个List实现了最快插入？</h4><p>&emsp;&emsp;LinkedList和ArrayList是两个不同变量列表的实现。ArrayList的优势在于动态的增长数组，非常适合初始时总长度未知的情况下使用。LinkedList的优势在于在中间位置插入和删除操作，速度是最快的。<br>&emsp;&emsp;LinkedList实现了List接口，允许null元素。此外LinkedList提供额外的get，remove，insert方法在LinkedList的首部或尾部。这些操作使LinkedList可被用作堆栈（stack），队列（queue）或双向队列（deque）。<br>&emsp;&emsp;ArrayList实现了可变大小的数组。它允许所有元素，包括null。 每个ArrayList实例都有一个容量（Capacity），即用于存储元素的数组的大小。这个容量可随着不断添加新元素而自动增加，但是增长算法并没有定义。当需要插入大量元素时，在插入前可以调用ensureCapacity方法来增加ArrayList的容量以提高插入效率。</p>
-<h4 id="Iterator和ListIterator的区别"><a href="#Iterator和ListIterator的区别" class="headerlink" title="Iterator和ListIterator的区别"></a>Iterator和ListIterator的区别</h4><ol>
-<li>ListIterator有add()方法，可以向List中添加对象，而Iterator不能。</li>
-<li>ListIterator和Iterator都有hasNext()和next()方法，可以实现顺序向后遍历，但是ListIterator有hasPrevious()和previous()方法，可以实现逆向（顺序向前）遍历。Iterator就不可以。</li>
-<li>ListIterator可以定位当前的索引位置，nextIndex()和previousIndex()可以实现。Iterator没有此功能。<br>都可实现删除对象，但是ListIterator可以实现对象的修改，set()方法可以实现。Iierator仅能遍历，不能修改。</li>
-</ol>
-<h4 id="什么是CopyOnWriteArrayList，它与ArrayList有何不同？"><a href="#什么是CopyOnWriteArrayList，它与ArrayList有何不同？" class="headerlink" title="什么是CopyOnWriteArrayList，它与ArrayList有何不同？"></a>什么是CopyOnWriteArrayList，它与ArrayList有何不同？</h4><ol>
-<li>CopyOnWriteArrayList是ArrayList的一个线程安全的变体，其中所有可变操作（add、set等等）都是通过对底层数组进行一次新的复制来实现的。相比较于ArrayList它的写操作要慢一些，因为它需要实例的快照。</li>
-<li>CopyOnWriteArrayList中写操作需要大面积复制数组，所以性能肯定很差，但是读操作因为操作的对象和写操作不是同一个对象，读之间也不需要加锁，读和写之间的同步处理只是在写完后通过一个简单的”=”将引用指向新的数组对象上来，这个几乎不需要时间，这样读操作就很快很安全，适合在多线程里使用，绝对不会发生ConcurrentModificationException ，因此CopyOnWriteArrayList适合使用在读操作远远大于写操作的场景里，比如缓存。</li>
-</ol>
-<h4 id="迭代器和枚举之间的区别"><a href="#迭代器和枚举之间的区别" class="headerlink" title="迭代器和枚举之间的区别"></a>迭代器和枚举之间的区别</h4><p>&emsp;&emsp;此题的意图是让你区分Iterator不同于Enumeration的两个方面：</p>
-<ol>
-<li>Iterator允许移除从底层集合的元素。</li>
-<li>Iterator的方法名是标准化的。</li>
-</ol>
-<h4 id="Hashmap如何同步"><a href="#Hashmap如何同步" class="headerlink" title="Hashmap如何同步?"></a>Hashmap如何同步?</h4><p>&emsp;&emsp;当我们需要一个同步的HashMap时，有两种选择：使用Collections.synchronizedMap()来同步HashMap。<br>使用ConcurrentHashMap的这两个选项之间的首选是使用ConcurrentHashMap，这是因为我们不需要锁定整个对象，以及通过ConcurrentHashMap分区地图来获得锁。</p>
-<h4 id="IdentityHashMap和HashMap的区别"><a href="#IdentityHashMap和HashMap的区别" class="headerlink" title="IdentityHashMap和HashMap的区别"></a>IdentityHashMap和HashMap的区别</h4><ol>
-<li>IdentityHashMap是Map接口的实现。不同于HashMap的，这里采用参考平等。</li>
-<li>在HashMap中如果两个元素是相等的，则key1.equals(key2)</li>
-<li>在IdentityHashMap中如果两个元素是相等的，则key1 == key2</li>
-</ol>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="http://www.kuqin.com/shuoit/20141128/343526.html" target="_blank" rel="external">酷勤网：10个经典的Java面试题集合</a></li>
-<li><a href="https://www.javacodegeeks.com/2014/04/java-interview-questions-and-answers.html" target="_blank" rel="external">JavaCodeGeeks</a></li>
-<li><a href="http://www.importnew.com/10980.html" target="_blank" rel="external">115个Java面试题和答案——终极列表（上）</a></li>
-<li><a href="http://www.importnew.com/11028.html" target="_blank" rel="external">115个Java面试题和答案——终极列表（下）</a></li>
-</ul>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[数据结构与算法学习笔记：树和二叉树]]></title>
-      <url>http://yaodong.ml/articles/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</url>
+      <title><![CDATA[算法学习笔记——树和二叉树]]></title>
+      <url>http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。<br><a id="more"></a></p>
 <h3 id="树与二叉树的相关概念"><a href="#树与二叉树的相关概念" class="headerlink" title="树与二叉树的相关概念"></a>树与二叉树的相关概念</h3><p>&emsp;&emsp;二叉树的左右子树有严格的顺序，不可颠倒，这是二叉树与普通树的关键区别。<br>&emsp;&emsp;<strong>二叉搜索树</strong>：二叉树的一个节点的左子节点的关键字值小于这个节点，右子节点的关键字值大于（或等于）这个父节点。<br>&emsp;&emsp;<strong>平衡树与非平衡树</strong>：左子节点与左子节点对称的树为平衡树，否则就是非平衡树。<br>&emsp;&emsp;<strong>满二叉树</strong>：满二叉树除最后一层无任何子节点外，其余每一层的所有结点都有两个子结点。也就是说，除叶子结点外的所有结点均有两个子结点。满二叉树的结点数达到最大值。<strong>满二叉树的所有叶子结点必须在同一层上</strong>。<br>&emsp;&emsp;<strong>完全二叉树</strong>：完全二叉树是由满二叉树而引出来的。对于深度为<strong>K</strong>的，有<strong>N</strong>个结点的二叉树，当且仅当其编号为<strong><em>i</em></strong>的结点与深度为<strong>K</strong>的满二叉树中编号为<strong><em>i</em></strong>的结点在二叉树中的位置一一对应时称之为完全二叉树。<br>&emsp;&emsp;<strong>霍夫曼树</strong>：一种特殊结构的二叉树，每个节点要么没有子节点，要么有两个子节点。<br>&emsp;&emsp;二叉树结合了有序数组和链表的优点：在二叉树中，数据的查找效率跟在有序数组中查找一样高，同时插入、删除数据的效率和在链表中一样高。<br>&emsp;&emsp;二叉树的工作效率：时间复杂度为<strong>O(logN)</strong>。总的来说，树对所有的数据存储操作都很高效。<br>&emsp;&emsp;满二叉树的相关性质：</p>
 <ul>
@@ -1472,7 +904,7 @@
     
     <entry>
       <title><![CDATA[Machine Learning学习笔记：决策树与随机森林]]></title>
-      <url>http://yaodong.ml/articles/Machine-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</url>
+      <url>http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。<br><a id="more"></a></p>
 <h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>&emsp;&emsp;决策树是一种基本的分类与回归算法，属于<strong>贪婪算法</strong>，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程<br>&emsp;&emsp;决策树的特点：</p>
 <ul>

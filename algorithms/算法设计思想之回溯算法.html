@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="机器学习," />
+  <meta name="keywords" content="算法,算法设计," />
 
 
 
@@ -88,16 +88,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。">
+<meta name="description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习、深度学习理论知识框架">
-<meta property="og:url" content="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html">
+<meta property="og:title" content="算法设计思想之回溯算法">
+<meta property="og:url" content="http://yaodong.ml/algorithms/算法设计思想之回溯算法.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。">
-<meta property="og:updated_time" content="2016-11-25T07:47:10.802Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
+<meta property="og:updated_time" content="2016-11-15T08:21:30.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习、深度学习理论知识框架">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。">
+<meta name="twitter:title" content="算法设计思想之回溯算法">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本博文记录了博主关于回溯算法设计思想的学习总结。">
 
 
 
@@ -118,10 +118,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html"/>
+  <link rel="canonical" href="http://yaodong.ml/algorithms/算法设计思想之回溯算法.html"/>
 
 
-  <title> 机器学习、深度学习理论知识框架 | Jellyyoung's Blog </title>
+  <title> 算法设计思想之回溯算法 | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +280,7 @@
             
             
               
-                机器学习、深度学习理论知识框架
+                算法设计思想之回溯算法
               
             
           </h1>
@@ -292,8 +292,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-25T15:45:16+08:00" content="2016-11-25">
-              2016-11-25
+            <time itemprop="dateCreated" datetime="2016-11-15T16:12:20+08:00" content="2016-11-15">
+              2016-11-15
             </time>
           </span>
 
@@ -306,8 +306,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/原创/" itemprop="url" rel="index">
-                    <span itemprop="name">原创</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -322,8 +322,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/articles/机器学习、深度学习理论知识框架.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="articles/机器学习、深度学习理论知识框架.html" itemprop="commentsCount"></span>
+                <a href="/algorithms/算法设计思想之回溯算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/算法设计思想之回溯算法.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,7 +333,7 @@
 
           
           
-             <span id="/articles/机器学习、深度学习理论知识框架.html" class="leancloud_visitors" data-flag-title="机器学习、深度学习理论知识框架">
+             <span id="/algorithms/算法设计思想之回溯算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之回溯算法">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,49 +355,39 @@
       
 
       
-        <p>&emsp;&emsp;研一就开始学习机器学习，Andrew Ng的机器学习公开课、UFLDL、Deep Learning Tutorial都学过，无奈学艺不精，感觉对机器学习理论的理解勉强算得上云里雾里。最近忙里偷闲整理了这篇机器学习的基础理论知识框架，方便找实习、校招时温故而知新。<br><a id="more"></a></p>
-<h2 id="机器学习-Machine-Learning-ML"><a href="#机器学习-Machine-Learning-ML" class="headerlink" title="机器学习(Machine Learning, ML)"></a>机器学习(Machine Learning, ML)</h2><h3 id="机器学习基本概念"><a href="#机器学习基本概念" class="headerlink" title="机器学习基本概念"></a>机器学习基本概念</h3><h4 id="三要素：模型、策略、算法"><a href="#三要素：模型、策略、算法" class="headerlink" title="三要素：模型、策略、算法"></a>三要素：模型、策略、算法</h4><h4 id="欠拟合-amp-过拟合"><a href="#欠拟合-amp-过拟合" class="headerlink" title="欠拟合&amp;过拟合"></a>欠拟合&amp;过拟合</h4><h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><h4 id="偏差-方差、化误差"><a href="#偏差-方差、化误差" class="headerlink" title="偏差-方差、化误差"></a>偏差-方差、化误差</h4><h4 id="交叉验证-amp-t检验等"><a href="#交叉验证-amp-t检验等" class="headerlink" title="交叉验证&amp;t检验等"></a>交叉验证&amp;t检验等</h4><h4 id="分类模型的精确率、召回率"><a href="#分类模型的精确率、召回率" class="headerlink" title="分类模型的精确率、召回率"></a>分类模型的精确率、召回率</h4><h4 id="ROC曲线-amp-AUC曲线"><a href="#ROC曲线-amp-AUC曲线" class="headerlink" title="ROC曲线&amp;AUC曲线"></a>ROC曲线&amp;AUC曲线</h4><h4 id="样本不均衡、数据集采样方法"><a href="#样本不均衡、数据集采样方法" class="headerlink" title="样本不均衡、数据集采样方法"></a>样本不均衡、数据集采样方法</h4><h4 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h4><h4 id="判别模型和生成模型"><a href="#判别模型和生成模型" class="headerlink" title="判别模型和生成模型"></a>判别模型和生成模型</h4><h3 id="线性回归（Linear-Regression）"><a href="#线性回归（Linear-Regression）" class="headerlink" title="线性回归（Linear Regression）"></a>线性回归（Linear Regression）</h3><ul>
-<li>损失函数</li>
-<li>梯度下降法</li>
-<li>最小二乘法</li>
-</ul>
-<h3 id="对数回归"><a href="#对数回归" class="headerlink" title="对数回归"></a>对数回归</h3><ul>
-<li>概率分布</li>
-<li>代价函数</li>
-<li>极大似然估计</li>
-<li>梯度上升法</li>
-<li>牛顿法</li>
-<li>Softmax多分类学习</li>
-</ul>
-<h3 id="最大熵模型"><a href="#最大熵模型" class="headerlink" title="最大熵模型"></a>最大熵模型</h3><h3 id="聚类算法"><a href="#聚类算法" class="headerlink" title="聚类算法"></a>聚类算法</h3><ul>
-<li>距离度量</li>
-<li>k近邻算法</li>
-<li>k均值算法</li>
-<li>高斯混合聚类</li>
-<li>密度聚类</li>
-<li>层次聚类</li>
-</ul>
-<h3 id="决策树算法"><a href="#决策树算法" class="headerlink" title="决策树算法"></a>决策树算法</h3><ul>
-<li>选择准则：信息增益、信息增益比、基尼指数</li>
-<li>ID3算法</li>
-<li>C4.5算法</li>
-<li>CART算法</li>
-<li>决策树的剪枝</li>
-</ul>
-<h3 id="朴素贝叶斯模型"><a href="#朴素贝叶斯模型" class="headerlink" title="朴素贝叶斯模型"></a>朴素贝叶斯模型</h3><ol>
-<li>概率分布的公式推导</li>
-<li>极大似然估计、贝叶斯估计</li>
+        <p>&emsp;&emsp;本博文记录了博主关于回溯算法设计思想的学习总结。<br><a id="more"></a></p>
+<blockquote>
+<p><strong>回溯（Backtracking）算法</strong>也叫试探法，属于暴力求解的范畴。<strong>回溯（Backtracking）算法</strong>是一种既有系统性又有跳跃性的的搜索算法，适用于求解具有约束条件，并且有多个候选解的问题。</p>
+</blockquote>
+<h3 id="回溯算法的设计思想"><a href="#回溯算法的设计思想" class="headerlink" title="回溯算法的设计思想"></a>回溯算法的设计思想</h3><p>&emsp;&emsp;<strong>回溯算法</strong>采用试探的思想，尝试分步解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。</p>
+<p>&emsp;&emsp;<strong>回溯算法</strong>在包含问题的所有解的解空间树中，按照深度优先遍历的策略，从根结点出发搜索整个解空间树。<br>&emsp;&emsp;当算法搜索至解空间树的任一结点时，先判断该结点是否肯定不包含问题的解。如果肯定不包含，则跳过对以该结点为根的子树的所有搜索，病逐层向其祖先结点回溯。否则，进入该子树，继续按深度优先遍历的策略进行搜索。<br>&emsp;&emsp;<strong>回溯算法</strong>通常用最简单的递归方法来实现，反复重复上述的步骤后会出现两种情况：</p>
+<ol>
+<li>找到了符合要求的正确答案</li>
+<li>遍历了所有可能的分步方法后，宣告该问题没有符合要求的解</li>
 </ol>
-<h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><ul>
-<li>函数间隔、几何间隔</li>
-<li>支持向量</li>
-<li>拉格朗日对偶算法</li>
-<li>软间隔、硬间隔</li>
-<li>核函数、核方法</li>
-<li>序列最小最优化算法（SMO）</li>
+<p>&emsp;&emsp;回溯法是设计递归过程的一种重要方法，回溯算法的实质是先序遍历一颗状态树的过程，只不过这棵状态树不是遍历前预先建立的，而是隐含在遍历过程中。</p>
+<h3 id="回溯算法的相关概念"><a href="#回溯算法的相关概念" class="headerlink" title="回溯算法的相关概念"></a>回溯算法的相关概念</h3><h4 id="约束函数-amp-限界函数"><a href="#约束函数-amp-限界函数" class="headerlink" title="约束函数&amp;限界函数"></a>约束函数&amp;限界函数</h4><p>&emsp;&emsp;约束函数可根据所求解问题中的限制条件构造。约束函数描述了给定问题的合法解的一般特征，用于DFS深度优先遍历过程中去除不合法的解，从而避免无效搜索。此外，约束函数是对于任何状态空间树上的节点都有效、等价的。</p>
+<h4 id="状态空间树"><a href="#状态空间树" class="headerlink" title="状态空间树"></a>状态空间树</h4><p>&emsp;&emsp;状态空间树是对问题的所有解的图形描述。树上的每个子节点的解都只有一个部分与父节点不同。</p>
+<h4 id="扩展节点、活结点、死结点"><a href="#扩展节点、活结点、死结点" class="headerlink" title="扩展节点、活结点、死结点"></a>扩展节点、活结点、死结点</h4><p>&emsp;&emsp;扩展节点，是当前正在求出它的子节点的节点，在DFS中，只允许有一个扩展节点。<br>&emsp;&emsp;节点本身和其父节点满足约束函数和限界条件的结点称为活结点。活结点需要进行DFS递归遍历<br>&emsp;&emsp;死结点反之，死结点是不满足约束函数的结点，DFS过程不必遍历死结点的子节点。</p>
+<h3 id="回溯算法的求解步骤"><a href="#回溯算法的求解步骤" class="headerlink" title="回溯算法的求解步骤"></a>回溯算法的求解步骤</h3><ul>
+<li>针对所给问题，定义问题的解空间</li>
+<li>确定易于搜索的解空间结构</li>
+<li>构造约束函数和限界函数，避免冗余的无效搜索</li>
+<li>以深度优先遍历（<strong>DFS</strong>）搜索解空间树，并在搜索过程中用剪枝函数避免无效搜索</li>
 </ul>
-<h3 id="高斯混合模型（Gaussian-Mix-Model-GMM）"><a href="#高斯混合模型（Gaussian-Mix-Model-GMM）" class="headerlink" title="高斯混合模型（Gaussian Mix Model, GMM）"></a>高斯混合模型（Gaussian Mix Model, GMM）</h3><h3 id="EM算法（Expection-Maximization-期望最大化）"><a href="#EM算法（Expection-Maximization-期望最大化）" class="headerlink" title="EM算法（Expection-Maximization, 期望最大化）"></a>EM算法（Expection-Maximization, 期望最大化）</h3><h3 id="主成分分析（Principal-Component-Analysis-PCA）"><a href="#主成分分析（Principal-Component-Analysis-PCA）" class="headerlink" title="主成分分析（Principal Component Analysis, PCA）"></a>主成分分析（Principal Component Analysis, PCA）</h3><h3 id="关联分析（Apriori算法）"><a href="#关联分析（Apriori算法）" class="headerlink" title="关联分析（Apriori算法）"></a>关联分析（Apriori算法）</h3><h3 id="独立成分分析（Independent-Component-Analysis-ICA）"><a href="#独立成分分析（Independent-Component-Analysis-ICA）" class="headerlink" title="独立成分分析（Independent Component Analysis, ICA）"></a>独立成分分析（Independent Component Analysis, ICA）</h3><h3 id="线性判别分析（Linear-Discriminant-Analysis-LDA）"><a href="#线性判别分析（Linear-Discriminant-Analysis-LDA）" class="headerlink" title="线性判别分析（Linear Discriminant Analysis, LDA）"></a>线性判别分析（Linear Discriminant Analysis, LDA）</h3><h3 id="高斯判别分析（Gaussian-Discriminant-Analysis-GDA）"><a href="#高斯判别分析（Gaussian-Discriminant-Analysis-GDA）" class="headerlink" title="高斯判别分析（Gaussian Discriminant Analysis, GDA）"></a>高斯判别分析（Gaussian Discriminant Analysis, GDA）</h3><h3 id="因子分析（Factor-Analysis-FA）"><a href="#因子分析（Factor-Analysis-FA）" class="headerlink" title="因子分析（Factor Analysis, FA）"></a>因子分析（Factor Analysis, FA）</h3><h3 id="Boosting方法"><a href="#Boosting方法" class="headerlink" title="Boosting方法"></a>Boosting方法</h3><h3 id="随机森林算法"><a href="#随机森林算法" class="headerlink" title="随机森林算法"></a>随机森林算法</h3><h3 id="隐马尔科夫模型"><a href="#隐马尔科夫模型" class="headerlink" title="隐马尔科夫模型"></a>隐马尔科夫模型</h3><h3 id="条件随机场"><a href="#条件随机场" class="headerlink" title="条件随机场"></a>条件随机场</h3><h3 id="强化学习（Reinforcement-Learning）"><a href="#强化学习（Reinforcement-Learning）" class="headerlink" title="强化学习（Reinforcement Learning）"></a>强化学习（Reinforcement Learning）</h3><h2 id="深度学习（Deep-Learning-DL）"><a href="#深度学习（Deep-Learning-DL）" class="headerlink" title="深度学习（Deep Learning, DL）"></a>深度学习（Deep Learning, DL）</h2><p>&emsp;&emsp;比较权威的学习教程：<a href="http://www.deeplearning.net/tutorial/" target="_blank" rel="external">Deep Learning Tutorial</a>、<a href="http://www.deeplearningbook.org/" target="_blank" rel="external">Deep Learning Book</a> by <code>Ian GoodFellow</code></p>
-<h3 id="反向传播算法-BP"><a href="#反向传播算法-BP" class="headerlink" title="反向传播算法(BP)"></a>反向传播算法(BP)</h3><h3 id="多层感知机（MLP）"><a href="#多层感知机（MLP）" class="headerlink" title="多层感知机（MLP）"></a>多层感知机（MLP）</h3><h3 id="卷积神经网络（CNN）"><a href="#卷积神经网络（CNN）" class="headerlink" title="卷积神经网络（CNN）"></a>卷积神经网络（CNN）</h3><h3 id="自编码网络（AutoEncoder）"><a href="#自编码网络（AutoEncoder）" class="headerlink" title="自编码网络（AutoEncoder）"></a>自编码网络（AutoEncoder）</h3><h4 id="栈式自编码网络（SAE）"><a href="#栈式自编码网络（SAE）" class="headerlink" title="栈式自编码网络（SAE）"></a>栈式自编码网络（SAE）</h4><h4 id="降噪自编码网络（SDA）"><a href="#降噪自编码网络（SDA）" class="headerlink" title="降噪自编码网络（SDA）"></a>降噪自编码网络（SDA）</h4><h4 id="卷积自编码网络（CAE）"><a href="#卷积自编码网络（CAE）" class="headerlink" title="卷积自编码网络（CAE）"></a>卷积自编码网络（CAE）</h4><h3 id="深度置信网络（DBN）"><a href="#深度置信网络（DBN）" class="headerlink" title="深度置信网络（DBN）"></a>深度置信网络（DBN）</h3><h4 id="限制玻尔兹曼机（RBM）"><a href="#限制玻尔兹曼机（RBM）" class="headerlink" title="限制玻尔兹曼机（RBM）"></a>限制玻尔兹曼机（RBM）</h4><h3 id="递归神经网络（RNN-amp-LSTM）"><a href="#递归神经网络（RNN-amp-LSTM）" class="headerlink" title="递归神经网络（RNN&amp;LSTM）"></a>递归神经网络（RNN&amp;LSTM）</h3><h3 id="深度残差网络（Deep-Residual-Learning）"><a href="#深度残差网络（Deep-Residual-Learning）" class="headerlink" title="深度残差网络（Deep Residual Learning）"></a>深度残差网络（Deep Residual Learning）</h3>
+<h3 id="回溯算法的适用情形"><a href="#回溯算法的适用情形" class="headerlink" title="回溯算法的适用情形"></a>回溯算法的适用情形</h3><ol>
+<li>给定的问题有很多组解，要求寻找问题的解集或者寻找满足某些约束条件的最佳解时，可以考虑使用回溯法</li>
+<li>回溯算法虽然属于暴力求解范畴，但是回溯思想能避免很多不必要的穷举式搜索。因此回溯算法适用于求解一些组合数很大的问题</li>
+<li>回溯算法的终止条件要注意以下两种情况：</li>
+</ol>
+<ul>
+<li>回溯算法用于求问题的所有解时，要回溯到解状态树的根结点，且根结点的所有子树都已被搜索遍才结束</li>
+<li>回溯算法用于求问题的任一解时，只要搜索到问题的一个解就可以结束</li>
+</ul>
+<h3 id="回溯算法的应用"><a href="#回溯算法的应用" class="headerlink" title="回溯算法的应用"></a>回溯算法的应用</h3><ul>
+<li>八皇后问题</li>
+</ul>
+
       
     </div>
 
@@ -440,7 +430,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag">#机器学习</a>
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
+            <a href="/tags/算法设计/" rel="tag">#算法设计</a>
           
         </div>
       
@@ -449,16 +441,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/articles/Ubuntu安装软件过程记录.html" rel="next" title="Ubuntu安装软件过程记录">
-                <i class="fa fa-chevron-left"></i> Ubuntu安装软件过程记录
+              <a href="/algorithms/算法设计思想之贪心算法.html" rel="next" title="算法设计思想之贪心算法">
+                <i class="fa fa-chevron-left"></i> 算法设计思想之贪心算法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/writings/不忘初心，未来可期——2017启笔.html" rel="prev" title="不忘初心，未来可期——2017启笔">
-                不忘初心，未来可期——2017启笔 <i class="fa fa-chevron-right"></i>
+              <a href="/algorithms/算法设计思想之分支界限.html" rel="prev" title="算法设计思想之分支界限">
+                算法设计思想之分支界限 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -474,10 +466,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="articles/机器学习、深度学习理论知识框架.html"
-     data-title="机器学习、深度学习理论知识框架"
+        <div class="ds-share flat" data-thread-key="algorithms/算法设计思想之回溯算法.html"
+     data-title="算法设计思想之回溯算法"
      data-content=""
-     data-url="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html">
+     data-url="http://yaodong.ml/algorithms/算法设计思想之回溯算法.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -504,8 +496,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="articles/机器学习、深度学习理论知识框架.html"
-           data-title="机器学习、深度学习理论知识框架" data-url="http://yaodong.ml/articles/机器学习、深度学习理论知识框架.html">
+      <div class="ds-thread" data-thread-key="algorithms/算法设计思想之回溯算法.html"
+           data-title="算法设计思想之回溯算法" data-url="http://yaodong.ml/algorithms/算法设计思想之回溯算法.html">
       </div>
     
   </div>
@@ -550,7 +542,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -558,7 +550,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -567,7 +559,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -658,7 +650,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#机器学习-Machine-Learning-ML"><span class="nav-number">1.</span> <span class="nav-text">机器学习(Machine Learning, ML)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">机器学习基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三要素：模型、策略、算法"><span class="nav-number">1.1.1.</span> <span class="nav-text">三要素：模型、策略、算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#欠拟合-amp-过拟合"><span class="nav-number">1.1.2.</span> <span class="nav-text">欠拟合&过拟合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则化"><span class="nav-number">1.1.3.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#偏差-方差、化误差"><span class="nav-number">1.1.4.</span> <span class="nav-text">偏差-方差、化误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交叉验证-amp-t检验等"><span class="nav-number">1.1.5.</span> <span class="nav-text">交叉验证&t检验等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分类模型的精确率、召回率"><span class="nav-number">1.1.6.</span> <span class="nav-text">分类模型的精确率、召回率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ROC曲线-amp-AUC曲线"><span class="nav-number">1.1.7.</span> <span class="nav-text">ROC曲线&AUC曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#样本不均衡、数据集采样方法"><span class="nav-number">1.1.8.</span> <span class="nav-text">样本不均衡、数据集采样方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据降维"><span class="nav-number">1.1.9.</span> <span class="nav-text">数据降维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判别模型和生成模型"><span class="nav-number">1.1.10.</span> <span class="nav-text">判别模型和生成模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性回归（Linear-Regression）"><span class="nav-number">1.2.</span> <span class="nav-text">线性回归（Linear Regression）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对数回归"><span class="nav-number">1.3.</span> <span class="nav-text">对数回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大熵模型"><span class="nav-number">1.4.</span> <span class="nav-text">最大熵模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚类算法"><span class="nav-number">1.5.</span> <span class="nav-text">聚类算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#决策树算法"><span class="nav-number">1.6.</span> <span class="nav-text">决策树算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#朴素贝叶斯模型"><span class="nav-number">1.7.</span> <span class="nav-text">朴素贝叶斯模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持向量机"><span class="nav-number">1.8.</span> <span class="nav-text">支持向量机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯混合模型（Gaussian-Mix-Model-GMM）"><span class="nav-number">1.9.</span> <span class="nav-text">高斯混合模型（Gaussian Mix Model, GMM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EM算法（Expection-Maximization-期望最大化）"><span class="nav-number">1.10.</span> <span class="nav-text">EM算法（Expection-Maximization, 期望最大化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主成分分析（Principal-Component-Analysis-PCA）"><span class="nav-number">1.11.</span> <span class="nav-text">主成分分析（Principal Component Analysis, PCA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联分析（Apriori算法）"><span class="nav-number">1.12.</span> <span class="nav-text">关联分析（Apriori算法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独立成分分析（Independent-Component-Analysis-ICA）"><span class="nav-number">1.13.</span> <span class="nav-text">独立成分分析（Independent Component Analysis, ICA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线性判别分析（Linear-Discriminant-Analysis-LDA）"><span class="nav-number">1.14.</span> <span class="nav-text">线性判别分析（Linear Discriminant Analysis, LDA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯判别分析（Gaussian-Discriminant-Analysis-GDA）"><span class="nav-number">1.15.</span> <span class="nav-text">高斯判别分析（Gaussian Discriminant Analysis, GDA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#因子分析（Factor-Analysis-FA）"><span class="nav-number">1.16.</span> <span class="nav-text">因子分析（Factor Analysis, FA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boosting方法"><span class="nav-number">1.17.</span> <span class="nav-text">Boosting方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机森林算法"><span class="nav-number">1.18.</span> <span class="nav-text">随机森林算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#隐马尔科夫模型"><span class="nav-number">1.19.</span> <span class="nav-text">隐马尔科夫模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件随机场"><span class="nav-number">1.20.</span> <span class="nav-text">条件随机场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强化学习（Reinforcement-Learning）"><span class="nav-number">1.21.</span> <span class="nav-text">强化学习（Reinforcement Learning）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习（Deep-Learning-DL）"><span class="nav-number">2.</span> <span class="nav-text">深度学习（Deep Learning, DL）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播算法-BP"><span class="nav-number">2.1.</span> <span class="nav-text">反向传播算法(BP)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层感知机（MLP）"><span class="nav-number">2.2.</span> <span class="nav-text">多层感知机（MLP）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积神经网络（CNN）"><span class="nav-number">2.3.</span> <span class="nav-text">卷积神经网络（CNN）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自编码网络（AutoEncoder）"><span class="nav-number">2.4.</span> <span class="nav-text">自编码网络（AutoEncoder）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#栈式自编码网络（SAE）"><span class="nav-number">2.4.1.</span> <span class="nav-text">栈式自编码网络（SAE）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#降噪自编码网络（SDA）"><span class="nav-number">2.4.2.</span> <span class="nav-text">降噪自编码网络（SDA）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积自编码网络（CAE）"><span class="nav-number">2.4.3.</span> <span class="nav-text">卷积自编码网络（CAE）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深度置信网络（DBN）"><span class="nav-number">2.5.</span> <span class="nav-text">深度置信网络（DBN）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#限制玻尔兹曼机（RBM）"><span class="nav-number">2.5.1.</span> <span class="nav-text">限制玻尔兹曼机（RBM）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#递归神经网络（RNN-amp-LSTM）"><span class="nav-number">2.6.</span> <span class="nav-text">递归神经网络（RNN&LSTM）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深度残差网络（Deep-Residual-Learning）"><span class="nav-number">2.7.</span> <span class="nav-text">深度残差网络（Deep Residual Learning）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的设计思想"><span class="nav-number">1.</span> <span class="nav-text">回溯算法的设计思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的相关概念"><span class="nav-number">2.</span> <span class="nav-text">回溯算法的相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#约束函数-amp-限界函数"><span class="nav-number">2.1.</span> <span class="nav-text">约束函数&限界函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态空间树"><span class="nav-number">2.2.</span> <span class="nav-text">状态空间树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展节点、活结点、死结点"><span class="nav-number">2.3.</span> <span class="nav-text">扩展节点、活结点、死结点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的求解步骤"><span class="nav-number">3.</span> <span class="nav-text">回溯算法的求解步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的适用情形"><span class="nav-number">4.</span> <span class="nav-text">回溯算法的适用情形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#回溯算法的应用"><span class="nav-number">5.</span> <span class="nav-text">回溯算法的应用</span></a></li></ol></div>
             
           </div>
         </section>
