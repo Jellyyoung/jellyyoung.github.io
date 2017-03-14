@@ -754,7 +754,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Machine Learning学习笔记：特征工程]]></title>
+      <title><![CDATA[Machine Learning算法笔记——特征工程]]></title>
       <url>http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;<strong>特征工程（Feature Engineering）</strong>包括特征构建(<strong>Construction</strong>)、特征提取(<strong>Extraction</strong>)、特征选择(<strong>Selection</strong>)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。<br><a id="more"></a></p>
 <blockquote>
@@ -783,7 +783,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Machine Learning学习笔记：判别模型与生成模型]]></title>
+      <title><![CDATA[Machine Learning算法笔记——判别模型与生成模型]]></title>
       <url>http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B%E4%B8%8E%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文简单介绍了判别模型与生成模型的定义、优缺点以及相互之间的关系。<br><a id="more"></a></p>
 <h3 id="生成模型和判别模型的定义"><a href="#生成模型和判别模型的定义" class="headerlink" title="生成模型和判别模型的定义"></a>生成模型和判别模型的定义</h3><p>&emsp;&emsp;监督学习的任务就是从数据中学习一个模型（也叫分类器），对给定的输入<strong>X</strong>预测相应的输出<strong>Y</strong>。决策函数为<strong>Y=<em>f</em>(X)</strong>或者条件概率分布<strong>P(Y|X)</strong>。实际上通过条件概率分布<strong>P(Y|X)</strong>进行预测也是隐含着表达成决策函数<strong>Y=<em>f</em>(X)</strong>的形式的。<br>&emsp;&emsp;监督学习方法分为<strong>生成方法</strong>（Generative approach）和<strong>判别方法</strong>（Discriminative approach），相应的机器学习模型分别称为<strong>生成模型</strong>（Generative Model）和<strong>判别模型</strong>（Discriminative Model）：</p>
@@ -903,7 +903,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Machine Learning学习笔记：决策树与随机森林]]></title>
+      <title><![CDATA[Machine Learning算法笔记——决策树与随机森林]]></title>
       <url>http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html</url>
       <content type="html"><![CDATA[<p>&emsp;&emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。<br><a id="more"></a></p>
 <h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>&emsp;&emsp;决策树是一种基本的分类与回归算法，属于<strong>贪婪算法</strong>，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程<br>&emsp;&emsp;决策树的特点：</p>
