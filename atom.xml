@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yaodong.ml/"/>
-  <updated>2017-03-21T06:39:50.412Z</updated>
+  <updated>2017-03-21T06:41:46.696Z</updated>
   <id>http://yaodong.ml/</id>
   
   <author>
@@ -20,10 +20,9 @@
     <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%B1%BB%E5%88%AB%E4%B8%8D%E5%9D%87%E8%A1%A1%E9%97%AE%E9%A2%98.html"/>
     <id>http://yaodong.ml/machine-learning/机器学习算法笔记——类别不均衡问题.html</id>
     <published>2017-01-22T06:24:56.000Z</published>
-    <updated>2017-03-21T06:39:50.412Z</updated>
+    <updated>2017-03-21T06:41:46.696Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
-<p>&emsp;&emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。<br>&emsp;&emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般来说，如果类别不平衡比例超过4:1，那么分类模型极有可能因为数据类别不平衡而无法达到很好地分类性能。因此在构建分类模型之前，需要对类别不均衡性问题进行处理。<br>&emsp;&emsp;以常见的二分类问题为例，设样本数据集中的正例样本数目为$m^-$ ,反例样本数目为$m^+$。</p>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。<br><a id="more"></a><br>&emsp;&emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般来说，如果类别不平衡比例超过4:1，那么分类模型极有可能因为数据类别不平衡而无法达到很好地分类性能。因此在构建分类模型之前，需要对类别不均衡性问题进行处理。<br>&emsp;&emsp;以常见的二分类问题为例，设样本数据集中的正例样本数目为$m^-$ ,反例样本数目为$m^+$。</p>
 <h3 id="扩大数据集"><a href="#扩大数据集" class="headerlink" title="扩大数据集"></a>扩大数据集</h3><p>&emsp;&emsp;更多的数据往往战胜更好的算法。遇到类别不均衡问题时，首先应该想到：是否可以增加数据集的规模，因为更大规模的数据意味着更多的信息。</p>
 <h3 id="采样（随机采样）"><a href="#采样（随机采样）" class="headerlink" title="采样（随机采样）"></a>采样（随机采样）</h3><p>&emsp;&emsp;可以使用采样（Sampling）策略来改善样本数据集的类别不均衡的成都。主要有以下两种采样方法来降低数据集的样本类别不均衡性：</p>
 <ol>
@@ -43,8 +42,7 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。&lt;br&gt;&amp;emsp;&amp;emsp;在现实中有很多类别
+      &lt;p&gt;&amp;emsp;&amp;emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。&lt;br&gt;
     
     </summary>
     
@@ -90,9 +88,11 @@
     <link href="http://yaodong.ml/deep-learning/Deep-Learning%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E6%96%B9%E6%B3%95%EF%BC%88MCMC%EF%BC%89.html"/>
     <id>http://yaodong.ml/deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html</id>
     <published>2017-01-21T06:34:15.000Z</published>
-    <updated>2017-03-21T06:37:02.263Z</updated>
+    <updated>2017-03-21T06:42:07.062Z</updated>
     
-    <content type="html"><![CDATA[<p>&emsp;&emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。<br><a id="more"></a><br>&emsp;&emsp;蒙特卡罗是一种在优先计算资源下近似计算的方法。蒙特卡罗方法通过对概率分布的数据进行采样，用采样点的“频率”估计该“概率”分布。MCMC可解决高维空间中的积分和优化不容易直接计算求解的问题。<br>&emsp;&emsp;给定一个概率分布$p(x)$，如何让计算机生成尽可能服从该概率分布的样本集？这是统计模拟领域的采样问题。如何从$p(x)$中采样，能使采样样本尽可能符合概率分布规律，一个方案是<strong>重要采样</strong>，但更常用的方案是使用一个趋于目标分布估计的序列，即马尔科夫链蒙特卡罗方法（MCMC）。</p>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。</p>
+<a id="more"></a>
+<p>&emsp;&emsp;蒙特卡罗是一种在优先计算资源下近似计算的方法。蒙特卡罗方法通过对概率分布的数据进行采样，用采样点的“频率”估计该“概率”分布。MCMC可解决高维空间中的积分和优化不容易直接计算求解的问题。<br>&emsp;&emsp;给定一个概率分布$p(x)$，如何让计算机生成尽可能服从该概率分布的样本集？这是统计模拟领域的采样问题。如何从$p(x)$中采样，能使采样样本尽可能符合概率分布规律，一个方案是<strong>重要采样</strong>，但更常用的方案是使用一个趋于目标分布估计的序列，即马尔科夫链蒙特卡罗方法（MCMC）。</p>
 <h3 id="马尔科夫链"><a href="#马尔科夫链" class="headerlink" title="马尔科夫链"></a>马尔科夫链</h3><p>&emsp;&emsp;马尔科夫链是MCMC的理论基础，在随机过程和信息论基础课上都学过这个概念，做一下简单的回顾。<br>&emsp;&emsp;马尔科夫链表示的是一个状态序列${x<em>1,x_2,…,x</em>{t-1},x<em>t,x</em>{t+1}}$，其中每个状态的取值为有限个，在当前状态已知的条件下，将来状态的取值只与当前状态有关，与过去的状态无关。马尔科夫链的数学定义如下：</p>
 <script type="math/tex; mode=display">P(X_{t+1}=x|X_t,X_{t−1},...)=P(X_{t+1}=x|X_t)</script><p>&emsp;&emsp;<strong>马尔科夫链定理</strong>：如果一个非周期马尔科夫链具有转移概率矩阵$P$，且它的任何两个状态是互通的，那么$\lim<em>{n \rightarrow \infty}P</em>{ij}^{n}$存在且与$i$无关，记$\lim<em>{n \rightarrow \infty}P</em>{ij}^{n}=\pi(j)$，有</p>
 <script type="math/tex; mode=display">\pi(j)=\sum_{i=0}^{\infty}\pi(i)P_{ij}</script><p>&emsp;&emsp;其中，$\pi$是方程$\pi P=\pi$的唯一非负解，其中</p>
@@ -109,7 +109,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;emsp;&amp;emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。&lt;br&gt;
+      &lt;p&gt;&amp;emsp;&amp;emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。&lt;/p&gt;
     
     </summary>
     

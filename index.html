@@ -360,26 +360,12 @@
 
       
         
-          
-            <a id="more"></a>
-<p>&emsp;&emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。<br>&emsp;&emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般来说，如果类别不平衡比例超过4:1，那么分类模型极有可能因为数据类别不平衡而无法达到很好地分类性能。因此在构建分类模型之前，需要对类别不均衡性问题进行处理。<br>&emsp;&emsp;以常见的二分类问题为例，设样本数据集中的正例样本数目为$m^-$ ,反例样本数目为$m^+$。</p>
-<h3 id="扩大数据集"><a href="#扩大数据集" class="headerlink" title="扩大数据集"></a>扩大数据集</h3><p>&emsp;&emsp;更多的数据往往战胜更好的算法。遇到类别不均衡问题时，首先应该想到：是否可以增加数据集的规模，因为更大规模的数据意味着更多的信息。</p>
-<h3 id="采样（随机采样）"><a href="#采样（随机采样）" class="headerlink" title="采样（随机采样）"></a>采样（随机采样）</h3><p>&emsp;&emsp;可以使用采样（Sampling）策略来改善样本数据集的类别不均衡的成都。主要有以下两种采样方法来降低数据集的样本类别不均衡性：</p>
-<ol>
-<li>对样本数目较少的一类样本进行采样，增加该类样本的数目，进而提高该类样本在样本数据集中占的比例，这种采样方法称为<strong>过采样（oversampling），也叫上采样</strong>。需要注意的是，过采样法不能简单地对样本数目较少的类别样本进行直接重复采样，否则会招致严重的过拟合。为了解决这一问题，可以在每次生成新数据样本时加入轻微的随机扰动，经验表明这种方法可以有效提高模型的泛化性能。例如，过采样方法的代表性算法——SMOTE算法，就是通过对训练集的正例进行插值来产生额外的正例。</li>
-<li>对样本数目较多的一类样本进行采样，即去除一些样本数目较多的类的样本，进而降低该类样本在样本数据集中所占的比例，使采样之后的数据集中正、反类样本数目接近，这种采样方法称为<strong>欠采样（undersampling），也叫下采样</strong>。<br>欠采样的代表性算法是集成学习（Ensemble Learning）机制，将样本数目较多的类别样本划分为多个集合供不同“弱分类器”使用，这样相当于对每个学习器都进行了欠采样，但在全局看却没有丢失过多的信息。</li>
-</ol>
-<p>&emsp;&emsp;随机采样最大的优点是简单易操作，但缺点也很明显：上采样后的数据集中会反复出现一些重复样本，训练出来的模型会倾向于过拟合；而下采样会导致丢失部分数据，使得算法模型不能完全学习到数据的总体模式。显然，下采样过程会丢失信息，如何解决这个问题？<br>&emsp;&emsp;<strong>Informed undersampling</strong>采样技术可以解决随机欠采样造成的数据信息丢失问题，<strong>informed undersampling</strong>采样技术主要有两种方法分别是<strong>EasyEnsemble</strong>算法和<strong>BalanceCascade</strong>算法。<br>&emsp;&emsp;EasyEnsemble算法,类似于Ensemble learning的Bagging方法，它把数据集$D$划分为两部分，分别是多数类别的样本和少数类别的样本，对于多数类样本$D<em>{max}$，通过$n$次有放回抽样生成$n$份子集，少数类样本分别和这$n$份样本合并训练一个模型，这样可以得到$n$个模型，最终的模型是这$n$个模型预测结果的平均值。<br>&emsp;&emsp;BalanceCascade算法是一种级联算法，该算法从多数类别样本集$S</em>{min}$中有效地选择N且满足$\mid N\mid=\mid D<em>{min}\mid$，将N和$D</em>{min}$合并为新的数据集进行训练，利用Boosting的思想，首先对原始数据集进行一次下采样，生成新的子训练集，使用该数据集合训练一个分类器，对于那些分类正确的样本不放回，然后再下采样，再用新生成的数据集训练下一个分类器，一直迭代进行，最后组合所有分类的结果作为最后的结果。</p>
-<h3 id="生成新数据"><a href="#生成新数据" class="headerlink" title="生成新数据"></a>生成新数据</h3><p>&emsp;&emsp;SMOTH算法，构造人工数据样本。SMOTE是一种过采样算法，它构造新的小类样本而不是产生小类中已有的样本的副本，即该算法构造的数据是新样本。SMOTE算法基于距离度量选择小类别下的两个或者更多的相似样本，然后选择其中一个样本，并随机选择一定数量的近邻样本对该样本的一个属性增加噪声，每次只处理一个属性。这样就构造了更多的新生数据样本。算法流程如下：<br>&emsp;&emsp;$Step 1$：随机选定少数类别中的一个样本$x^{(i)}$，以欧氏距离为标准计算它到少数类样本集$D_{min}$中所有样本的距离，得到与其距离度量最小的k个相似样本。<br>&emsp;&emsp;$Step 2$：根据类别不平衡比例设置一个采样比例阈值$T$以确定采样倍率$N$，对于每一个少数类样本$x$，从它的k个相邻样本中随机选择若干个样本，假设选择的近邻为$\hat{x}$。<br>&emsp;&emsp;$Step 3$：对于每一个随机选出的近邻$\hat{x}$，分别与原样本按照如下的公式构建新的样本：</p>
-<script type="math/tex; mode=display">x_{new}=x+rand(0,1)\times(\hat{x}-x)</script><h3 id="类别不平衡问题的评价指标"><a href="#类别不平衡问题的评价指标" class="headerlink" title="类别不平衡问题的评价指标"></a>类别不平衡问题的评价指标</h3><script type="math/tex; mode=display">Precision = \frac{TP}{TP+FP}</script><script type="math/tex; mode=display">Recall=\frac {TP}{TP+FN}</script><script type="math/tex; mode=display">F-Measure=\frac {(1+\beta)^2\cdot Recall\cdot Precision}{\beta ^ 2\cdot Recall+Precision}</script><script type="math/tex; mode=display">G-Mean=\sqrt{\frac{TP}{TP+TN}\cdot {\frac {TN}{TN+FP}}}</script><h3 id="转换问题的思考角度"><a href="#转换问题的思考角度" class="headerlink" title="转换问题的思考角度"></a>转换问题的思考角度</h3><p>&emsp;&emsp;对于类别不平衡的二分类问题，可将其看做一分类问题（One Class Learning），或异常检测问题（Novelty Detection）。转换看待问题的角度后，解决问题的重点不再是通过捕捉不同类别样本之间的差别来分类，而是对其中一类样本进行建模，进而解决问题。</p>
-<h3 id="尝试不同算法"><a href="#尝试不同算法" class="headerlink" title="尝试不同算法"></a>尝试不同算法</h3><p>&emsp;&emsp;对于分类问题，解决类别不均衡问题的另外一个思路是从算法的角度出发，考虑不同误分类情况代价的差异性对算法进行优化，使得我们的算法在不平衡数据下也能有较好的效果。<br>&emsp;&emsp;在算法层面上解决类别不平衡问题的方法主要是基于代价敏感学习算法（Cost-Sensitive Learning）。<br>&emsp;&emsp;代价敏感学习方法的核心要素是代价矩阵，实际生活中，不同类型的误分类情况导致的代价是不一样的，例如在医疗中，“将病人误疹为健康人”和“将健康人误疹为病人”的代价不同；在信用卡盗用检测中，“将盗用误认为正常使用”与“将正常使用识破认为盗用”的代价也不相同。对于二分类问题，定义代价矩阵。标记$C<em>{ij}$为将类别$j$误分类为类别$i$的代价，显然$C</em>{00}=C<em>{11}=0$，但$C</em>{01}$和$C_{10}$为两种不同的误分类代价，当两者相等时为代价不敏感的学习问题。二者不等时即为代价敏感学习问题。<br>&emsp;&emsp;基于代价矩阵$C$的分析，代价敏感学习方法主要有以下三种实现方式，分别是：</p>
-<ol>
-<li>从学习模型出发，着眼于对某一具体学习方法的改造，使之能适应不平衡数据下的学习，研究者们针对不同的学习模型如感知机，支持向量机，决策树，神经网络等分别提出了其代价敏感的版本。以代价敏感的决策树为例，可从以下方面对其进行改进以适应不平衡数据的学习，分别是决策阈值的选择、分裂标准的选择、剪枝，在上述三个步骤中都可以将代价矩阵引入，即可解决类别不平衡问题。</li>
-<li>从贝叶斯风险理论出发，把代价敏感学习看成是分类结果的一种后处理，按照传统方法学习到一个模型，以实现损失最小为目标对结果进行调整。此方法的优点在于它可以不依赖所用具体的分类器，但是缺点也很明显它要求分类器输出值为概率。</li>
-<li>从预处理的角度出发，将代价用于权重的调整，使得分类器满足代价敏感的特性。</li>
-</ol>
-
-          
+          <p>&emsp;&emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/machine-learning/机器学习算法笔记——类别不均衡问题.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -638,7 +624,7 @@
 
       
         
-          <p>&emsp;&emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。<br>
+          <p>&emsp;&emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html#more" rel="contents">
               阅读全文 &raquo;

@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://yaodong.ml/deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。">
-<meta property="og:updated_time" content="2017-03-21T06:37:02.263Z">
+<meta property="og:updated_time" content="2017-03-21T06:42:07.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Learning学习笔记——蒙特卡罗方法（MCMC）">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。">
@@ -355,7 +355,9 @@
       
 
       
-        <p>&emsp;&emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。<br><a id="more"></a><br>&emsp;&emsp;蒙特卡罗是一种在优先计算资源下近似计算的方法。蒙特卡罗方法通过对概率分布的数据进行采样，用采样点的“频率”估计该“概率”分布。MCMC可解决高维空间中的积分和优化不容易直接计算求解的问题。<br>&emsp;&emsp;给定一个概率分布$p(x)$，如何让计算机生成尽可能服从该概率分布的样本集？这是统计模拟领域的采样问题。如何从$p(x)$中采样，能使采样样本尽可能符合概率分布规律，一个方案是<strong>重要采样</strong>，但更常用的方案是使用一个趋于目标分布估计的序列，即马尔科夫链蒙特卡罗方法（MCMC）。</p>
+        <p>&emsp;&emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。</p>
+<a id="more"></a>
+<p>&emsp;&emsp;蒙特卡罗是一种在优先计算资源下近似计算的方法。蒙特卡罗方法通过对概率分布的数据进行采样，用采样点的“频率”估计该“概率”分布。MCMC可解决高维空间中的积分和优化不容易直接计算求解的问题。<br>&emsp;&emsp;给定一个概率分布$p(x)$，如何让计算机生成尽可能服从该概率分布的样本集？这是统计模拟领域的采样问题。如何从$p(x)$中采样，能使采样样本尽可能符合概率分布规律，一个方案是<strong>重要采样</strong>，但更常用的方案是使用一个趋于目标分布估计的序列，即马尔科夫链蒙特卡罗方法（MCMC）。</p>
 <h3 id="马尔科夫链"><a href="#马尔科夫链" class="headerlink" title="马尔科夫链"></a>马尔科夫链</h3><p>&emsp;&emsp;马尔科夫链是MCMC的理论基础，在随机过程和信息论基础课上都学过这个概念，做一下简单的回顾。<br>&emsp;&emsp;马尔科夫链表示的是一个状态序列${x<em>1,x_2,…,x</em>{t-1},x<em>t,x</em>{t+1}}$，其中每个状态的取值为有限个，在当前状态已知的条件下，将来状态的取值只与当前状态有关，与过去的状态无关。马尔科夫链的数学定义如下：</p>
 <script type="math/tex; mode=display">P(X_{t+1}=x|X_t,X_{t−1},...)=P(X_{t+1}=x|X_t)</script><p>&emsp;&emsp;<strong>马尔科夫链定理</strong>：如果一个非周期马尔科夫链具有转移概率矩阵$P$，且它的任何两个状态是互通的，那么$\lim<em>{n \rightarrow \infty}P</em>{ij}^{n}$存在且与$i$无关，记$\lim<em>{n \rightarrow \infty}P</em>{ij}^{n}=\pi(j)$，有</p>
 <script type="math/tex; mode=display">\pi(j)=\sum_{i=0}^{\infty}\pi(i)P_{ij}</script><p>&emsp;&emsp;其中，$\pi$是方程$\pi P=\pi$的唯一非负解，其中</p>
