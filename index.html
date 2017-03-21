@@ -884,35 +884,12 @@
 
       
         
-          
-            <a id="more"></a>
-<p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。<br>&emsp;&emsp;AdaBoosting算法的损失函数是指数函数。回忆一下，机器学习算法中，常见的损失函数有0-1损失函数、对数似然损失函数、均方误差函数、Hinge函数、指数损失函数等。</p>
-<p>&emsp;&emsp;下面对AdaBoosting算法作简单推导。给定样本数据集$S={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$。</p>
-<ol>
-<li>初始化数据集的样本权值分布<script type="math/tex; mode=display">D=(w_{11},...,w_{1i},...,w_{1n})</script>其中$w_{1i}=\frac{1}{m},i=1,2,…,m$。</li>
-<li><p>训练$m$个基学习器：<br><strong>1)</strong> 对于第$i$个样本，根据当前的样本权值分布$D_m$，求得基分类器$G_m(x)$，其中$G_m(x)\in {-1,+1}$；<br><strong>2)</strong> 并求得$G_m(x)$在训练数据集上的带权分类误差率：</p>
-<script type="math/tex; mode=display">e_m=P(G_m(x^{(i)})≠y^{(i)})=\sum_{i=1}^{m}w_{mi}I(G_m(x^{(i)})≠y^{(i)})</script><p><strong>3)</strong> 接下来计算$G_m(x)$的系数$\alpha_m$，$\alpha_m$表示第m个基学习器在最终的组合学习器中的比重：</p>
-<script type="math/tex; mode=display">\alpha_m=\frac{1}{2}log\frac{1-e_m}{e_m}</script><p>很显然，$\alpha_m$随着$e_m$的增大而减小，所以分类误差率越小的基学习器在最终的组合模型中占的比重越大。<br><strong>4)</strong> 更新样本权值分布向量：</p>
-<script type="math/tex; mode=display">D_{m+1} = (w_{m+1,1},...,w_{m+1,n})</script><script type="math/tex; mode=display">w_{m+1,i}=\frac {w_{mi}}{Z_m}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>这里$Z<em>m$是规范化因子，目的是将$D</em>{m+1}$进行归一化，使得$D_{m+1}$符合概率分布的归一性，$Z_m$由以下公式给出：</p>
-<script type="math/tex; mode=display">Z_m=\sum_{i=1}^Nw_{mi}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>根据$w_{m+1,i}$的表达式可知，被$G_m(x)$分类器误分类的样本的权值得以扩大，而被$G_m(x)$正确分类的样本的权值会缩小。因此，误分类样本在下一次的基学习器训练中起到更大的作用。这个<strong>不改变训练数据，而改变训练数据的权值分布，正是AdaBoost方法的重要特点</strong>。</p>
-</li>
-<li><p>步骤2中求得了m个基学习器的权值分布，将这m个基学习器组合起来，构成最终的组合学习器：</p>
-<script type="math/tex; mode=display">f_{(x)}=\sum_{m=1}^{M}\alpha_mG_{m}(x)</script><script type="math/tex; mode=display">G_{(x)}=sign\left((f(x)\right)=sign\left(\sum_{m=1}^{M}\alpha_mG_{m}(x))\right)</script><p><strong>注意</strong>，所有的$\alpha_m$相加之和并不等于1。</p>
-</li>
-</ol>
-<hr>
-<h3 id="梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）"><a href="#梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）" class="headerlink" title="梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）"></a>梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）</h3><blockquote>
-<p><strong>GBDT</strong>是一个应用很广泛的算法，可以用于解决分类、回归等问题。GBDT算法也有其他的名字，如MART(Multiple Additive Regression Tree)，GBRT(Gradient Boost Regression Tree)，Tree Net等。</p>
-</blockquote>
-<p>&emsp;&emsp;首先介绍一下Gradient Boosting的基本概念。Gradient Boost其实是一个框架，可以套入很多不同的算法以对穿传统的机器学习算法进行改进。当损失函数不是平方损失函数或者指数损失函数，而是一般函数时，boost算法对损失函数的求解和优化会变得比较复杂，针对这一问题，学者提出了Gradient Boosting算法。核心思想是利用损失函数的负梯度在当前模型下的取值作为残差的近似，进一步训练得到下一棵回归树。<br>&emsp;&emsp;回忆一下原始的Boosting算法：算法初始状态下，为每一个样本赋上大小相等的权重值。在之后迭代的每一步中增加被误分类的样本的权重，减少正确分类的样本的权重，使得被误分类的样本被赋上一个很高的权重。进行M次迭代训练，将得到M个基学习器，最后将它们根据指定的策略组合起来，得到一个最终的模型。<br>&emsp;&emsp;GBDT中的树都是回归树，不是分类树，但是对GBDT模型调整后可以用于分类问题。GBDT的核心在于，每一棵子树学习的是之前所有树的预测结果与实际观测值之间的残差。Gradient Boosting就是拟合Loss function的梯度，将其作为新的弱回归树加入到总的算法中即可。<br>&emsp;&emsp;Gradient Boost与传统的Boost的区别是，Gradient Boot算法每次的计算是为了减小上一次的残差（residual）。为了消除残差，可以取损失函数的负梯度在当前模型上的取值作为当前残差的近似值，并拟合下一个子树模型。所以说，在Gradient Boost中，每个新子树模型的建立会使之前模型的残差往梯度方向减少，与传统Boosting算法对正确、错误的样本进行加权有着很大的区别。</p>
-<p>&emsp;&emsp;GBDT的算法流程如下：给定样本数据集$T={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，损失函数为$L(y,f(x))$，设生成的子树的数目是K。</p>
-<ol>
-<li>初始化第一课子树，估计使损失函数最小化的常数值，建立只有一个根结点的树：<script type="math/tex; mode=display">f_0(x)=\arg\min_c\sum_{i=1}^{m}L(y^{(i)},c)</script></li>
-<li>对k=1,2,…,K:<br><strong>1)</strong> 对i=1,2,…,m，计算当前损失函数的负梯度在当前模型的值，作为模型残差的估计：<script type="math/tex; mode=display">g_{ki}=\left[\frac{\partial L(y^{(i)},f(x^{(i)}))}{\partial f(x^{(i)})}\right]_{f(x)=f_{k-1}(x)}</script><strong>2)</strong> 根据$r<em>{ki}$拟合一个回归树，作为下一个子树模型，估计回归树的叶节点对区域$R</em>{kj}$,$j=1,2,…,J$，以拟合残差的近似值：<br><strong>3)</strong> 利用线性搜索估计叶节点区域的值，使损失函数最小化。对$j=1,2,…,J$，计算<script type="math/tex; mode=display">c_{mj}=\arg\min_c\sum_{x_i \in R_{kj}}L(y^{(i)},f_{k-1}(x^{(i)})+c)</script><strong>4)</strong> 更新第k个子回归树模型<script type="math/tex; mode=display">f_k(x)=f_{k-1}(x)+\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
-<li>得到回归树<script type="math/tex; mode=display">\hat f(x)=f_{K}(x)=\sum_{k=1}^{K}\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
-</ol>
-
-          
+          <p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/machine-learning/机器学习算法笔记——AdaBoosting算法.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1300,23 +1277,12 @@
 
       
         
-          
-            <a id="more"></a>
-<p>&emsp;&emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。<br>&emsp;&emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：</p>
-<blockquote>
-<p>TP（真正例）——将正类样本预测为正类的样本数量<br>FP（假正例）——将负类样本预测为正类的样本数量<br>FN（假反例）——将正类样本预测为负类的样本数量<br>TN（真反例）——将负类样本预测为负类的样本数量</p>
-</blockquote>
-<p>&emsp;&emsp;查准率定义为</p>
-<script type="math/tex; mode=display">precision=\frac{TP}{TP+FP}</script><p>&emsp;&emsp;查全率定义为</p>
-<script type="math/tex; mode=display">recall=\frac{TP}{TP+FN}</script><p>&emsp;&emsp;查准率与查全率是一对矛盾的度量。因此还定义了$F_1$度量，$F_1$定义为查准率和查全率的调和均值</p>
-<script type="math/tex; mode=display">\frac{1}{F_1}=\frac{1}{precision}+\frac{1}{recall}=\frac{2TP}{2TP+FP+FN}</script><p>&emsp;&emsp;不同的实际应用场景对查准率和查全率的重视程度有所不同。$F<em>1$度量还有更一般的形式——$F</em>{\beta}$，根据$\beta$的取值可调整$F_{\beta}$对查准率和查全率的重视程度。</p>
-<script type="math/tex; mode=display">F_\beta=\frac{(1+\beta ^2)\times P \times R}{(\beta^2 \times P)+R}</script><p>&emsp;&emsp;其中$\beta &gt; 0$，度量了查全率对查准率的相对重要性，$\beta = 1$时退化为标准的$F_1$，$\beta &gt; 1$时更重视查全率，$\beta &gt; 1$时更重视查准率。</p>
-<h3 id="P-R曲线"><a href="#P-R曲线" class="headerlink" title="P-R曲线"></a>P-R曲线</h3><p>&emsp;&emsp;P-R曲线即Precision-Recall曲线，是以查准率为纵轴、查全率为横轴作图所得的曲线。P-R曲线能直观显示出分类模型在样本集上的查全率、查准率。如果模型A的P-R曲线完全被模型B的P-R曲线包住，则可断言模型B的性能优于模型A。如果两个分类模型的P-R曲线有交叉，则难以一般性地断言二者孰优孰劣，只能在具体的查准率或查全率条件下再对二者进行评估。更多情况下，比较合理的判据是比较P-R曲线与坐标轴围成的面积的大小，它在一定程度上表征了分类模型在查准率与查全率上取得相对“双高”的比例。</p>
-<h3 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h3><p>&emsp;&emsp;ROC的全称是Receiver Operating Characteristic，译为受控者工作特征。ROC曲线是以“真正例率”TPR为纵轴、以“假正例率”FPR为横轴绘制的曲线。TPR、FPR定义如下：</p>
-<script type="math/tex; mode=display">TPR = \frac{TP}{TP+FN}</script><script type="math/tex; mode=display">FPR=\frac{FP}{TN+FP}</script><p>&emsp;&emsp;TPR也叫灵敏度（sensitivity），TPR即召回率；FPR也叫特异度（specificity），FPR可以理解为在负类样本中，把负类样本误分为正样本的比例。TPR、FPR二者是相互对立的关系，此消彼长。<br>&emsp;&emsp;一般分类器对样本进分类的思路为，对测试样本产生一个回归值或概率预测，记为score，并将score与分类阈值（Threshold）比较，进而对样本进行分类。可以根据模型对每个样本计算出的“似然值”对测试样本进行从大到小重新排序，从这个角度来说，分类问题就相当于是将该排序序列在某个“截断点”将样本集分为两部分，前一部分的最终预测结果为正例，后一半的预测结果为反例。对于一个分类模型，选择不同的分类阈值，可以生成不同对（TPR，FPR），将这些（TPR，FPR）坐标值绘制在坐标轴中，就得到了当前分类模型的ROC曲线。一般来说，分类阈值可取每个样本的预测“似然值”score，这样就可以生成m对（TPR，FPR）坐标值，m为样本的数量。显然，在ROC曲线空间中，离右上角（0,1）点越近，说明算法的性能越好。<br>&emsp;&emsp;如果分类模型的ROC曲线被模型B的ROC曲线完全“包住”，则可断言模型B的分类性能由于模型A；若两个模型的ROC曲线发生交叉，则不能直接判断那个模型的性能更好。较为合理的判据是比较ROC曲线下的面积，即AUC值。<br>&emsp;&emsp;ROC曲线有个很好的特性：当测试集中的正负样本的分布发生变化时，ROC曲线能保持不变。</p>
-<h3 id="AUC值"><a href="#AUC值" class="headerlink" title="AUC值"></a>AUC值</h3><p>&emsp;&emsp;AUC的全称是Area Under Curve，AUC值定义为ROC曲线下的面积。显然，AUC的取值在0.5~1之间。AUC作为数值，可以直接评价分类模型的好坏，AUC值越大，模型的分类性能越好。<br>&emsp;&emsp;另外，根据ROC曲线的绘制规则可知，AUC值可以从概率的角度理解：随机地挑选一个正样本，当前的分类模型根据样本的“似然值”将该正样本排在负样本的前面的概率即为AUC，AUC值越大，当前的分类算法将正样本排在负样本前面的概率越大。</p>
-
-          
+          <p>&emsp;&emsp;本文总结了评估模型性能的几个度量指标。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/machine-learning/机器学习算法笔记——模型性能度量（Precision-Recall-ROC-AUC）.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

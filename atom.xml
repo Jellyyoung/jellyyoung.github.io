@@ -149,10 +149,9 @@
     <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94AdaBoosting%E7%AE%97%E6%B3%95.html"/>
     <id>http://yaodong.ml/machine-learning/机器学习算法笔记——AdaBoosting算法.html</id>
     <published>2017-01-21T06:29:46.000Z</published>
-    <updated>2017-03-21T06:30:38.105Z</updated>
+    <updated>2017-03-21T06:46:03.466Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
-<p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。<br>&emsp;&emsp;AdaBoosting算法的损失函数是指数函数。回忆一下，机器学习算法中，常见的损失函数有0-1损失函数、对数似然损失函数、均方误差函数、Hinge函数、指数损失函数等。</p>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。<br><a id="more"></a><br>&emsp;&emsp;AdaBoosting算法的损失函数是指数函数。回忆一下，机器学习算法中，常见的损失函数有0-1损失函数、对数似然损失函数、均方误差函数、Hinge函数、指数损失函数等。</p>
 <p>&emsp;&emsp;下面对AdaBoosting算法作简单推导。给定样本数据集$S={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$。</p>
 <ol>
 <li>初始化数据集的样本权值分布<script type="math/tex; mode=display">D=(w_{11},...,w_{1i},...,w_{1n})</script>其中$w_{1i}=\frac{1}{m},i=1,2,…,m$。</li>
@@ -181,8 +180,7 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。&lt;br&gt;&amp;emsp;&amp;emsp;AdaBoosting算法的
+      &lt;p&gt;&amp;emsp;&amp;emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。&lt;br&gt;
     
     </summary>
     
@@ -256,10 +254,9 @@
     <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A8%A1%E5%9E%8B%E6%80%A7%E8%83%BD%E5%BA%A6%E9%87%8F%EF%BC%88Precision-Recall-ROC-AUC%EF%BC%89.html"/>
     <id>http://yaodong.ml/machine-learning/机器学习算法笔记——模型性能度量（Precision-Recall-ROC-AUC）.html</id>
     <published>2017-01-21T06:21:48.000Z</published>
-    <updated>2017-03-21T06:22:54.298Z</updated>
+    <updated>2017-03-21T06:47:01.837Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>
-<p>&emsp;&emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。<br>&emsp;&emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：</p>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;本文总结了评估模型性能的几个度量指标。<br><a id="more"></a><br>&emsp;&emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。<br>&emsp;&emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：</p>
 <blockquote>
 <p>TP（真正例）——将正类样本预测为正类的样本数量<br>FP（假正例）——将负类样本预测为正类的样本数量<br>FN（假反例）——将正类样本预测为负类的样本数量<br>TN（真反例）——将负类样本预测为负类的样本数量</p>
 </blockquote>
@@ -276,8 +273,7 @@
     
     <summary type="html">
     
-      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。&lt;br&gt;&amp;emsp;&amp;emsp;
+      &lt;p&gt;&amp;emsp;&amp;emsp;本文总结了评估模型性能的几个度量指标。&lt;br&gt;
     
     </summary>
     

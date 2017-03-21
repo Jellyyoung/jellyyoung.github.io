@@ -88,22 +88,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。&amp;emsp;&amp;emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：
-
-TP（真正例）——将正类样本预测为正类的样本数量FP（假正例）">
+<meta name="description" content="&amp;emsp;&amp;emsp;本文总结了评估模型性能的几个度量指标。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习算法笔记——模型性能度量（Precision/Recall/ROC/AUC）">
 <meta property="og:url" content="http://yaodong.ml/machine-learning/机器学习算法笔记——模型性能度量（Precision-Recall-ROC-AUC）.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。&amp;emsp;&amp;emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：
-
-TP（真正例）——将正类样本预测为正类的样本数量FP（假正例）">
-<meta property="og:updated_time" content="2017-03-21T06:22:54.298Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;本文总结了评估模型性能的几个度量指标。">
+<meta property="og:updated_time" content="2017-03-21T06:47:01.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习算法笔记——模型性能度量（Precision/Recall/ROC/AUC）">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。&amp;emsp;&amp;emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：
-
-TP（真正例）——将正类样本预测为正类的样本数量FP（假正例）">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;本文总结了评估模型性能的几个度量指标。">
 
 
 
@@ -361,8 +355,7 @@ TP（真正例）——将正类样本预测为正类的样本数量FP（假正�
       
 
       
-        <a id="more"></a>
-<p>&emsp;&emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。<br>&emsp;&emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：</p>
+        <p>&emsp;&emsp;本文总结了评估模型性能的几个度量指标。<br><a id="more"></a><br>&emsp;&emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。<br>&emsp;&emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：</p>
 <blockquote>
 <p>TP（真正例）——将正类样本预测为正类的样本数量<br>FP（假正例）——将负类样本预测为正类的样本数量<br>FN（假反例）——将正类样本预测为负类的样本数量<br>TN（真反例）——将负类样本预测为负类的样本数量</p>
 </blockquote>
