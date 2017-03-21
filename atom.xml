@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yaodong.ml/"/>
-  <updated>2017-03-21T06:25:38.808Z</updated>
+  <updated>2017-03-21T06:39:50.412Z</updated>
   <id>http://yaodong.ml/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>机器学习算法笔记——类别不均衡问题</title>
     <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%B1%BB%E5%88%AB%E4%B8%8D%E5%9D%87%E8%A1%A1%E9%97%AE%E9%A2%98.html"/>
     <id>http://yaodong.ml/machine-learning/机器学习算法笔记——类别不均衡问题.html</id>
-    <published>2017-03-21T06:24:56.000Z</published>
-    <updated>2017-03-21T06:25:38.808Z</updated>
+    <published>2017-01-22T06:24:56.000Z</published>
+    <updated>2017-03-21T06:39:50.412Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a>
 <p>&emsp;&emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。<br>&emsp;&emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般来说，如果类别不平衡比例超过4:1，那么分类模型极有可能因为数据类别不平衡而无法达到很好地分类性能。因此在构建分类模型之前，需要对类别不均衡性问题进行处理。<br>&emsp;&emsp;以常见的二分类问题为例，设样本数据集中的正例样本数目为$m^-$ ,反例样本数目为$m^+$。</p>
