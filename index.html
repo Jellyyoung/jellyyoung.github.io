@@ -282,6 +282,1235 @@
             
               
                 
+                <a class="post-title-link" href="/machine-learning/机器学习算法笔记——类别不均衡问题.html" itemprop="url">
+                  机器学习算法笔记——类别不均衡问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-21T14:24:56+08:00" content="2017-03-21">
+              2017-03-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——类别不均衡问题.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——类别不均衡问题.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——类别不均衡问题.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——类别不均衡问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p>&emsp;&emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。<br>&emsp;&emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般来说，如果类别不平衡比例超过4:1，那么分类模型极有可能因为数据类别不平衡而无法达到很好地分类性能。因此在构建分类模型之前，需要对类别不均衡性问题进行处理。<br>&emsp;&emsp;以常见的二分类问题为例，设样本数据集中的正例样本数目为$m^-$ ,反例样本数目为$m^+$。</p>
+<h3 id="扩大数据集"><a href="#扩大数据集" class="headerlink" title="扩大数据集"></a>扩大数据集</h3><p>&emsp;&emsp;更多的数据往往战胜更好的算法。遇到类别不均衡问题时，首先应该想到：是否可以增加数据集的规模，因为更大规模的数据意味着更多的信息。</p>
+<h3 id="采样（随机采样）"><a href="#采样（随机采样）" class="headerlink" title="采样（随机采样）"></a>采样（随机采样）</h3><p>&emsp;&emsp;可以使用采样（Sampling）策略来改善样本数据集的类别不均衡的成都。主要有以下两种采样方法来降低数据集的样本类别不均衡性：</p>
+<ol>
+<li>对样本数目较少的一类样本进行采样，增加该类样本的数目，进而提高该类样本在样本数据集中占的比例，这种采样方法称为<strong>过采样（oversampling），也叫上采样</strong>。需要注意的是，过采样法不能简单地对样本数目较少的类别样本进行直接重复采样，否则会招致严重的过拟合。为了解决这一问题，可以在每次生成新数据样本时加入轻微的随机扰动，经验表明这种方法可以有效提高模型的泛化性能。例如，过采样方法的代表性算法——SMOTE算法，就是通过对训练集的正例进行插值来产生额外的正例。</li>
+<li>对样本数目较多的一类样本进行采样，即去除一些样本数目较多的类的样本，进而降低该类样本在样本数据集中所占的比例，使采样之后的数据集中正、反类样本数目接近，这种采样方法称为<strong>欠采样（undersampling），也叫下采样</strong>。<br>欠采样的代表性算法是集成学习（Ensemble Learning）机制，将样本数目较多的类别样本划分为多个集合供不同“弱分类器”使用，这样相当于对每个学习器都进行了欠采样，但在全局看却没有丢失过多的信息。</li>
+</ol>
+<p>&emsp;&emsp;随机采样最大的优点是简单易操作，但缺点也很明显：上采样后的数据集中会反复出现一些重复样本，训练出来的模型会倾向于过拟合；而下采样会导致丢失部分数据，使得算法模型不能完全学习到数据的总体模式。显然，下采样过程会丢失信息，如何解决这个问题？<br>&emsp;&emsp;<strong>Informed undersampling</strong>采样技术可以解决随机欠采样造成的数据信息丢失问题，<strong>informed undersampling</strong>采样技术主要有两种方法分别是<strong>EasyEnsemble</strong>算法和<strong>BalanceCascade</strong>算法。<br>&emsp;&emsp;EasyEnsemble算法,类似于Ensemble learning的Bagging方法，它把数据集$D$划分为两部分，分别是多数类别的样本和少数类别的样本，对于多数类样本$D<em>{max}$，通过$n$次有放回抽样生成$n$份子集，少数类样本分别和这$n$份样本合并训练一个模型，这样可以得到$n$个模型，最终的模型是这$n$个模型预测结果的平均值。<br>&emsp;&emsp;BalanceCascade算法是一种级联算法，该算法从多数类别样本集$S</em>{min}$中有效地选择N且满足$\mid N\mid=\mid D<em>{min}\mid$，将N和$D</em>{min}$合并为新的数据集进行训练，利用Boosting的思想，首先对原始数据集进行一次下采样，生成新的子训练集，使用该数据集合训练一个分类器，对于那些分类正确的样本不放回，然后再下采样，再用新生成的数据集训练下一个分类器，一直迭代进行，最后组合所有分类的结果作为最后的结果。</p>
+<h3 id="生成新数据"><a href="#生成新数据" class="headerlink" title="生成新数据"></a>生成新数据</h3><p>&emsp;&emsp;SMOTH算法，构造人工数据样本。SMOTE是一种过采样算法，它构造新的小类样本而不是产生小类中已有的样本的副本，即该算法构造的数据是新样本。SMOTE算法基于距离度量选择小类别下的两个或者更多的相似样本，然后选择其中一个样本，并随机选择一定数量的近邻样本对该样本的一个属性增加噪声，每次只处理一个属性。这样就构造了更多的新生数据样本。算法流程如下：<br>&emsp;&emsp;$Step 1$：随机选定少数类别中的一个样本$x^{(i)}$，以欧氏距离为标准计算它到少数类样本集$D_{min}$中所有样本的距离，得到与其距离度量最小的k个相似样本。<br>&emsp;&emsp;$Step 2$：根据类别不平衡比例设置一个采样比例阈值$T$以确定采样倍率$N$，对于每一个少数类样本$x$，从它的k个相邻样本中随机选择若干个样本，假设选择的近邻为$\hat{x}$。<br>&emsp;&emsp;$Step 3$：对于每一个随机选出的近邻$\hat{x}$，分别与原样本按照如下的公式构建新的样本：</p>
+<script type="math/tex; mode=display">x_{new}=x+rand(0,1)\times(\hat{x}-x)</script><h3 id="类别不平衡问题的评价指标"><a href="#类别不平衡问题的评价指标" class="headerlink" title="类别不平衡问题的评价指标"></a>类别不平衡问题的评价指标</h3><script type="math/tex; mode=display">Precision = \frac{TP}{TP+FP}</script><script type="math/tex; mode=display">Recall=\frac {TP}{TP+FN}</script><script type="math/tex; mode=display">F-Measure=\frac {(1+\beta)^2\cdot Recall\cdot Precision}{\beta ^ 2\cdot Recall+Precision}</script><script type="math/tex; mode=display">G-Mean=\sqrt{\frac{TP}{TP+TN}\cdot {\frac {TN}{TN+FP}}}</script><h3 id="转换问题的思考角度"><a href="#转换问题的思考角度" class="headerlink" title="转换问题的思考角度"></a>转换问题的思考角度</h3><p>&emsp;&emsp;对于类别不平衡的二分类问题，可将其看做一分类问题（One Class Learning），或异常检测问题（Novelty Detection）。转换看待问题的角度后，解决问题的重点不再是通过捕捉不同类别样本之间的差别来分类，而是对其中一类样本进行建模，进而解决问题。</p>
+<h3 id="尝试不同算法"><a href="#尝试不同算法" class="headerlink" title="尝试不同算法"></a>尝试不同算法</h3><p>&emsp;&emsp;对于分类问题，解决类别不均衡问题的另外一个思路是从算法的角度出发，考虑不同误分类情况代价的差异性对算法进行优化，使得我们的算法在不平衡数据下也能有较好的效果。<br>&emsp;&emsp;在算法层面上解决类别不平衡问题的方法主要是基于代价敏感学习算法（Cost-Sensitive Learning）。<br>&emsp;&emsp;代价敏感学习方法的核心要素是代价矩阵，实际生活中，不同类型的误分类情况导致的代价是不一样的，例如在医疗中，“将病人误疹为健康人”和“将健康人误疹为病人”的代价不同；在信用卡盗用检测中，“将盗用误认为正常使用”与“将正常使用识破认为盗用”的代价也不相同。对于二分类问题，定义代价矩阵。标记$C<em>{ij}$为将类别$j$误分类为类别$i$的代价，显然$C</em>{00}=C<em>{11}=0$，但$C</em>{01}$和$C_{10}$为两种不同的误分类代价，当两者相等时为代价不敏感的学习问题。二者不等时即为代价敏感学习问题。<br>&emsp;&emsp;基于代价矩阵$C$的分析，代价敏感学习方法主要有以下三种实现方式，分别是：</p>
+<ol>
+<li>从学习模型出发，着眼于对某一具体学习方法的改造，使之能适应不平衡数据下的学习，研究者们针对不同的学习模型如感知机，支持向量机，决策树，神经网络等分别提出了其代价敏感的版本。以代价敏感的决策树为例，可从以下方面对其进行改进以适应不平衡数据的学习，分别是决策阈值的选择、分裂标准的选择、剪枝，在上述三个步骤中都可以将代价矩阵引入，即可解决类别不平衡问题。</li>
+<li>从贝叶斯风险理论出发，把代价敏感学习看成是分类结果的一种后处理，按照传统方法学习到一个模型，以实现损失最小为目标对结果进行调整。此方法的优点在于它可以不依赖所用具体的分类器，但是缺点也很明显它要求分类器输出值为概率。</li>
+<li>从预处理的角度出发，将代价用于权重的调整，使得分类器满足代价敏感的特性。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/deep-learning/深度学习与浅层神经网络的不同之处.html" itemprop="url">
+                  深度学习与浅层神经网络的不同之处
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T14:36:03+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/deep-learning/深度学习与浅层神经网络的不同之处.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="deep-learning/深度学习与浅层神经网络的不同之处.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/deep-learning/深度学习与浅层神经网络的不同之处.html" class="leancloud_visitors" data-flag-title="深度学习与浅层神经网络的不同之处">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<blockquote>
+<p>深度学习又称深度神经网络，即包含多个隐藏层的神经网络。由于每个隐藏层都可以对上一层的输出进行非线性变换，因此深度神经网络拥有比浅层前馈式网络更加优异的表达能力，因此可以计算更多更复杂的特征信息。</p>
+</blockquote>
+<p>&emsp;&emsp;1. <strong>数据集规模</strong>。深度神经网路的隐层数量和隐层神经元数目都远大于传统的浅层神经网络，相应地，深度学习模型的复杂度也远高于浅层网络。从数据集规模的角度考虑，使用大规模的数据集对深度学习模型进行训练，可在一定程度上降低深度神经网络陷入过拟合的风险。<br>&emsp;&emsp;2. <strong>网络的训练速度</strong>。对神经网络进行训练的实质是基于梯度下降思路求解整体代价函数最小化时对应的参数。神经网络的训练速度与网络的参数的数目有直接关系，深度学习模型的隐层数目和隐层神经元数目都远多于浅层神经网络，因此深度神经网络的训练速度远小于浅层神经网络，训练时间远大于浅层神经网络。<br>&emsp;&emsp;3. <strong>网络的训练方式</strong>。浅层神经网络中最为广泛应用的训练算法是基于梯度下降的误差逆传播算法，但是多隐层深度网络一般难以直接用标准BP算法进行训练和求解。因为训练误差在多隐层内逆向传播时，在每一层都要乘以该层的激活函数的导数值，也就是说，误差在每一层传递都会不断衰减。当网络层数很深时，梯度就会不停的衰减，甚至消失，使得整个网络很难训练。这就是所谓的梯度消失问题（Vanishing Gradient Problem），也叫梯度弥散问题。<br>&emsp;&emsp;目前解决“梯度弥散”问题的有效思路是使用ReLU函数作为每个隐层神经元的激活函数，因为相对于sigmoid函数和tanh函数，ReLU函数的导数值更大，这样不仅神经网络的误差可以很好的传播，而且由于ReLU函数的优良特性，神经网路的训练速度也有相应的提高。<br>&emsp;&emsp;4. <strong>深度神经网络的训练思路</strong>。无监督逐层贪婪训练是对多隐层网络进行训练的有效手段。基本思想是， 每次只训练网络的一个隐层，训练时把上一个隐层的输出作为输入，并且本层结点的输出作为下一个隐层的输入。，当前隐层训练结束后再开始训练下一个隐层，即在训练第k个隐藏层时都需要将前k-1层固定。这种训练思想称为“预训练”（pre-training）。预训练全部完成之后，再利用BP算法训练整个网络，即使用BP算法对整个网络进行“微调”。需要注意的是，每一层的预训练可以是有监督的（例如将每一层的分类误差作为目标函数），也可以是无监督的。当用无标签数据训练完网络后，相比于随机初始化而言，各层初始权重会位于参数空间中较好的位置上。然后我们可以从靠近最优值的位置出发，进一步微调权重。从经验上来说，以这些位置为起点开始进行梯度下降训练，更有可能收敛到比较好的局部极值点，这是因为无标签数据已经提供了大量输入数据中包含的模式的先验信息。<br>&emsp;&emsp;5. <strong>深度神经网络的“参数共享”机制</strong>。深度神经网络的参数规模较大，使用“参数共享”的机制能有效地节省训练开销，缩短训练时间。这个策略在卷积神经网络（Convolutional Neural Network，CNN）中已得到成功的应用。<br>&emsp;&emsp;6. <strong>强调了特征学习的重要性</strong>。浅层神经网络模型的特征工程主要靠人工构建特征工程，进而对样本进行分类或预测。Deep Learning含有多个隐层，对样本的特征属性通过逐层特征变换，将样本的原特征空间映射到新的特征空间，从而使分类或预测更加简单。与人工构造特征工程相比，Deep Learning利用大数据来学习特征，更能够刻画数据的丰富内在信息。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html" itemprop="url">
+                  Deep Learning学习笔记——蒙特卡罗方法（MCMC）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T14:34:15+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html" class="leancloud_visitors" data-flag-title="Deep Learning学习笔记——蒙特卡罗方法（MCMC）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;本文对马尔科夫链蒙特卡罗（Markov Chain Monte Carlo，MCMC）作简单的介绍。主要参考《Pattern Recognition and Machinle Learning》和Ian Goodfellow的《Deep Learning》。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/deep-learning/Deep-Learning学习笔记——蒙特卡罗方法（MCMC）.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/machine-learning/机器学习算法笔记——集成学习（Ensemble-Learning）.html" itemprop="url">
+                  机器学习算法笔记——集成学习（Ensemble Learning）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T14:31:19+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——集成学习（Ensemble-Learning）.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——集成学习（Ensemble-Learning）.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——集成学习（Ensemble-Learning）.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——集成学习（Ensemble Learning）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;集成学习，通过构建或结合多个弱分类器形成一个强分类器，使组合得到的分类器具有更好的泛化性能，从而达到提升模型分类性能的方法。严格来说，集成学习并不算是一种分类器，而是一种将多个弱分类器结合的策略。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/machine-learning/机器学习算法笔记——集成学习（Ensemble-Learning）.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/machine-learning/机器学习算法笔记——AdaBoosting算法.html" itemprop="url">
+                  机器学习算法笔记——AdaBoosting算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T14:29:46+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——AdaBoosting算法.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——AdaBoosting算法.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——AdaBoosting算法.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——AdaBoosting算法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。<br>&emsp;&emsp;AdaBoosting算法的损失函数是指数函数。回忆一下，机器学习算法中，常见的损失函数有0-1损失函数、对数似然损失函数、均方误差函数、Hinge函数、指数损失函数等。</p>
+<p>&emsp;&emsp;下面对AdaBoosting算法作简单推导。给定样本数据集$S={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$。</p>
+<ol>
+<li>初始化数据集的样本权值分布<script type="math/tex; mode=display">D=(w_{11},...,w_{1i},...,w_{1n})</script>其中$w_{1i}=\frac{1}{m},i=1,2,…,m$。</li>
+<li><p>训练$m$个基学习器：<br><strong>1)</strong> 对于第$i$个样本，根据当前的样本权值分布$D_m$，求得基分类器$G_m(x)$，其中$G_m(x)\in {-1,+1}$；<br><strong>2)</strong> 并求得$G_m(x)$在训练数据集上的带权分类误差率：</p>
+<script type="math/tex; mode=display">e_m=P(G_m(x^{(i)})≠y^{(i)})=\sum_{i=1}^{m}w_{mi}I(G_m(x^{(i)})≠y^{(i)})</script><p><strong>3)</strong> 接下来计算$G_m(x)$的系数$\alpha_m$，$\alpha_m$表示第m个基学习器在最终的组合学习器中的比重：</p>
+<script type="math/tex; mode=display">\alpha_m=\frac{1}{2}log\frac{1-e_m}{e_m}</script><p>很显然，$\alpha_m$随着$e_m$的增大而减小，所以分类误差率越小的基学习器在最终的组合模型中占的比重越大。<br><strong>4)</strong> 更新样本权值分布向量：</p>
+<script type="math/tex; mode=display">D_{m+1} = (w_{m+1,1},...,w_{m+1,n})</script><script type="math/tex; mode=display">w_{m+1,i}=\frac {w_{mi}}{Z_m}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>这里$Z<em>m$是规范化因子，目的是将$D</em>{m+1}$进行归一化，使得$D_{m+1}$符合概率分布的归一性，$Z_m$由以下公式给出：</p>
+<script type="math/tex; mode=display">Z_m=\sum_{i=1}^Nw_{mi}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>根据$w_{m+1,i}$的表达式可知，被$G_m(x)$分类器误分类的样本的权值得以扩大，而被$G_m(x)$正确分类的样本的权值会缩小。因此，误分类样本在下一次的基学习器训练中起到更大的作用。这个<strong>不改变训练数据，而改变训练数据的权值分布，正是AdaBoost方法的重要特点</strong>。</p>
+</li>
+<li><p>步骤2中求得了m个基学习器的权值分布，将这m个基学习器组合起来，构成最终的组合学习器：</p>
+<script type="math/tex; mode=display">f_{(x)}=\sum_{m=1}^{M}\alpha_mG_{m}(x)</script><script type="math/tex; mode=display">G_{(x)}=sign\left((f(x)\right)=sign\left(\sum_{m=1}^{M}\alpha_mG_{m}(x))\right)</script><p><strong>注意</strong>，所有的$\alpha_m$相加之和并不等于1。</p>
+</li>
+</ol>
+<hr>
+<h3 id="梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）"><a href="#梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）" class="headerlink" title="梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）"></a>梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）</h3><blockquote>
+<p><strong>GBDT</strong>是一个应用很广泛的算法，可以用于解决分类、回归等问题。GBDT算法也有其他的名字，如MART(Multiple Additive Regression Tree)，GBRT(Gradient Boost Regression Tree)，Tree Net等。</p>
+</blockquote>
+<p>&emsp;&emsp;首先介绍一下Gradient Boosting的基本概念。Gradient Boost其实是一个框架，可以套入很多不同的算法以对穿传统的机器学习算法进行改进。当损失函数不是平方损失函数或者指数损失函数，而是一般函数时，boost算法对损失函数的求解和优化会变得比较复杂，针对这一问题，学者提出了Gradient Boosting算法。核心思想是利用损失函数的负梯度在当前模型下的取值作为残差的近似，进一步训练得到下一棵回归树。<br>&emsp;&emsp;回忆一下原始的Boosting算法：算法初始状态下，为每一个样本赋上大小相等的权重值。在之后迭代的每一步中增加被误分类的样本的权重，减少正确分类的样本的权重，使得被误分类的样本被赋上一个很高的权重。进行M次迭代训练，将得到M个基学习器，最后将它们根据指定的策略组合起来，得到一个最终的模型。<br>&emsp;&emsp;GBDT中的树都是回归树，不是分类树，但是对GBDT模型调整后可以用于分类问题。GBDT的核心在于，每一棵子树学习的是之前所有树的预测结果与实际观测值之间的残差。Gradient Boosting就是拟合Loss function的梯度，将其作为新的弱回归树加入到总的算法中即可。<br>&emsp;&emsp;Gradient Boost与传统的Boost的区别是，Gradient Boot算法每次的计算是为了减小上一次的残差（residual）。为了消除残差，可以取损失函数的负梯度在当前模型上的取值作为当前残差的近似值，并拟合下一个子树模型。所以说，在Gradient Boost中，每个新子树模型的建立会使之前模型的残差往梯度方向减少，与传统Boosting算法对正确、错误的样本进行加权有着很大的区别。</p>
+<p>&emsp;&emsp;GBDT的算法流程如下：给定样本数据集$T={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，损失函数为$L(y,f(x))$，设生成的子树的数目是K。</p>
+<ol>
+<li>初始化第一课子树，估计使损失函数最小化的常数值，建立只有一个根结点的树：<script type="math/tex; mode=display">f_0(x)=\arg\min_c\sum_{i=1}^{m}L(y^{(i)},c)</script></li>
+<li>对k=1,2,…,K:<br><strong>1)</strong> 对i=1,2,…,m，计算当前损失函数的负梯度在当前模型的值，作为模型残差的估计：<script type="math/tex; mode=display">g_{ki}=\left[\frac{\partial L(y^{(i)},f(x^{(i)}))}{\partial f(x^{(i)})}\right]_{f(x)=f_{k-1}(x)}</script><strong>2)</strong> 根据$r<em>{ki}$拟合一个回归树，作为下一个子树模型，估计回归树的叶节点对区域$R</em>{kj}$,$j=1,2,…,J$，以拟合残差的近似值：<br><strong>3)</strong> 利用线性搜索估计叶节点区域的值，使损失函数最小化。对$j=1,2,…,J$，计算<script type="math/tex; mode=display">c_{mj}=\arg\min_c\sum_{x_i \in R_{kj}}L(y^{(i)},f_{k-1}(x^{(i)})+c)</script><strong>4)</strong> 更新第k个子回归树模型<script type="math/tex; mode=display">f_k(x)=f_{k-1}(x)+\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
+<li>得到回归树<script type="math/tex; mode=display">\hat f(x)=f_{K}(x)=\sum_{k=1}^{K}\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/machine-learning/机器学习算法笔记——偏差与方差.html" itemprop="url">
+                  机器学习算法笔记——偏差与方差
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T14:26:55+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——偏差与方差.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——偏差与方差.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——偏差与方差.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——偏差与方差">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;最近在复习基本机器学习、深度学习的基础模型和理论算法，总结一下机器学习中常见的几个概念。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/machine-learning/机器学习算法笔记——偏差与方差.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/machine-learning/机器学习算法笔记——正则化、交叉验证.html" itemprop="url">
+                  机器学习算法笔记——正则化、交叉验证
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T14:23:34+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——正则化、交叉验证.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——正则化、交叉验证.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——正则化、交叉验证.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——正则化、交叉验证">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/machine-learning/机器学习算法笔记——正则化、交叉验证.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/machine-learning/机器学习算法笔记——模型性能度量（Precision-Recall-ROC-AUC）.html" itemprop="url">
+                  机器学习算法笔记——模型性能度量（Precision/Recall/ROC/AUC）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-21T14:21:48+08:00" content="2017-01-21">
+              2017-01-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——模型性能度量（Precision-Recall-ROC-AUC）.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——模型性能度量（Precision-Recall-ROC-AUC）.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——模型性能度量（Precision-Recall-ROC-AUC）.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——模型性能度量（Precision/Recall/ROC/AUC）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<p>&emsp;&emsp;分类问题中，最直接的模型性能度量指标是错误率和精度。但在实际的应用中，更常用的模型评价指标是查准率（precision）与查全率（recall）。查准率也叫准确率，查全率也叫召回率。<br>&emsp;&emsp;在二分类问题中，将关注的类别记为正类，其他类记为父类。分类模型在测试数据集上的预测结果可分为以下几类：</p>
+<blockquote>
+<p>TP（真正例）——将正类样本预测为正类的样本数量<br>FP（假正例）——将负类样本预测为正类的样本数量<br>FN（假反例）——将正类样本预测为负类的样本数量<br>TN（真反例）——将负类样本预测为负类的样本数量</p>
+</blockquote>
+<p>&emsp;&emsp;查准率定义为</p>
+<script type="math/tex; mode=display">precision=\frac{TP}{TP+FP}</script><p>&emsp;&emsp;查全率定义为</p>
+<script type="math/tex; mode=display">recall=\frac{TP}{TP+FN}</script><p>&emsp;&emsp;查准率与查全率是一对矛盾的度量。因此还定义了$F_1$度量，$F_1$定义为查准率和查全率的调和均值</p>
+<script type="math/tex; mode=display">\frac{1}{F_1}=\frac{1}{precision}+\frac{1}{recall}=\frac{2TP}{2TP+FP+FN}</script><p>&emsp;&emsp;不同的实际应用场景对查准率和查全率的重视程度有所不同。$F<em>1$度量还有更一般的形式——$F</em>{\beta}$，根据$\beta$的取值可调整$F_{\beta}$对查准率和查全率的重视程度。</p>
+<script type="math/tex; mode=display">F_\beta=\frac{(1+\beta ^2)\times P \times R}{(\beta^2 \times P)+R}</script><p>&emsp;&emsp;其中$\beta &gt; 0$，度量了查全率对查准率的相对重要性，$\beta = 1$时退化为标准的$F_1$，$\beta &gt; 1$时更重视查全率，$\beta &gt; 1$时更重视查准率。</p>
+<h3 id="P-R曲线"><a href="#P-R曲线" class="headerlink" title="P-R曲线"></a>P-R曲线</h3><p>&emsp;&emsp;P-R曲线即Precision-Recall曲线，是以查准率为纵轴、查全率为横轴作图所得的曲线。P-R曲线能直观显示出分类模型在样本集上的查全率、查准率。如果模型A的P-R曲线完全被模型B的P-R曲线包住，则可断言模型B的性能优于模型A。如果两个分类模型的P-R曲线有交叉，则难以一般性地断言二者孰优孰劣，只能在具体的查准率或查全率条件下再对二者进行评估。更多情况下，比较合理的判据是比较P-R曲线与坐标轴围成的面积的大小，它在一定程度上表征了分类模型在查准率与查全率上取得相对“双高”的比例。</p>
+<h3 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h3><p>&emsp;&emsp;ROC的全称是Receiver Operating Characteristic，译为受控者工作特征。ROC曲线是以“真正例率”TPR为纵轴、以“假正例率”FPR为横轴绘制的曲线。TPR、FPR定义如下：</p>
+<script type="math/tex; mode=display">TPR = \frac{TP}{TP+FN}</script><script type="math/tex; mode=display">FPR=\frac{FP}{TN+FP}</script><p>&emsp;&emsp;TPR也叫灵敏度（sensitivity），TPR即召回率；FPR也叫特异度（specificity），FPR可以理解为在负类样本中，把负类样本误分为正样本的比例。TPR、FPR二者是相互对立的关系，此消彼长。<br>&emsp;&emsp;一般分类器对样本进分类的思路为，对测试样本产生一个回归值或概率预测，记为score，并将score与分类阈值（Threshold）比较，进而对样本进行分类。可以根据模型对每个样本计算出的“似然值”对测试样本进行从大到小重新排序，从这个角度来说，分类问题就相当于是将该排序序列在某个“截断点”将样本集分为两部分，前一部分的最终预测结果为正例，后一半的预测结果为反例。对于一个分类模型，选择不同的分类阈值，可以生成不同对（TPR，FPR），将这些（TPR，FPR）坐标值绘制在坐标轴中，就得到了当前分类模型的ROC曲线。一般来说，分类阈值可取每个样本的预测“似然值”score，这样就可以生成m对（TPR，FPR）坐标值，m为样本的数量。显然，在ROC曲线空间中，离右上角（0,1）点越近，说明算法的性能越好。<br>&emsp;&emsp;如果分类模型的ROC曲线被模型B的ROC曲线完全“包住”，则可断言模型B的分类性能由于模型A；若两个模型的ROC曲线发生交叉，则不能直接判断那个模型的性能更好。较为合理的判据是比较ROC曲线下的面积，即AUC值。<br>&emsp;&emsp;ROC曲线有个很好的特性：当测试集中的正负样本的分布发生变化时，ROC曲线能保持不变。</p>
+<h3 id="AUC值"><a href="#AUC值" class="headerlink" title="AUC值"></a>AUC值</h3><p>&emsp;&emsp;AUC的全称是Area Under Curve，AUC值定义为ROC曲线下的面积。显然，AUC的取值在0.5~1之间。AUC作为数值，可以直接评价分类模型的好坏，AUC值越大，模型的分类性能越好。<br>&emsp;&emsp;另外，根据ROC曲线的绘制规则可知，AUC值可以从概率的角度理解：随机地挑选一个正样本，当前的分类模型根据样本的“似然值”将该正样本排在负样本的前面的概率即为AUC，AUC值越大，当前的分类算法将正样本排在负样本前面的概率越大。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/algorithms/数据结构与算法之堆与堆排序.html" itemprop="url">
+                  数据结构与算法之堆与堆排序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-05T14:19:24+08:00" content="2017-01-05">
+              2017-01-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/algorithms/数据结构与算法之堆与堆排序.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/数据结构与算法之堆与堆排序.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/algorithms/数据结构与算法之堆与堆排序.html" class="leancloud_visitors" data-flag-title="数据结构与算法之堆与堆排序">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&emsp;&emsp;<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/algorithms/数据结构与算法之堆与堆排序.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/machine-learning/Machine Learning算法笔记——判别模型与生成模型.html" itemprop="url">
                   Machine Learning算法笔记——判别模型与生成模型
                 </a>
@@ -392,1190 +1621,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/machine-learning/Machine Learning算法笔记——特征工程.html" itemprop="url">
-                  Machine Learning算法笔记——特征工程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-03T16:48:47+08:00" content="2017-01-03">
-              2017-01-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/machine-learning/Machine Learning算法笔记——特征工程.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/Machine Learning算法笔记——特征工程.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/machine-learning/Machine Learning算法笔记——特征工程.html" class="leancloud_visitors" data-flag-title="Machine Learning算法笔记——特征工程">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;<strong>特征工程（Feature Engineering）</strong>包括特征构建(<strong>Construction</strong>)、特征提取(<strong>Extraction</strong>)、特征选择(<strong>Selection</strong>)三个部分。本博文简单记录了特征工程的相关知识和实战应用经验。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/machine-learning/Machine Learning算法笔记——特征工程.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/machine-learning/Machine Learning算法笔记——决策树与随机森林.html" itemprop="url">
-                  Machine Learning算法笔记——决策树与随机森林
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-03T12:54:14+08:00" content="2017-01-03">
-              2017-01-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/machine-learning/Machine Learning算法笔记——决策树与随机森林.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/Machine Learning算法笔记——决策树与随机森林.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/machine-learning/Machine Learning算法笔记——决策树与随机森林.html" class="leancloud_visitors" data-flag-title="Machine Learning算法笔记——决策树与随机森林">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/machine-learning/Machine Learning算法笔记——决策树与随机森林.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/writings/不忘初心，未来可期——2017启笔.html" itemprop="url">
-                  不忘初心，未来可期——2017启笔
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-01T22:39:05+08:00" content="2017-01-01">
-              2017-01-01
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/writings/不忘初心，未来可期——2017启笔.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="writings/不忘初心，未来可期——2017启笔.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/writings/不忘初心，未来可期——2017启笔.html" class="leancloud_visitors" data-flag-title="不忘初心，未来可期——2017启笔">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;博客好久没更了，感觉一直都在碌碌无为地忙碌着。毫无准备地跨进了2017，哦，本命年。坐在这里也不知道该写点什么，过去的一年里有遗憾，有后悔，一切都回不去了。<br>&emsp;&emsp;2017，不忘初心，不辜负。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/writings/不忘初心，未来可期——2017启笔.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/algorithms/算法设计思想之分支界限.html" itemprop="url">
-                  算法设计思想之分支界限
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T16:13:30+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/algorithms/算法设计思想之分支界限.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/算法设计思想之分支界限.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/algorithms/算法设计思想之分支界限.html" class="leancloud_visitors" data-flag-title="算法设计思想之分支界限">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文记录了博主关于分支界限算法设计思想的学习总结。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/algorithms/算法设计思想之分支界限.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/algorithms/算法设计思想之回溯算法.html" itemprop="url">
-                  算法设计思想之回溯算法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T16:12:20+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/algorithms/算法设计思想之回溯算法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/算法设计思想之回溯算法.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/algorithms/算法设计思想之回溯算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之回溯算法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文记录了博主关于回溯算法设计思想的学习总结。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/algorithms/算法设计思想之回溯算法.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/algorithms/算法设计思想之贪心算法.html" itemprop="url">
-                  算法设计思想之贪心算法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T16:11:25+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/algorithms/算法设计思想之贪心算法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/算法设计思想之贪心算法.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/algorithms/算法设计思想之贪心算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之贪心算法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文记录了博主关于贪心算法设计思想的学习总结。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/algorithms/算法设计思想之贪心算法.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/algorithms/算法设计思想之分治算法.html" itemprop="url">
-                  算法设计思想之分治算法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T16:08:14+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/algorithms/算法设计思想之分治算法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/算法设计思想之分治算法.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/algorithms/算法设计思想之分治算法.html" class="leancloud_visitors" data-flag-title="算法设计思想之分治算法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文记录了博主关于分治算法设计思想的学习总结。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/algorithms/算法设计思想之分治算法.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/algorithms/算法设计思想之动态规划.html" itemprop="url">
-                  算法设计思想之动态规划
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-15T15:59:11+08:00" content="2016-12-15">
-              2016-12-15
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/algorithms/算法设计思想之动态规划.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/算法设计思想之动态规划.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/algorithms/算法设计思想之动态规划.html" class="leancloud_visitors" data-flag-title="算法设计思想之动态规划">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/algorithms/算法设计思想之动态规划.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/algorithms/算法学习笔记——树和二叉树.html" itemprop="url">
-                  算法学习笔记——树和二叉树
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-03T13:13:10+08:00" content="2016-12-03">
-              2016-12-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/algorithms/算法学习笔记——树和二叉树.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="algorithms/算法学习笔记——树和二叉树.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/algorithms/算法学习笔记——树和二叉树.html" class="leancloud_visitors" data-flag-title="算法学习笔记——树和二叉树">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&emsp;&emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/algorithms/算法学习笔记——树和二叉树.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1616,7 +1666,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1633,7 +1683,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -1,0 +1,1063 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="google-site-verification" content="ekv-W0AxllwZ-k-lfisabABgmiSU94Ex3-o0Ka-TjRU" />
+<meta name="baidu-site-verification" content="PKbwImzbNH" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine Learning," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jellyyoung's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.icon?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。&amp;emsp;&amp;emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习算法笔记——类别不均衡问题">
+<meta property="og:url" content="http://yaodong.ml/machine-learning/机器学习算法笔记——类别不均衡问题.html">
+<meta property="og:site_name" content="Jellyyoung's Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。&amp;emsp;&amp;emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般">
+<meta property="og:updated_time" content="2017-03-21T06:25:38.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习算法笔记——类别不均衡问题">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。&amp;emsp;&amp;emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6310520035420931000',
+      author: '摇摇果冻'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yaodong.ml/machine-learning/机器学习算法笔记——类别不均衡问题.html"/>
+
+
+  <title> 机器学习算法笔记——类别不均衡问题 | Jellyyoung's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jellyyoung's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Practice makes me progressive</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                机器学习算法笔记——类别不均衡问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-21T14:24:56+08:00" content="2017-03-21">
+              2017-03-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——类别不均衡问题.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——类别不均衡问题.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——类别不均衡问题.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——类别不均衡问题">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <a id="more"></a>
+<p>&emsp;&emsp;类别不均衡（class-imbalance）指的是机器学习的分类任务中不同类别的训练样本样例数目差别很大的情况。为了使算法模型达到更好的分类效果，有必要解决该问题。<br>&emsp;&emsp;在现实中有很多类别不均衡问题，它是常见的，并且也是合理的，符合人们期望的。例如在欺诈交易识别中，属于欺诈交易的应该是很少部分，即绝大部分交易是正常的，只有极少部分的交易属于欺诈交易。一般来说，如果类别不平衡比例超过4:1，那么分类模型极有可能因为数据类别不平衡而无法达到很好地分类性能。因此在构建分类模型之前，需要对类别不均衡性问题进行处理。<br>&emsp;&emsp;以常见的二分类问题为例，设样本数据集中的正例样本数目为$m^-$ ,反例样本数目为$m^+$。</p>
+<h3 id="扩大数据集"><a href="#扩大数据集" class="headerlink" title="扩大数据集"></a>扩大数据集</h3><p>&emsp;&emsp;更多的数据往往战胜更好的算法。遇到类别不均衡问题时，首先应该想到：是否可以增加数据集的规模，因为更大规模的数据意味着更多的信息。</p>
+<h3 id="采样（随机采样）"><a href="#采样（随机采样）" class="headerlink" title="采样（随机采样）"></a>采样（随机采样）</h3><p>&emsp;&emsp;可以使用采样（Sampling）策略来改善样本数据集的类别不均衡的成都。主要有以下两种采样方法来降低数据集的样本类别不均衡性：</p>
+<ol>
+<li>对样本数目较少的一类样本进行采样，增加该类样本的数目，进而提高该类样本在样本数据集中占的比例，这种采样方法称为<strong>过采样（oversampling），也叫上采样</strong>。需要注意的是，过采样法不能简单地对样本数目较少的类别样本进行直接重复采样，否则会招致严重的过拟合。为了解决这一问题，可以在每次生成新数据样本时加入轻微的随机扰动，经验表明这种方法可以有效提高模型的泛化性能。例如，过采样方法的代表性算法——SMOTE算法，就是通过对训练集的正例进行插值来产生额外的正例。</li>
+<li>对样本数目较多的一类样本进行采样，即去除一些样本数目较多的类的样本，进而降低该类样本在样本数据集中所占的比例，使采样之后的数据集中正、反类样本数目接近，这种采样方法称为<strong>欠采样（undersampling），也叫下采样</strong>。<br>欠采样的代表性算法是集成学习（Ensemble Learning）机制，将样本数目较多的类别样本划分为多个集合供不同“弱分类器”使用，这样相当于对每个学习器都进行了欠采样，但在全局看却没有丢失过多的信息。</li>
+</ol>
+<p>&emsp;&emsp;随机采样最大的优点是简单易操作，但缺点也很明显：上采样后的数据集中会反复出现一些重复样本，训练出来的模型会倾向于过拟合；而下采样会导致丢失部分数据，使得算法模型不能完全学习到数据的总体模式。显然，下采样过程会丢失信息，如何解决这个问题？<br>&emsp;&emsp;<strong>Informed undersampling</strong>采样技术可以解决随机欠采样造成的数据信息丢失问题，<strong>informed undersampling</strong>采样技术主要有两种方法分别是<strong>EasyEnsemble</strong>算法和<strong>BalanceCascade</strong>算法。<br>&emsp;&emsp;EasyEnsemble算法,类似于Ensemble learning的Bagging方法，它把数据集$D$划分为两部分，分别是多数类别的样本和少数类别的样本，对于多数类样本$D<em>{max}$，通过$n$次有放回抽样生成$n$份子集，少数类样本分别和这$n$份样本合并训练一个模型，这样可以得到$n$个模型，最终的模型是这$n$个模型预测结果的平均值。<br>&emsp;&emsp;BalanceCascade算法是一种级联算法，该算法从多数类别样本集$S</em>{min}$中有效地选择N且满足$\mid N\mid=\mid D<em>{min}\mid$，将N和$D</em>{min}$合并为新的数据集进行训练，利用Boosting的思想，首先对原始数据集进行一次下采样，生成新的子训练集，使用该数据集合训练一个分类器，对于那些分类正确的样本不放回，然后再下采样，再用新生成的数据集训练下一个分类器，一直迭代进行，最后组合所有分类的结果作为最后的结果。</p>
+<h3 id="生成新数据"><a href="#生成新数据" class="headerlink" title="生成新数据"></a>生成新数据</h3><p>&emsp;&emsp;SMOTH算法，构造人工数据样本。SMOTE是一种过采样算法，它构造新的小类样本而不是产生小类中已有的样本的副本，即该算法构造的数据是新样本。SMOTE算法基于距离度量选择小类别下的两个或者更多的相似样本，然后选择其中一个样本，并随机选择一定数量的近邻样本对该样本的一个属性增加噪声，每次只处理一个属性。这样就构造了更多的新生数据样本。算法流程如下：<br>&emsp;&emsp;$Step 1$：随机选定少数类别中的一个样本$x^{(i)}$，以欧氏距离为标准计算它到少数类样本集$D_{min}$中所有样本的距离，得到与其距离度量最小的k个相似样本。<br>&emsp;&emsp;$Step 2$：根据类别不平衡比例设置一个采样比例阈值$T$以确定采样倍率$N$，对于每一个少数类样本$x$，从它的k个相邻样本中随机选择若干个样本，假设选择的近邻为$\hat{x}$。<br>&emsp;&emsp;$Step 3$：对于每一个随机选出的近邻$\hat{x}$，分别与原样本按照如下的公式构建新的样本：</p>
+<script type="math/tex; mode=display">x_{new}=x+rand(0,1)\times(\hat{x}-x)</script><h3 id="类别不平衡问题的评价指标"><a href="#类别不平衡问题的评价指标" class="headerlink" title="类别不平衡问题的评价指标"></a>类别不平衡问题的评价指标</h3><script type="math/tex; mode=display">Precision = \frac{TP}{TP+FP}</script><script type="math/tex; mode=display">Recall=\frac {TP}{TP+FN}</script><script type="math/tex; mode=display">F-Measure=\frac {(1+\beta)^2\cdot Recall\cdot Precision}{\beta ^ 2\cdot Recall+Precision}</script><script type="math/tex; mode=display">G-Mean=\sqrt{\frac{TP}{TP+TN}\cdot {\frac {TN}{TN+FP}}}</script><h3 id="转换问题的思考角度"><a href="#转换问题的思考角度" class="headerlink" title="转换问题的思考角度"></a>转换问题的思考角度</h3><p>&emsp;&emsp;对于类别不平衡的二分类问题，可将其看做一分类问题（One Class Learning），或异常检测问题（Novelty Detection）。转换看待问题的角度后，解决问题的重点不再是通过捕捉不同类别样本之间的差别来分类，而是对其中一类样本进行建模，进而解决问题。</p>
+<h3 id="尝试不同算法"><a href="#尝试不同算法" class="headerlink" title="尝试不同算法"></a>尝试不同算法</h3><p>&emsp;&emsp;对于分类问题，解决类别不均衡问题的另外一个思路是从算法的角度出发，考虑不同误分类情况代价的差异性对算法进行优化，使得我们的算法在不平衡数据下也能有较好的效果。<br>&emsp;&emsp;在算法层面上解决类别不平衡问题的方法主要是基于代价敏感学习算法（Cost-Sensitive Learning）。<br>&emsp;&emsp;代价敏感学习方法的核心要素是代价矩阵，实际生活中，不同类型的误分类情况导致的代价是不一样的，例如在医疗中，“将病人误疹为健康人”和“将健康人误疹为病人”的代价不同；在信用卡盗用检测中，“将盗用误认为正常使用”与“将正常使用识破认为盗用”的代价也不相同。对于二分类问题，定义代价矩阵。标记$C<em>{ij}$为将类别$j$误分类为类别$i$的代价，显然$C</em>{00}=C<em>{11}=0$，但$C</em>{01}$和$C_{10}$为两种不同的误分类代价，当两者相等时为代价不敏感的学习问题。二者不等时即为代价敏感学习问题。<br>&emsp;&emsp;基于代价矩阵$C$的分析，代价敏感学习方法主要有以下三种实现方式，分别是：</p>
+<ol>
+<li>从学习模型出发，着眼于对某一具体学习方法的改造，使之能适应不平衡数据下的学习，研究者们针对不同的学习模型如感知机，支持向量机，决策树，神经网络等分别提出了其代价敏感的版本。以代价敏感的决策树为例，可从以下方面对其进行改进以适应不平衡数据的学习，分别是决策阈值的选择、分裂标准的选择、剪枝，在上述三个步骤中都可以将代价矩阵引入，即可解决类别不平衡问题。</li>
+<li>从贝叶斯风险理论出发，把代价敏感学习看成是分类结果的一种后处理，按照传统方法学习到一个模型，以实现损失最小为目标对结果进行调整。此方法的优点在于它可以不依赖所用具体的分类器，但是缺点也很明显它要求分类器输出值为概率。</li>
+<li>从预处理的角度出发，将代价用于权重的调整，使得分类器满足代价敏感的特性。</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>感谢果冻君，受益匪浅！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-qrd.png" alt="摇摇果冻 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-qcode.jpg" alt="摇摇果冻 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag">#Machine Learning</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/deep-learning/深度学习与浅层神经网络的不同之处.html" rel="next" title="深度学习与浅层神经网络的不同之处">
+                <i class="fa fa-chevron-left"></i> 深度学习与浅层神经网络的不同之处
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="machine-learning/机器学习算法笔记——类别不均衡问题.html"
+     data-title="机器学习算法笔记——类别不均衡问题"
+     data-content=""
+     data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——类别不均衡问题.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="machine-learning/机器学习算法笔记——类别不均衡问题.html"
+           data-title="机器学习算法笔记——类别不均衡问题" data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——类别不均衡问题.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/don't-fear.jpg"
+               alt="摇摇果冻" />
+          <p class="site-author-name" itemprop="name">摇摇果冻</p>
+          <p class="site-description motion-element" itemprop="description">Nothing but practice</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jellyyoung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2685489433" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/yao-yao-guo-dong" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com" title="Github" target="_blank">Github</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://leetcode.com" title="Leetcode" target="_blank">Leetcode</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.nowcoder.com" title="牛客网" target="_blank">牛客网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.kaggle.com/competitions" title="Kaggle" target="_blank">Kaggle</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩大数据集"><span class="nav-number">1.</span> <span class="nav-text">扩大数据集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#采样（随机采样）"><span class="nav-number">2.</span> <span class="nav-text">采样（随机采样）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新数据"><span class="nav-number">3.</span> <span class="nav-text">生成新数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类别不平衡问题的评价指标"><span class="nav-number">4.</span> <span class="nav-text">类别不平衡问题的评价指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转换问题的思考角度"><span class="nav-number">5.</span> <span class="nav-text">转换问题的思考角度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尝试不同算法"><span class="nav-number">6.</span> <span class="nav-text">尝试不同算法</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">摇摇果冻</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jellyyoung"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("FMr7sWjQxkJp3Cryj0InKhSH-gzGzoHsz", "MM5zwP9a10uxjJHqpLRtlyQF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
