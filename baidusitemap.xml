@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://yaodong.ml/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%EF%BC%88Random-Forest%EF%BC%89.html</loc>
-    <lastmod>2017-04-13T05:37:25.403Z</lastmod>
+    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Boosting%20&%20Adaboosting.html</loc>
+    <lastmod>2017-04-13T05:43:56.807Z</lastmod>
     <data>
         <display>
-        <title>机器学习算法笔记——随机森林（Random Forest）</title>
-        <pubTime>2017-02-13T05:36:30.000Z</pubTime>
+        <title>机器学习算法笔记——Boosting & Adaboosting</title>
+        <pubTime>2017-02-21T06:29:46.000Z</pubTime>
         
         <tag>Machine Learning</tag>
          
@@ -23,16 +23,42 @@
     </url>
 
     
+    
+  <url>
+    <loc>http://yaodong.ml/algorithms/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A0%86%E4%B8%8E%E5%A0%86%E6%8E%92%E5%BA%8F.html</loc>
+    <lastmod>2017-04-13T05:39:23.504Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法之堆与堆排序</title>
+        <pubTime>2017-01-05T06:19:24.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%EF%BC%88Random-Forest%EF%BC%89.html</loc>
-    <lastmod>2017-04-13T05:37:08.662Z</lastmod>
+    <lastmod>2017-04-13T05:37:25.403Z</lastmod>
     <data>
         <display>
         <title>机器学习算法笔记——随机森林（Random Forest）</title>
         <pubTime>2017-02-13T05:36:30.000Z</pubTime>
         
+        <tag>Machine Learning</tag>
+         
          
            
+             
+              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
         </display>
     </data>
     </url>
@@ -79,7 +105,7 @@
 
     
   <url>
-    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%EF%BC%88Probabilistic-Graphical-Model%EF%BC%89%EF%BC%89.html</loc>
+    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%EF%BC%88Probabilistic-Graphical-Model%EF%BC%89.html</loc>
     <lastmod>2017-04-13T05:30:05.049Z</lastmod>
     <data>
         <display>
@@ -105,26 +131,6 @@
         <display>
         <title>机器学习中的特征选择方法总结</title>
         <pubTime>2017-02-13T05:21:07.000Z</pubTime>
-        
-        <tag>Machine Learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Boosting%20&%20Adaboosting.html</loc>
-    <lastmod>2017-04-13T05:24:25.283Z</lastmod>
-    <data>
-        <display>
-        <title>机器学习算法笔记——AdaBoosting算法</title>
-        <pubTime>2017-01-21T06:29:46.000Z</pubTime>
         
         <tag>Machine Learning</tag>
          
@@ -279,26 +285,6 @@
 
     
   <url>
-    <loc>http://yaodong.ml/algorithms/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A0%86%E4%B8%8E%E5%A0%86%E6%8E%92%E5%BA%8F.html</loc>
-    <lastmod>2017-03-21T06:21:06.954Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法之堆与堆排序</title>
-        <pubTime>2017-01-05T06:19:24.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习笔记" url="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yaodong.ml/articles/Window%E4%B8%8Bpython%E7%9A%84Xgboost%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.html</loc>
     <lastmod>2017-03-14T07:32:12.510Z</lastmod>
     <data>
@@ -368,9 +354,9 @@
         <title>17个适合练手的数据科学项目数据集</title>
         <pubTime>2015-11-15T17:03:40.000Z</pubTime>
         
-        <tag>Machine Learning</tag>
-         
         <tag>机器学习</tag>
+         
+        <tag>Machine Learning</tag>
          
         <tag>数据集</tag>
          
@@ -544,9 +530,9 @@
         <title>Machine Learning算法笔记——特征工程</title>
         <pubTime>2017-01-03T08:48:47.000Z</pubTime>
         
-        <tag>Machine Learning</tag>
-         
         <tag>机器学习</tag>
+         
+        <tag>Machine Learning</tag>
          
          
            
@@ -615,7 +601,6 @@
     </data>
     </url>
 
-    
     
     
   <url>

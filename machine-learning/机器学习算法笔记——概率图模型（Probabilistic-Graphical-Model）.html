@@ -88,16 +88,16 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。">
+<meta name="description" content="&amp;emsp;&amp;emsp;概率图模型（Probabilistic Graphical Model）学习笔记总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习算法笔记——AdaBoosting算法">
-<meta property="og:url" content="http://yaodong.ml/machine-learning/机器学习算法笔记——AdaBoosting算法.html">
+<meta property="og:title" content="机器学习算法笔记——概率图模型（Probabilistic Graphical Model）">
+<meta property="og:url" content="http://yaodong.ml/machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html">
 <meta property="og:site_name" content="Jellyyoung's Blog">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。">
-<meta property="og:updated_time" content="2017-03-21T06:46:03.466Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;概率图模型（Probabilistic Graphical Model）学习笔记总结。">
+<meta property="og:updated_time" content="2017-04-13T05:30:05.049Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习算法笔记——AdaBoosting算法">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。">
+<meta name="twitter:title" content="机器学习算法笔记——概率图模型（Probabilistic Graphical Model）">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;概率图模型（Probabilistic Graphical Model）学习笔记总结。">
 
 
 
@@ -118,10 +118,10 @@
 
 
 
-  <link rel="canonical" href="http://yaodong.ml/machine-learning/机器学习算法笔记——AdaBoosting算法.html"/>
+  <link rel="canonical" href="http://yaodong.ml/machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html"/>
 
 
-  <title> 机器学习算法笔记——AdaBoosting算法 | Jellyyoung's Blog </title>
+  <title> 机器学习算法笔记——概率图模型（Probabilistic Graphical Model） | Jellyyoung's Blog </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +280,7 @@
             
             
               
-                机器学习算法笔记——AdaBoosting算法
+                机器学习算法笔记——概率图模型（Probabilistic Graphical Model）
               
             
           </h1>
@@ -292,8 +292,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-01-21T14:29:46+08:00" content="2017-01-21">
-              2017-01-21
+            <time itemprop="dateCreated" datetime="2017-02-13T13:26:41+08:00" content="2017-02-13">
+              2017-02-13
             </time>
           </span>
 
@@ -322,8 +322,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/machine-learning/机器学习算法笔记——AdaBoosting算法.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——AdaBoosting算法.html" itemprop="commentsCount"></span>
+                <a href="/machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -333,7 +333,7 @@
 
           
           
-             <span id="/machine-learning/机器学习算法笔记——AdaBoosting算法.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——AdaBoosting算法">
+             <span id="/machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——概率图模型（Probabilistic Graphical Model）">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,31 +355,8 @@
       
 
       
-        <p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。<br><a id="more"></a><br>&emsp;&emsp;AdaBoosting算法的损失函数是指数函数。回忆一下，机器学习算法中，常见的损失函数有0-1损失函数、对数似然损失函数、均方误差函数、Hinge函数、指数损失函数等。</p>
-<p>&emsp;&emsp;下面对AdaBoosting算法作简单推导。给定样本数据集$S={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$。</p>
-<ol>
-<li>初始化数据集的样本权值分布<script type="math/tex; mode=display">D=(w_{11},...,w_{1i},...,w_{1n})</script>其中$w_{1i}=\frac{1}{m},i=1,2,…,m$。</li>
-<li><p>训练$m$个基学习器：<br><strong>1)</strong> 对于第$i$个样本，根据当前的样本权值分布$D_m$，求得基分类器$G_m(x)$，其中$G_m(x)\in {-1,+1}$；<br><strong>2)</strong> 并求得$G_m(x)$在训练数据集上的带权分类误差率：</p>
-<script type="math/tex; mode=display">e_m=P(G_m(x^{(i)})≠y^{(i)})=\sum_{i=1}^{m}w_{mi}I(G_m(x^{(i)})≠y^{(i)})</script><p><strong>3)</strong> 接下来计算$G_m(x)$的系数$\alpha_m$，$\alpha_m$表示第m个基学习器在最终的组合学习器中的比重：</p>
-<script type="math/tex; mode=display">\alpha_m=\frac{1}{2}log\frac{1-e_m}{e_m}</script><p>很显然，$\alpha_m$随着$e_m$的增大而减小，所以分类误差率越小的基学习器在最终的组合模型中占的比重越大。<br><strong>4)</strong> 更新样本权值分布向量：</p>
-<script type="math/tex; mode=display">D_{m+1} = (w_{m+1,1},...,w_{m+1,n})</script><script type="math/tex; mode=display">w_{m+1,i}=\frac {w_{mi}}{Z_m}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>这里$Z<em>m$是规范化因子，目的是将$D</em>{m+1}$进行归一化，使得$D_{m+1}$符合概率分布的归一性，$Z_m$由以下公式给出：</p>
-<script type="math/tex; mode=display">Z_m=\sum_{i=1}^Nw_{mi}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>根据$w_{m+1,i}$的表达式可知，被$G_m(x)$分类器误分类的样本的权值得以扩大，而被$G_m(x)$正确分类的样本的权值会缩小。因此，误分类样本在下一次的基学习器训练中起到更大的作用。这个<strong>不改变训练数据，而改变训练数据的权值分布，正是AdaBoost方法的重要特点</strong>。</p>
-</li>
-<li><p>步骤2中求得了m个基学习器的权值分布，将这m个基学习器组合起来，构成最终的组合学习器：</p>
-<script type="math/tex; mode=display">f_{(x)}=\sum_{m=1}^{M}\alpha_mG_{m}(x)</script><script type="math/tex; mode=display">G_{(x)}=sign\left((f(x)\right)=sign\left(\sum_{m=1}^{M}\alpha_mG_{m}(x))\right)</script><p><strong>注意</strong>，所有的$\alpha_m$相加之和并不等于1。</p>
-</li>
-</ol>
-<hr>
-<h3 id="梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）"><a href="#梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）" class="headerlink" title="梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）"></a>梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）</h3><blockquote>
-<p><strong>GBDT</strong>是一个应用很广泛的算法，可以用于解决分类、回归等问题。GBDT算法也有其他的名字，如MART(Multiple Additive Regression Tree)，GBRT(Gradient Boost Regression Tree)，Tree Net等。</p>
-</blockquote>
-<p>&emsp;&emsp;首先介绍一下Gradient Boosting的基本概念。Gradient Boost其实是一个框架，可以套入很多不同的算法以对穿传统的机器学习算法进行改进。当损失函数不是平方损失函数或者指数损失函数，而是一般函数时，boost算法对损失函数的求解和优化会变得比较复杂，针对这一问题，学者提出了Gradient Boosting算法。核心思想是利用损失函数的负梯度在当前模型下的取值作为残差的近似，进一步训练得到下一棵回归树。<br>&emsp;&emsp;回忆一下原始的Boosting算法：算法初始状态下，为每一个样本赋上大小相等的权重值。在之后迭代的每一步中增加被误分类的样本的权重，减少正确分类的样本的权重，使得被误分类的样本被赋上一个很高的权重。进行M次迭代训练，将得到M个基学习器，最后将它们根据指定的策略组合起来，得到一个最终的模型。<br>&emsp;&emsp;GBDT中的树都是回归树，不是分类树，但是对GBDT模型调整后可以用于分类问题。GBDT的核心在于，每一棵子树学习的是之前所有树的预测结果与实际观测值之间的残差。Gradient Boosting就是拟合Loss function的梯度，将其作为新的弱回归树加入到总的算法中即可。<br>&emsp;&emsp;Gradient Boost与传统的Boost的区别是，Gradient Boot算法每次的计算是为了减小上一次的残差（residual）。为了消除残差，可以取损失函数的负梯度在当前模型上的取值作为当前残差的近似值，并拟合下一个子树模型。所以说，在Gradient Boost中，每个新子树模型的建立会使之前模型的残差往梯度方向减少，与传统Boosting算法对正确、错误的样本进行加权有着很大的区别。</p>
-<p>&emsp;&emsp;GBDT的算法流程如下：给定样本数据集$T={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，损失函数为$L(y,f(x))$，设生成的子树的数目是K。</p>
-<ol>
-<li>初始化第一课子树，估计使损失函数最小化的常数值，建立只有一个根结点的树：<script type="math/tex; mode=display">f_0(x)=\arg\min_c\sum_{i=1}^{m}L(y^{(i)},c)</script></li>
-<li>对k=1,2,…,K:<br><strong>1)</strong> 对i=1,2,…,m，计算当前损失函数的负梯度在当前模型的值，作为模型残差的估计：<script type="math/tex; mode=display">g_{ki}=\left[\frac{\partial L(y^{(i)},f(x^{(i)}))}{\partial f(x^{(i)})}\right]_{f(x)=f_{k-1}(x)}</script><strong>2)</strong> 根据$r<em>{ki}$拟合一个回归树，作为下一个子树模型，估计回归树的叶节点对区域$R</em>{kj}$,$j=1,2,…,J$，以拟合残差的近似值：<br><strong>3)</strong> 利用线性搜索估计叶节点区域的值，使损失函数最小化。对$j=1,2,…,J$，计算<script type="math/tex; mode=display">c_{mj}=\arg\min_c\sum_{x_i \in R_{kj}}L(y^{(i)},f_{k-1}(x^{(i)})+c)</script><strong>4)</strong> 更新第k个子回归树模型<script type="math/tex; mode=display">f_k(x)=f_{k-1}(x)+\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
-<li>得到回归树<script type="math/tex; mode=display">\hat f(x)=f_{K}(x)=\sum_{k=1}^{K}\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
-</ol>
+        <p>&emsp;&emsp;概率图模型（Probabilistic Graphical Model）学习笔记总结。<br><a id="more"></a><br>&emsp;&emsp;常见的机器学习算法模型一般分为两类：判别模型和生成模型，二者都属于概率模型。机器学习、深度学习的实质是根据给定的训练样本数据来对位置变量进行估计和预测，概率模型将模型的学习任务归结于计算未知变量的概率分布。概率模型中，主要任务是基于可观测变量，即已知的样本数据集，去推测未知变量的条件分布，这称为“推断”（Inference）。<br>当模型中含有隐变量时，假定目标变量集合为$Y$，可观测变量集合为$X$，隐变量集合为$Z$，生成模型考虑模型的联合分布概率$P(X,Z,Y)$，判别式模型考虑条件概率分布$P(Y,Z|X)$。给定具体的样本数据集，推断就是要由$P(X,Z,Y)$或$P(Y,Z|X)$得到条件概率分布$P(Y|X)$，进而对目标变量进行估计和预测。<br>&emsp;&emsp;当模型中含有隐变量时，概率模型的求解往往比较困难。概率图模型很好地解决了这个问题。</p>
+<h3 id="概率图模型"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型</h3><p>&emsp;&emsp;概率图模型主要分为两类，第一类是使用有向图（无环）表示变量间的依赖关系，称为有向图模型或者<strong>贝叶斯网络</strong>（Bayes Network），第二类是使用无向图表示变量间的相关关系，称为无向图模型或者<strong>马尔科夫网</strong>（Markov Netowork）。</p>
 
       
     </div>
@@ -432,16 +409,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/machine-learning/机器学习算法笔记——偏差与方差.html" rel="next" title="机器学习算法笔记——偏差与方差">
-                <i class="fa fa-chevron-left"></i> 机器学习算法笔记——偏差与方差
+              <a href="/machine-learning/机器学习中的特征选择方法总结.html" rel="next" title="机器学习中的特征选择方法总结">
+                <i class="fa fa-chevron-left"></i> 机器学习中的特征选择方法总结
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/machine-learning/机器学习算法笔记——集成学习（Ensemble-Learning）.html" rel="prev" title="机器学习算法笔记——集成学习（Ensemble Learning）">
-                机器学习算法笔记——集成学习（Ensemble Learning） <i class="fa fa-chevron-right"></i>
+              <a href="/machine-learning/机器学习算法笔记——GBDT-XGBoost.html" rel="prev" title="机器学习算法笔记——GBDT & XGBoost">
+                机器学习算法笔记——GBDT & XGBoost <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -457,10 +434,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="machine-learning/机器学习算法笔记——AdaBoosting算法.html"
-     data-title="机器学习算法笔记——AdaBoosting算法"
+        <div class="ds-share flat" data-thread-key="machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html"
+     data-title="机器学习算法笔记——概率图模型（Probabilistic Graphical Model）"
      data-content=""
-     data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——AdaBoosting算法.html">
+     data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -487,8 +464,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="machine-learning/机器学习算法笔记——AdaBoosting算法.html"
-           data-title="机器学习算法笔记——AdaBoosting算法" data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——AdaBoosting算法.html">
+      <div class="ds-thread" data-thread-key="machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html"
+           data-title="机器学习算法笔记——概率图模型（Probabilistic Graphical Model）" data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model）.html">
       </div>
     
   </div>
@@ -533,7 +510,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">30</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -641,7 +618,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）"><span class="nav-number">1.</span> <span class="nav-text">梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概率图模型"><span class="nav-number">1.</span> <span class="nav-text">概率图模型</span></a></li></ol></div>
             
           </div>
         </section>

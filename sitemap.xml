@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yaodong.ml/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%EF%BC%88Random-Forest%EF%BC%89.html</loc>
+    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Boosting%20&%20Adaboosting.html</loc>
     
-    <lastmod>2017-04-13T05:37:25.403Z</lastmod>
+    <lastmod>2017-04-13T05:43:56.807Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/about/index.html</loc>
+    
+    <lastmod>2017-04-13T05:41:25.062Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yaodong.ml/algorithms/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A0%86%E4%B8%8E%E5%A0%86%E6%8E%92%E5%BA%8F.html</loc>
+    
+    <lastmod>2017-04-13T05:39:23.504Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%EF%BC%88Random-Forest%EF%BC%89.html</loc>
     
-    <lastmod>2017-04-13T05:37:08.662Z</lastmod>
+    <lastmod>2017-04-13T05:37:25.403Z</lastmod>
     
   </url>
   
@@ -30,7 +44,7 @@
   </url>
   
   <url>
-    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%EF%BC%88Probabilistic-Graphical-Model%EF%BC%89%EF%BC%89.html</loc>
+    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%EF%BC%88Probabilistic-Graphical-Model%EF%BC%89.html</loc>
     
     <lastmod>2017-04-13T05:30:05.049Z</lastmod>
     
@@ -40,13 +54,6 @@
     <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html</loc>
     
     <lastmod>2017-04-13T05:24:38.487Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Boosting%20&%20Adaboosting.html</loc>
-    
-    <lastmod>2017-04-13T05:24:25.283Z</lastmod>
     
   </url>
   
@@ -96,13 +103,6 @@
     <loc>http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%AD%A3%E5%88%99%E5%8C%96%E3%80%81%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81.html</loc>
     
     <lastmod>2017-03-21T06:24:16.655Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/algorithms/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E5%A0%86%E4%B8%8E%E5%A0%86%E6%8E%92%E5%BA%8F.html</loc>
-    
-    <lastmod>2017-03-21T06:21:06.954Z</lastmod>
     
   </url>
   
@@ -208,13 +208,6 @@
     <loc>http://yaodong.ml/writings/%E4%B8%8D%E5%BF%98%E5%88%9D%E5%BF%83%EF%BC%8C%E6%9C%AA%E6%9D%A5%E5%8F%AF%E6%9C%9F%E2%80%94%E2%80%942017%E5%90%AF%E7%AC%94.html</loc>
     
     <lastmod>2017-03-14T06:53:14.794Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yaodong.ml/about/index.html</loc>
-    
-    <lastmod>2017-01-02T06:52:10.705Z</lastmod>
     
   </url>
   
