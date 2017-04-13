@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yaodong.ml/"/>
-  <updated>2017-03-21T06:41:46.696Z</updated>
+  <updated>2017-04-13T05:37:25.403Z</updated>
   <id>http://yaodong.ml/</id>
   
   <author>
@@ -14,6 +14,263 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习算法笔记——随机森林（Random Forest）</title>
+    <link href="http://yaodong.ml/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%EF%BC%88Random-Forest%EF%BC%89.html"/>
+    <id>http://yaodong.ml/机器学习算法笔记——随机森林（Random-Forest）.html</id>
+    <published>2017-02-13T05:36:30.000Z</published>
+    <updated>2017-04-13T05:37:25.403Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;随机森林算法学习笔记总结。<br><a id="more"></a><br>&emsp;&emsp;随机森林由许多的决策树组成，这些决策树的形成采用了“随机”的方法，所以叫做随机森林。随机森林中的决策树之间是没有关联的。<br>&emsp;&emsp;随机森林中的所有树都使用同样的训练参数。但是每个决策树的训练集是不同的，每个决策树的错误估计采用OOB（Out of Bag）的方法。</p>
+<h3 id="Bagging方法"><a href="#Bagging方法" class="headerlink" title="Bagging方法"></a>Bagging方法</h3><p>&emsp;&emsp;Bagging方法就是将所有training data放进一个“黑色”的bag中，然后从这个bag中随机抽取部分数据生成新的训练集。随机森林算法中，样本训练集本省可以使用bagging方法，同样，样本的feature也可以进行bagging。从随机性来看，bagging技术可以有效的减小方差，即减小过拟合程度<br>&emsp;&emsp;随机森林是一种经典而强大的机器学习算法，具有回归和分类的功能。随机森林算法由若干决策树组成，这些决策树一般采用随机的方法生成，因此也叫做随机决策树。随机森林算法中的各决策树之间是没有关联的。</p>
+<h3 id="Bootstrap抽样"><a href="#Bootstrap抽样" class="headerlink" title="Bootstrap抽样"></a>Bootstrap抽样</h3><p>&emsp;&emsp;随机森林算法中包含了对输入数据的重复自抽样过程，即所谓的bootstrap抽样。大约三分之一的数据集将用于测试而不是模型的训练，这样的数据被称为out of bag samples。<br>&emsp;&emsp;bootstrap抽样与bagging的区别是：在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。<br>&emsp;&emsp;综上可知，随机森林算法的的两个随机采样的过程保证了随机性，所以即使对最终的各决策树不剪枝，也不会出现over-fitting。</p>
+<h3 id="随机采样"><a href="#随机采样" class="headerlink" title="随机采样"></a>随机采样</h3><p>&emsp;&emsp;随机森林的随机体现在两个方面：数据集的<strong>行随机采样</strong>和<strong>列随机采样</strong>。行随机采样采用<strong>Bootstraping</strong>的方法对训练数据集进行又放回抽样。列随机采样指的是从所有$M$个特征属性中随机选择$m$个属性，同时保证$m &lt;&lt; M$。相当于把$M$维特征做了低维度的投影。减小特征选择的数量$m$，决策树之间的相关性和决策树的分类能力也会相应的降低；增大m，决策树之间的相关性和决策树的分类能力也会随之增大。<br>&emsp;&emsp;随机采样的后果是生成的每一个决策树的分类能力都很有限，但是将这些性能有限的决策树组合在一起的模型的性能就大大加强了。随机森林的最后结果是由多个决策树的训练结果进行加权组合而得到。</p>
+<h3 id="完全分裂"><a href="#完全分裂" class="headerlink" title="完全分裂"></a>完全分裂</h3><p>&emsp;&emsp;随机森林建立决策树的过程不考虑决策树是否会发生过拟合。也就是说，随机森林对采样之后的数据采用完全分裂的方式建立决策树，因此，决策树的某一个叶子结点要么是无法继续分裂的，要么对应的所有样本都属于同一类。再次强调，<strong>随机森林中的两个“随机采样”充分保证了样本的随机性，因此即使不剪枝，也不会出现过拟合</strong>。</p>
+<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><ol>
+<li>通过自助法（bootstrap）重采样技术，从原始训练样本集中有放回地重复随机抽取N个样本生成新的训练样本集合</li>
+<li>对随机采样得到的新训练数据集，构建决策树，在每个节点执行以下操作：</li>
+</ol>
+<ul>
+<li>从样本数据的M个features中随机选取m($m&lt;&lt;M$)个feature</li>
+<li>对这m个features，选择特定的度量准则分割节点</li>
+<li>重复上述操作N次，从而生成与样本数量相等的决策树</li>
+</ul>
+<ol>
+<li>对于每一个测试样例，对k颗决策树的预测结果进行投票。票数最多的结果就是随机森林的分裂（预测）结果</li>
+</ol>
+<h3 id="特征重要性度量"><a href="#特征重要性度量" class="headerlink" title="特征重要性度量"></a>特征重要性度量</h3><p>&emsp;&emsp;随机森林能够计算特征的重要性，因此随机森林可用于特征选择。<br>&emsp;&emsp;随机森林算法中特征$X$的重要性的计算方法如下：</p>
+<ol>
+<li>对于随机森林中的每一棵决策树，输入都是经bootstrap采样的随机采样数据，使用OOB数据计算当前决策树模型的袋外错误率，记为$errorOOB1$</li>
+<li>对每棵决策树的OOB数据的特征$X$加入噪声干扰，再次计算OOB错误率，记为$errorOOB2$</li>
+<li>特征$X$的重要性可通过以下公式来衡量：<script type="math/tex; mode=display">X\_importacne = \frac{1}{N}\sum_{i=1}^{N}(errorOOB2 - errorOOB1)</script>&emsp;&emsp;不难理解，对于同一棵决策树来说，如果对特征$X$加入噪声干扰后，$errorOOB2$如果大幅度降低，说明该特征对样本的分类结果影响很大，即特征更重要。</li>
+</ol>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>&emsp;&emsp;随机森林算法有以下优点：</p>
+<ul>
+<li>属于集成学习模型，适合多分类模型，训练和预测速度快，在数据集上表现良好</li>
+<li>对训练数据的容错能力强，即使训练数据中有缺失值，仍然可以保持预测精度不变</li>
+<li>随机森林在分类的过程中，对generlization error使用的是内部无偏估计</li>
+<li>能够在训练过程中检测到特征之间的相互影响以及各个特征的重要性程度</li>
+<li>随机采样和特征属性采样保证了算法不易出现过度拟合</li>
+<li>算法训练速度快，方便并行实现</li>
+<li>适合用于多分类问题，算法训练和预测速度快，容易实现并行化</li>
+<li>可有效估计缺失数据，即有一定程度的数据容错能力，当数据集中有大比例的数据缺失时仍然可以保持精度不变和能够有效地处理大的数据集</li>
+<li>不会出现过拟合</li>
+<li>能够处理很高维度（feature很多）的数据，并且不用做特征选择</li>
+<li>对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
+<li>可检测样本的各特征（维度）之间的相互影响程度，判断特征对所解决问题的重要性程度</li>
+<li>可直接处理大规模的的变量（群）</li>
+<li>在创建森林即分类的过程中，对泛化误差的估计是内部无偏估计</li>
+<li>随机森林算法也是一种数据降维的方法，用于处理缺失值、异常值</li>
+<li><h3 id="scikit-learn中的Random-Forest算法"><a href="#scikit-learn中的Random-Forest算法" class="headerlink" title="scikit-learn中的Random Forest算法"></a>scikit-learn中的Random Forest算法</h3>参考代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sklearn.ensemble.RandomForestClassfier</div><div class="line">clf = RandomForestClassifier([parameters]) <span class="comment">#generator the entity object of classifier</span></div><div class="line">parameters:</div><div class="line">n_estimators：指定随机森林中树的数目，越多越好，不超过内存即可</div><div class="line">criterion:指定在分裂使用的决策算法，取值有“entropy”、“gini”等</div><div class="line">max_features:单个决策树使用特征的最大数量，取值为<span class="string">"Auto"</span>，<span class="string">"None"</span>，<span class="string">"sqrt"</span>，<span class="string">"0.X"</span>。回归问题，max_features=n_features,分类问题，max_features=sqrt(n_features),<span class="string">"sqrt"</span>即为全部特征数目的平均根</div><div class="line">max_depth:默认为<span class="keyword">None</span>，一般可不改动</div><div class="line">min_simples_split:</div><div class="line">min_samples_leaf:最小叶片大小。默认值为<span class="number">1</span>，可设置为<span class="number">50</span>。叶是决策树的末端节点，较小的叶子使模型更容易捕捉训练数据中的噪声。</div><div class="line">min_weight_fraction_leaf:</div><div class="line">max_leaf_nodes:</div><div class="line">min_impurity_split:</div><div class="line">bootstrap:</div><div class="line">oob_score:这是一个随机森林交叉验证方法，取值为boolean类型，<span class="string">"True"</span>,<span class="string">"False"</span></div><div class="line">n_jobs:指定并行训练时使用的进程数。“<span class="number">-1</span>”表示使用所有处理器</div><div class="line">random_state:经验值<span class="string">"random_state=50"</span></div><div class="line">verbose:</div><div class="line">warm_state:</div><div class="line">class_weight:</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;随机森林算法学习笔记总结。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://yaodong.ml/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习算法笔记——随机森林（Random Forest）</title>
+    <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%EF%BC%88Random-Forest%EF%BC%89.html"/>
+    <id>http://yaodong.ml/machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html</id>
+    <published>2017-02-13T05:36:30.000Z</published>
+    <updated>2017-04-13T05:37:08.662Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;随机森林算法学习笔记总结。<br><a id="more"></a><br>&emsp;&emsp;随机森林由许多的决策树组成，这些决策树的形成采用了“随机”的方法，所以叫做随机森林。随机森林中的决策树之间是没有关联的。<br>&emsp;&emsp;随机森林中的所有树都使用同样的训练参数。但是每个决策树的训练集是不同的，每个决策树的错误估计采用OOB（Out of Bag）的方法。</p>
+<h3 id="Bagging方法"><a href="#Bagging方法" class="headerlink" title="Bagging方法"></a>Bagging方法</h3><p>&emsp;&emsp;Bagging方法就是将所有training data放进一个“黑色”的bag中，然后从这个bag中随机抽取部分数据生成新的训练集。随机森林算法中，样本训练集本省可以使用bagging方法，同样，样本的feature也可以进行bagging。从随机性来看，bagging技术可以有效的减小方差，即减小过拟合程度<br>&emsp;&emsp;随机森林是一种经典而强大的机器学习算法，具有回归和分类的功能。随机森林算法由若干决策树组成，这些决策树一般采用随机的方法生成，因此也叫做随机决策树。随机森林算法中的各决策树之间是没有关联的。</p>
+<h3 id="Bootstrap抽样"><a href="#Bootstrap抽样" class="headerlink" title="Bootstrap抽样"></a>Bootstrap抽样</h3><p>&emsp;&emsp;随机森林算法中包含了对输入数据的重复自抽样过程，即所谓的bootstrap抽样。大约三分之一的数据集将用于测试而不是模型的训练，这样的数据被称为out of bag samples。<br>&emsp;&emsp;bootstrap抽样与bagging的区别是：在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。<br>&emsp;&emsp;综上可知，随机森林算法的的两个随机采样的过程保证了随机性，所以即使对最终的各决策树不剪枝，也不会出现over-fitting。</p>
+<h3 id="随机采样"><a href="#随机采样" class="headerlink" title="随机采样"></a>随机采样</h3><p>&emsp;&emsp;随机森林的随机体现在两个方面：数据集的<strong>行随机采样</strong>和<strong>列随机采样</strong>。行随机采样采用<strong>Bootstraping</strong>的方法对训练数据集进行又放回抽样。列随机采样指的是从所有$M$个特征属性中随机选择$m$个属性，同时保证$m &lt;&lt; M$。相当于把$M$维特征做了低维度的投影。减小特征选择的数量$m$，决策树之间的相关性和决策树的分类能力也会相应的降低；增大m，决策树之间的相关性和决策树的分类能力也会随之增大。<br>&emsp;&emsp;随机采样的后果是生成的每一个决策树的分类能力都很有限，但是将这些性能有限的决策树组合在一起的模型的性能就大大加强了。随机森林的最后结果是由多个决策树的训练结果进行加权组合而得到。</p>
+<h3 id="完全分裂"><a href="#完全分裂" class="headerlink" title="完全分裂"></a>完全分裂</h3><p>&emsp;&emsp;随机森林建立决策树的过程不考虑决策树是否会发生过拟合。也就是说，随机森林对采样之后的数据采用完全分裂的方式建立决策树，因此，决策树的某一个叶子结点要么是无法继续分裂的，要么对应的所有样本都属于同一类。再次强调，<strong>随机森林中的两个“随机采样”充分保证了样本的随机性，因此即使不剪枝，也不会出现过拟合</strong>。</p>
+<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><ol>
+<li>通过自助法（bootstrap）重采样技术，从原始训练样本集中有放回地重复随机抽取N个样本生成新的训练样本集合</li>
+<li>对随机采样得到的新训练数据集，构建决策树，在每个节点执行以下操作：</li>
+</ol>
+<ul>
+<li>从样本数据的M个features中随机选取m($m&lt;&lt;M$)个feature</li>
+<li>对这m个features，选择特定的度量准则分割节点</li>
+<li>重复上述操作N次，从而生成与样本数量相等的决策树</li>
+</ul>
+<ol>
+<li>对于每一个测试样例，对k颗决策树的预测结果进行投票。票数最多的结果就是随机森林的分裂（预测）结果</li>
+</ol>
+<h3 id="特征重要性度量"><a href="#特征重要性度量" class="headerlink" title="特征重要性度量"></a>特征重要性度量</h3><p>&emsp;&emsp;随机森林能够计算特征的重要性，因此随机森林可用于特征选择。<br>&emsp;&emsp;随机森林算法中特征$X$的重要性的计算方法如下：</p>
+<ol>
+<li>对于随机森林中的每一棵决策树，输入都是经bootstrap采样的随机采样数据，使用OOB数据计算当前决策树模型的袋外错误率，记为$errorOOB1$</li>
+<li>对每棵决策树的OOB数据的特征$X$加入噪声干扰，再次计算OOB错误率，记为$errorOOB2$</li>
+<li>特征$X$的重要性可通过以下公式来衡量：<script type="math/tex; mode=display">X\_importacne = \frac{1}{N}\sum_{i=1}^{N}(errorOOB2 - errorOOB1)</script>&emsp;&emsp;不难理解，对于同一棵决策树来说，如果对特征$X$加入噪声干扰后，$errorOOB2$如果大幅度降低，说明该特征对样本的分类结果影响很大，即特征更重要。</li>
+</ol>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>&emsp;&emsp;随机森林算法有以下优点：</p>
+<ul>
+<li>属于集成学习模型，适合多分类模型，训练和预测速度快，在数据集上表现良好</li>
+<li>对训练数据的容错能力强，即使训练数据中有缺失值，仍然可以保持预测精度不变</li>
+<li>随机森林在分类的过程中，对generlization error使用的是内部无偏估计</li>
+<li>能够在训练过程中检测到特征之间的相互影响以及各个特征的重要性程度</li>
+<li>随机采样和特征属性采样保证了算法不易出现过度拟合</li>
+<li>算法训练速度快，方便并行实现</li>
+<li>适合用于多分类问题，算法训练和预测速度快，容易实现并行化</li>
+<li>可有效估计缺失数据，即有一定程度的数据容错能力，当数据集中有大比例的数据缺失时仍然可以保持精度不变和能够有效地处理大的数据集</li>
+<li>不会出现过拟合</li>
+<li>能够处理很高维度（feature很多）的数据，并且不用做特征选择</li>
+<li>对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
+<li>可检测样本的各特征（维度）之间的相互影响程度，判断特征对所解决问题的重要性程度</li>
+<li>可直接处理大规模的的变量（群）</li>
+<li>在创建森林即分类的过程中，对泛化误差的估计是内部无偏估计</li>
+<li>随机森林算法也是一种数据降维的方法，用于处理缺失值、异常值</li>
+<li><h3 id="scikit-learn中的Random-Forest算法"><a href="#scikit-learn中的Random-Forest算法" class="headerlink" title="scikit-learn中的Random Forest算法"></a>scikit-learn中的Random Forest算法</h3>参考代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sklearn.ensemble.RandomForestClassfier</div><div class="line">clf = RandomForestClassifier([parameters]) <span class="comment">#generator the entity object of classifier</span></div><div class="line">parameters:</div><div class="line">n_estimators：指定随机森林中树的数目，越多越好，不超过内存即可</div><div class="line">criterion:指定在分裂使用的决策算法，取值有“entropy”、“gini”等</div><div class="line">max_features:单个决策树使用特征的最大数量，取值为<span class="string">"Auto"</span>，<span class="string">"None"</span>，<span class="string">"sqrt"</span>，<span class="string">"0.X"</span>。回归问题，max_features=n_features,分类问题，max_features=sqrt(n_features),<span class="string">"sqrt"</span>即为全部特征数目的平均根</div><div class="line">max_depth:默认为<span class="keyword">None</span>，一般可不改动</div><div class="line">min_simples_split:</div><div class="line">min_samples_leaf:最小叶片大小。默认值为<span class="number">1</span>，可设置为<span class="number">50</span>。叶是决策树的末端节点，较小的叶子使模型更容易捕捉训练数据中的噪声。</div><div class="line">min_weight_fraction_leaf:</div><div class="line">max_leaf_nodes:</div><div class="line">min_impurity_split:</div><div class="line">bootstrap:</div><div class="line">oob_score:这是一个随机森林交叉验证方法，取值为boolean类型，<span class="string">"True"</span>,<span class="string">"False"</span></div><div class="line">n_jobs:指定并行训练时使用的进程数。“<span class="number">-1</span>”表示使用所有处理器</div><div class="line">random_state:经验值<span class="string">"random_state=50"</span></div><div class="line">verbose:</div><div class="line">warm_state:</div><div class="line">class_weight:</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;随机森林算法学习笔记总结。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习算法笔记——GBDT &amp; XGBoost</title>
+    <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94GBDT-XGBoost.html"/>
+    <id>http://yaodong.ml/machine-learning/机器学习算法笔记——GBDT-XGBoost.html</id>
+    <published>2017-02-13T05:27:59.000Z</published>
+    <updated>2017-04-13T05:30:30.932Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;<strong>GBDT</strong>是一个应用很广泛的算法，可以用于解决分类、回归等问题。GBDT算法也有其他的名字，如MART(Multiple Additive Regression Tree)，GBRT(Gradient Boost Regression Tree)，Tree Net等。<br><a id="more"></a><br>&emsp;&emsp;GBDT的全称是Gradient Boosting Decision Tree，即梯度提升决策树。GBDT属于集成学习模型，通过将多个Decision Tree的决策结果迭代累加起来，作为最终的预测输出，进而达到提升模型性能的目的。<br>&emsp;&emsp;需要注意的是，GBDT算法过程中的树都属于回归树，不是分类树。GBDT的核心在于，每一棵子树学习的是之前所有树的预测结果与实际观测值之间的残差。Gradient Boosting就是拟合Loss function的梯度，将其作为新的弱回归树加入到总的算法中即可。</p>
+<h3 id="Gradient-Boosting"><a href="#Gradient-Boosting" class="headerlink" title="Gradient Boosting"></a>Gradient Boosting</h3><p>&emsp;&emsp;首先介绍一下Gradient Boosting的基本概念。Gradient Boosting是一个框架，基于梯度提升算法的学习器叫做<strong>GBM</strong>（Gradient Boosting Machine）。<br>&emsp;&emsp;《统计学习方法》中提到，提升树算法利用加法模型和前向分步算法实现模型的优化过程。但是实际的回归问题中，模型的代价函数（Cost Function）可能不是特殊形式的平方损失函数或指数损失函数等。对于一般形式的损失函数而言，boosting算法对Cost Function的求解和优化会变得比较复杂。Gradient Boosting正是在这样的问题背景下产生，Gradient Boosting的核心思想是迭代生成$K$个具有弱泛化能力的学习器，然后将$K$个弱学习器的预测结果相加，得到最后的预测结果。Gradient Boosting框架中，后续的基学习器$f_{k+1}(x)$都是在前面的基学习器$f_k(x)$的训练效果上得到的，即</p>
+<script type="math/tex; mode=display">f_{m+1}(x)=f_m(x)+h(x)</script><p>&emsp;&emsp;Gradient Boosting算法的流程如下：给定样本数据集$T={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(n)},y^{(n)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，设基学习器的数量为$M$，第$m$个基学习器的损失函数为$L(y,f_m(x))$。</p>
+<ol>
+<li>初始化第一课子树，估计使损失函数最小化的常数值：<script type="math/tex; mode=display">f_0(x)=\arg\min_\gamma\sum_{i=1}^{n}L(y^{(i)},\gamma)</script></li>
+<li>对$m=1,2,…,M$:<br><strong>1)</strong> 对i=1,2,…,n，计算当前损失函数的负梯度在当前模型的值，作为当前模型的残差估计：<script type="math/tex; mode=display">r_{mi}=\left[\frac{\partial L(y^{(i)},f(x^{(i)}))}{\partial f(x^{(i)})}\right]_{f(x)=f_{m-1}(x)}</script><strong>2)</strong> 根据${x^{(i)},r_{mi}}$拟合回归树，生成基学习器$h_m(x)$。<br><strong>3)</strong> 计算最优的叶节点区域估计值$\gamma_m$，使损失函数最小化<script type="math/tex; mode=display">\gamma_{m}=\arg\min_\gamma\sum_{i=1}^nL(y^{(i)},f_{k-1}(x^{(i)})+\gamma h_m(x^{(i)}))</script><strong>4)</strong> 更新第$m$个子回归树模型<script type="math/tex; mode=display">f_m(x)=f_{m-1}(x)+\gamma_m h_m(x^{(i)})</script></li>
+<li>组合$m$个基学习器，得到最终的模型<script type="math/tex; mode=display">\hat f(x)=\sum_{m=0}^{M}\gamma_m f(x)</script></li>
+</ol>
+<h4 id="GBDT算法理论推导"><a href="#GBDT算法理论推导" class="headerlink" title="GBDT算法理论推导"></a>GBDT算法理论推导</h4><p>&emsp;&emsp;Gadient Boosting Decision Tree是Gradient Boosting框架下的Decision Tree版本，基本思想是新模型是在前一个模型的损失函数的梯度下降方向建立。下面进行算法推导：<br>&emsp;&emsp;假设模型的参数空间为$P$，$P={p_1,p_2,…}$，$F(x;P)$表示以$P$为参数的关于$x$的函数，也就是GBDT的预测函数。GBDT算法属于前向加法模型，用$\beta$表示每个学习模型的权重，$\alpha$表示每个学习模型的内部参数，则有</p>
+<script type="math/tex; mode=display">F(x;P)=\sum_{i=1}^{M}\beta_{m}h(x;\alpha_{m})</script><p>&emsp;&emsp;GBDT算法通过优化参数空间${\alpha,\beta}$来对最终的预测函数$F(x;P)$进行优化。在给定损失函数和训练数据的前提下，对$F(x;P)$的学习即为GBDT的损失函数极小化问题，设模型$F(x;P)$的Loss Function为$\Phi(P)$，则有</p>
+<script type="math/tex; mode=display">P^{*}=\arg\min_{F}\Phi(P)</script><script type="math/tex; mode=display">F^*(x;P)=\arg\min_{F}\Phi(P)</script><p>&emsp;&emsp;模型的Loss Function为$\Phi(P)$</p>
+<script type="math/tex; mode=display">\Phi(P)=E_{y,x}L(y,F(x;P))=E_{x}[E_{y}(L(y,F(x)))\mid \boldsymbol{x}]</script><p>&emsp;&emsp;基于模型的可加性，有如下推导关系</p>
+<script type="math/tex; mode=display">F^{*}(\boldsymbol{x})=\sum_{i=1}^{M}f(\boldsymbol{x})</script><script type="math/tex; mode=display">P^{*}=\sum_{i=1}^{M}p_{m}</script><p>&emsp;&emsp;因此，对损失函数$\Phi(P)$在当前模型$F_{m-1}(\boldsymbol{x})$下求偏导，得到梯度：</p>
+<script type="math/tex; mode=display">g_{m}(\boldsymbol{x})=\big{[}\frac{\partial{\Phi(F(\boldsymbol{x}))}}{\partial{F(\boldsymbol{x}})}\big{]}_{F(\boldsymbol{x})=F_{m-1}(\boldsymbol{x})}</script><p>&emsp;&emsp;$F_{m-1}(\boldsymbol{x})$表示前$m-1$个基学习模型的累加：</p>
+<script type="math/tex; mode=display">F_{m-1}(\boldsymbol{x})=\sum_{i=1}^{m-1}f_{i}(\boldsymbol{x})</script><p>&emsp;&emsp;第$m$个基学习模型的预测函数$f_{m}(\boldsymbol{x})$的计算公式如下：</p>
+<script type="math/tex; mode=display">f_{m}(\boldsymbol{x})=-\rho_{m}g_{m}(\boldsymbol{x})</script><p>&emsp;&emsp;$\rho_{m}$表示第$m$个基学习模型在当前梯度方向上下降的距离，根据损失函数与当前模型的梯度方向可求得：</p>
+<script type="math/tex; mode=display">\rho_{m}=\arg\min_{\rho}\big{[}\Phi(P_{m-1}-\rho g_{m}(x))\big{]}</script><script type="math/tex; mode=display">\rho_{m}=\arg\min_{\rho}\big{[}E_{y,x}L(y,F_{m-1}(\boldsymbol{x}))-\rho g_{m}(x)\big{]}</script><p>&emsp;&emsp;GBDT的基本思路是，先训练一个回归树，并计算各样本的目标值与预测值之间的残差，将这个残差作为目标值，训练下一个回归树，继续求残差，直到回归树的数目达到指定值或残差达到允许范围，停止学习。</p>
+<p>&emsp;&emsp;回忆一下原始的Boosting算法：算法初始状态下，为每一个样本赋上大小相等的权重值。在之后迭代的每一步中增加被误分类的样本的权重，减少正确分类的样本的权重，使得被误分类的样本被赋上一个很高的权重。进行M次迭代训练，将得到$M$个基学习器，最后将这$M$个根据指定的策略组合起来，即得到最终的模型。</p>
+<p>&emsp;&emsp;<strong>Gradient Boost与传统的Boosting的区别</strong></p>
+<ol>
+<li>Gradient Boot算法在迭代的每一步都是建立一个能使损失函数沿着负梯度方向降低的学习器来弥补之前的学习器的不足。经典的AdaBoosting算法只能处理采用指数损失函数的二分类问题，但由于Gradient Boosting框架可以设置不同的可微损失函数，因此Gradient Boosting算法可以应用到不同的学习任务中；</li>
+<li>AdaBoosting算法对异常点（outlier）比较敏感，但是Gradient Boosting算法可以通过引入Bagging思想、加入正则化项等方法抵御训练数据中的噪声，具有更好的健壮性。</li>
+</ol>
+<p>每次的计算是为了减小上一次的残差（residual）。为了消除残差，可以取损失函数的负梯度在当前模型上的取值作为当前残差的近似值，并拟合下一个子树模型。所以说，在Gradient Boost中，每个新子树模型的建立会使之前模型的残差往梯度方向减少，与传统Boosting算法对正确、错误的样本进行加权有着很大的区别。</p>
+<hr>
+<h3 id="梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）"><a href="#梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）" class="headerlink" title="梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）"></a>梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）</h3><blockquote>
+<p><strong>GBDT</strong>是一个应用很广泛的算法，可以用于解决分类、回归等问题。GBDT算法也有其他的名字，如MART(Multiple Additive Regression Tree)，GBRT(Gradient Boost Regression Tree)，Tree Net等。</p>
+</blockquote>
+<p>&emsp;&emsp;首先介绍一下Gradient Boosting的基本概念。Gradient Boost其实是一个框架，可以套入很多不同的算法以对穿传统的机器学习算法进行改进。当损失函数不是平方损失函数或者指数损失函数，而是一般函数时，boost算法对损失函数的求解和优化会变得比较复杂，针对这一问题，学者提出了Gradient Boosting算法。核心思想是利用损失函数的负梯度在当前模型下的取值作为残差的近似，进一步训练得到下一棵回归树。<br>&emsp;&emsp;回忆一下原始的Boosting算法：算法初始状态下，为每一个样本赋上大小相等的权重值。在之后迭代的每一步中增加被误分类的样本的权重，减少正确分类的样本的权重，使得被误分类的样本被赋上一个很高的权重。进行M次迭代训练，将得到M个基学习器，最后将它们根据指定的策略组合起来，得到一个最终的模型。<br>&emsp;&emsp;GBDT中的树都是回归树，不是分类树，但是对GBDT模型调整后可以用于分类问题。GBDT的核心在于，每一棵子树学习的是之前所有树的预测结果与实际观测值之间的残差。Gradient Boosting就是拟合Loss function的梯度，将其作为新的弱回归树加入到总的算法中即可。<br>&emsp;&emsp;Gradient Boost与传统的Boost的区别是，Gradient Boot算法每次的计算是为了减小上一次的残差（residual）。为了消除残差，可以取损失函数的负梯度在当前模型上的取值作为当前残差的近似值，并拟合下一个子树模型。所以说，在Gradient Boost中，每个新子树模型的建立会使之前模型的残差往梯度方向减少，与传统Boosting算法对正确、错误的样本进行加权有着很大的区别。</p>
+<p>&emsp;&emsp;GBDT的算法流程如下：给定样本数据集$T={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，损失函数为$L(y,f(x))$，设生成的子树的数目是K。</p>
+<ol>
+<li>初始化第一课子树，估计使损失函数最小化的常数值，建立只有一个根结点的树：<script type="math/tex; mode=display">f_0(x)=\arg\min_c\sum_{i=1}^{m}L(y^{(i)},c)</script></li>
+<li>对k=1,2,…,K:<br><strong>1)</strong> 对i=1,2,…,m，计算当前损失函数的负梯度在当前模型的值，作为模型残差的估计：<script type="math/tex; mode=display">g_{ki}=\left[\frac{\partial L(y^{(i)},f(x^{(i)}))}{\partial f(x^{(i)})}\right]_{f(x)=f_{k-1}(x)}</script><strong>2)</strong> 根据$r<em>{ki}$拟合一个回归树，作为下一个子树模型，估计回归树的叶节点对区域$R</em>{kj}$,$j=1,2,…,J$，以拟合残差的近似值：<br><strong>3)</strong> 利用线性搜索估计叶节点区域的值，使损失函数最小化。对$j=1,2,…,J$，计算<script type="math/tex; mode=display">c_{mj}=\arg\min_c\sum_{x_i \in R_{kj}}L(y^{(i)},f_{k-1}(x^{(i)})+c)</script><strong>4)</strong> 更新第k个子回归树模型<script type="math/tex; mode=display">f_k(x)=f_{k-1}(x)+\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
+<li>得到回归树<script type="math/tex; mode=display">\hat f(x)=f_{K}(x)=\sum_{k=1}^{K}\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
+</ol>
+<h4 id="GBDT的优缺点"><a href="#GBDT的优缺点" class="headerlink" title="GBDT的优缺点"></a>GBDT的优缺点</h4><ul>
+<li><strong>优点</strong>：GBDT中的非线性变化很多，因此模型的表达能力强，不需要做复杂的特征工程和特征变换。</li>
+<li><strong>缺点</strong>：GBDT中的Boosting迭代过程是一个串行工程，不利于并行实现；此外，GBDT的计算复杂度很高。<h4 id="GBDT的参数调优"><a href="#GBDT的参数调优" class="headerlink" title="GBDT的参数调优"></a>GBDT的参数调优</h4>&emsp;&emsp;GBDT的常用参数如下：</li>
+<li>子树的棵数，即基学习器的数量</li>
+<li>树的深度</li>
+<li>缩放因子</li>
+<li>损失函数</li>
+<li>数据采样比</li>
+<li>特征采样比</li>
+</ul>
+<h3 id="Xgboost"><a href="#Xgboost" class="headerlink" title="Xgboost"></a>Xgboost</h3><p>&emsp;&emsp;XGBoost的全称是eXtreme Gradient Boosting，是Gradient Boosting算法的高效实现。XGBoost中的基学习器除了可以是CART也可以是其他线性分类器。<br>&emsp;&emsp;XGBoost的目标函数中显式的加入正则化项，当基学习器为CART时，正则化项与树的叶子结点的数量$T$、叶子结点的取值有关。<br>&emsp;&emsp;待整理。</p>
+<h3 id="Xgboost与GBDT的区别："><a href="#Xgboost与GBDT的区别：" class="headerlink" title="Xgboost与GBDT的区别："></a>Xgboost与GBDT的区别：</h3><ol>
+<li>传统的GBDT以CART作为基分类器，xgboost还支持线性分类器，这个时候xgboost相当于带L1和L2正则化项的逻辑斯蒂回归（分类问题）或者线性回归（回归问题）。</li>
+<li>关于优化求解问题：传统GBDT在优化时只用到一阶导数信息，xgboost则对代价函数进行了二阶泰勒展开，同时用到了一阶和二阶导数。顺便提一下，xgboost工具支持自定义代价函数，只要函数可一阶和二阶求导。</li>
+<li>xgboost在代价函数里加入了正则项，用于控制模型的复杂度。正则项里包含了树的叶子节点个数、每个叶子节点上输出的score的L2模的平方和。从Bias-variance tradeoff角度来讲，正则项降低了模型的variance，使学习出来的模型更加简单，防止过拟合，这也是xgboost优于传统GBDT的一个特性</li>
+<li>列抽样（column subsampling）。xgboost借鉴了随机森林的做法，支持列抽样，不仅能降低过拟合，还能减少计算，这也是xgboost异于传统gbdt的一个特性。</li>
+<li>对缺失值的处理。对于特征的值有缺失的样本，xgboost可以自动学习出它的分裂方向。</li>
+<li>xgboost工具支持并行。<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3></li>
+<li><a href="http://blog.csdn.net/puqutogether/article/details/41957089" target="_blank" rel="external">http://blog.csdn.net/puqutogether/article/details/41957089</a></li>
+<li><a href="http://blog.csdn.net/china1000/article/details/51106856" target="_blank" rel="external">http://blog.csdn.net/china1000/article/details/51106856</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;&lt;strong&gt;GBDT&lt;/strong&gt;是一个应用很广泛的算法，可以用于解决分类、回归等问题。GBDT算法也有其他的名字，如MART(Multiple Additive Regression Tree)，GBRT(Gradient Boost Regression Tree)，Tree Net等。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://yaodong.ml/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习算法笔记——概率图模型（Probabilistic Graphical Model）</title>
+    <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%EF%BC%88Probabilistic-Graphical-Model%EF%BC%89%EF%BC%89.html"/>
+    <id>http://yaodong.ml/machine-learning/机器学习算法笔记——概率图模型（Probabilistic-Graphical-Model））.html</id>
+    <published>2017-02-13T05:26:41.000Z</published>
+    <updated>2017-04-13T05:30:05.049Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;概率图模型（Probabilistic Graphical Model）学习笔记总结。<br><a id="more"></a><br>&emsp;&emsp;常见的机器学习算法模型一般分为两类：判别模型和生成模型，二者都属于概率模型。机器学习、深度学习的实质是根据给定的训练样本数据来对位置变量进行估计和预测，概率模型将模型的学习任务归结于计算未知变量的概率分布。概率模型中，主要任务是基于可观测变量，即已知的样本数据集，去推测未知变量的条件分布，这称为“推断”（Inference）。<br>当模型中含有隐变量时，假定目标变量集合为$Y$，可观测变量集合为$X$，隐变量集合为$Z$，生成模型考虑模型的联合分布概率$P(X,Z,Y)$，判别式模型考虑条件概率分布$P(Y,Z|X)$。给定具体的样本数据集，推断就是要由$P(X,Z,Y)$或$P(Y,Z|X)$得到条件概率分布$P(Y|X)$，进而对目标变量进行估计和预测。<br>&emsp;&emsp;当模型中含有隐变量时，概率模型的求解往往比较困难。概率图模型很好地解决了这个问题。</p>
+<h3 id="概率图模型"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型</h3><p>&emsp;&emsp;概率图模型主要分为两类，第一类是使用有向图（无环）表示变量间的依赖关系，称为有向图模型或者<strong>贝叶斯网络</strong>（Bayes Network），第二类是使用无向图表示变量间的相关关系，称为无向图模型或者<strong>马尔科夫网</strong>（Markov Netowork）。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;概率图模型（Probabilistic Graphical Model）学习笔记总结。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://yaodong.ml/tags/Machine-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习中的特征选择方法总结</title>
+    <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E7%89%B9%E5%BE%81%E9%80%89%E6%8B%A9%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html"/>
+    <id>http://yaodong.ml/machine-learning/机器学习中的特征选择方法总结.html</id>
+    <published>2017-02-13T05:21:07.000Z</published>
+    <updated>2017-04-13T05:24:38.487Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;本文整理了一些特征选择相关的文章，汇总而来。<br><a id="more"></a><br>&emsp;&emsp;特征工程在机器学习中占有重要的地位。“数据和特征决定了机器学习的上限，而模型和算法仅仅是为了更好地逼近这个上限”。特征工程主要可分为三大类：特征生成，特征选择、特征提取。<br>&emsp;&emsp;为什么要做特征选择？特征选择是指从完备数据集中选择能使相应模型和算法获得最好性能的特征集和的过程。通过特征选择，我们希望提高模型预测的准确性，构造复杂度更低的算法模型，使数据对模型有更好的理解和解释。本文简单总结了比赛和工业应用中常用的特征选择方法。<br>&emsp;&emsp;常用的特征选择的方法有以下几种：<strong>Filtering methods</strong>，<strong>Wrapping methods</strong>，<strong>Embeded methods</strong></p>
+<h3 id="Filtering-methods（刷选器）"><a href="#Filtering-methods（刷选器）" class="headerlink" title="Filtering methods（刷选器）"></a>Filtering methods（刷选器）</h3><p>&emsp;&emsp;filtering方法的主要思想是：根据特征对目标变量的响应，对每个特征进行打分（<strong>score</strong>），score的值代表特征的重要性，然后依据每个特征的score进行排序，进而选择特征。<br>&emsp;&emsp;根据<strong>Filtering</strong>的思想进行特征选择的方法有<strong>方差选择法</strong>，<strong>卡方检验（Chi-squared test）</strong>、<strong>信息增益（information gain）</strong>，<strong>相关系数（correlation coefficient）</strong> 。<br>&emsp;&emsp;总结来说，<strong>Filtering methods</strong>侧重于单个特征跟目标变量的相关性。<strong>Filtering methods</strong>不考虑特征之间的相关性，因此倾向于选择冗余的特征。</p>
+<h3 id="Wrapper-methods（封装器）"><a href="#Wrapper-methods（封装器）" class="headerlink" title="Wrapper methods（封装器）"></a>Wrapper methods（封装器）</h3><p>&emsp;&emsp;<strong>Wrapper methods</strong>的主要思想是：将特征选择看作是对全部特征的最优子集搜索问题。根据训练数据集生成不同的特征子集，封装器用选定的的特征子集对训练数据进行分类或回归，模型的分类或预测精度作为特征选择的衡量标准，经过比较不同特征子集对应的模型性能，选出表现最好的特征子集。常用的wrapper methods有逐步回归（Stepwise regression）、向前选择（Forward selection）和向后选择（Backward selection）。<br>&emsp;&emsp;Wrapper methods的优点是考虑了特征与特征之间的关联性；缺点是当训练数据规模较小时容易发生过拟合。</p>
+<h4 id="递归特征消除算法（Recursive-Feature-Elimination，RFE）"><a href="#递归特征消除算法（Recursive-Feature-Elimination，RFE）" class="headerlink" title="递归特征消除算法（Recursive Feature Elimination，RFE）"></a>递归特征消除算法（Recursive Feature Elimination，RFE）</h4><p>&emsp;&emsp;递归特征消除算法的主要思想是反复的构建算法模型（如SVM、回归模型），然后从中选择最好的（或者最差的）的特征；将被选择的特征从候选特征集中删除，然后在新的特征子集上重复该过程，直到遍历所有特征为止。这个过程中特征被消除的次序就是特征的排序。因此，递归特征消除算法是一种寻找最优特征子集的贪心算法。<br>&emsp;&emsp;Scikit-learn提供了<code>RFE package</code>，可用于特征选择，还提供了<code>RFECV  packge</code>，可以通过交叉验证来对特征进行排序。</p>
+<h4 id="基于Regularization做特征选择"><a href="#基于Regularization做特征选择" class="headerlink" title="基于Regularization做特征选择"></a><strong>基于Regularization做特征选择</strong></h4><p>&emsp;&emsp;L1正则方法具有稀疏的特征，即很多特征对应的参数会为零，因此可以训练一个Lasso模型，然后将系数为零的特征去除。需要注意的是，Lasso没有选到的特征不代表不重要，原因是两个具有高相关性的特征可能只保留了一个。<br>&emsp;&emsp;在实际的工作中，Lasso的参数$\lambda$越大，解的稀疏性越强，选定的特征数目越少。如何确定使用多大的$\lambda$？对于一系列$\lambda$，用交叉验证计算模型的$rmse$，然后选择$rmse$的极小值对应的$\lambda$。</p>
+<h4 id="基于树模型的特征选择方法"><a href="#基于树模型的特征选择方法" class="headerlink" title="基于树模型的特征选择方法"></a><strong>基于树模型的特征选择方法</strong></h4><p>&emsp;&emsp;可以利用决策树、随机森林、GBDT求解每个feature的importances。以Random Forest为例，主要思想是训练一系列不同的决策树模型，每个决策树的训练数据是对原始数据进行bootstrap自助采样得到的特征子集。</p>
+<h3 id="Embeded-methods"><a href="#Embeded-methods" class="headerlink" title="Embeded methods"></a>Embeded methods</h3><p>&emsp;&emsp;Embeded method的主要思想是：在模型既定的情况下学习出对提高模型准确性最好的属性。学习器自身自主选择特征，如使用Regularization做特征选择，或者使用决策树思想，细节这里就不做介绍了。这里还提一下，在做实验的时候，我们有时候会用Random Forest和Gradient boosting做特征选择，本质上都是基于决策树来做的特征选择，只是细节上有些区别。Embeded methods中最常见的是利用正则化项做Feature Selection。</p>
+<h3 id="降维算法"><a href="#降维算法" class="headerlink" title="降维算法"></a>降维算法</h3><p>&emsp;&emsp;常见的降维方法除了基于L1惩罚项的模型以外，还有主成分分析算法（PCA）和线性判别分析（LDA）。PCA和LDA的本质都是将原始的样本数据映射到低维度的样本空间中，但是PCA和LDA的映射目标不一样：PCA是为了让映射后的样本具有最大的发散性；而LDA是为了让映射后的样本有最好的分类性能。所以说PCA是一种无监督的降维方法，而LDA是一种有监督的降维方法。</p>
+<h3 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h3><p>&emsp;&emsp;从数据的角度来理解特征选择，寻找一个更好的空间来描述数据，把原始数据对象映射到这个空间去表达。随着深度学习浪潮的到来，通过深度学习来进行特征选择已经成为一种有效的特征选择方法，尤其是在计算机视觉领域。原因不难理解，Deep Learning具有从原始数据中自动学习特征的能力。这也是Deep Learning又被称为Unsupervised Learning的原因。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;本文整理了一些特征选择相关的文章，汇总而来。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Machine Learning" scheme="http://yaodong.ml/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>机器学习算法笔记——类别不均衡问题</title>
@@ -146,36 +403,39 @@
   
   <entry>
     <title>机器学习算法笔记——AdaBoosting算法</title>
-    <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94AdaBoosting%E7%AE%97%E6%B3%95.html"/>
-    <id>http://yaodong.ml/machine-learning/机器学习算法笔记——AdaBoosting算法.html</id>
+    <link href="http://yaodong.ml/machine-learning/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94Boosting%20&amp;%20Adaboosting.html"/>
+    <id>http://yaodong.ml/machine-learning/机器学习算法笔记——Boosting &amp; Adaboosting.html</id>
     <published>2017-01-21T06:29:46.000Z</published>
-    <updated>2017-03-21T06:46:03.466Z</updated>
+    <updated>2017-04-13T05:24:25.283Z</updated>
     
     <content type="html"><![CDATA[<p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，其学习算属于为前向分步算法。<br><a id="more"></a><br>&emsp;&emsp;AdaBoosting算法的损失函数是指数函数。回忆一下，机器学习算法中，常见的损失函数有0-1损失函数、对数似然损失函数、均方误差函数、Hinge函数、指数损失函数等。</p>
-<p>&emsp;&emsp;下面对AdaBoosting算法作简单推导。给定样本数据集$S={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$。</p>
-<ol>
-<li>初始化数据集的样本权值分布<script type="math/tex; mode=display">D=(w_{11},...,w_{1i},...,w_{1n})</script>其中$w_{1i}=\frac{1}{m},i=1,2,…,m$。</li>
-<li><p>训练$m$个基学习器：<br><strong>1)</strong> 对于第$i$个样本，根据当前的样本权值分布$D_m$，求得基分类器$G_m(x)$，其中$G_m(x)\in {-1,+1}$；<br><strong>2)</strong> 并求得$G_m(x)$在训练数据集上的带权分类误差率：</p>
-<script type="math/tex; mode=display">e_m=P(G_m(x^{(i)})≠y^{(i)})=\sum_{i=1}^{m}w_{mi}I(G_m(x^{(i)})≠y^{(i)})</script><p><strong>3)</strong> 接下来计算$G_m(x)$的系数$\alpha_m$，$\alpha_m$表示第m个基学习器在最终的组合学习器中的比重：</p>
+<h3 id="Adaboost算法"><a href="#Adaboost算法" class="headerlink" title="Adaboost算法"></a>Adaboost算法</h3><p>&emsp;&emsp;对AdaBoosting算法作简单推导。AdaBoosting算法的Loss Function定义如下：</p>
+<script type="math/tex; mode=display">L\big[ y,f(\boldsymbol{x})\big]=e^{-yf(\boldsymbol{x})}</script><p>&emsp;&emsp;给定样本数据集$D={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(N)},y^{(N)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，指数损失函数的标准形式为：</p>
+<script type="math/tex; mode=display">L\big[ y,f(\boldsymbol{x})\big]=\sum_{i=1}^{N}e^{-y^{(i)}f(x^{(i)})}</script><p>&emsp;&emsp;Adaboosting算法的损失函数为：</p>
+<script type="math/tex; mode=display">L\big[ y,f(\boldsymbol{x})\big]=\frac{1}{N}\sum_{i=1}^{N}e^{-y^{(i)}f(x^{(i)})}</script><ol>
+<li>初始化数据集的样本权值分布<script type="math/tex; mode=display">W=(w_{11},...,w_{1i},...,w_{1n}),\quad w_{1i}=\frac{1}{N},\quad i=1,2,...,N</script></li>
+<li><p>训练$m$个基学习器：<br><strong>1)</strong> 对于第$i$个样本，根据具有权值分布$W_m$的训练数据集，求得基分类器$G_m(x)$：</p>
+<script type="math/tex; mode=display">G_m(x): \mathcal{X} \rightarrow \{-1,+1\}</script><p><strong>2)</strong> 求得$G_m(x)$在训练数据集上的加权分类误差率：</p>
+<script type="math/tex; mode=display">e_m=P(G_m(x^{(i)})≠y^{(i)})=\sum_{i=1}^{m}w_{mi}I(G_m(x^{(i)})≠y^{(i)})</script><p><strong>3)</strong> 计算$G_m(x)$的系数$\alpha_m$，$\alpha_m$表示第m个基学习器在最终的组合学习器中的比重：</p>
 <script type="math/tex; mode=display">\alpha_m=\frac{1}{2}log\frac{1-e_m}{e_m}</script><p>很显然，$\alpha_m$随着$e_m$的增大而减小，所以分类误差率越小的基学习器在最终的组合模型中占的比重越大。<br><strong>4)</strong> 更新样本权值分布向量：</p>
-<script type="math/tex; mode=display">D_{m+1} = (w_{m+1,1},...,w_{m+1,n})</script><script type="math/tex; mode=display">w_{m+1,i}=\frac {w_{mi}}{Z_m}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>这里$Z<em>m$是规范化因子，目的是将$D</em>{m+1}$进行归一化，使得$D_{m+1}$符合概率分布的归一性，$Z_m$由以下公式给出：</p>
-<script type="math/tex; mode=display">Z_m=\sum_{i=1}^Nw_{mi}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>根据$w_{m+1,i}$的表达式可知，被$G_m(x)$分类器误分类的样本的权值得以扩大，而被$G_m(x)$正确分类的样本的权值会缩小。因此，误分类样本在下一次的基学习器训练中起到更大的作用。这个<strong>不改变训练数据，而改变训练数据的权值分布，正是AdaBoost方法的重要特点</strong>。</p>
+<script type="math/tex; mode=display">W_{m+1} = (w_{m+1,1},...,w_{m+1,N})</script><script type="math/tex; mode=display">w_{m+1,i}=\frac {w_{mi}}{Z_m}e^{-\alpha _my^{(i)}G_m(x_i)}</script><p>这里$Z<em>m$是规范化因子，目的是将$W</em>{m+1}$进行归一化，使得$W_{m+1}$符合概率分布的归一性，$Z_m$由以下公式给出：</p>
+<script type="math/tex; mode=display">Z_m=\sum_{i=1}^Nw_{mi}e^{-\alpha _my^{(i)}G_m(x^{(i)})}</script><p>根据$w_{m+1,i}$的表达式可知，被$G_m(x)$分类器误分类的样本的权值得以扩大，而被$G_m(x)$正确分类的样本的权值会缩小。因此，误分类样本在下一次的基学习器训练中起到更大的作用。这个<strong>不改变训练数据，而改变训练数据的权值分布，正是AdaBoost方法的重要特点</strong>。</p>
 </li>
-<li><p>步骤2中求得了m个基学习器的权值分布，将这m个基学习器组合起来，构成最终的组合学习器：</p>
-<script type="math/tex; mode=display">f_{(x)}=\sum_{m=1}^{M}\alpha_mG_{m}(x)</script><script type="math/tex; mode=display">G_{(x)}=sign\left((f(x)\right)=sign\left(\sum_{m=1}^{M}\alpha_mG_{m}(x))\right)</script><p><strong>注意</strong>，所有的$\alpha_m$相加之和并不等于1。</p>
+<li><p>步骤2中求得了$M$个基学习器的权值分布，将这$M$个基学习器组合起来，构成最终的组合学习器：</p>
+<script type="math/tex; mode=display">f(\boldsymbol{x})=\sum_{m=1}^{M}\alpha_mG_{m}(x)</script><script type="math/tex; mode=display">G(x)=sign\big[f(x)\big]=sign\left(\sum_{m=1}^{M}\alpha_mG_{m}(x))\right)</script><p><strong>注意</strong>，所有的$\alpha_m$相加之和并不等于1。</p>
 </li>
+</ol>
+<h3 id="前向分步算法"><a href="#前向分步算法" class="headerlink" title="前向分步算法"></a>前向分步算法</h3><p>&emsp;&emsp;从算法模型的角度来说，AdaBoosting算法是前向分布加法算法的特例，也就是说，AdaBoosting算法是一个加法模型，损失函数为指数函数的前向分步算法。<br>&emsp;&emsp;加法模型的理论基础是算法模型的可加性，加法模型是由多个基学习模型加权组合得到。定义加法模型$f(\boldsymbol{x})$为</p>
+<script type="math/tex; mode=display">f(\boldsymbol{x})=\sum_{i=1}^{M}\beta_{m}h(\boldsymbol{x};\alpha_m)</script><p>&emsp;&emsp;其中，$\beta_m$是第m个基学习器的权重，$\alpha_m$表示第m个基学习模型的参数，$h(\boldsymbol{x})$表示第m个基学习模型的模型函数。<br>&emsp;&emsp;给定训练数据集合损失函数$\mathcal{L}\big[f(\boldsymbol{x}),y\big]$的前提下，对加法模型$f(\boldsymbol{x})$的学习将转化为经验风险最小化问题，即在训练集上求解模型的损失函数最小化问题：</p>
+<script type="math/tex; mode=display">(\boldsymbol{\alpha},\boldsymbol{\beta})=\arg\min_{\alpha_{m},\beta_{m}}\sum_{i=1}^{N}L\big[y^{(i)},\sum_{i=1}^{M}\beta_{m}h(\boldsymbol{x};\alpha_m)\big]</script><p>&emsp;&emsp;前向分步算法的核心思想是从前往后训练$M$个基学习模型，每个模型都在前一个模型的基础上进一步训练得到。另外，每个基学习模型只学习一个基函数$h_m(\boldsymbol{x})$及其组合权重$\beta_m$，最后将这$M$个基学习模型进行加权组合，进而逐步逼近优化Loss Function。每一步的优化可用公式表示如下：</p>
+<script type="math/tex; mode=display">\min_{\alpha,\beta}\sum_{i=1}^{N}L\big[y^{(i)},\sum_{i=1}^{M}\beta h(\boldsymbol{x};\alpha)\big]</script><p>&emsp;&emsp;给定样本数据集$D={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(N)},y^{(N)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，模型的损失函数为$L(y,f(\boldsymbol{x}))$，前向分步算法步骤总结如下：</p>
+<ol>
+<li>初始化$f(\boldsymbol{x})$：$f_0(x)=0$</li>
+<li>训练M个基学习模型，对$m=1,2,…M$：<br><strong>a)</strong> 计算当前参数下的损失函数，并通过优化方法，求得目标参数$\alpha_m$，$\beta_m$：<script type="math/tex; mode=display">(\alpha_m,\beta_m)=\min_{\alpha,\beta}\sum_{i=1}^{N}L\big[y^{(i)},f_{m-1}(\boldsymbol{x})+\beta_{m}h(x^{(i)};\alpha)\big]</script><strong>b)</strong> 实时更新$f_{m}(\boldsymbol{x})$<script type="math/tex; mode=display">f_{m}(\boldsymbol{x})=f_{m-1}(\boldsymbol{x})+\beta_{m}h(\boldsymbol{x};\alpha_m)</script></li>
+<li>对$M$个基学习模型进行加权组合，得到最后的Additive Model：<script type="math/tex; mode=display">f((\boldsymbol{x})=f_{M}(\boldsymbol{x})=\sum_{i=1}^{M}\beta_{m}h(\boldsymbol{x};\alpha_m)</script></li>
 </ol>
 <hr>
-<h3 id="梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）"><a href="#梯度上升决策树算法（Gradient-Boosting-Decision-Tree，GBDT）" class="headerlink" title="梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）"></a>梯度上升决策树算法（Gradient Boosting Decision Tree，GBDT）</h3><blockquote>
-<p><strong>GBDT</strong>是一个应用很广泛的算法，可以用于解决分类、回归等问题。GBDT算法也有其他的名字，如MART(Multiple Additive Regression Tree)，GBRT(Gradient Boost Regression Tree)，Tree Net等。</p>
-</blockquote>
-<p>&emsp;&emsp;首先介绍一下Gradient Boosting的基本概念。Gradient Boost其实是一个框架，可以套入很多不同的算法以对穿传统的机器学习算法进行改进。当损失函数不是平方损失函数或者指数损失函数，而是一般函数时，boost算法对损失函数的求解和优化会变得比较复杂，针对这一问题，学者提出了Gradient Boosting算法。核心思想是利用损失函数的负梯度在当前模型下的取值作为残差的近似，进一步训练得到下一棵回归树。<br>&emsp;&emsp;回忆一下原始的Boosting算法：算法初始状态下，为每一个样本赋上大小相等的权重值。在之后迭代的每一步中增加被误分类的样本的权重，减少正确分类的样本的权重，使得被误分类的样本被赋上一个很高的权重。进行M次迭代训练，将得到M个基学习器，最后将它们根据指定的策略组合起来，得到一个最终的模型。<br>&emsp;&emsp;GBDT中的树都是回归树，不是分类树，但是对GBDT模型调整后可以用于分类问题。GBDT的核心在于，每一棵子树学习的是之前所有树的预测结果与实际观测值之间的残差。Gradient Boosting就是拟合Loss function的梯度，将其作为新的弱回归树加入到总的算法中即可。<br>&emsp;&emsp;Gradient Boost与传统的Boost的区别是，Gradient Boot算法每次的计算是为了减小上一次的残差（residual）。为了消除残差，可以取损失函数的负梯度在当前模型上的取值作为当前残差的近似值，并拟合下一个子树模型。所以说，在Gradient Boost中，每个新子树模型的建立会使之前模型的残差往梯度方向减少，与传统Boosting算法对正确、错误的样本进行加权有着很大的区别。</p>
-<p>&emsp;&emsp;GBDT的算法流程如下：给定样本数据集$T={(x^{(1)},y^{(1)}),…,(x^{(i)},y^{(i)}),…,(x^{(m)},y^{(m)})}$，$x^{(i)}\in R^n$，$y(i)\in {-1,+1}$，损失函数为$L(y,f(x))$，设生成的子树的数目是K。</p>
-<ol>
-<li>初始化第一课子树，估计使损失函数最小化的常数值，建立只有一个根结点的树：<script type="math/tex; mode=display">f_0(x)=\arg\min_c\sum_{i=1}^{m}L(y^{(i)},c)</script></li>
-<li>对k=1,2,…,K:<br><strong>1)</strong> 对i=1,2,…,m，计算当前损失函数的负梯度在当前模型的值，作为模型残差的估计：<script type="math/tex; mode=display">g_{ki}=\left[\frac{\partial L(y^{(i)},f(x^{(i)}))}{\partial f(x^{(i)})}\right]_{f(x)=f_{k-1}(x)}</script><strong>2)</strong> 根据$r<em>{ki}$拟合一个回归树，作为下一个子树模型，估计回归树的叶节点对区域$R</em>{kj}$,$j=1,2,…,J$，以拟合残差的近似值：<br><strong>3)</strong> 利用线性搜索估计叶节点区域的值，使损失函数最小化。对$j=1,2,…,J$，计算<script type="math/tex; mode=display">c_{mj}=\arg\min_c\sum_{x_i \in R_{kj}}L(y^{(i)},f_{k-1}(x^{(i)})+c)</script><strong>4)</strong> 更新第k个子回归树模型<script type="math/tex; mode=display">f_k(x)=f_{k-1}(x)+\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
-<li>得到回归树<script type="math/tex; mode=display">\hat f(x)=f_{K}(x)=\sum_{k=1}^{K}\sum_{j=1}^Jc_{kj}I(x\in R_{kj})</script></li>
-</ol>
+<p>&emsp;&emsp;前向分步算法将同时求解所有参数$(\boldsymbol{\alpha},\boldsymbol{\beta})$的优化问题简化为逐次求解各个基学习模型的参数$(\alpha_m,\beta_m)$优化问题。</p>
 ]]></content>
     
     <summary type="html">
@@ -429,20 +689,20 @@
       <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="机器学习" scheme="http://yaodong.ml/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="Machine Learning" scheme="http://yaodong.ml/tags/Machine-Learning/"/>
+    
+      <category term="机器学习" scheme="http://yaodong.ml/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
-    <title>Machine Learning算法笔记——决策树与随机森林</title>
-    <link href="http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97.html"/>
-    <id>http://yaodong.ml/machine-learning/Machine Learning算法笔记——决策树与随机森林.html</id>
+    <title>Machine Learning算法笔记——决策树</title>
+    <link href="http://yaodong.ml/machine-learning/Machine%20Learning%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95.html"/>
+    <id>http://yaodong.ml/machine-learning/Machine Learning算法笔记——决策树算法.html</id>
     <published>2017-01-03T04:54:14.000Z</published>
-    <updated>2017-03-14T07:29:29.345Z</updated>
+    <updated>2017-04-13T05:32:05.345Z</updated>
     
-    <content type="html"><![CDATA[<p>&emsp;&emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>&emsp;&emsp;本博文介绍了机器学习中的决策树算法。<br><a id="more"></a></p>
 <h2 id="决策树-Decision-Tree"><a href="#决策树-Decision-Tree" class="headerlink" title="决策树(Decision Tree)"></a>决策树(Decision Tree)</h2><p>&emsp;&emsp;决策树是一种基本的分类与回归算法，属于<strong>贪婪算法</strong>，其模型呈现为树形结构，可理解为基于特征或模型属性对实例进行分类或回归的过程<br>&emsp;&emsp;决策树的特点：</p>
 <ul>
 <li><strong>优点</strong>：计算复杂度不高，输出结果可直观理解数据，对中间值得缺失不敏感，可以处理不相关特征数据</li>
@@ -465,40 +725,11 @@
 <li>决策树生成：基于训练数据集生成决策树，生成的决策树要尽量大</li>
 <li>决策树剪枝：用验证数据集对已生成的树进行剪枝并选择最优子树，此过程中，用损失函数最小化作为剪枝的标准</li>
 </ol>
-<hr>
-<h2 id="随机森林算法"><a href="#随机森林算法" class="headerlink" title="随机森林算法"></a>随机森林算法</h2><h3 id="Bagging方法"><a href="#Bagging方法" class="headerlink" title="Bagging方法"></a>Bagging方法</h3><p>&emsp;&emsp;Bagging方法就是将所有training data放进一个“黑色”的bag中，然后从这个bag中随机抽取部分数据生成新的训练集。随机森林算法中，样本训练集本省可以使用bagging方法，同样，样本的feature也可以进行bagging。从随机性来看，bagging技术可以有效的减小方差，即减小过拟合程度<br>&emsp;&emsp;随机森林是一种经典而强大的机器学习算法，具有回归和分类的功能。随机森林算法由若干决策树组成，这些决策树一般采用随机的方法生成，因此也叫做随机决策树。随机森林算法中的各决策树之间是没有关联的。</p>
-<p>&emsp;&emsp;随机森林算法的<strong>特点</strong>：</p>
-<ul>
-<li>适合用于多分类问题，算法训练和预测速度快，容易实现并行化</li>
-<li>可有效估计缺失数据，即有一定程度的数据容错能力，当数据集中有大比例的数据缺失时仍然可以保持精度不变和能够有效地处理大的数据集</li>
-<li>不会出现过拟合</li>
-<li>能够处理很高维度（feature很多）的数据，并且不用做特征选择</li>
-<li>对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
-<li>可检测样本的各特征（维度）之间的相互影响程度，判断特征对所解决问题的重要性程度</li>
-<li>可直接处理大规模的的变量（群）</li>
-<li>在创建森林即分类的过程中，对泛化误差的估计是内部无偏估计</li>
-<li>随机森林算法也是一种数据降维的方法，用于处理缺失值、异常值</li>
-</ul>
-<h3 id="Bootstrap抽样"><a href="#Bootstrap抽样" class="headerlink" title="Bootstrap抽样"></a>Bootstrap抽样</h3><p>&emsp;&emsp;随机森林算法中包含了对输入数据的重复自抽样过程，即所谓的bootstrap抽样。大约三分之一的数据集将用于测试而不是模型的训练，这样的数据被称为out of bag samples。</p>
-<p>&emsp;&emsp;bootstrap抽样与bagging的区别是：在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。<br>&emsp;&emsp;综上可知，随机森林算法的的两个随机采样的过程保证了随机性，所以即使对最终的各决策树不剪枝，也不会出现over-fitting。</p>
-<h3 id="随机森林算法的具体步骤："><a href="#随机森林算法的具体步骤：" class="headerlink" title="随机森林算法的具体步骤："></a>随机森林算法的具体步骤：</h3><ol>
-<li>通过自助法（bootstrap）重采样技术，从原始训练样本集中有放回地重复随机抽取N个样本生成新的训练样本集合</li>
-<li>对随机采样得到的新训练数据集，构建决策树，在每个节点执行以下操作：</li>
-</ol>
-<ul>
-<li>从样本数据的M个features中随机选取m($m&lt;&lt;M$)个feature</li>
-<li>对这m个features，选择特定的度量准则分割节点</li>
-<li>重复上述操作N次，从而生成与样本数量相等的决策树</li>
-</ul>
-<ol>
-<li>对于每一个测试样例，对k颗决策树的预测结果进行投票。票数最多的结果就是随机森林的分裂（预测）结果</li>
-</ol>
-<h3 id="scikit-learn中的Random-Forest算法"><a href="#scikit-learn中的Random-Forest算法" class="headerlink" title="scikit-learn中的Random Forest算法"></a>scikit-learn中的Random Forest算法</h3><p>参考代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sklearn.ensemble.RandomForestClassfier</div><div class="line">clf = RandomForestClassifier([parameters]) <span class="comment">#generator the entity object of classifier</span></div><div class="line">parameters:</div><div class="line">n_estimators：指定随机森林中树的数目，越多越好，不超过内存即可</div><div class="line">criterion:指定在分裂使用的决策算法，取值有“entropy”、“gini”等</div><div class="line">max_features:单个决策树使用特征的最大数量，取值为<span class="string">"Auto"</span>，<span class="string">"None"</span>，<span class="string">"sqrt"</span>，<span class="string">"0.X"</span>。回归问题，max_features=n_features,分类问题，max_features=sqrt(n_features),<span class="string">"sqrt"</span>即为全部特征数目的平均根</div><div class="line">max_depth:默认为<span class="keyword">None</span>，一般可不改动</div><div class="line">min_simples_split:</div><div class="line">min_samples_leaf:最小叶片大小。默认值为<span class="number">1</span>，可设置为<span class="number">50</span>。叶是决策树的末端节点，较小的叶子使模型更容易捕捉训练数据中的噪声。</div><div class="line">min_weight_fraction_leaf:</div><div class="line">max_leaf_nodes:</div><div class="line">min_impurity_split:</div><div class="line">bootstrap:</div><div class="line">oob_score:这是一个随机森林交叉验证方法，取值为boolean类型，<span class="string">"True"</span>,<span class="string">"False"</span></div><div class="line">n_jobs:指定并行训练时使用的进程数。“<span class="number">-1</span>”表示使用所有处理器</div><div class="line">random_state:经验值<span class="string">"random_state=50"</span></div><div class="line">verbose:</div><div class="line">warm_state:</div><div class="line">class_weight:</div></pre></td></tr></table></figure>]]></content>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&amp;emsp;&amp;emsp;本博文介绍了机器学习中经典的随机森林算法和决策树算法。&lt;br&gt;
+      &lt;p&gt;&amp;emsp;&amp;emsp;本博文介绍了机器学习中的决策树算法。&lt;br&gt;
     
     </summary>
     
@@ -627,351 +858,6 @@
       <category term="算法" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="算法设计" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法设计思想之贪心算法</title>
-    <link href="http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95.html"/>
-    <id>http://yaodong.ml/algorithms/算法设计思想之贪心算法.html</id>
-    <published>2016-12-15T08:11:25.000Z</published>
-    <updated>2017-03-14T07:31:00.618Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于贪心算法设计思想的学习总结。<br><a id="more"></a></p>
-<blockquote>
-<p><strong>贪心算法（greedy algorithm）</strong>，又称<strong>贪婪算法</strong>，在每一步都选择当前状态下能达到最好或最优的策略，从而希望算法结束时的结果就是全局最优的算法。换句话说，贪心算法不考虑全局只考虑局部最优，基于当前状态做出局部最优选择。</p>
-</blockquote>
-<h3 id="贪心算法的基本步骤"><a href="#贪心算法的基本步骤" class="headerlink" title="贪心算法的基本步骤"></a>贪心算法的基本步骤</h3><p>&emsp;&emsp;贪心算法把原问题可分解为多个子问题，然后贪心算法以迭代的方式作出每一步的贪心选择策略，每作一次贪心选择就将原复杂问题化简为规模更小的子问题。一直迭代求解子问题的局部最优解，最终子问题的最优解能递推到原复杂问题的最优解。<br>&emsp;&emsp;<strong>贪心算法求解问题的步骤</strong>：</p>
-<ol>
-<li>对问题进行分析，确定原问题的最优子结构</li>
-<li>针对分解后的各子问题，设计递归求解算法</li>
-<li>证明原问题总是有一个最优解是贪心选择得到的，即证明贪心选择是安全的</li>
-<li>证明剩余的子问题的最优解结合贪心选择策略，可以得到原问题的最优解</li>
-<li>设计出一个实现贪心策略的递归算法，并将递归算法转换成迭代算法</li>
-</ol>
-<p>&emsp;&emsp;贪心算法通常用于求解一些最优化问题。 贪心算法并不总能求得问题的整体最优解，但是由于贪心法的高效性以及其所求得的答案通常很接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。</p>
-<h3 id="贪心算法的适用情形"><a href="#贪心算法的适用情形" class="headerlink" title="贪心算法的适用情形"></a>贪心算法的适用情形</h3><ol>
-<li>给定的问题是否能使用贪心算法策略求解，首先要确定该问题是否具有<strong>贪心选择性质</strong>。贪心选择性质是指一系列子问题的局部最优策略可以导致产生全局最优解。给定问题的整体最优解可以通过这些子问题的局部最优解得到。这也是贪心算法与动态规划算法的主要区别</li>
-<li>给定问题是否具有贪心选择性质，需要证明子问题每一步进行的贪心选择最终导致问题的整体最优解。</li>
-<li>一个问题的最优解包含其子问题的最优解，或者局部最优解能决定全局最优解，则称此问题具有<strong>最优子结构性质</strong>。贪心算法可用于求解具有最优子结构性质的问题。<br>因此当问题具有最优子结构性质时，可以考虑使用贪心算法。</li>
-<li>贪心算法中，每一步的贪心选择可以依赖于以往的选择策略，但决不依赖于未来子问题的选择，也不依赖于将来子问题的解。简单来说，<strong>Greedy Algorithm</strong>选择的贪心策略必须具备无后效性，即将来子问题的选择策略不会影响先前子问题的求解。所以对所采用的贪心策略一定要仔细分析其是否满足<strong>无后效性</strong>。</li>
-</ol>
-<h3 id="贪心算法与动态规划算法的区别"><a href="#贪心算法与动态规划算法的区别" class="headerlink" title="贪心算法与动态规划算法的区别"></a>贪心算法与动态规划算法的区别</h3><ol>
-<li>动态规划算法通常以自底向上的方式迭代求解各子问题，而贪心算法则通常以自顶向下的方式对问题进行求解。</li>
-<li>在动态规划算法中，原问题每步所作的选择往往依赖于相关子问题的解。只有在求解相关子问题之后，原问题才能作出在当前状态的选择。而在贪心算法中，仅在当前状态下作出最好选择，即局部最优解，然后再求解相应的子问题。</li>
-<li>贪心算法与动态规划的不同在于它每对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。</li>
-</ol>
-<h3 id="贪心算法的应用"><a href="#贪心算法的应用" class="headerlink" title="贪心算法的应用"></a>贪心算法的应用</h3><ul>
-<li><code>Dijkstra</code>算法</li>
-<li><code>Prim</code>算法</li>
-<li><code>Kruskal</code>算法</li>
-<li><code>Huffman</code>编码</li>
-<li>磁盘文件的存储算法</li>
-<li>生产调度问题</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;emsp;&amp;emsp;本博文记录了博主关于贪心算法设计思想的学习总结。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="算法" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法设计" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法设计思想之分治算法</title>
-    <link href="http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95.html"/>
-    <id>http://yaodong.ml/algorithms/算法设计思想之分治算法.html</id>
-    <published>2016-12-15T08:08:14.000Z</published>
-    <updated>2017-03-14T07:30:46.078Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;本博文记录了博主关于分治算法设计思想的学习总结。<br><a id="more"></a></p>
-<blockquote>
-<p><strong>分治法（Divide and Conquer）</strong>是基于多项分支递归的一种很重要的算法范式思想。分治的意思是“分而治之”，把复杂问题分解成多个规模较小、相对独立、与原问题形式相同的子问题，子问题的求解很简单很直观，原问题的解即子问题的解的合并。</p>
-</blockquote>
-<p>&emsp;&emsp;分治与递归经常同时应用在算法设计中，是诸多高效算法的基础，因此也产生了很多著名的高效算法。如（快速排序、归并排序）、傅里叶变换等。</p>
-<h3 id="分治算法的设计思想"><a href="#分治算法的设计思想" class="headerlink" title="分治算法的设计思想"></a>分治算法的设计思想</h3><ul>
-<li>将计算规模较大的复杂问题，分割成规模较小的相同性质的多个子问题，对简单的子问题进行逐个击破，分而治之</li>
-<li>使用数学上的不完全归纳法，寻找求解原问题的方程表达式，根据方程式设计递归程序Solution</li>
-</ul>
-<h3 id="分治算法的递归求解步骤"><a href="#分治算法的递归求解步骤" class="headerlink" title="分治算法的递归求解步骤"></a>分治算法的递归求解步骤</h3><ol>
-<li><strong>分解</strong>：将原问题分解为若干个规模较小，相对独立，与原问题形式相同的子问题。</li>
-<li><strong>求解</strong>：若子问题规模较小且易于解决时，则直接解。否则，递归地解决各子问题。</li>
-<li><strong>合并</strong>：将各子问题的解合并为原问题的解。</li>
-</ol>
-<h3 id="分治算法的适用情形"><a href="#分治算法的适用情形" class="headerlink" title="分治算法的适用情形"></a>分治算法的适用情形</h3><ol>
-<li>原复杂问题的规模缩减到一定程度后可以很容易求解</li>
-<li>原问题可分解成若干个规模较小、与原问题性质相同的子问题，即原问题具有<strong>最优子结构</strong>性质，这条特性反映了递归思想</li>
-<li>原复杂问题分解得到的子问题相互之间是独立的，即<strong>子问题之间不包含公共的问题</strong></li>
-<li>子问题的解可以合并为原复杂问题的解</li>
-<li>算法求解过程中至少含有两个递归调用，也就是说，只进行一次递归调用的不属于分治算法范畴</li>
-</ol>
-<h3 id="分治算法与动态规划算法的区别"><a href="#分治算法与动态规划算法的区别" class="headerlink" title="分治算法与动态规划算法的区别"></a>分治算法与动态规划算法的区别</h3><ol>
-<li>分治法与动态规划都要求原问题具有最有子结构，都是将问题分解成若干个规模较小的子问题</li>
-<li>动态规划是将原问题分解为多个相同性质的子问题，这些子问题相互之间有联系，有重叠。分治法将分解后的子问题看成是相互独立的。</li>
-<li>动态规划通过迭代法自底向上求解，通过子问题的求解进而寻找原问题的最优解。而分治法是利用递归对各个子问题独立求解，最后将各子问题的解进行合并形成原问题的解。</li>
-<li>若原复杂问题分解之后得到的各子问题之间不独立，则可以考虑使用动态规划算法</li>
-</ol>
-<h3 id="分治算法的复杂度分析"><a href="#分治算法的复杂度分析" class="headerlink" title="分治算法的复杂度分析"></a>分治算法的复杂度分析</h3><p>&emsp;&emsp;假设分治算法策略将原问题分解为<code>K</code>个计算规模为<code>n/m</code>的同质子问题，<code>m</code>表示问题规模减小的因子，$f(n)$为分解与合并子问题的计算复杂度。原问题的时间复杂度可用如下的递归表达式表示：</p>
-<script type="math/tex; mode=display">T(n)=KT(n/m)+f(n)</script><h3 id="分治算法的应用"><a href="#分治算法的应用" class="headerlink" title="分治算法的应用"></a>分治算法的应用</h3><ul>
-<li>二分查找</li>
-<li>大整数乘法</li>
-<li>棋盘覆盖</li>
-<li>快速排序</li>
-<li>合并排序</li>
-<li>Strassen矩阵乘法</li>
-<li>最接近点对问题</li>
-<li>汉诺塔</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;emsp;&amp;emsp;本博文记录了博主关于分治算法设计思想的学习总结。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="算法" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法设计" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法设计思想之动态规划</title>
-    <link href="http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E4%B9%8B%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.html"/>
-    <id>http://yaodong.ml/algorithms/算法设计思想之动态规划.html</id>
-    <published>2016-12-15T07:59:11.000Z</published>
-    <updated>2017-03-14T07:30:26.883Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。<br><a id="more"></a></p>
-<blockquote>
-<p><strong>动态规划</strong>（Dynamic programming，简称<strong>DP</strong>）是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。</p>
-</blockquote>
-<p>&emsp;&emsp;动态规划的基本思想：要求解给定问题的最优解，把给定的复杂问题分解成多个规模较小的子问题，且子问题是同质的。动态规划中，欲求给定问题的最优解，首先要求解子问题的最优解，$DP$对同 的子问题只求解一次，并存储子问题的求解结果，便于后续求解使用时查询。</p>
-<p>&emsp;&emsp;动态规划算法设计思想中的两个重要概念：状态和状态转移方程。根据子问题定义状态，描述状态之间的如何转移的方程称为状态转移方程。大部分情况下，某个状态只与它前面出现的状态有关， 而独立于后面的状态。<br>&nbsp;<br>&emsp;&emsp;动态规划算法主要分为有两步：1.将给定的问题（或子问题）抽象为状态（对应空间复杂度） 2.根据状态推导出子问题之间的状态转移方程（对应时间复杂度）。</p>
-<h3 id="动态规划算法的总结"><a href="#动态规划算法的总结" class="headerlink" title="动态规划算法的总结"></a>动态规划算法的总结</h3><p>&emsp;&emsp;动态规划通常用于解决最优化问题。<br>&emsp;&emsp;动态规划算法的时间复杂度远小于暴力求解和回溯法。<br>&emsp;&emsp;采用动态规划思想解决问题的前提是所给定问题具有<strong>最优子结构</strong>和<strong>重叠子问题</strong>的性质：</p>
-<ul>
-<li><strong>最优子结构</strong>是指问题的最优解包含其子问题的最优解。动态规划按照自底向上的策略利用最优子结构，即首先找到子问题的最优解，然后逐步向上寻找问题的一个最优解。最优子结构在求解的过程中以两种方式变化：</li>
-</ul>
-<ol>
-<li>有多少个子问题被使用在原问题的一个最优解中</li>
-<li>构建问题的最优解时使用子问题时有多少种选择或组合</li>
-</ol>
-<ul>
-<li><strong>重叠子问题</strong>是指用来解决原问题的递归算法可以反复地解同样的子问题，而不是总是产生新的子问题。重叠子问题的一个重要性质是同一个算法被不断递归调用以求解同一性质的问题</li>
-<li>简而言之，动态规划的核心就是寻找问题的最优子结构，找到最优子结构之后将问题分解成几个同质的子问题，使用同一算法递归求解子问题，并把每个子问题的求解结果保存在辅助表中，供求解后续问题时查询使用，每次查表的时间复杂度为常数</li>
-</ul>
-<p>&emsp;&emsp;<strong>算法思想</strong>是将给定的问题分解成几个相互不独立的子问题，各子问题之间是同质的，又称重叠子问题。对每个子问题只求解一次，并将其计算结果保存到辅助表中，便于后续子问题的计算。动态规划算法的设计步骤如下：</p>
-<ol>
-<li>描述问题的最优解的结构：分析给定问题出现最优解的情形，将给定的问题抽象化</li>
-<li>将给定问题分解成同质的子问题，分析子问题如何才能得到最优解，并给出子问题最优解的递归公式</li>
-<li>根据递归公式，采用自底向上的策略，计算每个子问题的最优解，将结果保存到辅助表中</li>
-<li>根据每个子问题的最优解，选择或构造给定问题的最优解</li>
-</ol>
-<h3 id="动态规划的应用"><a href="#动态规划的应用" class="headerlink" title="动态规划的应用"></a>动态规划的应用</h3><ul>
-<li><p>斐波那契数列</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 使用动态规划算法思想求解斐波那契数列</div><div class="line"> * <span class="doctag">@param</span> num: 要求的斐波那契数列的第idx个数</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span>[] fib = <span class="keyword">new</span> <span class="keyword">int</span>[num];<span class="comment">//数组默认初始化元素全为0</span></div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="keyword">if</span>(num == <span class="number">1</span> || num == <span class="number">2</span>)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    fib[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">    fib[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt; num;i++) &#123;</div><div class="line">        fib[i] = fib[i-<span class="number">1</span>] + fib[i-<span class="number">2</span>];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> fib[num-<span class="number">1</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>求最长递增子序列（不连续）（LIS）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 动态规划思想求解最长非降子序列(longest increasing subsequence,LIS)</div><div class="line"> * 代码以辅助理解动态规划算法的思想为目的，根据实际需求对形参进行改动</div><div class="line"> * <span class="doctag">@param</span> </div><div class="line"> * <span class="doctag">@return</span> 最长非降子序列的长度</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">solution_LIS</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span>[] series = &#123;<span class="number">5</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">1</span>&#125;;</div><div class="line">    <span class="keyword">int</span> num_length = series.length;</div><div class="line">    <span class="keyword">if</span> (num_length == <span class="number">0</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//定义longest数组，longest[i]表示前i个数中以series[i]结尾的最长非降子序列的长度</span></div><div class="line">    <span class="keyword">int</span>[] longest = <span class="keyword">new</span> <span class="keyword">int</span>[num_length];</div><div class="line">    </div><div class="line">    <span class="keyword">int</span> len = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; num_length;i++) &#123;</div><div class="line">        longest[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; i;j++) &#123;</div><div class="line">            <span class="keyword">if</span>((series[j] &lt;= series[i]) &amp;&amp; (longest[j]+<span class="number">1</span> &gt; longest[i])) &#123;</div><div class="line">                longest[i] = longest[j] + <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(longest[i] &gt; len)</div><div class="line">            len = longest[i];</div><div class="line">    &#125;   </div><div class="line">    <span class="keyword">return</span> len;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>0-1背包问题<br>&emsp;&emsp;一位游客去森林里探险，发现了一堆宝石，宝石的数量为$N$。他的背包的容量有限，只能带走一部分宝石。游客该如何选择哪些宝石带走，以获得最大利益？（宝石的编号为$0\sim N-1$）,编号为$i$的宝石的体积和价值分别为$vol[i]$和$w[i]$，背包的容量为$C$。</li>
-<li>最大连续子序列之和<ul>
-<li>最长公共子序列</li>
-<li><strong>Leetcode 198</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="使用动态规划思想的算法"><a href="#使用动态规划思想的算法" class="headerlink" title="使用动态规划思想的算法"></a>使用动态规划思想的算法</h3><ul>
-<li><strong>Floyd-Warshall</strong>算法</li>
-<li><strong>Viterbi</strong>算法</li>
-</ul>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li>Anker关于动态规划的总结：<a href="http://www.cnblogs.com/Anker/archive/2013/03/15/2961725.html" target="_blank" rel="external">《算法导论》读书笔记之动态规划</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;emsp;&amp;emsp;动态规划算法作为五大算法设计思想之一，重要性不言而喻。本博文记录了博主动态规划的学习总结。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="算法" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="算法设计" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法学习笔记——树和二叉树</title>
-    <link href="http://yaodong.ml/algorithms/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%A0%91%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91.html"/>
-    <id>http://yaodong.ml/algorithms/算法学习笔记——树和二叉树.html</id>
-    <published>2016-12-03T05:13:10.000Z</published>
-    <updated>2017-03-14T07:31:19.952Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。<br><a id="more"></a></p>
-<h3 id="树与二叉树的相关概念"><a href="#树与二叉树的相关概念" class="headerlink" title="树与二叉树的相关概念"></a>树与二叉树的相关概念</h3><p>&emsp;&emsp;二叉树的左右子树有严格的顺序，不可颠倒，这是二叉树与普通树的关键区别。<br>&emsp;&emsp;<strong>二叉搜索树</strong>：二叉树的一个节点的左子节点的关键字值小于这个节点，右子节点的关键字值大于（或等于）这个父节点。<br>&emsp;&emsp;<strong>平衡树与非平衡树</strong>：左子节点与左子节点对称的树为平衡树，否则就是非平衡树。<br>&emsp;&emsp;<strong>满二叉树</strong>：满二叉树除最后一层无任何子节点外，其余每一层的所有结点都有两个子结点。也就是说，除叶子结点外的所有结点均有两个子结点。满二叉树的结点数达到最大值。<strong>满二叉树的所有叶子结点必须在同一层上</strong>。<br>&emsp;&emsp;<strong>完全二叉树</strong>：完全二叉树是由满二叉树而引出来的。对于深度为<strong>K</strong>的，有<strong>N</strong>个结点的二叉树，当且仅当其编号为<strong><em>i</em></strong>的结点与深度为<strong>K</strong>的满二叉树中编号为<strong><em>i</em></strong>的结点在二叉树中的位置一一对应时称之为完全二叉树。<br>&emsp;&emsp;<strong>霍夫曼树</strong>：一种特殊结构的二叉树，每个节点要么没有子节点，要么有两个子节点。<br>&emsp;&emsp;二叉树结合了有序数组和链表的优点：在二叉树中，数据的查找效率跟在有序数组中查找一样高，同时插入、删除数据的效率和在链表中一样高。<br>&emsp;&emsp;二叉树的工作效率：时间复杂度为<strong>O(logN)</strong>。总的来说，树对所有的数据存储操作都很高效。<br>&emsp;&emsp;满二叉树的相关性质：</p>
-<ul>
-<li>叶子结点只能出现在深度最大的一层；</li>
-<li>非叶子结点的度一定为2；</li>
-<li>在同等深度的二叉树中，满二叉树的结点个数最多，叶子结点也最多；</li>
-</ul>
-<p>&emsp;&emsp;完全二叉树的相关性质：</p>
-<ul>
-<li>叶子结点只能出现在最下的两层；</li>
-<li>最下层的叶子结点一定集中在左部连续位置；</li>
-<li>倒数第二层如有叶子结点存在，则一定都在右部连续位置；</li>
-<li>如果某结点的度为1，则该结点一定只有左孩子，不可能存在只有右孩子的情况；</li>
-<li>对于同样结点数的二叉树，完全二叉树的深度最小。</li>
-<li>完全二叉树除最后一层外，每一层上的结点数均达到最大值；在最后一层上只缺少右子树的若干结点。</li>
-</ul>
-<p>&emsp;&emsp;<strong>满二叉树与完全二叉树的重要区别</strong>：<strong>满二叉树肯定是完全二叉树，完全二叉树不一定是满二叉树。</strong></p>
-<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><p>&emsp;&emsp;1. 在二叉树的第<strong>i</strong>层最多有$2^{i}-1$个结点（$i$）；<br>&emsp;&emsp;2. 深度为<strong>k</strong>的二叉树至多有个结点；<br>&emsp;&emsp;3. 对任何一棵二叉树T，如果其终端结点数为$n<em>0$，度为<strong>2</strong>的结点数为$n_2$，则$n_0=n_2+1$；<br>&emsp;&emsp;4. 具有<strong>n</strong>个结点的完全二叉树的深度为$\lfloor log</em>{2} n \rfloor+1$<br>&emsp;&emsp;5. 如果对一棵有<strong>n</strong>个结点的完全二叉树（其深度为$\lfloor log_{2} n \rfloor+1$）的结点按层序编号，对任一结点$i$都有：</p>
-<ul>
-<li>如果$i=1$，则结点$i$是二叉树的根结点，无双亲；如果$i&gt;1$，则其双亲是结点$\lfloor i/2 \rfloor$;</li>
-<li>如果$2i&gt;n$，则结点$i$无左孩子，结点$i$为叶子结点，否则其左孩子是结点$2i$；</li>
-<li>如果$2i+1&gt;n$，则结点$i$无右孩子，否则其右孩子是结点$2i+1$。</li>
-</ul>
-<h3 id="二叉树的存储结构"><a href="#二叉树的存储结构" class="headerlink" title="二叉树的存储结构"></a>二叉树的存储结构</h3><p>&emsp;&emsp;二叉树常用的存储结构是：<strong>孩子兄弟表示法</strong>和<strong>二叉链表</strong>。</p>
-<h3 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h3><h4 id="前序遍历：根-左-右"><a href="#前序遍历：根-左-右" class="headerlink" title="前序遍历：根 左 右"></a><strong>前序遍历</strong>：根 左 右</h4><ol>
-<li>递归遍历（较简单）</li>
-<li>非递归遍历（借助<strong>Stack</strong>结构实现）：</li>
-</ol>
-<ul>
-<li>当访问到任一结点<strong>p</strong>：输出结点<strong>p</strong>，并将该结点入栈；</li>
-<li>判断结点<strong>p</strong>的左孩子是否为空：<ol>
-<li>若不为空，并将<strong>p</strong>的左孩子置为当前结点，回到1，循环；</li>
-<li>若为空，则对栈顶结点进行出栈操作，但不输出，并将待出栈结点的右孩子置为当前结点，判断是否为空：<pre><code> 1. 若不为空，回到1，循环操作；
- 2. 若为空，则对栈顶结点进行出栈操作，但不输出，即重复上述操作
-</code></pre></li>
-</ol>
-</li>
-<li>直到栈为空且当前结点为空，则遍历结束<h4 id="中序遍历：左-根-右"><a href="#中序遍历：左-根-右" class="headerlink" title="中序遍历：左 根 右"></a><strong>中序遍历</strong>：左 根 右</h4></li>
-<li>递归遍历（较简单）</li>
-<li>非递归遍历（借助<strong>Stack</strong>结构实现）：</li>
-</ul>
-<ol>
-<li>对任一结点<strong>p</strong>，若<strong>p</strong>的左孩子结点不为空，则将<strong>p</strong>入栈并将<strong>p</strong>的左孩子结点置为当前结点，一直对当前结点做相同处理；</li>
-<li>若当前结点<strong>p</strong>左孩子为空，则输出结点<strong>p</strong>，然后将<strong>p</strong>的右孩子置为当前结点，并判断其是否为空：<ul>
-<li>(1)：若不为空，重复1,2操作</li>
-<li>(2)：若为空，则执行出栈操作，输出栈顶结点，并将栈顶结点的右孩子结点置为当前结点，并判断是否为空；重复(1), (2)操作；</li>
-</ul>
-</li>
-<li>直至当前结点<strong>p</strong>为<code>NULL</code>且栈为空，遍历结束；<h4 id="后序遍历：左-右-根"><a href="#后序遍历：左-右-根" class="headerlink" title="后序遍历：左 右 根"></a><strong>后序遍历</strong>：左 右 根</h4></li>
-</ol>
-<ul>
-<li>递归遍历（较简单）</li>
-<li>非递归遍历（借助<strong>Stack</strong>结构实现）,后序遍历的非递归的实现相对来说要难一些，因为<strong>后序遍历要保证根节点在左子树和右子树被访问后才能访问</strong>，思路如下：<ul>
-<li><strong>思路1</strong>：核心思想是将暂时不访问的右、左孩子结点依次入栈</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>对于任意结点<strong>p</strong>，先将<strong>p</strong>入栈；</li>
-<li>若P不存在左孩子和右孩子，或者P存在左孩子或右孩子，但左右孩子已经被输出，则可以直接输出结点P，并将其出栈，将出栈结点P标记为上一个输出的结点，再将此时的栈顶结点设为当前结点；</li>
-<li>若不满足2中的条件，则将<strong>p</strong>的右孩子和左孩子依次入栈（先右后左），当前节点重新置为栈顶结点，重复步骤2；</li>
-<li>直至栈空，遍历结束。<ul>
-<li><strong>思路2</strong>：<ol>
-<li>对于任一结点<strong>current</strong>，当结点<strong>current</strong>非空时，将其右孩子结点入栈，然后<strong>current</strong>入栈，设置<strong>current</strong>的左孩子为<strong>current</strong>然后沿左子树一直深度搜索，一直down到最左孩子结点，</li>
-<li>设置栈顶元素为<strong>current</strong>，并将其出栈，判断该出栈结点的右孩子是否为空：<ul>
-<li>若<strong>current</strong>的右孩子不为空，栈不为空且右孩子是栈顶结点，则再将栈顶结点出栈（<strong>current</strong>的右孩子结点）， 设置<code>current=current.right</code></li>
-<li>如果出栈结点的右孩子为空，则可以访问该结点，并且设置<strong>current=null</strong></li>
-</ul>
-</li>
-<li>重复步骤2直至栈为空(null)，遍历结束。</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="层序遍历：从上到下，从左到右"><a href="#层序遍历：从上到下，从左到右" class="headerlink" title="层序遍历：从上到下，从左到右"></a><strong>层序遍历</strong>：从上到下，从左到右</h4><ul>
-<li>递归结构</li>
-<li>层序遍历的非递归结构可借助队列Queue来实现：</li>
-</ul>
-<ol>
-<li>将根结点入队；</li>
-<li>如果队列不空，则进入以下循环：<ul>
-<li>将队首的结点出队，并输出该结点；</li>
-<li>如果该结点有左孩子，则将其左孩子入队；</li>
-<li>如果该结点有右孩子吗，则将其右孩子入队。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<p>&emsp;&emsp;霍夫曼树以及其他二叉树的知识后续会在博文下次更新时整理。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;emsp;&amp;emsp;本博文总结了树和二叉树的基本概念，简单介绍了二叉树的遍历。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构" scheme="http://yaodong.ml/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="http://yaodong.ml/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python学习笔记之面向对象高级编程</title>
-    <link href="http://yaodong.ml/python/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B.html"/>
-    <id>http://yaodong.ml/python/python学习笔记之面向对象高级编程.html</id>
-    <published>2016-11-12T06:44:55.000Z</published>
-    <updated>2017-03-14T07:02:58.089Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;本博文是python面向对象高级编程的学习总结，主要参考<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" target="_blank" rel="external">廖雪峰的python教程</a>整理而来。<br><a id="more"></a></p>
-<h3 id="使用-slot-限制动态添加属性"><a href="#使用-slot-限制动态添加属性" class="headerlink" title="使用__slot__限制动态添加属性"></a>使用<code>__slot__</code>限制动态添加属性</h3><p>&emsp;&emsp;python作为一门动态语言，比静态语言更灵活，功能更强大。python可以实现对类的具体对象添加属性和方法，但是对类的一个具体实例动态添加属性和方法只对当前实例对象有效，对该类的其他实例对象是不起作用的。<br>&emsp;&emsp;给类的所有实例对象都绑定属性方法，可以<code>MethodType()</code>函数通过给class绑定属性和方法实现：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> types <span class="keyword">import</span> MethodType</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyObject</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="keyword">pass</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">new_method</span><span class="params">(self,var)</span>:</span></div><div class="line">    self.var = var</div><div class="line">% 给MyObject类添加new_method方法</div><div class="line">MyObject.new_method = MethodType(new_method,<span class="keyword">None</span>,MyObject)</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;python语言的动态特性允许在程序运行的过程中为对象的所属类添加属性或方法。相应地，为了保护自定义类的固有属性和方法，在定义class时需要通过一定的措施来限制对该class动态添加属性和方法。在定义class时，可添加一个<code>__slots__</code>变量，来限制该class能添加的属性：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line">    __slots__ = (<span class="string">"name"</span>,<span class="string">"age"</span>)   <span class="comment"># 用tuple定义允许绑定的属性名称</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;通过<code>__slots__</code>变量对class进行约束后，如果在程序运行过程中对class添加<code>__slots__</code>中不存在的属性，则会抛出AttributeError。<br>&emsp;&emsp;使用<code>__slots__</code>要注意，<code>__slots__</code>定义的属性仅对当前class起作用，对继承该class的子类是不起作用的。除非在子类中也定义<code>__slots__</code>，这样，子类允许定义的属性就是自身的<code>__slots__</code>加上父类的<code>__slots__</code>。</p>
-<h3 id="使用-property"><a href="#使用-property" class="headerlink" title="使用@property"></a>使用@property</h3><p>&emsp;&emsp;对class添加属性时，要进行参数检查，检查参数的格式或数值范围。传统的实现方法是在set_xx()方法里加入判断：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_score</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self._score</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_score</span><span class="params">(self, value)</span>:</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(value, int):</div><div class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'score must be an integer!'</span>)</div><div class="line">        <span class="keyword">if</span> value &lt; <span class="number">0</span> <span class="keyword">or</span> value &gt; <span class="number">100</span>:</div><div class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'score must between 0 ~ 100!'</span>)</div><div class="line">        self._score = value</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;python的装饰器（generator）可以给函数在程序运行期间添加属性和方法。Python内置的<code>@property</code>装饰器可以把一个方法变成属性以便于调用。把一个<code>getter()</code>方法变成属性，只需在相应函数前加上<code>@property</code>即可。此外，@property的另一个装饰器<code>@score.setter</code>，可以把一个setter()方法变成属性赋值：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line"><span class="meta">    @property</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self)</span>:</span>   <span class="comment">#实现get_score功能</span></div><div class="line">        <span class="keyword">return</span> self._score</div><div class="line"><span class="meta">    @score.setter</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self, value)</span>:</span>    <span class="comment"># 实现set_score功能</span></div><div class="line">        <span class="keyword">if</span> <span class="keyword">not</span> isinstance(value, int):</div><div class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'score must be an integer!'</span>)</div><div class="line">        <span class="keyword">if</span> value &lt; <span class="number">0</span> <span class="keyword">or</span> value &gt; <span class="number">100</span>:</div><div class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'score must between 0 ~ 100!'</span>)</div><div class="line">        self._score = value</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;定义只读属性：只定义<code>getter()</code>方法，不定义<code>setter()</code>方法。有了<code>@property</code>，对类的指定属性只添加<code>@property</code>，不添加<code>@property.setter</code>即可实现只读属性。</p>
-<h3 id="多重继承"><a href="#多重继承" class="headerlink" title="多重继承"></a>多重继承</h3><p>&emsp;&emsp;通过继承，子类可以在实现父类所有功能的基础上，扩展更多自定义功能。Python支持多重继承，这一点区别于Java。通过多重继承，子类可以同时获得多个父类的所有功能。<br>&emsp;&emsp; <strong>Mixin</strong>是python多重继承中的一种设计模式，可以看作多重继承在特定场景下的一种应用。Mixin实质上是利用语言特性来更简洁地实现组合模式。类比于Java，Mixin相当于Java中以<code>-able</code>结尾的接口，不同的是，传统的<code>interface</code>概念并不包含实现，而Mixin包含实现。多重继承中，继承Mixin类是为了在原有父类的基础上添加某些可选功能。通俗的讲：<strong>继承强调$I \ am$，Mixin强调$I \ can$</strong>。<br>&emsp;&emsp;<strong>Mixin</strong>的目的就是给一个类增加多个功能。在设计类时，优先考虑通过多重继承来组合多个Mixin的功能，而不是设计多层次的复杂的继承关系。</p>
-<h3 id="定制类"><a href="#定制类" class="headerlink" title="定制类"></a>定制类</h3><p>&emsp;&emsp;<strong>python</strong>中，形如<code>__xxx__</code>的变量或者函数都是有特殊用途的，这些特殊的函数可以帮助设计定制类。<br>&emsp;&emsp;<code>__str__</code>可用于打印class的基本信息，比如变量和方法等。<code>__str__</code>相当于Java中的<code>toString()</code>方法。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.name = name</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> <span class="string">'Student object (name: %s)'</span> % self.name</div><div class="line"></div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> Student(<span class="string">'Michael'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>Student object (name: Michael)</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;<code>__iter__</code>用于生成可迭代对象，使得class可以用于循环中。该方法返回一个迭代对象。class定义<code>__iter__</code>的同时，还需要定义<code>next()</code>方法，便于访问可迭代对象。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fib</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></div><div class="line">        self.a, self.b = <span class="number">0</span>, <span class="number">1</span> <span class="comment"># 初始化两个计数器a，b</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></div><div class="line">        <span class="keyword">return</span> self <span class="comment"># 实例本身就是迭代对象，故返回自己</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">(self)</span>:</span></div><div class="line">        self.a, self.b = self.b, self.a + self.b <span class="comment"># 计算下一个值</span></div><div class="line">        <span class="keyword">if</span> self.a &gt; <span class="number">100000</span>: <span class="comment"># 退出循环的条件</span></div><div class="line">            <span class="keyword">raise</span> StopIteration();</div><div class="line">        <span class="keyword">return</span> self.a <span class="comment"># 返回下一个值</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;<code>__getitem__()</code>用于获取可迭代对象指定索引位置的元素。若class仅实现<code>__iter__</code>方法，则只能通过<code>next()</code>方法从前到后逐个获取class对象的元素，不能像list一样按照下标访问元素，也不能使用切片（slice）访问部分元素，<code>__getitem__()</code>方法可以实现这个功能。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fib</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, n)</span>:</span></div><div class="line">        <span class="keyword">if</span> isinstance(n, int):</div><div class="line">            a, b = <span class="number">1</span>, <span class="number">1</span></div><div class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> range(n):</div><div class="line">                a, b = b, a + b</div><div class="line">            <span class="keyword">return</span> a</div><div class="line">        <span class="keyword">if</span> isinstance(n, slice):</div><div class="line">            start = n.start</div><div class="line">            stop = n.stop</div><div class="line">            a, b = <span class="number">1</span>, <span class="number">1</span></div><div class="line">            L = []</div><div class="line">            <span class="keyword">for</span> x <span class="keyword">in</span> range(stop):</div><div class="line">                <span class="keyword">if</span> x &gt;= start:</div><div class="line">                    L.append(a)</div><div class="line">                a, b = b, a + b</div><div class="line">            <span class="keyword">return</span> L</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;<code>__setitem__()</code>方法，把class对象视为list或dict来对集合赋值。<br>&emsp;&emsp;<code>__delitem__()</code>方法，用于删除某个元素<br>&emsp;&emsp;<code>__getattr__()</code>方法，用于解决class对象调用不存在的方法或属性，系统报错的问题。注意，只有在没有找到属性的情况下，才调用<code>__getattr__</code>，已存在的属性，不会在<code>__getattr__</code>中查找。<br>&emsp;&emsp;<code>__call__()</code>方法，实现调用class对象自身：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></div><div class="line">        self.name = name</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self)</span>:</span></div><div class="line">        print(<span class="string">'My name is %s.'</span> % self.name)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s = Student(<span class="string">'Michael'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>s()</div><div class="line">My name <span class="keyword">is</span> Michael.</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;<code>__call__()</code>还可以定义参数。对class实例对象进行直接调用就好比对一个函数进行调用一样，所以完全可以把对象看成函数，把函数看成对象，因为这两者之间本来就没有根本的区别。<br>&emsp;&emsp;<code>callable()</code>函数，我们就可以判断一个class实例对象是否是“可调用”对象。</p>
-<h3 id="元类metaclass"><a href="#元类metaclass" class="headerlink" title="元类metaclass"></a>元类metaclass</h3><p>&emsp;&emsp;动态语言和静态语言最大的不同，就是类和函数不是编译时定义的，而是在运行时动态创建。也就是说，class的定义是运行时动态创建的。</p>
-<h4 id="type-函数创建类"><a href="#type-函数创建类" class="headerlink" title="type()函数创建类"></a>type()函数创建类</h4><p>&emsp;&emsp;创建class可以使用type()函数。type()函数可以查看一个类型或变量的类型，上述代码中，Hello是一个class，它的类型就是type，而h是一个实例，它的类型就是class Hello。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">(self, name=<span class="string">'world'</span>)</span>:</span></div><div class="line">        print(<span class="string">'Hello, %s.'</span> % name)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> hello <span class="keyword">import</span> Hello</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>h = Hello()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>h.hello()</div><div class="line">Hello, world.</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(type(Hello))</div><div class="line">&lt;type <span class="string">'type'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(type(h))</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">hello</span>.<span class="title">Hello</span>'&gt;</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;type()函数既可以返回一个对象的类型，又可以创建出新的类型。比如，可以通过type()函数创建出Hello类：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">fn</span><span class="params">(self, name=<span class="string">'world'</span>)</span>:</span> <span class="comment"># 先定义函数</span></div><div class="line">    print(<span class="string">'Hello, %s.'</span> % name)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>Hello = type(<span class="string">'Hello'</span>, (object,), dict(hello=fn)) <span class="comment"># (object,)是tuple的单元素写法</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>h = Hello()</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>h.hello()</div><div class="line">Hello, world.</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(type(Hello))</div><div class="line">&lt;type <span class="string">'type'</span>&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>print(type(h))</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Hello</span>'&gt;</span></div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;事实上，底层的Python解释器检测到class定义时，仅仅是扫描一下class定义的语法，然后调用type()函数创建出class。</p>
-<h3 id="通过metaclass创建类"><a href="#通过metaclass创建类" class="headerlink" title="通过metaclass创建类"></a>通过metaclass创建类</h3><p>&emsp;&emsp;Python面向对象编程的顺序是：先定义metaclass，根据metaclass创建class类，最后创建class类的实例对象。metaclass允许创建class类或者修改class类。换句话说，可以把class类看成是metaclass创建出来的“实例”。<br>&emsp;&emsp;按照默认习惯，metaclass的类名总是以<code>Metaclass</code>结尾，以便清楚地表示这是一个metaclass。<code>__new__()</code>方法接收到的参数依次是：当前准备创建的类的对象；类的名字；类继承的父类集合；类的方法集合。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">% metaclass是创建class类，所以必须从`type`类型派生</div><div class="line">class ListMetaclass(type):</div><div class="line">    def __new__(cls, name, bases, attrs):</div><div class="line">        attrs['add'] = lambda self, value: self.append(value)</div><div class="line">        return type.__new__(cls, name, bases, attrs)</div><div class="line">class MyList(list):</div><div class="line">    __metaclass__ = ListMetaclass # 魔术语句，指示Python解释器在创建MyList时，要通过ListMetaclass.__new__()来创建</div></pre></td></tr></table></figure></p>
-<p>&emsp;&emsp;一般情况下，不需使用metaclass创建class类，只有特殊情形下需要通过metaclass修改类定义。ORM就是一个典型的例子。ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，后续写代码更简单，无需直接操作SQL语句。要编写一个ORM框架，所有的类都只能动态定义，因为只有使用者才能根据表的结构定义出对应的类来。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;emsp;&amp;emsp;本博文是python面向对象高级编程的学习总结，主要参考&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000&quot;&gt;廖雪峰的python教程&lt;/a&gt;整理而来。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://yaodong.ml/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="python" scheme="http://yaodong.ml/tags/python/"/>
     
   </entry>
   

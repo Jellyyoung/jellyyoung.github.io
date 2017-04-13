@@ -1,0 +1,1067 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="google-site-verification" content="ekv-W0AxllwZ-k-lfisabABgmiSU94Ex3-o0Ka-TjRU" />
+<meta name="baidu-site-verification" content="PKbwImzbNH" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine Learning, Data Science" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Jellyyoung's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.icon?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="&amp;emsp;&amp;emsp;随机森林算法学习笔记总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习算法笔记——随机森林（Random Forest）">
+<meta property="og:url" content="http://yaodong.ml/machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html">
+<meta property="og:site_name" content="Jellyyoung's Blog">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;随机森林算法学习笔记总结。">
+<meta property="og:updated_time" content="2017-04-13T05:37:08.662Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习算法笔记——随机森林（Random Forest）">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;随机森林算法学习笔记总结。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6310520035420931000',
+      author: '摇摇果冻'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yaodong.ml/machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html"/>
+
+
+  <title> 机器学习算法笔记——随机森林（Random Forest） | Jellyyoung's Blog </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jellyyoung's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Practice makes me progressive</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-resume">
+          <a href="/resume" rel="section">
+            
+            简历
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                机器学习算法笔记——随机森林（Random Forest）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-13T13:36:30+08:00" content="2017-02-13">
+              2017-02-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html" class="leancloud_visitors" data-flag-title="机器学习算法笔记——随机森林（Random Forest）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;随机森林算法学习笔记总结。<br><a id="more"></a><br>&emsp;&emsp;随机森林由许多的决策树组成，这些决策树的形成采用了“随机”的方法，所以叫做随机森林。随机森林中的决策树之间是没有关联的。<br>&emsp;&emsp;随机森林中的所有树都使用同样的训练参数。但是每个决策树的训练集是不同的，每个决策树的错误估计采用OOB（Out of Bag）的方法。</p>
+<h3 id="Bagging方法"><a href="#Bagging方法" class="headerlink" title="Bagging方法"></a>Bagging方法</h3><p>&emsp;&emsp;Bagging方法就是将所有training data放进一个“黑色”的bag中，然后从这个bag中随机抽取部分数据生成新的训练集。随机森林算法中，样本训练集本省可以使用bagging方法，同样，样本的feature也可以进行bagging。从随机性来看，bagging技术可以有效的减小方差，即减小过拟合程度<br>&emsp;&emsp;随机森林是一种经典而强大的机器学习算法，具有回归和分类的功能。随机森林算法由若干决策树组成，这些决策树一般采用随机的方法生成，因此也叫做随机决策树。随机森林算法中的各决策树之间是没有关联的。</p>
+<h3 id="Bootstrap抽样"><a href="#Bootstrap抽样" class="headerlink" title="Bootstrap抽样"></a>Bootstrap抽样</h3><p>&emsp;&emsp;随机森林算法中包含了对输入数据的重复自抽样过程，即所谓的bootstrap抽样。大约三分之一的数据集将用于测试而不是模型的训练，这样的数据被称为out of bag samples。<br>&emsp;&emsp;bootstrap抽样与bagging的区别是：在生成每棵树的时候，每个节点变量都仅仅在随机选出的少数变量中产生。因此，不但样本是随机的，连每个节点变量（Features）的产生都是随机的。<br>&emsp;&emsp;综上可知，随机森林算法的的两个随机采样的过程保证了随机性，所以即使对最终的各决策树不剪枝，也不会出现over-fitting。</p>
+<h3 id="随机采样"><a href="#随机采样" class="headerlink" title="随机采样"></a>随机采样</h3><p>&emsp;&emsp;随机森林的随机体现在两个方面：数据集的<strong>行随机采样</strong>和<strong>列随机采样</strong>。行随机采样采用<strong>Bootstraping</strong>的方法对训练数据集进行又放回抽样。列随机采样指的是从所有$M$个特征属性中随机选择$m$个属性，同时保证$m &lt;&lt; M$。相当于把$M$维特征做了低维度的投影。减小特征选择的数量$m$，决策树之间的相关性和决策树的分类能力也会相应的降低；增大m，决策树之间的相关性和决策树的分类能力也会随之增大。<br>&emsp;&emsp;随机采样的后果是生成的每一个决策树的分类能力都很有限，但是将这些性能有限的决策树组合在一起的模型的性能就大大加强了。随机森林的最后结果是由多个决策树的训练结果进行加权组合而得到。</p>
+<h3 id="完全分裂"><a href="#完全分裂" class="headerlink" title="完全分裂"></a>完全分裂</h3><p>&emsp;&emsp;随机森林建立决策树的过程不考虑决策树是否会发生过拟合。也就是说，随机森林对采样之后的数据采用完全分裂的方式建立决策树，因此，决策树的某一个叶子结点要么是无法继续分裂的，要么对应的所有样本都属于同一类。再次强调，<strong>随机森林中的两个“随机采样”充分保证了样本的随机性，因此即使不剪枝，也不会出现过拟合</strong>。</p>
+<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><ol>
+<li>通过自助法（bootstrap）重采样技术，从原始训练样本集中有放回地重复随机抽取N个样本生成新的训练样本集合</li>
+<li>对随机采样得到的新训练数据集，构建决策树，在每个节点执行以下操作：</li>
+</ol>
+<ul>
+<li>从样本数据的M个features中随机选取m($m&lt;&lt;M$)个feature</li>
+<li>对这m个features，选择特定的度量准则分割节点</li>
+<li>重复上述操作N次，从而生成与样本数量相等的决策树</li>
+</ul>
+<ol>
+<li>对于每一个测试样例，对k颗决策树的预测结果进行投票。票数最多的结果就是随机森林的分裂（预测）结果</li>
+</ol>
+<h3 id="特征重要性度量"><a href="#特征重要性度量" class="headerlink" title="特征重要性度量"></a>特征重要性度量</h3><p>&emsp;&emsp;随机森林能够计算特征的重要性，因此随机森林可用于特征选择。<br>&emsp;&emsp;随机森林算法中特征$X$的重要性的计算方法如下：</p>
+<ol>
+<li>对于随机森林中的每一棵决策树，输入都是经bootstrap采样的随机采样数据，使用OOB数据计算当前决策树模型的袋外错误率，记为$errorOOB1$</li>
+<li>对每棵决策树的OOB数据的特征$X$加入噪声干扰，再次计算OOB错误率，记为$errorOOB2$</li>
+<li>特征$X$的重要性可通过以下公式来衡量：<script type="math/tex; mode=display">X\_importacne = \frac{1}{N}\sum_{i=1}^{N}(errorOOB2 - errorOOB1)</script>&emsp;&emsp;不难理解，对于同一棵决策树来说，如果对特征$X$加入噪声干扰后，$errorOOB2$如果大幅度降低，说明该特征对样本的分类结果影响很大，即特征更重要。</li>
+</ol>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>&emsp;&emsp;随机森林算法有以下优点：</p>
+<ul>
+<li>属于集成学习模型，适合多分类模型，训练和预测速度快，在数据集上表现良好</li>
+<li>对训练数据的容错能力强，即使训练数据中有缺失值，仍然可以保持预测精度不变</li>
+<li>随机森林在分类的过程中，对generlization error使用的是内部无偏估计</li>
+<li>能够在训练过程中检测到特征之间的相互影响以及各个特征的重要性程度</li>
+<li>随机采样和特征属性采样保证了算法不易出现过度拟合</li>
+<li>算法训练速度快，方便并行实现</li>
+<li>适合用于多分类问题，算法训练和预测速度快，容易实现并行化</li>
+<li>可有效估计缺失数据，即有一定程度的数据容错能力，当数据集中有大比例的数据缺失时仍然可以保持精度不变和能够有效地处理大的数据集</li>
+<li>不会出现过拟合</li>
+<li>能够处理很高维度（feature很多）的数据，并且不用做特征选择</li>
+<li>对数据集的适应能力强：既能处理离散型数据，也能处理连续型数据，数据集无需规范化</li>
+<li>可检测样本的各特征（维度）之间的相互影响程度，判断特征对所解决问题的重要性程度</li>
+<li>可直接处理大规模的的变量（群）</li>
+<li>在创建森林即分类的过程中，对泛化误差的估计是内部无偏估计</li>
+<li>随机森林算法也是一种数据降维的方法，用于处理缺失值、异常值</li>
+<li><h3 id="scikit-learn中的Random-Forest算法"><a href="#scikit-learn中的Random-Forest算法" class="headerlink" title="scikit-learn中的Random Forest算法"></a>scikit-learn中的Random Forest算法</h3>参考代码如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sklearn.ensemble.RandomForestClassfier</div><div class="line">clf = RandomForestClassifier([parameters]) <span class="comment">#generator the entity object of classifier</span></div><div class="line">parameters:</div><div class="line">n_estimators：指定随机森林中树的数目，越多越好，不超过内存即可</div><div class="line">criterion:指定在分裂使用的决策算法，取值有“entropy”、“gini”等</div><div class="line">max_features:单个决策树使用特征的最大数量，取值为<span class="string">"Auto"</span>，<span class="string">"None"</span>，<span class="string">"sqrt"</span>，<span class="string">"0.X"</span>。回归问题，max_features=n_features,分类问题，max_features=sqrt(n_features),<span class="string">"sqrt"</span>即为全部特征数目的平均根</div><div class="line">max_depth:默认为<span class="keyword">None</span>，一般可不改动</div><div class="line">min_simples_split:</div><div class="line">min_samples_leaf:最小叶片大小。默认值为<span class="number">1</span>，可设置为<span class="number">50</span>。叶是决策树的末端节点，较小的叶子使模型更容易捕捉训练数据中的噪声。</div><div class="line">min_weight_fraction_leaf:</div><div class="line">max_leaf_nodes:</div><div class="line">min_impurity_split:</div><div class="line">bootstrap:</div><div class="line">oob_score:这是一个随机森林交叉验证方法，取值为boolean类型，<span class="string">"True"</span>,<span class="string">"False"</span></div><div class="line">n_jobs:指定并行训练时使用的进程数。“<span class="number">-1</span>”表示使用所有处理器</div><div class="line">random_state:经验值<span class="string">"random_state=50"</span></div><div class="line">verbose:</div><div class="line">warm_state:</div><div class="line">class_weight:</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>感谢果冻君，受益匪浅！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-qrd.png" alt="摇摇果冻 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-qcode.jpg" alt="摇摇果冻 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/machine-learning/机器学习算法笔记——GBDT-XGBoost.html" rel="next" title="机器学习算法笔记——GBDT & XGBoost">
+                <i class="fa fa-chevron-left"></i> 机器学习算法笔记——GBDT & XGBoost
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/机器学习算法笔记——随机森林（Random-Forest）.html" rel="prev" title="机器学习算法笔记——随机森林（Random Forest）">
+                机器学习算法笔记——随机森林（Random Forest） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html"
+     data-title="机器学习算法笔记——随机森林（Random Forest）"
+     data-content=""
+     data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html"
+           data-title="机器学习算法笔记——随机森林（Random Forest）" data-url="http://yaodong.ml/machine-learning/机器学习算法笔记——随机森林（Random-Forest）.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/don't-fear.jpg"
+               alt="摇摇果冻" />
+          <p class="site-author-name" itemprop="name">摇摇果冻</p>
+          <p class="site-description motion-element" itemprop="description">Nothing but practice</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/jellyyoung" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2685489433" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/yao-yao-guo-dong" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com" title="Github" target="_blank">Github</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://leetcode.com" title="Leetcode" target="_blank">Leetcode</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.nowcoder.com" title="牛客网" target="_blank">牛客网</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.kaggle.com/competitions" title="Kaggle" target="_blank">Kaggle</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bagging方法"><span class="nav-number">1.</span> <span class="nav-text">Bagging方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrap抽样"><span class="nav-number">2.</span> <span class="nav-text">Bootstrap抽样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机采样"><span class="nav-number">3.</span> <span class="nav-text">随机采样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全分裂"><span class="nav-number">4.</span> <span class="nav-text">完全分裂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法步骤"><span class="nav-number">5.</span> <span class="nav-text">算法步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征重要性度量"><span class="nav-number">6.</span> <span class="nav-text">特征重要性度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">7.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scikit-learn中的Random-Forest算法"><span class="nav-number">8.</span> <span class="nav-text">scikit-learn中的Random Forest算法</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">摇摇果冻</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jellyyoung"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("FMr7sWjQxkJp3Cryj0InKhSH-gzGzoHsz", "MM5zwP9a10uxjJHqpLRtlyQF");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
